@@ -101,6 +101,7 @@
 \newcommand{\T}{\mathrm{T}}
 \newcommand{\iBT}{\mathrm{i}^\T_\B}
 \newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\gra}{\ell}
 
 %Mots parentheses colores
 \newcommand{\blue}[1]{\textcolor{MidnightBlue}{\textbf{(}} #1 \textcolor{MidnightBlue}{\textbf{)}}} 
@@ -513,7 +514,6 @@
 
 %%%%%%%%% Nouveau
 
-
 \DeclareMathOperator{\Ima}{Im} %Image d'une fonction
 \DeclareMathOperator{\cone}{Cone} %Cône
 
@@ -567,13 +567,14 @@
 \Guillaume{TBC at the end}
 
 \subsection*{Acknowledgements} 
-\Guillaume{TBC at the end}
+\Guillaume{Bruno!}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Realization of the muliplihedra} 
 
+\Guillaume{Intro de section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -945,6 +946,8 @@ It is straightforward to see that these two grafting operations on corollas gene
 \label{Fig5:FacetsColoredTrees}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Forcey--Loday realizations of the multiplihedra}
 Jean-Louis Loday gave in \cite{Loday04a} realizations of the associahedra in the form of polytopes with integer coordinates. 
 Stefan Forcey generalized this construction in \cite{Forcey08} in order to give similar realizations for the multiplihedra. 
@@ -1130,7 +1133,7 @@ We can finally conclude the proof with these decompositions of facets of $\J_\om
 \subsection{The multiplihedra as generalized permutahedra} 
 \label{sec:generalizedpermutahedra}
 
-\begin{definition}[Permutahedron] The \emph{permutahedron} is the polytope in $\RR^n$ equivalently defined as :
+\begin{definition}[Permutahedron] The \emph{$(n-1)$-dimensional permutahedron} is the polytope in $\RR^n$ equivalently defined as:
 \begin{itemize}
   \item the convex hull of the points $\displaystyle \sum_{i=1}^{n}i\vec e_{\sigma(i)}$ for all permutations $\sigma \in \mathbb{S}_n$, or
   \item the intersection of the hyperplane $\displaystyle  \left\{x \in \RR^n \ \bigg| \ \sum_{i=1}^{n} x_i = \binom{n+1}{2}\right\}$ with the affine half-spaces $\displaystyle \left\{x \in \RR^n \ \bigg| \ \sum_{i=1}^{n} x_i \geq \binom{|I|+1}{2}\right\}$ for all $\emptyset\neq I \subseteq [n]$.
@@ -1160,7 +1163,7 @@ We consider here the special case $q=1/2$ in their construction.
 For a generalized permutahedron $P\subset \RR^n$, its \emph{$\tfrac{1}{2}$-lifting} $P \left(\tfrac{1}{2}\right) \subset \RR^{n+1}$ is defined by 
 \[P \left(\tfrac{1}{2}\right) \coloneqq \left\{ x \in \RR^{n+1} \ : \ 
 \sum_{i=1}^{n+1} x_i = z_{[n]} \ , 
-\sum_{i \in I} t_i \geq \tfrac{1}{2}z_I \ ,
+\sum_{i \in I} x_i \geq \tfrac{1}{2}z_I \ ,
 \sum_{i \in I \cup \{n+1\}} x_i \geq z_I 
 \text{ for all } I \subseteq [n] \right\} \ . \]
 \end{definition}
@@ -1186,10 +1189,11 @@ That is, we have  \[ \J_\omega = \pi \left(2 \K_\omega\left(\tfrac{1}{2}\right)\
   This follows from the vertex description of $\tfrac{1}{2}$-lifting given in \cite[Definition 3.5.3]{Doker11}, together with the description of the projection from the permutahedron to the multiplihedron given in the proof of \cite[Theorem 3.3.6]{Doker11}. 
   The coordinates of a vertex in $2 \K_\omega$ are of the form $(2\alpha_1\beta_1, \ldots, 2\alpha_n\beta_n)$. 
   A coordinate $2\alpha_i\beta_i$ is then multiplied by $1/2$ in the lifting if and only if its associated vertex in the 2-colored maximal tree is of the upper color. 
-  We thus recover the description of \cref{def:ForceyLoday}. \Guillaume{More details?}
+  We thus recover the description of \cref{def:ForceyLoday}.
 \end{proof}
 
 In summary, we have the following diagram:
+\medskip
 \begin{equation*}
 \begin{matrix}
   $ \small  \text{Loday}$ & & $ \small \text{Ardila--Doker}$ &  & $ \small \text{Forcey--Loday}$ \\
@@ -1203,8 +1207,13 @@ In summary, we have the following diagram:
 \end{matrix}
 \end{equation*}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Diagonal of the multiplihedra}
+
+\Guillaume{Intro de section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
 \subsection{Category of polytopal subdivisions, oriented polytopes, and diagonal maps}
 Let us recall the following notions from \cite[Section~2.1]{MTTV19}. 
@@ -1233,12 +1242,12 @@ Any positively oriented polytope admits a diagonal map of the form
 Such a diagonal map is cellular, coincides with the usual diagonal $x\mapsto (x, x)$ on vertices, and is fiber-homotopic to it. It is a morphism in the category $\PolySub$ by \cite[Proposition~5]{MTTV19}.
 Its cellular image admits a combinatorial description in terms of the fundamental hyperplane arrangement of $P$.
 
-\begin{definition}
+\begin{definition}[Fundamental hyperplane arrangement]
   \label{def:fundamentalhyperplane} 
   The \emph{fundamental hyperplane arrangement} $\mathcal{H}_P$ of $P$ is the collection of hyperplanes in $\RR^n$ orthogonal to the directions of the edges of $P\cap\rho_z P$, for all $z \in P$. 
 \end{definition}
 
-\Guillaume{Qui sont les $F_i$ et $G_j$???}
+Recall that a face $F$ of a polytope $P$ is equal to the intersection of a family of facets $\{F_i\}_{i\in I}$. If we choose an outward pointing normal vector $\vec F_i$ for each facet $F_i$, then the normal cone of $F$ is spanned by these normal vectors, i.e. we have $\mathcal{N}_P(F)=\cone(\{\vec F_i\}_{i\in I})$. 
 
 \begin{theorem}[{\cite[Theorem 1.23]{LA21}}]
   \label{thm:universalformula} 
@@ -1251,14 +1260,26 @@ Its cellular image admits a combinatorial description in terms of the fundamenta
 
 We recall general facts from \cite[Section 1.6]{LA21}. 
 
+\begin{definition}[Coarsening projection] 
+  \label{def:coarseningprojection} 
+  Let $P$ and $Q$ be two polytopes in $\RR^n$ such that the normal fan of $P$ refines the normal fan of $Q$. 
+  The \emph{coarsening projection} from $P$ to $Q$ is the application $\theta : \mathcal{L}(P)\to\mathcal{L}(Q)$ which sends a face $F$ of $P$ to the face $\theta(F)$ of $Q$ whose normal cone $\mathcal{N}_Q(\theta(F))$ is the minimal cone with respect to inclusion which contains $\mathcal{N}_P(F)$.
+\end{definition}
+
 \begin{proposition} 
 \label{prop:refinementofnormalfans}
 Let $P$ and $Q$ be two polytopes such that the normal fan of $P$ refines the one of $Q$. 
 If $P$ is positively oriented by $\vec v$, then so is $Q$. 
-Moreover, the natural projection from $P$ to $Q$ commutes with the diagonal maps $\triangle_{(P,\vec v)}$ and $\triangle_{(Q,\vec v)}$, and the formula above for the cellular image of the former applies without modification to the latter.  \Guillaume{plus de details}
+Moreover, the coarsening projection from $P$ to $Q$ commutes with the diagonal maps $\triangle_{(P,\vec v)}$ and $\triangle_{(Q,\vec v)}$, and we have 
+\begin{eqnarray*}
+  (F,G) \in \Ima \triangle_{(Q,\vec v)} 
+  &\iff& \forall H \in \mathcal{H}_P , \ \exists \vec F_i , \ \langle \vec F_i, \vec d_H \rangle < 0  \text{ or } \exists \vec G_j , \ \langle \vec G_j, \vec d_H \rangle > 0 \ .
+\end{eqnarray*} 
 \end{proposition}
 
-We will apply this proposition in \cref{sec:Ainftycat} with $P$ the permutahedron and $Q$ the multiplihedron, in order to obtain a diagonal map for the multiplihedra as well as an explicit formula describing its cellular image.
+We will apply this proposition in \cref{sec:Ainftycat} with $P$ the permutahedron and $Q$ the Ardila--Doker multiplihedron, in order to obtain a diagonal map for the Forcey--Loday multiplihedron as well as an explicit formula describing its cellular image.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Diagonal of the Forcey--Loday realizations of the multiplihedra}
 \label{sec:diagonal}
@@ -1267,7 +1288,8 @@ The projection $\pi : \RR^{n+1} \to \RR^n$ forgetting the last coordinate define
 The inverse map $(\pi_{| H})^{-1}$ is given by the assignment \[ (x_1, \ldots, x_n) \mapsto \left(x_1, \ldots, x_n, c- \sum_{i=1}^{n}x_i\right) \ . \]
 If a polytope $P$ is contained in the hyperplane $H$, then the polytope $\pi(P)$ is affinely isomorphic to $P$, and the projection $\pi$ defines a bijection between the faces of $P$ and the faces of $\pi(P)$. Moreover, for every face $F$ of $P$, we have $\dim F = \dim \pi(F)$.
 
-\Guillaume{However, the projection $\pi$ does not preserve orthogonality, we thus need to restrict our attention to a certain class of orientation vectors [...]}
+However, the projection $\pi$ does not preserve orthogonality in general, so if $P$ is positively oriented by $\vec v$, the projection $\pi(P)$ might not be positively oriented by $\pi(\vec v)$.  
+We restrict our attention to a certain class of orientation vectors for which this property holds, in the case where $P$ is a generalized permutahedron.
 
 \begin{definition} 
 \label{def:goodvector}
@@ -1285,13 +1307,21 @@ Moreover, the projection $\pi$ commutes with the diagonal maps of $P$ and $\pi(P
 \end{proposition}
 
 \begin{proof} 
-  Since $P$ is a generalized permutahedron, the direction of the edges of the intersection $P\cap\rho_z P$, for any $z \in P$, are vectors with coordinates equal to $0,1$ or $-1$, and the same number of $1$ and $-1$ (combine Proposition 1.27 and Proposition 3.4 of \cite{LA21}). 
-  The direction $\vec d$ of such an edge satisfies $\langle \vec d, \vec v \rangle \neq 0$, since the first non-zero coordinate of $\vec d$ will contribute a greater amount than the sum of the remaining coordinates in the scalar product.  
-  For the same reason, we have $\langle \pi(\vec d), \pi(\vec v) \rangle \neq 0$. 
-  Indeed, we have that $\pi(P\cap\rho_z P)=\pi(P)\cap\rho_{\pi(z)}\pi(P)$, and in particular that the image of the edges of $P\cap\rho_z P$ under $\pi$ are the edges of $\pi(P)\cap\rho_{\pi(z)}\pi(P)$. 
-  Thus, $\pi(P)$ is positively oriented by $\pi(\vec v)$. 
-  For the last part of the statement, observe that $\pi$ preserves the orientation of the edges: if we have $\langle \vec d, \vec v \rangle >0$, then we have $\langle \pi(\vec d), \pi(\vec v) \rangle > 0$. 
-  Hence, the image of the vertex $\tp_{\vec v}(P\cap\rho_z P)$, which maximizes $\langle - ,\vec v \rangle$ over $P\cap\rho_z P$, under $\pi$ is equal to the vertex $\tp_{\pi(\vec v)}(\pi(P)\cap\rho_{\pi(z)} \pi(P))$ which maximizes $\langle - ,\pi(\vec v) \rangle$ over $\pi(P)\cap\rho_{\pi(z)} \pi(P)$. The argument for the minimum $\bm(P\cap\rho_z P)$ is the same.
+Since $P$ is a generalized permutahedron, the direction of the edges of the intersection $P\cap\rho_z P$, for any $z \in P$, are vectors with coordinates equal to $0,1$ or $-1$, and the same number of $1$ and $-1$ (combine Proposition 1.27 and Proposition 3.4 of \cite{LA21}). 
+The direction $\vec d$ of such an edge satisfies $\langle \vec d, \vec v \rangle \neq 0$, since the first non-zero coordinate of $\vec d$ will contribute a greater amount than the sum of the remaining coordinates in the scalar product.  
+For the same reason, we have $\langle \pi(\vec d), \pi(\vec v) \rangle \neq 0$. 
+Indeed, we have that $\pi(P\cap\rho_z P)=\pi(P)\cap\rho_{\pi(z)}\pi(P)$, and in particular that the image of the edges of $P\cap\rho_z P$ under $\pi$ are the edges of $\pi(P)\cap\rho_{\pi(z)}\pi(P)$. 
+Thus, $\pi(P)$ is positively oriented by $\pi(\vec v)$. 
+For the last part of the statement, observe that $\pi$ preserves the orientation of the edges: if we have $\langle \vec d, \vec v \rangle >0$, then we have $\langle \pi(\vec d), \pi(\vec v) \rangle > 0$. 
+Hence, the image of the vertex $\tp_{\vec v}(P\cap\rho_z P)$, which maximizes $\langle - ,\vec v \rangle$ over $P\cap\rho_z P$, under $\pi$ is equal to the vertex $\tp_{\pi(\vec v)}(\pi(P)\cap\rho_{\pi(z)} \pi(P))$ which maximizes $\langle - ,\pi(\vec v) \rangle$ over $\pi(P)\cap\rho_{\pi(z)} \pi(P)$. The argument for the minimum $\bm(P\cap\rho_z P)$ is the same.
+\end{proof}
+
+\begin{proposition}
+Let $P\subset\RR^{n+1}$ be a generalized permutahedron. 
+Any two good orientation vectors $\vec v, \vec w$ define the same diagonal maps on $P$ and $\pi(P)$, that is, we have $\triangle_{(P,\vec v)}=\triangle_{(P,\vec w)}$ and $\triangle_{(\pi(P),\pi(\vec v))}=\triangle_{(\pi(P),\pi(\vec w))}$.
+\end{proposition}
+\begin{proof}
+Good orientation vectors are principal orientation vectors \cite[Definition 3.15]{LA21}. Since all principal orientation vectors live in the same chamber of the fundamental hyperplane arrangement of the permutahedron, they all define the same diagonal on the permutahedron \cite[Proposition 1.21]{LA21}, and thus the same diagonal on any generalized permutahedron (\cref{prop:refinementofnormalfans}). So, we have $\triangle_{(P,\vec v)}=\triangle_{(P,\vec w)}$. Finally, using \cref{prop:goodprojection}, we have $\triangle_{(\pi(P),\pi(\vec v))}=(\pi \times \pi)\triangle_{(P,\vec v)}=(\pi \times \pi)\triangle_{(P,\vec w)}=\triangle_{(\pi(P),\pi(\vec w))}$. 
 \end{proof}
 
 \begin{definition}
@@ -1304,29 +1334,33 @@ Any good orientation vector induces a well-oriented realization $(\J_\omega, \ve
 \end{proposition}
 
 \begin{proof}
-  The proof of \cref{prop:goodprojection} shows that any edge of the realization of the muliplihedron $\J_\omega$ is directed, according to the Tamari type order, by either $\vec e_i$ or $\vec e_i-\vec e_j$, for $i<j$. 
-  Since $\vec v$ has strictly decreasing coordinates, in each case the scalar product is positive. 
-  It remains to show that $P\cap\rho_z P$ is oriented by $\vec v$, for any $z \in P$. 
-  This follows directly from \cref{prop:goodprojection}, and the fact that $\J_\omega$ arises as the projection under $\pi$ of a generalized permutahedron, see \cref{prop:lifting}.
+The proof of \cref{prop:goodprojection} shows that any edge of the realization of the muliplihedron $\J_\omega$ is directed, according to the Tamari type order, by either $\vec e_i$ or $\vec e_i-\vec e_j$, for $i<j$. 
+Since $\vec v$ has strictly decreasing coordinates, in each case the scalar product is positive. 
+It remains to show that $P\cap\rho_z P$ is oriented by $\vec v$, for any $z \in P$. 
+This follows directly from \cref{prop:goodprojection}, and the fact that $\J_\omega$ arises as the projection under $\pi$ of a generalized permutahedron, see \cref{prop:lifting}.
 \end{proof}
 
-We simply denote by $\triangle_\omega : \J_\omega\to \J_\omega \times \J_\omega$ the diagonal map given by the above orientation vector. 
-In fact, we can restrict our attention to the diagonal $\triangle_n : \J_n \to \J_n\times \J_n$ associated to the standard weight $\omega=(1, \ldots, 1)$.
+Any good orientation vector defines a diagonal map $\triangle_\omega : \J_\omega\to \J_\omega \times \J_\omega$, for any weight $\omega$.
+These maps are all equivalent, up to isomorphim in the category $\PolySub$. 
 
 \begin{proposition}
+\label{prop:transitionmap}
 For any pair of weights $\omega$ and $\theta$ of length $n$, there exists a unique isomorphism 
 $\tr=\tr_\omega^\theta : \J_\omega \to \J_\theta$ in the category $\PolySub$,  
 which preserves homeomorphically the faces of the same type and which commutes with the respective diagonals.
 \end{proposition}
 
 \begin{proof}
-The arguments of \cite[Sections~3.1-3.2]{MTTV19} hold in the present case using \cref{prop:PropertiesKLoday}. 
+The arguments of \cite[Sections~3.1-3.2]{MTTV19} hold in the present case using \cref{prop:PropertiesKLoday}. Requiring commutation with the respective diagonals is really what makes the map $\tr$ unique, and even exhibit a "fractal" character.
 \end{proof}
 
-Requiring that the isomorphism commutes with the diagonal maps is a strong requirement: the map $\tr$ is the \emph{unique} such isomorphism. 
-The preceding proposition, and in particular this uniqueness property of the map $\tr$, will be essential to the definition of the operadic bimodule structure in the next section. 
+We denote by $\triangle_n : \J_n \to \J_n\times \J_n$ the diagonal associated to the standard weight $\omega=(1, \ldots, 1)$.
 
-\subsection{Operadic bimodule structure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Operadic bimodule structure} 
+We will use the transition map $\tr$ of \cref{prop:transitionmap} above to endow the family of standard weight Forcey--Loday multiplihedra with an operadic bimodule structure over the standard weight Loday associahedra. 
+We will use the uniqueness property of the map $\tr$ in a crucial way. 
 
 \begin{definition}[Action-composition maps]
 For any $n,m\geq 1$ and any $1\leq i \leq m$, for any $k\geq 2$ and any $i_1,\ldots,i_k \geq 1$, we define the \emph{action-composition maps}  by 
@@ -1334,10 +1368,11 @@ For any $n,m\geq 1$ and any $1\leq i \leq m$, for any $k\geq 2$ and any $i_1,\ld
 \vcenter{\hbox{
 \begin{tikzcd}[column sep=1cm]
 \circ_{p+1}\ : \ \J_{p+1+r}\times \K_q
-\arrow[r,  "\tr\times \id"]
-& \J_{(1,\ldots,q,\ldots,1)}\times \K_q 
-\arrow[r,hookrightarrow, "\Theta_{p,q,r}"]
-&
+\arrow[rr,  "\tr\times \id"]
+& & 
+\J_{(1,\ldots,q,\ldots,1)}\times \K_q 
+\arrow[rr,hookrightarrow, "\Theta_{p,q,r}"]
+&  &
 \J_{n}\ \ \text{and}
 \end{tikzcd}
 }}
@@ -1346,10 +1381,11 @@ For any $n,m\geq 1$ and any $1\leq i \leq m$, for any $k\geq 2$ and any $i_1,\ld
 \vcenter{\hbox{
 \begin{tikzcd}[column sep=1cm]
 \gamma_{i_1,\ldots,i_k}\ : \ \K_{k}\times \J_{i_1} \times \cdots \times \J_{i_k}
-\arrow[r,  "\tr\times \id"]
-& \K_{(i_1,\ldots,i_k)} \times \J_{i_1} \times \cdots \times \J_{i_k} 
-\arrow[r,hookrightarrow, "\Theta^{i_1, \ldots , i_k}"]
-&
+\arrow[rr,  "\tr\times \id"]
+& &
+\K_{(i_1,\ldots,i_k)} \times \J_{i_1} \times \cdots \times \J_{i_k} 
+\arrow[rr,hookrightarrow, "\Theta^{i_1, \ldots , i_k}"]
+& &
 \J_{i_1+\cdots + i_k}\ , 
 \end{tikzcd}
 }}
@@ -1380,16 +1416,39 @@ This is easily seen to be the case from the definition of $\Theta$, in the proof
 \end{theorem}
 
 \begin{proof}
-Once we have in hand \cref{prop:thetacommutes} asserting that the diagonal maps commute with the maps $\Theta$, we can apply the proof of \cite[Theorem~1]{MTTV19} \emph{mutatis mutandis}.
+Once we have in hand \cref{prop:thetacommutes} asserting that the diagonal maps commute with the maps $\Theta$, we can apply the proof of \cite[Theorem~1]{MTTV19} \emph{mutatis mutandis}. The uniqueness of the transition map $\tr$ is the essential ingredient, as it forces the operadic axioms to hold. 
 \end{proof}
 
-This theorem was announced in \cite{Mazuir21} \Guillaume{and was used to... TBC Thibaut} 
+This theorem was mentioned in \cite{Mazuir21}, where associahedra and multiplihedra were interpreted as compactifications of moduli spaces of metric trees, and used to unravel $\mathrm{A}_\infty$ structures on the Morse cochains of a smooth compact manifold \Guillaume{Thibaut?}.
 
-Notice that such an operadic bimodule structure is equivalent to a free 2-colored non-symmetric operad generated by blue corollas $\{c_n^B\}_{n\geq 2}$, red corollas $\{c_n^T\}_{n\geq 2}$ and corollas where the cut is made of the unique vertex $\{c_n\}_{n \geq 1}$.
+\medskip
 
-Under the cellular chains functor, this gives a quasi-free 2-colored operad, where blue corollas have degree $|c_n^B|=n-2$, red corollas have degree $|c_n^T|=n-2$ and bicolored corollas have degree $|c_n|=n-1$. The differential is given by the boundary map of the multiplihedra. An algebra over this 2-colored operad is a pair of $\mathrm{A}_\infty$-algebras related by an $\mathrm{A}_\infty$-morphism. 
+From the general theory of operads, we know that the data of a $(\mathcal{P},\mathcal{Q})$-operadic bimodule $M$ is equivalent to the data of a 2-colored operad, whose algebras consists of a $\mathcal{P}$-algebra, a $\mathcal{Q}$-algebra, and a $M$-morphism \Guillaume{?} between the two \Guillaume{REF}.
 
-Now, we promote the operadic bimodule $\{\J_n\}_{n\geq 1}$ to an operadic bimodule in the category of CW complexes by making a choice of orientation on the multiplihedra. We aim at recovering, via the cellular chains functor, the usual sign conventions for $\mathrm{A}_\infty$-morphisms.
+Thus, under the cellular chains functor, \cref{thm:MainOperad} gives a quasi-free 2-colored operad, spanned by blue corollas in degree $|c_n^B|=n-2$, red corollas in degree $|c_n^T|=n-2$ and bicolored corollas in degree $|c_n|=n-1$. An algebra over this differential graded 2-colored operad is a pair of $\mathrm{A}_\infty$-algebras related by an $\mathrm{A}_\infty$-morphism. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Differential graded structures}
+Let us quickly recall the definitions of $\mathrm{A}_\infty$-algebra and $\mathrm{A}_\infty$-morphism, and at the same time establish our sign conventions. For more details, we refer to \cite[Chapter 9]{LodayVallette12}.
+
+\begin{definition}[$\mathrm{A}_\infty$-algebra] An \emph{$\mathrm{A}_\infty$-algebra} is a graded vector space $A$ together with operations \[ m_n : A^{\otimes n} \to A \ , \ n\geq 1 \] of degree $|m_n|=n-2$, satisfying the equations \[\sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr}m_{p+1+r}(\id^{\otimes p} \otimes m_q \otimes \id^{\otimes r}) = 0 \ , \ n\geq 1 \ .\]
+\end{definition}
+
+An $\mathrm{A}_\infty$-algebra is an algebra over the differential graded non-symmetric operad $\mathrm{A}_\infty$. This quasi-free operad is generated by the operations $m_n$ and its differential encodes the relations that they satisfy. 
+
+\begin{definition}[$\mathrm{A}_\infty$-morphism] An \emph{$\mathrm{A}_\infty$-morphism} $A\rightsquigarrow B$ between two $\mathrm{A}_\infty$-algebras $(A,\{m_n\})$ and $(B,\{m_n'\})$ is a family of linear maps \[f_n : A^{\otimes n} \to B \ , n \geq 1\] of degree $|f_n|=n-1$, satisfying the equations  \[
+  \sum_{\substack{i_1+\cdots+i_k=n \\ k \geq 1}} (-1)^{\varepsilon} m_k'(f_{i_1}\otimes\cdots\otimes f_{i_k}) = 
+  \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr}f_{p+1+r}(\id^{\otimes p} \otimes m_q \otimes \id^{\otimes r}) = 0 \ , \ n\geq 1 \ ,\] where $\varepsilon = \sum_{u=1}^{k}(k-u)(1-i_u)$.
+\end{definition}
+
+An $\mathrm{A}_\infty$-morphism is an algebra over the differential graded operadic bimodule $\mathrm{A}_\infty$-Morph. This quasi-free operadic bimodule is generated by the maps $f_n$ and its differential encodes the relations that they satisfy.
+
+\medskip
+
+Now, we promote the operadic bimodule $\{\J_n\}_{n\geq 1}$ to an operadic bimodule in the category of CW complexes by making a choice of orientation on the multiplihedra. We aim at recovering, via the cellular chains functor, the previous sign conventions for $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms.
 
 \begin{definition}[Cellular orientation] 
 \leavevmode
@@ -1407,8 +1466,9 @@ We make the same choices of cellular orientations as in \cite[I, Section 4]{Mazu
 
 We then proceed as in \cite[Proposition 4.22]{LA21} to endow the $\K_n$ and $\J_n$ with a CW structure. 
 
-\begin{proposition} \label{prop:functoriality}
-The above cellular orientations on the associahedra and multiplihedra yield an isomorphism of differential graded operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong A_\infty$-Morph.
+\begin{proposition} 
+\label{prop:functoriality}
+The above cellular orientations on the associahedra and multiplihedra yield an isomorphism of differential graded non-symmetric operads $C_\bullet^{cell}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong \mathrm{A}_\infty$-Morph.
 \end{proposition}
 
 \begin{proof}
@@ -1416,59 +1476,57 @@ Computing the signs in the (action-)composition maps amounts to comparing bases 
 The signs for the differentials, arising from the boundary maps, were computed in \cite[I, Section 4]{Mazuir21}.
 \end{proof}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Functorial tensor product of $\mathrm{A}_\infty$-categories}
 
-The results of the previous section provide us with a cellular approximation of the diagonal map of the multiplihedra and, equivalently, a polytopal subdivision of them. It remains to make this combinatorics of cells explicit. 
+\Guillaume{Intro de section}
+%The results of the previous section provide us with a cellular approximation of the diagonal map of the multiplihedra and, equivalently, a polytopal subdivision of them. It remains to make this combinatorics of cells explicit. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Cellular formula}
 
-We introduce an equivalent description of 2-colored trees as 2-colored nested linear graphs, a more suitable language for describing the cellular image of the diagonal maps $\triangle_n$. 
+We introduce an equivalent description of 2-colored trees as 2-colored nested linear graphs, a language that is more suitable for the description of the cellular image of the diagonal maps $\triangle_n$. 
 
-Let $g$ be a linear graph with $n$ vertices. 
+Let $\gra$ be a linear graph with $n$ vertices. 
 We number its edges from $1$ to $n-1$ from bottom to top. 
-We write $V(g)$ and $E(g)$ for its sets of vertices and edges, respectively.
-Any subset of edges $N\subset E(g)$ defines a subgraph of $g$ whose edges are $N$ and whose vertices are all the vertices adjacent to an edge in $N$. 
-We call this graph the \emph{closure} of $N$. 
+We write $V(\gra)$ and $E(\gra)$ for its sets of vertices and edges, respectively.
+Any subset of edges $N\subset E(\gra)$ defines a subgraph of $g$ whose edges are $N$ and whose vertices are all the vertices adjacent to an edge in $N$. 
+We call this graph the \emph{closure} of~$N$. 
 
-\begin{definition}[Nesting]
+\begin{definition}[Nest and nesting]
 \leavevmode
-\begin{itemize}
-\item A \emph{nest} of a linear graph $g$ with $n$ vertices is a non-empty set of edges $N \subset E(g)$ whose closure is a connected subgraph of $g$.
-\item A \emph{nesting} of a graph $g$ is a set $\mathcal{N}=\{N_i\}_{i\in I}$ of nests such that 
+\begin{itemize}[leftmargin=*]
+\item A \emph{nest} of a linear graph $\gra$ with $n$ vertices is a non-empty set of edges $N \subset E(\gra)$ whose closure is a connected subgraph of $\gra$.
+\item A \emph{nesting} of a graph $\gra$ is a set $\mathcal{N}=\{N_i\}_{i\in I}$ of nests such that 
 \begin{enumerate}
-    \item the \emph{trivial nest} $E(g)$ is in $\mathcal{N}$,
+    \item the \emph{trivial nest} $E(\gra)$ is in $\mathcal{N}$,
     \item for every pair of nests $N_i\neq N_j$, we have either $N_i \subsetneq N_j$, $N_j \subsetneq N_i$ or $N_i \cap N_j = \emptyset$, and
     \item if $N_i \cap N_j = \emptyset$ then no edges of $N_i$ is adjacent to an edge of $N_j$.
 \end{enumerate}
 \end{itemize}
 \end{definition}
 
-Two nests that satisfy Conditions (2) and (3) are said to be \textit{compatible}. We denote the set of nestings of $g$ by $\mathcal{N}(g)$. We naturally represent a nesting by circling the closure of each nest as in \cref{fig:bijections}. A nesting is \emph{maximal} if it has maximal cardinality $|\mathcal{N}|=|E(g)|$.
+Two nests that satisfy Conditions (2) and (3) are said to be \textit{compatible}. We denote the set of nestings of $\gra$ by $\mathcal{N}(\gra)$. We naturally represent a nesting by circling the closure of each nest as in \cref{fig:bijections}. A nesting is \emph{maximal} if it has maximal cardinality $|\mathcal{N}|=|E(\gra)|$.
 
 \begin{definition}[2-colored nesting] A \emph{2-colored nesting} is a nesting where each nest is either colored in blue, red or purple, and which satisfy the following properties: 
 \begin{enumerate}
-  \item if a nest $N$ is blue or purple, then all nests contained in $N$ are blue, and 
-  \item if a nest $N$ is red or purple, then all nests that contain $N$ are red.
+\item if a nest $N$ is blue or purple, then all nests contained in $N$ are blue, and 
+\item if a nest $N$ is red or purple, then all nests that contain $N$ are red.
 \end{enumerate}
 \end{definition}
-One should think of purple nests as both colored by red and blue. Notice that there cannot be two purple nests contained in each other. 
-We denote by $\mathcal{N}_2(g)$ the set of 2-colored nesting of $g$.
+One should think of purple nests as both colored by red and blue. 
+We denote by $\mathcal{N}_2(\gra)$ the set of 2-colored nesting of $\gra$.
 
 \begin{remark} 
-Taking the line graph of a 2-colored nested graph $g$, one obtains a marked tubed graph as defined in \cite{DevadossForcey08}. 
+The data of a 2-colored nesting on a graph is equivalent to the data of a marked tubings on its line graph, as defined in \cite{DevadossForcey08}. 
 See also \cite[Remark 2.4]{LA21}.
 \end{remark}
-
-
-
 
 \begin{lemma} 
 \label{lemma:bijection}
 There is a bijection between 2-colored trees with $n$ leaves and 2-colored nested linear graphs with $n$ vertices. 
-
 \begin{figure}[h!]
 \resizebox{0.8\linewidth}{!}{
 %\begin{tikzpicture}
@@ -1574,24 +1632,29 @@ There is a bijection between 2-colored trees with $n$ leaves and 2-colored neste
 \node (D) at (2.75,1.5) {$\red{a \purple{\blue{bc} d}}$};
 
 \end{tikzpicture}}
-\caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations. \Guillaume{il faut inverser droite et gauche pour que Tamari coincide!}}
+\caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations.}
 \label{fig:bijections}
 \end{figure}
 \end{lemma}
 
 \begin{proof}
-  This is a simple generalization of the bijection between planar trees and nested linear graphs, see \cref{fig:bijections}. \Guillaume{correspondence between vertices and nests; and colors correspond to previous conventions}
+This is a simple generalization of the bijection between planar trees and nested linear graphs, see \cref{fig:bijections}. 
+Under this bijection, vertices of 2-colored trees correspond to nests, and their colors agree under the previous conventions. 
+Also, 2-colored maximal trees are in bijection with maximal 2-colored nested linear graphs. 
 \end{proof}
 
+\begin{definition}
 We denote by 
 \begin{itemize}
   \item $B(\mathcal{N})$ the set of blue nests of the nesting $\mathcal{N}$, and by
   \item $R(\mathcal{N})$ the set of all distinct \emph{unions} of red and purple nests of the nesting $\mathcal{N}$.
 \end{itemize}
+\end{definition}
 
 To each nest $B \in B(\mathcal{N})$ and to each union of nests $R \in R(\mathcal{N})$, we can associate their \emph{characteristic vectors} $\vec B$ and $\vec R$ which have a $1$ in position $i$ if $i \in B$ (resp. if $i \in \vec R$) and $0$ otherwise.  
 
-\begin{lemma} \label{lemma:normalcones}
+\begin{lemma} 
+\label{lemma:normalcones}
 The normal cone of a face $\mathcal{N}$ of the Ardila--Doker realization of the multiplihedron is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})}\right) \ . \]
 \end{lemma}
 
@@ -1603,7 +1666,8 @@ These can be easily determined from the projection from the permutahedron to the
 
 We are now ready to apply \cref{thm:universalformula} to the multiplihedra. We define \[ D(n)\coloneqq \{(I,J) \ | \ I,J\subset\{1,\ldots,n\}, |I|=|J|, I\cap J=\emptyset, \min(I\cup J)\in I \}. \]
 
-\begin{theorem}\label{thm:formuladiagonal}
+\begin{theorem}
+\label{thm:formuladiagonal}
 Let $\J_n$ be the Forcey--Loday realization of the multiplihedron, and let $\vec v \in \RR^n$ be a good orientation vector. The cellular image of the diagonal map $\triangle_n : \J_n \to \J_n \times \J_n$ admits the following description: for $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph with $n$ vertices, we have
 \begin{eqnarray*}
   (\mathcal{N},\mathcal{N}') \in \Ima\triangle_n 
@@ -1621,15 +1685,25 @@ Let $\J_n$ be the Forcey--Loday realization of the multiplihedron, and let $\vec
 \end{figure}
 \end{theorem}
 
-\begin{proof}
-Since a good orientation vector $\vec v$ is also a principal orientation vector in the sense of \cite[Definition 3.15]{LA21}, it orients positively the permutahedron (in fact, it induces on the permutahedron the same diagonal as the one defined in \emph{loc. cit.}). 
-We use \cref{prop:refinementofnormalfans}, which says that the formula of \cref{thm:universalformula} can be applied to the Ardila--Doker realizations of the multiplihedra. 
-\cref{prop:goodprojection} garantees that the resulting combinatorial description will also hold true for the Forcey--Loday realizations.
-To any~$(I,J)~\in~D(n)$, and thus to any hyperplane $H$ in the fundamental hyperplane arrangement of the permutahedron, we associate a normal vector $\vec d_N \in \RR^n$ by setting $(d_H)_i=1$ for $i\in I$, $(d_H)_j =-1$ for $j \in J$ and $(d_H)_k=0$ otherwise. 
-Using the description of the normal cones of the faces of the multiplihedron in \cref{lemma:normalcones}, we conclude by applying \cref{thm:universalformula}.
+\begin{proof} 
+The essential ingredient is the computation of the fundamental hyperplane arrangement of the permutahedron, which was already done in \cite[Section 3.1]{LA21}. The result follows in four steps:
+\begin{enumerate}
+\item Since a good orientation vector $\vec v$ is also a principal orientation vector \cite[Definition 3.15]{LA21}, it orients positively the permutahedron. 
+\item \cref{thm:universalformula} then gives a combinatoial description of the cellular image of the diagonal of the permutahedron induced by $\vec v$, which is precisely \cite[Theorem 3.16]{LA21}. 
+\item Using \cref{prop:refinementofnormalfans} and the description of the normal cones of the faces of the multiplihedron in \cref{lemma:normalcones}, we get the above formula for the Ardila--Doker realizations of the multiplihedra. 
+\item \cref{prop:goodprojection} garantees that this formula holds for the Forcey--Loday realizations, which completes the proof.
+\end{enumerate}
 \end{proof}
 
-Let us make this formula explicit in low dimensions. We use colored parenthesizations of words, which are easier to read. We show only pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$. The other pairs can be deduced by taking faces.
+The cellular image of $\triangle_n$ can be represented on $\J_n$ as follows: for each pair of faces $(F,G) \in \Ima \triangle_n$, draw the polytope $(F+G)/2$. 
+This defines a polytopal subdivision of $\J_n$.
+The polytopal subdivision of $\J_4$ is illustrated in \cref{Fig5:J4}.
+
+\medskip
+
+Let us make this formula explicit in low dimensions. 
+We write 2-colored nestings of a linear graph with $n$ vertices as 2-colored parenthesizations of a word with $n$ letters, which are easier to read, see \cref{fig:bijections}. 
+We show only pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$; the other pairs can be deduced by taking faces.
 
 \begin{equation*}
   \begin{matrix}
@@ -1641,18 +1715,22 @@ Let us make this formula explicit in low dimensions. We use colored parenthesiza
   \renewcommand*{\arraystretch}{1.5}
   \begin{matrix}
       \triangle_3(\purple{abc}) 
-      & = & \blue{\blue{ab} c} \times \purple{abc} & \cup & \purple{abc} \times \red{a \red{bc}}
-      & \cup & \blue{abc} \times \purple{a \blue{bc}} & \cup & \blue{abc} \times \red{a \purple{bc}}  \\
-      & \cup & \purple{a \blue{bc}} \times \red{a \purple{bc}} & \cup & \purple{\blue{ab} c} \times \red{\purple{ab} c} 
-      & \cup & \purple{\blue{ab} c} \times \red{abc} & \cup & \red{\purple{ab} c} \times \red{abc} \\
+      & = & \blue{\blue{ab} c} \times \purple{abc} 
+      & \cup & \purple{abc} \times \red{a \red{bc}}
+      & \cup & \blue{abc} \times \purple{a \blue{bc}} \\
+      & \cup & \blue{abc} \times \red{a \purple{bc}}  
+      & \cup & \purple{a \blue{bc}} \times \red{a \purple{bc}} 
+      & \cup & \purple{\blue{ab} c} \times \red{\purple{ab} c} \\
+      & \cup & \purple{\blue{ab} c} \times \red{abc} 
+      & \cup & \red{\purple{ab} c} \times \red{abc} 
   \end{matrix}
 \end{equation*}
 
 \begin{equation*}
   \renewcommand*{\arraystretch}{1.5}
   \begin{matrix}
-      \triangle_4(\purple{abcd}) 
-      & = & \blue{\blue{\blue{ab}c}d} \times \purple{abcd} 
+      & & & & \triangle_4(\purple{abcd}) =  \\
+      &  & \blue{\blue{\blue{ab}c}d} \times \purple{abcd} 
       & \cup & \purple{abcd} \times \red{a\red{b\red{cd}}}
       & \cup & \blue{\blue{abc}d} \times \purple{a\blue{bc}d} \\ 
       & \cup & \red{\purple{ab}\purple{cd}} \times \red{ab\red{cd}} 
@@ -1700,29 +1778,37 @@ Let us make this formula explicit in low dimensions. We use colored parenthesiza
 
 \medskip
 
-\Guillaume{Number of pairs of faces in each dimension?? $1,2,8,42,254,1678,11 790$}
+The number of pairs of faces of complementary dimensions in the image of $\triangle_n$ are given, for $n=0$ to $6$, by $1,2,8,42,254,1678$ and $11 790$, respectively. This sequence of integers does not (yet) appear on the Online Encyclopedia of Integer Sequences (OEIS). 
+
+\medskip
 
 For every face $F$ of the multiplihedron $\J_n$, a good orientation vector $\vec v$ defines a unique vertex $\tp F$ (resp. $\bm F$) which maximizes (resp. minimizes) the scalar product $\langle - , \vec v \rangle$. 
 By \cite[Proposition 1.15]{LA21}, we have that any pair of faces $(F,G) \in \Ima \triangle_n$ satisfies $\tp F\leq \bm G$. 
-However, as in the case of the permutahedron, this condition is not restrictive enough to determine completely the image of $\triangle_n$. For instance, in dimension $3$ it determines completely all the pairs except four of them: $\purple{\blue{abc}d} \times \red{a\red{\purple{bc}d}}$, $\purple{\blue{abc}d} \times \red{a\blue{bc}d}$, $\red{\blue{abc}d} \times \red{a\purple{bc}d}$ and $\purple{\blue{\blue{ab}c}d} \times \red{a\purple{bc}d}$.
+In the cases of the simplices, the cubes and the associahedra, the converse also holds: we can characterize the diagonal with a formula of the form $(F,G) \in \Ima \triangle_n \iff \tp F\leq \bm G$.
+However, it was shown in \cite{LA21} that this doesn't hold anymore for the operahedra, and in particular for the permutahedra.
+This property does not hold either in the case of the multiplihedra. 
+For instance, in dimension~$3$ the condition $\tp F\leq \bm G$ determines completely all the pairs in $\Ima \triangle_4$ except four of them: $\purple{\blue{abc}d} \times \red{a\red{\purple{bc}d}}$, $\purple{\blue{abc}d} \times \red{a\blue{bc}d}$, $\red{\blue{abc}d} \times \red{a\purple{bc}d}$ and $\purple{\blue{\blue{ab}c}d} \times \red{a\purple{bc}d}$.
 In fact, one can see that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$. 
 
 \begin{remark}
 Observe that our choice of diagonal differs from the one of \cite{SaneblidzeUmble04}. 
-For instance, the four pairs of faces above are not part of the image of the Saneblidze--Umble diagonal in dimension $3$. It would be interesting to relate more precisely the two constructions, see \cite[Remark 3.18]{LA21}.
+For instance, the four pairs of faces above are not part of the image of the Saneblidze--Umble diagonal in dimension $3$. 
+A way to relate the two constructions would be to find a choice of chambers in the fundamental hyperplane arrangement of the permutahedra (or the multiplihedra) recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
 \end{remark}
 
-\begin{remark}
-The formula above, even though easily implemented in the computer, is not optimal. For instance, on observes that all the pairs $(I,J)$ are not needed in the computation of $\Ima \triangle_n$. It would be desirable to obtain equivalent combinatorial characterizations, that would possibly make it more amenable to actual computations (see \cref{sec:Ainftycat}). One could look up, for instance, which condition should be further imposed on the pairs $(F,G)$ beyond $\tp F\leq \bm G$ so that they belong to $\Ima \triangle_n$.
-\end{remark}
+The formula above, even though easily implemented in the computer, is not optimal. For instance, one could use equation (1) in \cite[Theorem 1.23]{LA21} to reduce the number of pairs $(I,J)$ on which the conditions have to be tested. 
+It would be desirable to obtain equivalent combinatorial descriptions of $\Ima \triangle_n$, with a view towards possible applications. 
+We sketch some of them in the next sections.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-\subsection{Application to $\mathrm{A}_\infty$-categories} 
+\subsection{Application to $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-categories} 
 \label{sec:Ainftycat}
 
+The diagonal of the associahedra gives a tensor product of $\mathrm{A}_\infty$-algebras, and the diagonal of the multiplihedra gives a tensor product of $\mathrm{A}_\infty$-morphisms.
+They also define tensor products on the categorical enrichment of these two notions. 
 
 \begin{definition} 
 An $\mathrm{A}_\infty$-category $\cat{A}$ consists of 
@@ -1733,21 +1819,21 @@ An $\mathrm{A}_\infty$-category $\cat{A}$ consists of
 \end{itemize}
 \end{definition}
 
-
-
-The diagonal of the associahedra provides us with a canonical 
+Observe that an $\mathrm{A}_\infty$-algebra is just an $\mathrm{A}_\infty$-category with one object.
+Thus, the diagonal of the associahedra provides us with a canonical 
 $\mathrm{A}_\infty$-category structure on the tensor product $\cat{A}\otimes \cat{B}$ of two $\mathrm{A}_\infty$-categories, which we describe now. 
 
 \begin{definition}
-Let $(g,\mathcal{N})$ be a nested linear graph. The \emph{left-levelwise order} on $\mathcal{N}$ is defined as follows: we order the nests by decreasing cardinality, and we order two nests of same cardinality by comparing their minimal elements. 
+Let $(\gra,\mathcal{N})$ be a nested linear graph. The \emph{left-levelwise order} on $\mathcal{N}$ is defined as follows: we order the nests by decreasing cardinality, and we order two nests of same cardinality by comparing their minimal elements. 
 \end{definition}
 The left-levelwise order on a nesting is induced by the left-levelwise order on trees, under the bijection of \cref{lemma:bijection}.
 
-\begin{definition} \label{def:signs}
-Let $g$ be a linear graph.  
+\begin{definition} 
+\label{def:signs}
+Let $\gra$ be a linear graph.  
 \begin{enumerate}[leftmargin=*]
-\item For a nesting $\mathcal{N}$ of $g$, we denote by $N_i$ the unique minimal nest of $\mathcal{N}$ containing the edge $i$, with respect to nest inclusion. 
-\item An edge $i$ of $g$ is \emph{admissible} if $i \neq \min N_i$. We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
+\item For a nesting $\mathcal{N}$ of $\gra$, we denote by $N_i$ the unique minimal nest of $\mathcal{N}$ containing the edge $i$, with respect to nest inclusion. 
+\item An edge $i$ of $\gra$ is \emph{admissible} if $i \neq \min N_i$. We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
 \item Given a pair of nestings $\mathcal{N}, \mathcal{N}'$, we give the set $\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')$ the total order by using the left-levelwise order on the nestings and within a nest by following the numbering of the edges in increasing order. 
 \item The function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
 \begin{equation*}
@@ -1761,7 +1847,7 @@ and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by inversing the roles of $\m
 \end{enumerate}
 \end{definition}
 
-We are now ready to define the tensor product of two $\mathrm{A}_\infty$-categories.
+We are now ready to define the tensor product of two $\mathrm{A}_\infty$-categories. We denote by $\sigma_n$ the isomorphism $(A_1 \otimes B_1)\otimes (A_2 \otimes B_2) \otimes \cdots \otimes (A_n \otimes B_n) \cong (A_1 \otimes \cdots \otimes A_n) \otimes (B_1 \otimes \cdots \otimes B_n)$. 
 
 \begin{proposition} The \emph{tensor product} $\cat{A}\otimes \cat{B}$ of two $\mathrm{A}_\infty$-categories $\cat{A}$ and $\cat{B}$ is given by 
 \begin{itemize}
@@ -1775,36 +1861,36 @@ We are now ready to define the tensor product of two $\mathrm{A}_\infty$-categor
 defined by 
 \[\rho_n \coloneqq 
 \sum_{\substack{
-  \mathcal{N},\mathcal{N}' \in \mathcal{N}(g_n) \\ 
-  |\mathcal{N}|+|\mathcal{N}'|=n \\
+  \mathcal{N},\mathcal{N}' \in \mathcal{N}(\gra) \\ 
+  |\mathcal{N}|+|\mathcal{N}'|=|V(\gra)| \\
   \forall i<j, \exists N \in \mathcal{N}, i \in \mathcal{N} \text{ and } j \notin \mathcal{N} \text{ or } \\
   \exists N' \in \mathcal{N}', i \notin \mathcal{N} \text{ and } j \in \mathcal{N}'
 }}
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}\mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})\mathcal{N}(m_n)\otimes \mathcal{N}'(m_n') \ \sigma_n \ ,\] 
-where $g_n$ is the linear graph with $n$ vertices, where $\mathcal{N}(m_n)$ and $\mathcal{N}'(m_n')$ denote the composition of the structural maps $\{m_n\}$ and $\{m_n'\}$ of $\cat{A}$ and $\cat{B}$, respectively, corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order, and where $\sigma_n$ is the isomorphism $\cat{A}(X_0,X_1)\otimes\cat{B}(Y_0,Y_1) \otimes \cdots \otimes \cat{A}(X_{n-1},X_n)\otimes\cat{B}(Y_{n-1},Y_n) \cong \cat{A}(X_0,X_1) \otimes \cdots \otimes \cat{A}(X_{n-1},X_n) \otimes \cat{B}(Y_0,Y_1) \otimes \cdots \otimes \cat{B}(Y_{n-1},Y_n)$.
+where $\gra$ is a linear graph, and where $\mathcal{N}(m_n)$ and $\mathcal{N}'(m_n')$ denote the composition of the structural maps $\{m_n\}$ and $\{m_n'\}$ of $\cat{A}$ and $\cat{B}$ respectively, corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
   The formula for the $\rho_n$'s stems from our choice of diagonal on the associahedra; the fact that they satisfy the $\mathrm{A}_\infty$ relations follows from the construction and the functoriality in \cref{prop:functoriality}. The signs depend on our choice of cellular orientations on the associahedra, and they are obtained via the computation of a determinant. We refer to the proof of \cite[Proposition 4.27]{LA21} for more details. 
 \end{proof}
-\Guillaume{qu'est-ce qu'on veut dire par fonctoriel? le mettre en avant!}
 
 Now we treat the case of $\mathrm{A}_\infty$-functors between $\mathrm{A}_\infty$-categories. 
 
 \begin{definition}
-An $\mathrm{A}_\infty$-functor $f : \cat{A} \rightsquigarrow \cat{B}$ between two $\mathrm{A}_\infty$-categories $\cat{A}$ and $\cat{B}$ consists of 
+An $\mathrm{A}_\infty$-functor $f : \cat{A} \rightsquigarrow \cat{B}$ between two $\mathrm{A}_\infty$-categories consists of 
 \begin{itemize}
 \item a function $\mathrm{Ob}(f) : \mathrm{Ob}(\cat{A}) \to \mathrm{Ob}(\cat{B})$,
 \item for each $n \geq 1$ and each family of objects $X_0, \ldots, X_n \in \mathrm{Ob}(\cat{A})$, a linear map \[f_n : \cat{A}(X_0,X_1) \otimes \cdots \otimes \cat{A}(X_{n-1},X_n) \to \cat{B}(f(X_0),f(X_n))\] of degree $|f_n|=n-1$, satisfying the equations \[
-  \sum_{\substack{i_1+\cdots+i_k=n \\ k \geq 1}} (-1)^{\varepsilon} m_k(f_{i_1}\otimes\cdots\otimes f_{i_k}) = 
+  \sum_{\substack{i_1+\cdots+i_k=n \\ k \geq 1}} (-1)^{\varepsilon} m_k'(f_{i_1}\otimes\cdots\otimes f_{i_k}) = 
   \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr}f_{p+1+r}(\id^{\otimes p} \otimes m_q \otimes \id^{\otimes r}) = 0 \ , \ n\geq 1 \ ,\] where $\varepsilon = \sum_{u=1}^{k}(k-u)(1-i_u)$.
 \end{itemize}
 \end{definition}
 
-The diagonal of the multiplihedra provides us with a canonical $\mathrm{A}_\infty$-functor structure from $\cat{A}\otimes \cat{B}$ to $\cat{A}'\otimes \cat{B}'$ associated to two $\mathrm{A}_\infty$-functors $\cat{A}\rightsquigarrow \cat{A}'$ and $\cat{B} \rightsquigarrow \cat{B}'$~. 
+Observe that an $\mathrm{A}_\infty$-functor between two $\mathrm{A}_\infty$-categories with one object is just an $\mathrm{A}_\infty$-morphism between two $\mathrm{A}_\infty$-algebras.
+Thus, the diagonal of the multiplihedra provides us with a canonical $\mathrm{A}_\infty$-functor structure from $\cat{A}\otimes \cat{B}$ to $\cat{A}'\otimes \cat{B}'$ associated to two $\mathrm{A}_\infty$-functors $\cat{A}\rightsquigarrow \cat{A}'$ and $\cat{B} \rightsquigarrow \cat{B}'$~. 
 
-\begin{definition} In the case where $\mathcal{N}$ and $\mathcal{N}'$ are 2-colored nestings, we make the following changes to \cref{def:signs}:
+\begin{definition} For 2-colored nestings $\mathcal{N}$ and $\mathcal{N}'$, we use the same definitions as in \cref{def:signs}, but with the following two modifications:
 \begin{enumerate}[leftmargin=*]
 \item[(2)] We say that an edge $i$ of $g$ is \emph{admissible} when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome. 
 \item[(4)] The function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ is defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
@@ -1821,6 +1907,7 @@ and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by inversing the roles of $\m
 \end{definition}
 
 For convenience, let us recall that \[ D(n)\coloneqq \{(I,J) \ | \ I,J\subset\{1,\ldots,n\}, |I|=|J|, I\cap J=\emptyset, \min(I\cup J)\in I \}. \]
+Let us denote by $\text{mono}(\mathcal{N})$ the set of monochrome nests of a nesting $\mathcal{N}$.
 
 \begin{proposition}
 The \emph{tensor product} $f\otimes g$ of two $\mathrm{A}_\infty$-functors $f:\cat{A}\rightsquigarrow \cat{A}'$ and $g:\cat{B} \rightsquigarrow \cat{B}'$ is given by 
@@ -1834,7 +1921,7 @@ h_n : (\cat{A}\otimes \cat{B})(X_0\times Y_0,X_1\times Y_1) \otimes  \cdots \oti
 defined by 
 \[h_n \coloneqq 
 \sum_{\substack{
-\mathcal{N},\mathcal{N}' \in \mathcal{N}_2(g_n), |\mathcal{N}|+|\mathcal{N}'|=n \\
+\mathcal{N},\mathcal{N}' \in \mathcal{N}_2(\gra), \ |\text{mono}(\mathcal{N})|+|\text{mono}(\mathcal{N}')|=|E(\gra)| \\
 \forall (I,J) \in D(n), \exists B \in B(\mathcal{N}), |B\cap I|>|B\cap J| \text{ or } \\
 \exists R \in R(\mathcal{N}), |(R\cup \{n\}) \cap I|>| (R\cup \{n\}) \cap J| \text{ or } \\
 \exists B' \in B(\mathcal{N}'), |B'\cap I|<|B'\cap J| \text{ or } \\
@@ -1843,7 +1930,7 @@ defined by
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}
 \mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})
 \mathcal{N}(f)\otimes \mathcal{N}'(g) \ \sigma_n \ ,\]
-where $g_n$ is the linear graph with $n$ vertices, where $\mathcal{N}(f)$ and $\mathcal{N}'(g)$ denote the composition of the structural maps $\{f_n\}$ and $\{g_n\}$ corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order, and where $\sigma_n$ is the isomorphism $\cat{A}(X_0,X_1)\otimes\cat{B}(Y_0,Y_1) \otimes \cdots \otimes \cat{A}(X_{n-1},X_n)\otimes\cat{B}(Y_{n-1},Y_n) \cong \cat{A}(X_0,X_1) \otimes \cdots \otimes \cat{A}(X_{n-1},X_n) \otimes \cat{B}(Y_0,Y_1) \otimes \cdots \otimes \cat{B}(Y_{n-1},Y_n)$.
+where $\gra$ is a linear graph, and where $\mathcal{N}(f)$ and $\mathcal{N}'(g)$ denote the composition of the structural maps $\{f_n\}$ and $\{g_n\}$ corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order.
 \end{itemize}
 \end{proposition}
 
@@ -1852,16 +1939,26 @@ where $g_n$ is the linear graph with $n$ vertices, where $\mathcal{N}(f)$ and $\
   The formula for the $h_n$'s stems from our choice of diagonal on the multiplihedra; the fact that they satisfy the $\mathrm{A}_\infty$ relations follows from the construction and the functoriality in \cref{prop:functoriality}. The signs depend on our choice of cellular orientations on the multiplihedra, and they are obtained via the computation of a determinant. We refer to \cite[Section 4.3]{LA21} for more details. 
 \end{proof}
 
-\begin{remark} 
-  The diagonal maps $\K_n \to \K_n \times \K_n$ and $\J_n \to \J_n \times \J_n$ are not cellularly coassociative, hence under the cellular chains functor, they do not make the category of $\mathrm{A}_\infty$-categories with $\mathrm{A}_\infty$-functors into a monoidal category. 
-  According to a result of M. Markl and S. Schnider \cite[Section 6]{MarklShnider06}, such a strict monoidal structure cannot exist. 
-\end{remark}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The above functorial tensor product can be used in symplectic topology to relate the Fukaya category of a product of symplectic manifold to the product of the Fuakaya categories of the manifolds. \Guillaume{refs Thibaut}
+\subsection{Further directions}
 
-The definition of the above tensor product by an explicit formula that can be easily implemented on the computer, could be applied to calculate explicit invariants of 4-dimensonal symplectic manifolds. For instance, R. Lipshitz, P. Osv\'ath and D. P. Thurston define in \cite{LOT20} diagonals of the multiplihedra to study bordered Floer homology of ... These invariants detect exotic smooth structures ... \Guillaume{TBC Thibaut!}
+\subsubsection{Monoidality}
+The tensor products defined above do not make the category of $\mathrm{A}_\infty$-categories with $\mathrm{A}_\infty$-functors into a monoidal category, in the strict sense of the term. There are two obstructions to this:
+\begin{enumerate}
+  \item The diagonal maps $\K_n \to \K_n \times \K_n$ and $\J_n \to \J_n \times \J_n$ are not cellularly coassociative, hence under the cellular chains functor, they do not define associative tensor products. 
+  According to a result of M. Markl and S. Schnider \cite[Section 6]{MarklShnider06}, such an associative tensor product does not exist.
+  \item The tensor product above is not compatibile with the composition of $\mathrm{A}_\infty$-morphisms \Guillaume{[...] Counterexample!}. 
+  We belive that there is a way to prove, in a similar fashion to the preceding point, that such a functorial tensor product cannot exist.
+\end{enumerate}
 
-
+\subsubsection{Applications in symplectic topology}
+There are three main applications:
+\begin{enumerate}
+  \item Armorim \Guillaume{TBC}
+  \item The above functorial tensor product can be used in symplectic topology to relate the Fukaya category of a product of symplectic manifold to the product of the Fuakaya categories of the manifolds. \Guillaume{TBC}
+  \item LOT; The definition of the above tensor product by an explicit formula that can be easily implemented on the computer, and could be applied to calculate explicitely invariants of 4-dimensonal symplectic manifolds. For instance, R. Lipshitz, P. Osv\'ath and D. P. Thurston define in \cite{LOT20} diagonals of the multiplihedra to study bordered Floer homology of ... These invariants detect exotic smooth structures ... \Guillaume{TBC}
+\end{enumerate}
 
 
 \bibliographystyle{amsalpha}
