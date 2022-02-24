@@ -102,6 +102,7 @@
 \newcommand{\iBT}{\mathrm{i}^\T_\B}
 \newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\gra}{\ell}
+\newcommand{\Ainf}{\mathrm{A}_\infty}
 
 %Mots parentheses colores
 \newcommand{\blue}[1]{\textcolor{MidnightBlue}{\textbf{(}} #1 \textcolor{MidnightBlue}{\textbf{)}}} 
@@ -524,57 +525,120 @@
 
 %%%%%% TITLE+AUTHOR
 
-\title{The diagonal of the multiplihedra and the product of $\mathrm{A}_\infty$-categories}
+\title{The diagonal of the multiplihedra and the product of A-infinity categories}
 
 \author{Guillaume Laplante-Anfossi}
 \address{Laboratoire Analyse, G\'eom\'etrie et Applications, Universit\'e Paris Nord 13, Sorbonne Paris Cit\'e, CNRS, UMR 7539, 93430 Villetaneuse, France.}
 \email{laplante-anfossi@math.univ-paris13.fr}
 
 \author{Thibaut Mazuir}
-\address{Sorbonne Universit\'e \Guillaume{TBC Thibaut}}
+\address{Sorbonne Universit\'e, Institut de Math\'ematiques de Jussieu-Paris Rive Gauche CNRS, Campus Pierre et Marie Curie, 75013 Paris, France.}
 \email{thibaut.mazuir@imj-prg.fr}
 
 \date{\today}
 
-\subjclass[2010]{Primary ???; Secondary ???}
-%52B11; Secondary 18D50, 06A07}
+\subjclass[2010]{Primary 52B11; Secondary 18M70, 53D37}
 
-\keywords{Multiplihedra, $\mathrm{A}_\infty$-categories, approximation of the diagonal, operads.}
+\keywords{Multiplihedra, A-infinity categories, approximation of the diagonal, operads.}
 
-\thanks{G. L.-A. was supported by the European Union's Horizon 2020 research and innovation program under the Marie Sklodowska-Curie grant agreement No 754362 \inlinegraphics{EU.png}, by the Natural Sciences and Engineering Research Council of Canada (NSERC) and by the ANR-20-CE40-0016 Higher Algebra, Geometry and Topology.}
+\thanks{The first author was supported by the European Union's Horizon 2020 research and innovation program under the Marie Sklodowska-Curie grant agreement No 754362 \inlinegraphics{EU.png}, by the Natural Sciences and Engineering Research Council of Canada (NSERC) and by the ANR-20-CE40-0016 Higher Algebra, Geometry and Topology.}
 
 \begin{document}
 
 \begin{abstract}
-\Guillaume{TBC at the end}
+The goal of this article is to define a cellular approximation to the diagonal of Forcey--Loday realizations of the multiplihedra, and to endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra. 
+This gives a model for topological and algebraic A-infinity morphisms, and an explicit formula for their tensor product.
+In this way, one can consider for the first time a functorial tensor product of A-infinity categories defined by explicit formulas, and its potential applications, notably to Fukaya categories in symplectic topology. 
 \end{abstract}
 
 \maketitle
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\linewidth]{J4.png} 
+%\caption{The polytopal subdivision of $\J_4$.}
+\label{Fig5:J4}
+\end{figure}
+
 \setcounter{tocdepth}{1}
 \tableofcontents
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section*{Introduction}
 
-\Guillaume{TBC at the end}
+The $n$-dimensional associahedron, a polytope whose faces are in bijection with planar trees with $n+1$ leaves, was introduced as a topological cell complex by J. Stasheff to describe algebras whose product is associative only up to homotopy \cite{Stasheff63}.
+The problem of giving convex realizations of these polytopes has a rich history \cite{CeballosZiegler12}, and the algebras that they encode, called $\mathrm{A}_\infty$-algebras, are now classical objects in algebraic topology. 
+They have found many applications, from iterated loop spaces \cite{May72} to Fukaya categories \cite{Seidel08}, through the interpretation of the associahedra as moduli spaces of metric trees \cite{MauWoodward10}.
 
 \medskip
+
+The $n$-dimensional multiplihedron, a polytope whose faces are in bijection with 2-colored planar trees with $n$ leaves (see \cref{def:2coloredtree} below), was introduced by J. Stasheff \cite{Stasheff70} to describe morphisms between $\mathrm{A}_\infty$-algebras.
+These polytopes were studied both in algebraic topology \cite{BoardmanVogt73} and symplectic topology, through their interpretation as moduli spaces of 2-colored metric trees \cite{MauWoodward10}. 
+First defined as topological cell complexes, they were only realized recently as convex polytopes, through the work of S. Forcey \cite{Forcey08}, and later S. Forcey and S. Devadoss \cite{DevadossForcey08}, F. Ardila and J. Doker \cite{AD13}, and F. Chapoton and V. Pilaud \cite{CP22}.
+
+\medskip
+
+In this paper, we study a cellular approximation to the diagonal of the multiplihedron. 
+The set-theoretic diagonal $\triangle_P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular, that is, its image is not a union of faces of $P\times P$. 
+One is led to the problem of finding a cellular approximation to $\triangle_P$, that is finding a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
+
+\medskip
+
+The Alexander--Whitney map \cite{EilenbergMacLane53} and the Serre diagonal \cite{Serre51} are cellular approximations of the diagonal of the simplices and the cubes, respectively. 
+They allow one to define the cup product in cohomology.
+A cellular approximation of the diagonal of the associahedra allows one to define the tensor product of two $\mathrm{A}_\infty$-algebras \cite{SaneblidzeUmble04,MarklShnider06,MTTV19}. 
+Our goal here is to make this tensor product functorial, by defining and describing explicitly a cellular approximation to the diagonal of the multiplihedra.
+
+\medskip
+
+Our results can be summarized as follows:
+\begin{enumerate}
+  \item We define a cellular approximation of the diagonal of the Forcey--Loday realizations of the multiplihedra (\cref{prop:OrientationVector});
+  \item We endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra (\cref{thm:MainOperad});
+  \item We describe combinatorially the cellular image of the diagonal (\cref{thm:formuladiagonal});
+  \item We apply the cellular chains functor to obtain a functorial tensor product of $\mathrm{A}_\infty$-algebras and their categorification, $\mathrm{A}_\infty$-categories.
+\end{enumerate}
+
+
+To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, based on the method introduced in \cite{MTTV19}. 
+More precisely, we use the fact that the Forcey--Loday realization of the multiplihedron, as defined in \cite{Forcey08}, can be obtained from the Ardila--Doker realization of the multiplihedron \cite{AD13} by projection.
+This last realization is a generalized permutahedron, in the sense of A. Postnikov \cite{Postnikov09}, which allows us to apply the results of \cite{LA21} directly, both for the purpose of defining a cellular approximation of the diagonal, and to describe its cellular image combinatorially.
+
+\medskip
+
+Our results can readily be applied to different fields, prominently to symplectic topology. 
+First, the operadic bimodule structure in~(2) above was used in the work of the second author, where the structures of $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms are unraveled in the context of Morse theory \cite{Mazuir21}. 
+Second, our definition of a functorial tensor product of $\mathrm{A}_\infty$-categories by explicit formulas can be used to study the Fukaya categories of symplectic manifolds. %deformations of bordered Riemann surfaces and the work of Liu
+It could also be used in the context of bordered Heegaard Floer homology to compute invariants of 4-manifolds \cite{LOT20}. 
+See \cref{sec:furtherdirections} where we sketch some applications to symplectic topology.
+One could also think to applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}.
+
+\medskip
+
+Finally, the methods of this paper can be straightfowardly extended to the "multiploperahedra", a family of polytopes which is to the operahedra of \cite{LA21} what the multiplihedra are to the associahedra. 
+They belong to both the families of graph-multiplihedra \cite{DevadossForcey08} and nestomultiplihedra \cite{AD13}.  
+Together with the results of \cite{LA21}, one would obtain a functorial tensor product of homotopy operads, defined by explicit formulas. 
+
 \subsection*{Layout} 
-\Guillaume{TBC at the end}
+We define the realizations of the multiplihedra we will work with in \cref{sec:I}. 
+We define a cellular approximation of their diagonal and endow them with an operadic bimodule structure over the associahedra in \cref{sec:II}.
+We describe explicitly the image of our diagonal combinatorially, define the functorial tensor product of $\mathrm{A}_\infty$-categories, and sketch applications to symplectic topology in \cref{sec:III}. 
 
-\medskip
-\subsection*{Conventions} We use the conventions and notations of \cite{Ziegler95} for convex polytopes and the ones of  \cite{LodayVallette12} for operads. We denote by $[n]\coloneqq \{1,\ldots,n\}$ and by $\{\vec e_i\}_{i \in [n]}$ the standard basis of $\RR^n$.
-\Guillaume{TBC at the end}
+\subsection*{Conventions} We use the conventions and notations of \cite{Ziegler95} for convex polytopes and the ones of \cite{LodayVallette12} for operads. We denote by $[n]\coloneqq \{1,\ldots,n\}$ and by $\{\vec e_i\}_{i \in [n]}$ the standard basis of $\RR^n$.
 
 \subsection*{Acknowledgements} 
-\Guillaume{Bruno!}
+We would like to thank Bruno Vallette for numerous discussions and for his careful reading of the manuscript.
+We are also indebted to Robert Lipshitz for his detailed insights about the possible applications of our results in symplectic topology.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Realization of the muliplihedra} 
+\label{sec:I}
 
-\Guillaume{Intro de section}
+Building on the work of S. Forcey in \cite{Forcey08}, we define Forcey--Loday realizations of the multiplihedra, and describe their general properties in \cref{prop:PropertiesKLoday}.
+We show how they can be obtained from the Ardila--Doker realizations via projection. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -588,7 +652,7 @@ A \emph{cut} of a tree is a subset of edges or vertices which contains precisely
 
 A cut divides a tree into two parts: an upper part, that we color in blue, and a lower part, that we color in red.  
 
-\begin{definition}[2-colored tree]
+\begin{definition}[2-colored tree] \label{def:2coloredtree}
 A \emph{2-colored tree} is a tree together with a cut. We call \emph{2-colored maximal tree} a 2-colored binary tree where the cut is made of edges only. 
 \end{definition}
 We denote by $\CT{n}$ (resp. $\CMT{n}$) the set of 2-colored trees (resp. 2-colored maximal trees) with $n$ leaves, for $n\geq 1$. 
@@ -1210,8 +1274,14 @@ In summary, we have the following diagram:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Diagonal of the multiplihedra}
+\label{sec:II}
 
-\Guillaume{Intro de section}
+In this section, we define a cellular approximation of the diagonal of the Forcey--Loday realizations of the multiplihedra, and we endow them with an operadic bimodule structure over the Loday realizations of the associahedra. 
+We use the method of \cite{MTTV19} and the general theory developed in \cite{LA21}.
+Results of \cite{LA21} can be applied directly to the Ardila--Doker multiplihedron, from which one obtains the Forcey--Loday multiplihedron by projection. 
+One can transfer the results to these realizations, using the crucial fact that the projection preserves orthogonality for a certain class of vectors with coordinates equal to $0$, $1$ or $-1$. 
+Another salient feature is that, in order to obtain the operadic struture, we need to make a choice of orientation vectors that is coherent with operadic composition, see \cref{prop:thetacommutes}. 
+Finally, choosing an orientation and applying the cellular chains functor, we recover the operadic bimodule $\mathrm{A}_\infty$-Morph with its usual sign conventions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
@@ -1419,12 +1489,11 @@ This is easily seen to be the case from the definition of $\Theta$, in the proof
 Once we have in hand \cref{prop:thetacommutes} asserting that the diagonal maps commute with the maps $\Theta$, we can apply the proof of \cite[Theorem~1]{MTTV19} \emph{mutatis mutandis}. The uniqueness of the transition map $\tr$ is the essential ingredient, as it forces the operadic axioms to hold. 
 \end{proof}
 
-This theorem was mentioned in \cite{Mazuir21}, where associahedra and multiplihedra were interpreted as compactifications of moduli spaces of metric trees, and used to unravel $\mathrm{A}_\infty$ structures on the Morse cochains of a smooth compact manifold \Guillaume{Thibaut?}.
+This theorem was mentioned in \cite{Mazuir21}, where associahedra and multiplihedra were interpreted as compactifications of moduli spaces of metric trees, and used to unravel $\mathrm{A}_\infty$ structures on the Morse cochains of a smooth compact manifold.
 
 \medskip
 
-From the general theory of operads, we know that the data of a $(\mathcal{P},\mathcal{Q})$-operadic bimodule $M$ is equivalent to the data of a 2-colored operad, whose algebras consists of a $\mathcal{P}$-algebra, a $\mathcal{Q}$-algebra, and a $M$-morphism \Guillaume{?} between the two \Guillaume{REF}.
-
+From the general theory of operads, we know that the data of a $(\mathcal{P},\mathcal{Q})$-operadic bimodule $M$ is equivalent to the data of a 2-colored operad, whose algebras consists of a $\mathcal{P}$-algebra, a $\mathcal{Q}$-algebra, and a morphism between the two \Guillaume{REF}.
 Thus, under the cellular chains functor, \cref{thm:MainOperad} gives a quasi-free 2-colored operad, spanned by blue corollas in degree $|c_n^B|=n-2$, red corollas in degree $|c_n^T|=n-2$ and bicolored corollas in degree $|c_n|=n-1$. An algebra over this differential graded 2-colored operad is a pair of $\mathrm{A}_\infty$-algebras related by an $\mathrm{A}_\infty$-morphism. 
 
 
@@ -1468,20 +1537,26 @@ We then proceed as in \cite[Proposition 4.22]{LA21} to endow the $\K_n$ and $\J_
 
 \begin{proposition} 
 \label{prop:functoriality}
-The above cellular orientations on the associahedra and multiplihedra yield an isomorphism of differential graded non-symmetric operads $C_\bullet^{cell}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong \mathrm{A}_\infty$-Morph.
+The above cellular orientations on the associahedra and multiplihedra yield an isomorphism of differential graded non-symmetric operads $C_\bullet^{cell}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong \mathrm{A}_\infty$-Morph. 
 \end{proposition}
 
 \begin{proof}
-Computing the signs in the (action-)composition maps amounts to comparing bases where the vectors have been permuted. Since we have choosen the left-levelwise order on trees, we recover precisely the usual sign conventions for the operad $A_\infty$ and of the operadic bimodule $A_\infty$-Morph.
+Computing the signs in the (action-)composition maps amounts to comparing bases where the vectors have been permuted. Since we have choosen the left-levelwise order on trees, we recover precisely the usual sign conventions for the operad $\mathrm{A}_\infty$ and of the operadic bimodule $\mathrm{A}_\infty$-Morph.
 The signs for the differentials, arising from the boundary maps, were computed in \cite[I, Section 4]{Mazuir21}.
 \end{proof}
+
+The image of the diagonal maps $\triangle_n : \J_n \to \J_n \times \J_n$ under this functor gives a morphism of differential graded operadic bimodules $\mathrm{A}_\infty$-Morph $\to \mathrm{A}_\infty$-Morph $\otimes$ $\mathrm{A}_\infty$-Morph, and thus defines the tensor product of two $\mathrm{A}_\infty$-morphisms. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Functorial tensor product of $\mathrm{A}_\infty$-categories}
+\label{sec:III}
 
-\Guillaume{Intro de section}
-%The results of the previous section provide us with a cellular approximation of the diagonal map of the multiplihedra and, equivalently, a polytopal subdivision of them. It remains to make this combinatorics of cells explicit. 
+We provide a combinatorial description of the cellular image of the diagonal of the Forcey--Loday multiplihedra, defined in the preceding section. 
+We make use of the universal formula of \cref{thm:universalformula}, as well as the computation of the fundamental hyperplane arrrangement of the permutahedra from \cite{LA21}.
+The fact that the Ardila--Doker multiplihedron is a generalized permutahedron allows us to avoid the computation of the fundamental hyperplane arrangement of the multiplihedron itself. 
+Applying the cellular chains functor, we obtain an explicit formula for the tensor product of $\mathrm{A}_\infty$-morphisms between $\mathrm{A}_\infty$-algebras, and at the same time for $\mathrm{A}_\infty$-functors bewteen $\mathrm{A}_\infty$-categories. 
+This prompts several applications to symplectic topology, which we sketch in the last subsection. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1508,7 +1583,9 @@ We call this graph the \emph{closure} of~$N$.
 \end{itemize}
 \end{definition}
 
-Two nests that satisfy Conditions (2) and (3) are said to be \textit{compatible}. We denote the set of nestings of $\gra$ by $\mathcal{N}(\gra)$. We naturally represent a nesting by circling the closure of each nest as in \cref{fig:bijections}. A nesting is \emph{maximal} if it has maximal cardinality $|\mathcal{N}|=|E(\gra)|$.
+Two nests that satisfy Conditions (2) and (3) are said to be \textit{compatible}. We denote the set of nestings of $\gra$ by $\mathcal{N}(\gra)$. 
+We naturally represent a nesting by circling the closure of each nest as in \cref{fig:bijections}. 
+A nesting is \emph{maximal} if it has maximal cardinality $|\mathcal{N}|=|E(\gra)|$.
 
 \begin{definition}[2-colored nesting] A \emph{2-colored nesting} is a nesting where each nest is either colored in blue, red or purple, and which satisfy the following properties: 
 \begin{enumerate}
@@ -1517,7 +1594,8 @@ Two nests that satisfy Conditions (2) and (3) are said to be \textit{compatible}
 \end{enumerate}
 \end{definition}
 One should think of purple nests as both colored by red and blue. 
-We denote by $\mathcal{N}_2(\gra)$ the set of 2-colored nesting of $\gra$.
+We denote by $\mathcal{N}_2(\gra)$ the set of 2-colored nesting of $\gra$. 
+A 2-colored nesting is \emph{maximal} if it has maximal cardinality, and it is made of blue and red nests only. 
 
 \begin{remark} 
 The data of a 2-colored nesting on a graph is equivalent to the data of a marked tubings on its line graph, as defined in \cite{DevadossForcey08}. 
@@ -1677,12 +1755,6 @@ Let $\J_n$ be the Forcey--Loday realization of the multiplihedron, and let $\vec
   && \exists B' \in B(\mathcal{N}'), |B'\cap I|<|B'\cap J| \text{ or } \\
   && \exists R' \in R(\mathcal{N}'), |(R'\cup \{n\}) \cap I|<| (R'\cup \{n\}) \cap J| \ . \\
 \end{eqnarray*}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\linewidth]{J4.png} 
-\caption{The polytopal subdivision of $\J_4$.}
-\label{Fig5:J4}
-\end{figure}
 \end{theorem}
 
 \begin{proof} 
@@ -1697,7 +1769,7 @@ The essential ingredient is the computation of the fundamental hyperplane arrang
 
 The cellular image of $\triangle_n$ can be represented on $\J_n$ as follows: for each pair of faces $(F,G) \in \Ima \triangle_n$, draw the polytope $(F+G)/2$. 
 This defines a polytopal subdivision of $\J_n$.
-The polytopal subdivision of $\J_4$ is illustrated in \cref{Fig5:J4}.
+The polytopal subdivision of $\J_4$ is illustrated on the first page of this article.
 
 \medskip
 
@@ -1797,6 +1869,7 @@ A way to relate the two constructions would be to find a choice of chambers in t
 \end{remark}
 
 The formula above, even though easily implemented in the computer, is not optimal. For instance, one could use equation (1) in \cite[Theorem 1.23]{LA21} to reduce the number of pairs $(I,J)$ on which the conditions have to be tested. 
+One could also compute directly the fundamental hyperplane arrangement of the Ardila--Doker or Forcey--Loday multiplihedron.
 It would be desirable to obtain equivalent combinatorial descriptions of $\Ima \triangle_n$, with a view towards possible applications. 
 We sketch some of them in the next sections.
 
@@ -1941,7 +2014,7 @@ where $\gra$ is a linear graph, and where $\mathcal{N}(f)$ and $\mathcal{N}'(g)$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Further directions}
+\subsection{Further directions} \label{sec:furtherdirections}
 
 \subsubsection{Monoidality}
 The tensor products defined above do not make the category of $\mathrm{A}_\infty$-categories with $\mathrm{A}_\infty$-functors into a monoidal category, in the strict sense of the term. There are two obstructions to this:
@@ -1951,6 +2024,8 @@ The tensor products defined above do not make the category of $\mathrm{A}_\infty
   \item The tensor product above is not compatibile with the composition of $\mathrm{A}_\infty$-morphisms \Guillaume{[...] Counterexample!}. 
   We belive that there is a way to prove, in a similar fashion to the preceding point, that such a functorial tensor product cannot exist.
 \end{enumerate}
+
+$\mathtt{\Ainf -alg}$
 
 \subsubsection{Applications in symplectic topology}
 There are three main applications:
