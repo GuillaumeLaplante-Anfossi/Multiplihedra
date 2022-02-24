@@ -103,6 +103,7 @@
 \newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\gra}{\ell}
 \newcommand{\Ainf}{\mathrm{A}_\infty}
+\newcommand{\ide}{\ensuremath{\mathrm{id}}}
 
 %Mots parentheses colores
 \newcommand{\blue}[1]{\textcolor{MidnightBlue}{\textbf{(}} #1 \textcolor{MidnightBlue}{\textbf{)}}} 
@@ -609,9 +610,10 @@ This last realization is a generalized permutahedron, in the sense of A. Postnik
 
 Our results can readily be applied to different fields, prominently to symplectic topology. 
 First, the operadic bimodule structure in~(2) above was used in the work of the second author, where the structures of $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms are unraveled in the context of Morse theory \cite{Mazuir21}. 
-Second, our definition of a functorial tensor product of $\mathrm{A}_\infty$-categories by explicit formulas can be used to study the Fukaya categories of symplectic manifolds. %deformations of bordered Riemann surfaces and the work of Liu
-It could also be used in the context of bordered Heegaard Floer homology to compute invariants of 4-manifolds \cite{LOT20}. 
-See \cref{sec:furtherdirections} where we sketch some applications to symplectic topology.
+Second, our definition of a functorial tensor product of $\mathrm{A}_\infty$-categories by explicit formulas can be used to study the product of Fukaya algebras of Lagrangians \cite{amorim-lagrangian}, and more generally the product of Fukaya categories of symplectic manifolds. 
+%deformations of bordered Riemann surfaces and the work of Liu
+It could also be used in the context of bordered Heegaard Floer homology \cite{LOT20}. 
+See \cref{sec:furtherdirections} where we sketch in more details applications to symplectic topology.
 One could also think to applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}.
 
 \medskip
@@ -2016,24 +2018,63 @@ where $\gra$ is a linear graph, and where $\mathcal{N}(f)$ and $\mathcal{N}'(g)$
 
 \subsection{Further directions} \label{sec:furtherdirections}
 
-\subsubsection{Monoidality}
-The tensor products defined above do not make the category of $\mathrm{A}_\infty$-categories with $\mathrm{A}_\infty$-functors into a monoidal category, in the strict sense of the term. There are two obstructions to this:
-\begin{enumerate}
-  \item The diagonal maps $\K_n \to \K_n \times \K_n$ and $\J_n \to \J_n \times \J_n$ are not cellularly coassociative, hence under the cellular chains functor, they do not define associative tensor products. 
-  According to a result of M. Markl and S. Schnider \cite[Section 6]{MarklShnider06}, such an associative tensor product does not exist.
-  \item The tensor product above is not compatibile with the composition of $\mathrm{A}_\infty$-morphisms \Guillaume{[...] Counterexample!}. 
-  We belive that there is a way to prove, in a similar fashion to the preceding point, that such a functorial tensor product cannot exist.
-\end{enumerate}
+\subsubsection{"Homotopy" monoidal structure on the category $\mathtt{\Ainf-alg}$}
 
-$\mathtt{\Ainf -alg}$
+Define $\mathtt{\Ainf -alg}$ to be the category whose objects are $\Ainf$-algebras and morphisms are $\Ainf$-morphisms between them (see \cite{LodayVallette12}). Given $A$ and $B$ two $\Ainf$-algebras, we write $A \otimes_\infty B$ for the dg-module $A \otimes B$ endowed with the $\Ainf$-algebra structure induced by the diagonal of~\cite{MTTV19}. 
+Given two $\Ainf$ -morphisms $F_1 : A_1 \rightarrow B_1$ and $F_2 : A_2 \rightarrow B_2$ we write similarly $F_1 \otimes_\infty F_2 : A_1 \otimes_\infty B_1 \rightarrow A_2 \otimes_\infty B_2$ for the $\Ainf$-morphism defined using the diagonal introduced in this article. 
+We will moreover denote $\Delta_{\Ainf}$ and $\Delta_{M_\infty}$.
 
-\subsubsection{Applications in symplectic topology}
-There are three main applications:
-\begin{enumerate}
-  \item Armorim \Guillaume{TBC}
-  \item The above functorial tensor product can be used in symplectic topology to relate the Fukaya category of a product of symplectic manifold to the product of the Fuakaya categories of the manifolds. \Guillaume{TBC}
-  \item LOT; The definition of the above tensor product by an explicit formula that can be easily implemented on the computer, and could be applied to calculate explicitely invariants of 4-dimensonal symplectic manifolds. For instance, R. Lipshitz, P. Osv\'ath and D. P. Thurston define in \cite{LOT20} diagonals of the multiplihedra to study bordered Floer homology of ... These invariants detect exotic smooth structures ... \Guillaume{TBC}
-\end{enumerate}
+We would like to know if the tensor product $\otimes_\infty$ defines a symmetric monoidal category structure on the category $\mathtt{\Ainf-alg}$ (where $\ZZ$ is taken to be the identity object). 
+More precisely, we have to prove that there exists functorial isomorphisms $\alpha_{A,B,C} : A \otimes_\infty ( B \otimes_\infty C) \rightarrow (A \otimes_\infty B) \otimes_\infty C$ and $\tau_{A,B} : A \otimes_\infty B \rightarrow B \otimes_\infty A$ that fit into the usual diagrams for a monoidal category, and that this tensor product is functorial i.e. that given $\Ainf$-morphisms $F_i : A_i \rightarrow B_i$ and $G_i : B_i \rightarrow C_i$ for $i=1,2$, the following identity is satisfied 
+\[ (G_1 \circ F_1) \otimes_\infty (G_2 \circ F_2) = (G_1 \otimes_\infty G_2) \circ (F_1 \otimes_\infty F_2) \ . \]
+
+Applying the theory of Hopf operads and minimal models to the Hopf operad $Ass$ endowed with the obvious diagonal and its minimal model $\Ainf \rightarrow Ass$, it is proven in~\cite{MarklShnider06} and \cite{MSS} that there exists an homotopy of morphisms of operads between $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}$ and $(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$. 
+Following for instance \cite{fukaya-cyclic-symmetry}, this means that there exists a quasi-isotopy between the $\Ainf$-algebras $A \otimes_\infty ( B \otimes_\infty C)$ and $(A \otimes_\infty B) \otimes_\infty C$, thus in particular that there exists an $\Ainf$ -quasi-isomorphism between them.  
+A similar method also shows that $A \otimes_\infty B \simeq B \otimes_\infty A$.  It is moreover proven in~\cite{MarklShnider06} that a diagonal on $\Ainf$ can in fact never be coassociative, i.e. that the equality $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}=(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$ can never hold.
+
+Using the fact that the operad $\Ainf$ and the operadic bimodule $M_\infty$ are contractible, R. Lipshitz, P. Osv\'ath and D. P. Thurston construct in \cite{LOT20} a morphism of operadic bimodules (a \emph{trigonal}) $M_\infty \rightarrow M_\infty \otimes M_\infty \otimes M_\infty$ compatible with $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}$ on the left and $(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$. This yields another proof the existence of a quasi-isomorphism $A \otimes_\infty ( B \otimes_\infty C) \simeq (A \otimes_\infty B) \otimes_\infty C$.
+
+It is however unclear why these collections of quasi-isomorphisms should fit into natural transformations $\alpha$ and $\tau$ defining the associator and the symmetry of a symmetric monoidal category. While a diagonal on $\Ainf$ can never be associative, \Thibaut{we moreover prove a general fact that a diagonal on $M_\infty$ can never be functorial} :
+
+\begin{proposition} \Guillaume{The diagonal of the multiplihedra defined by the formula of \cref{thm:formuladiagonal} is not compatible with the composition of $\Ainf$-morphisms.}
+\end{proposition}
+
+\begin{proof} \Thibaut{petite arit\'e ou juste regarder F x id o id x G ?}
+\end{proof}
+
+It is thus impossible to endow the category $\mathtt{\Ainf -alg)}$ with a monoidal category structure. The authors however expect that the data of a diagonal on $\Ainf$\ and of a compatible diagonal on $M_\infty$ should endow $\mathtt{\Ainf -alg)}$ with a "homotopy" monoidal category structure, although it is not yet clear to them which explicit model for such a category one has to choose.
+It would also be interesting to know how given diagonals $\Delta_{\Ainf}^i$ and $\Delta_{M_\infty}^i$ for $i=1,2$, the two "homotopy" monoidal category structures defined on $\mathtt{\Ainf -alg)}$ would then be related.
+A first result towards that direction is again given in \cite{MarklShnider06} : the diagonals $\Delta_{\Ainf}^1$ and $\Delta_{\Ainf}^2$ are always homotopic as morphism of operads, hence there exists a quasi-isomorphism $A \otimes_{\infty_1} B \simeq A \otimes_{\infty_2} B$.
+
+\subsubsection{The work of Amorim}
+
+Let $M$ be a symplectic manifold (either compact of convex at infinity) and $L \subset M$ a (compact spin) Lagrangian submanifold. Using Lagrangian Floer theory and pseudo-holomorphic disks curves theory, Fukaya constructs in \cite{fukaya-cyclic-symmetry} a unital $\Ainf$-algebra $\mathcal{F}(L)$ associated to the Lagrangian $L$, called the \textit{Fukaya algebra of $L$}. In \cite{amorim-lagrangian}, Amorim shows that given two symplectic manifolds $M_1$ and $M_2$ together with Lagrangians $L_i \subset M_i$, the Fukaya algebra of the product Lagrangian $L_1 \times L_2$ is quasi-isomorphic to tensor product of their Fukaya algebras, i.e. $\mathcal{F}(L_1 \times L_2) \simeq \mathcal{F}(L_1) \otimes_\infty \mathcal{F}(L_2)$. His proof relies on a theorem that he proves in~\cite{amorim-tensor}, giving a criterion for an $\Ainf$-algebra $C$ to be quasi-isomorphic to the tensor product $A \otimes_\infty B$ of two commuting $\Ainf$ -subalgebras $A \subset C$ and $B \subset C$, that he applies to the two $\Ainf$ -subalgebras $\mathcal{F}(L_1) \subset \mathcal{F}(L_1 \times L_2)$ and $\mathcal{F}(L_2) \subset \mathcal{F}(L_1 \times L_2)$.
+
+In \cite{amorim-tensor}, he constructs the tensor product $\otimes_\infty$ as follows. 
+Firstly he proves that given a unital $\Ainf$-algebra $A$, it is naturally quasi-isomorphic to a particular dg-algebra that he denotes $\mathrm{End}(A)$. 
+Given two unital $\Ainf$-algebras $A$ and $B$, he then shows that the tensor dg-algebra $\mathrm{End}(A) \otimes \mathrm{End}(B)$ and the tensor product $A \otimes B$ fit into a deformation retract diagram
+\begin{center} 
+\begin{tikzcd}
+\arrow[loop left,"h"] \mathrm{End}(A) \otimes \mathrm{End}(B) \arrow[r, shift left, "p"] & \arrow[l,shift left,"i"] A \otimes B \ .
+\end{tikzcd}
+\end{center}
+He then applies the homotopy transfer theorem (see \cite{Markl06} for instance), to transfer the dg-algebra structure on $\mathrm{End}(A) \otimes \mathrm{End}(B)$ to an $\Ainf$-algebra structure on $A \otimes B$. 
+He finally shows that his construction recovers in fact exactly the diagonal of \cite{MarklShnider06} and \cite{MTTV19}.
+
+It would be interesting to know whether the formula for the tensor product of $\Ainf$-morphisms introduced in this article could be recovered by a method similar to this one. 
+This diagonal might then prove useful to study the $\Ainf$-morphisms between the Fukaya algebras of products of two Lagrangian submanifolds, and more generally the $\Ainf$-functors between Fukaya categories of products of two symplectic manifolds.
+
+\subsubsection{The work of R. Lipshitz, P. Osv\'ath and D. P. Thurston}
+Given a 3-manifold $Y$ with two boundary components, R. Lipshitz, P. Osv\'ath and D. P. Thurston build in \cite{LOT20} a "bimodule twisted complex" $CFDD^{-}(Y)$, which involves a cellular approximation of the diagonal of the associahedra. 
+A diagonal of the multiplihedron is needed in order to relate the categories of bimodules with different associahedron diagonals. 
+Thus, it is expected that diagonals for the multiplihedra will also be useful for studying the bimodules $CFDD^{-}$ in bordered Heegaard Floer homology, associated to 3-dimensional cobordisms. 
+We expect that diagonals for the multiplihedron are needed, in particular, when re-associating certain gluings in that theory.
+
+\subsubsection{Lagrangian correspondences}
+Mau-Wehrheim-Woodward, 2-associahedra of Nate Bottman \Guillaume{TBC}
+
+\subsubsection{Hochschild homology}
+of the Fukaya category (Sheel Ganatra) \Guillaume{TBC}
 
 
 \bibliographystyle{amsalpha}
