@@ -17,6 +17,7 @@
 \usepackage{graphicx}
 \usepackage[all]{xy}
 \usepackage{a4wide}
+\usepackage{mathrsfs} % mathscr
 
 \usepackage{enumitem}
 
@@ -102,7 +103,10 @@
 \newcommand{\iBT}{\mathrm{i}^\T_\B}
 \newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\gra}{\ell}
-\newcommand{\Ainf}{\mathrm{A}_\infty}
+\newcommand{\Ainf}{\mathrm{A}_\infty} %A-infinity
+\newcommand{\Minf}{\mathrm{M}_\infty} %A-infinity bimodule
+\newcommand{\Aalg}{\ensuremath{\mathrm{A}_\infty\text{-}\mathsf{alg}}} %category A-infinity
+\newcommand{\infAalg}{\ensuremath{\infty\text{-}\mathrm{A}_\infty\text{-}\mathsf{alg}}} %category A-infinity with morphisms
 \newcommand{\ide}{\ensuremath{\mathrm{id}}}
 
 %Mots parentheses colores
@@ -526,7 +530,7 @@
 
 %%%%%% TITLE+AUTHOR
 
-\title{The diagonal of the multiplihedra and the product of A-infinity categories}
+\title{The diagonal of the multiplihedra and the product of $\Ainf$-categories}
 
 \author{Guillaume Laplante-Anfossi}
 \address{Laboratoire Analyse, G\'eom\'etrie et Applications, Universit\'e Paris Nord 13, Sorbonne Paris Cit\'e, CNRS, UMR 7539, 93430 Villetaneuse, France.}
@@ -549,7 +553,7 @@
 \begin{abstract}
 The goal of this article is to define a cellular approximation to the diagonal of Forcey--Loday realizations of the multiplihedra, and to endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra. 
 This gives a model for topological and algebraic A-infinity morphisms, and an explicit formula for their tensor product.
-In this way, one can consider for the first time a functorial tensor product of A-infinity categories defined by explicit formulas, and its potential applications, notably to Fukaya categories in symplectic topology. 
+In this way, one can consider for the first time a functorial tensor product of A-infinity categories defined by explicit formulas, and its potential applications in symplectic topology. 
 \end{abstract}
 
 \maketitle
@@ -581,8 +585,8 @@ First defined as topological cell complexes, they were only realized recently as
 \medskip
 
 In this paper, we study a cellular approximation to the diagonal of the multiplihedron. 
-The set-theoretic diagonal $\triangle_P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular, that is, its image is not a union of faces of $P\times P$. 
-One is led to the problem of finding a cellular approximation to $\triangle_P$, that is finding a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
+The need for such an approximation comes from the general fact that the set-theoretic diagonal $\triangle_P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular, that is, its image is not a union of faces of $P\times P$. 
+A cellular approximation of the diagonal is a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
 
 \medskip
 
@@ -631,7 +635,7 @@ We describe explicitly the image of our diagonal combinatorially, define the fun
 
 \subsection*{Acknowledgements} 
 We would like to thank Bruno Vallette for numerous discussions and for his careful reading of the manuscript.
-We are also indebted to Robert Lipshitz for his detailed insights about the possible applications of our results in symplectic topology.
+We are also indebted to Robert Lipshitz for his detailed insights about possible applications of our results in symplectic topology.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1319,14 +1323,15 @@ Its cellular image admits a combinatorial description in terms of the fundamenta
   The \emph{fundamental hyperplane arrangement} $\mathcal{H}_P$ of $P$ is the collection of hyperplanes in $\RR^n$ orthogonal to the directions of the edges of $P\cap\rho_z P$, for all $z \in P$. 
 \end{definition}
 
-Recall that a face $F$ of a polytope $P$ is equal to the intersection of a family of facets $\{F_i\}_{i\in I}$. If we choose an outward pointing normal vector $\vec F_i$ for each facet $F_i$, then the normal cone of $F$ is spanned by these normal vectors, i.e. we have $\mathcal{N}_P(F)=\cone(\{\vec F_i\}_{i\in I})$. 
+Recall that a face $F$ of a polytope $P \subset \RR^n$ is equal to the intersection of a family of facets $\{F_i\}$. 
+If we choose an outward pointing normal vector $\vec F_i$ for each facet $F_i$ (see \cite[Definition 1.24]{LA21}) and a basis $\{b_k\}$ of the orthogonal complement of the affine hull of $P$ in $\RR^n$, then the normal cone of $F$ is given by $\mathcal{N}_P(F)=\cone(\{\vec F_i\} \cup \{b_k,-b_k\})$. 
 
 \begin{theorem}[{\cite[Theorem 1.23]{LA21}}]
   \label{thm:universalformula} 
   Let $(P,\vec v)$ be a positively oriented polytope in $\RR^n$. For each $H\in\mathcal{H}_P$, we choose a normal vector $\vec d_H$ such that $\langle \vec d_H, \vec v \rangle >0$. We have 
 \begin{eqnarray*}
   (F,G) \in \Ima \triangle_{(P,\vec v)} 
-  &\iff&  \forall H \in \mathcal{H}_P , \ \exists \vec F_i , \ \langle \vec F_i, \vec d_H \rangle < 0  \text{ or } \exists \vec G_j , \ \langle \vec G_j, \vec d_H \rangle > 0 \ . 
+  &\iff&  \forall H \in \mathcal{H}_P , \ \exists i , \ \langle \vec F_i, \vec d_H \rangle < 0  \text{ or } \exists j , \ \langle \vec G_j, \vec d_H \rangle > 0 \ . 
 \end{eqnarray*} 
 \end{theorem}
 
@@ -1345,7 +1350,7 @@ If $P$ is positively oriented by $\vec v$, then so is $Q$.
 Moreover, the coarsening projection from $P$ to $Q$ commutes with the diagonal maps $\triangle_{(P,\vec v)}$ and $\triangle_{(Q,\vec v)}$, and we have 
 \begin{eqnarray*}
   (F,G) \in \Ima \triangle_{(Q,\vec v)} 
-  &\iff& \forall H \in \mathcal{H}_P , \ \exists \vec F_i , \ \langle \vec F_i, \vec d_H \rangle < 0  \text{ or } \exists \vec G_j , \ \langle \vec G_j, \vec d_H \rangle > 0 \ .
+  &\iff& \forall H \in \mathcal{H}_P , \ \exists i , \ \langle \vec F_i, \vec d_H \rangle < 0  \text{ or } \exists j , \ \langle \vec G_j, \vec d_H \rangle > 0 \ .
 \end{eqnarray*} 
 \end{proposition}
 
@@ -1495,7 +1500,7 @@ This theorem was mentioned in \cite{Mazuir21}, where associahedra and multiplihe
 
 \medskip
 
-From the general theory of operads, we know that the data of a $(\mathcal{P},\mathcal{Q})$-operadic bimodule $M$ is equivalent to the data of a 2-colored operad, whose algebras consists of a $\mathcal{P}$-algebra, a $\mathcal{Q}$-algebra, and a morphism between the two \Guillaume{REF}.
+From the general theory of operads, we know that the data of a $(\mathcal{P},\mathcal{Q})$-operadic bimodule $M$ is equivalent to the data of a 2-colored operad, whose algebras consists of a $\mathcal{P}$-algebra, a $\mathcal{Q}$-algebra, and a morphism between the two.
 Thus, under the cellular chains functor, \cref{thm:MainOperad} gives a quasi-free 2-colored operad, spanned by blue corollas in degree $|c_n^B|=n-2$, red corollas in degree $|c_n^T|=n-2$ and bicolored corollas in degree $|c_n|=n-1$. An algebra over this differential graded 2-colored operad is a pair of $\mathrm{A}_\infty$-algebras related by an $\mathrm{A}_\infty$-morphism. 
 
 
@@ -1531,8 +1536,8 @@ Now, we promote the operadic bimodule $\{\J_n\}_{n\geq 1}$ to an operadic bimodu
 
 We make the same choices of cellular orientations as in \cite[I, Section 4]{Mazuir21}. For a (2-colored) tree $t$, we order its vertices from bottom to top and from left to right, proceeding one level at a time. We call this the \emph{left-levelwise order} on $t$. There is a unique decomposition of $t=(\cdots ((c_{n_1} \circ_{i_1} c_{n_2})\circ_{i_2}c_{n_3})\cdots \circ_{i_k} c_{n_{k+1}})$ where the (2-colored) corollas are grafted according to this total order. 
 \begin{itemize}
-  \item For the associahedra $\K_n \subset \RR^{n-1}$, we choose as positively oriented basis of the top dimensional cell the basis $\{\vec e_1 - \vec e_{j+1}\}_{1\leq j \leq n-2}$. Then, we choose the orientation of any other cell $t$ of $\K_n$ to be the image of the positively oriented basis of the top cells of the polytopes $\K_{n_i}$ under the sequence of compositions following the left-recursive order on $t$. 
-  \item For the multiplihedra $\J_n \subset \RR^{n-1}$, we choose as positively oriented basis of the top dimensional cell the basis $\{-\vec e_j\}_{1\leq j \leq n-1}$. Then, we choose the orientation of any other cell $t$ of $\J_n$ to be the image of the positively oriented basis of the top cells of the polytopes $\K_{n_i}$ and $\J_{n_j}$ under the sequence of action-compositions following the left-recursive order on $t$.
+  \item For the associahedra $\K_n \subset \RR^{n-1}$, we choose as positively oriented basis of the top dimensional cell the basis $\{e_1 - e_{j+1}\}_{1\leq j \leq n-2}$. Then, we choose the orientation of any other cell $t$ of $\K_n$ to be the image of the positively oriented basis of the top cells of the polytopes $\K_{n_i}$ under the sequence of compositions following the left-recursive order on $t$. 
+  \item For the multiplihedra $\J_n \subset \RR^{n-1}$, we choose as positively oriented basis of the top dimensional cell the basis $\{- e_j\}_{1\leq j \leq n-1}$. Then, we choose the orientation of any other cell $t$ of $\J_n$ to be the image of the positively oriented basis of the top cells of the polytopes $\K_{n_i}$ and $\J_{n_j}$ under the sequence of action-compositions following the left-recursive order on $t$.
 \end{itemize}
 
 We then proceed as in \cite[Proposition 4.22]{LA21} to endow the $\K_n$ and $\J_n$ with a CW structure. 
@@ -1731,16 +1736,17 @@ We denote by
 \end{itemize}
 \end{definition}
 
-To each nest $B \in B(\mathcal{N})$ and to each union of nests $R \in R(\mathcal{N})$, we can associate their \emph{characteristic vectors} $\vec B$ and $\vec R$ which have a $1$ in position $i$ if $i \in B$ (resp. if $i \in \vec R$) and $0$ otherwise.  
+To each nest $B \in B(\mathcal{N})$ and to each union of nests $R \in R(\mathcal{N})$, we can associate their \emph{characteristic vectors} $\vec B$ and $\vec R$ which have a $1$ in position $i$ if $i \in B$ (resp. if $i \in \vec R$) and $0$ otherwise. 
+We denote by $\vec n \coloneqq (1,\ldots,1)$ the characteristic vector of the trivial nest. 
 
 \begin{lemma} 
 \label{lemma:normalcones}
-The normal cone of a face $\mathcal{N}$ of the Ardila--Doker realization of the multiplihedron is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})}\right) \ . \]
+The normal cone of a face $\mathcal{N}$ of the Ardila--Doker realization of the multiplihedron is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})} \cup \{\vec n\} \right) \ . \]
 \end{lemma}
 
 \begin{proof} 
 This follows from the description of the Ardila--Doker multiplihedron as a generalized permutahedron. 
-The normal cone of a face of the former is a union of normal cones of faces of the latter. 
+The normal cone of a face of the former is a union of normal cones of faces of the permutahedron. 
 These can be easily determined from the projection from the permutahedron to the multiplihedron, written down explicitly in the proof of \cite[Theorem 3.3.6]{Doker11}.
 \end{proof}
 
@@ -1862,7 +1868,7 @@ In the cases of the simplices, the cubes and the associahedra, the converse also
 However, it was shown in \cite{LA21} that this doesn't hold anymore for the operahedra, and in particular for the permutahedra.
 This property does not hold either in the case of the multiplihedra. 
 For instance, in dimension~$3$ the condition $\tp F\leq \bm G$ determines completely all the pairs in $\Ima \triangle_4$ except four of them: $\purple{\blue{abc}d} \times \red{a\red{\purple{bc}d}}$, $\purple{\blue{abc}d} \times \red{a\blue{bc}d}$, $\red{\blue{abc}d} \times \red{a\purple{bc}d}$ and $\purple{\blue{\blue{ab}c}d} \times \red{a\purple{bc}d}$.
-In fact, one can see that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$. 
+It seems likely that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$, as it is for the permutahedron \cite[Proposition 3.17]{LA21}. 
 
 \begin{remark}
 Observe that our choice of diagonal differs from the one of \cite{SaneblidzeUmble04}. 
@@ -1938,8 +1944,7 @@ defined by
 \sum_{\substack{
   \mathcal{N},\mathcal{N}' \in \mathcal{N}(\gra) \\ 
   |\mathcal{N}|+|\mathcal{N}'|=|V(\gra)| \\
-  \forall i<j, \exists N \in \mathcal{N}, i \in \mathcal{N} \text{ and } j \notin \mathcal{N} \text{ or } \\
-  \exists N' \in \mathcal{N}', i \notin \mathcal{N} \text{ and } j \in \mathcal{N}'
+  \tp(\mathcal{N}) \leq \bm(\mathcal{N})
 }}
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}\mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})\mathcal{N}(m_n)\otimes \mathcal{N}'(m_n') \ \sigma_n \ ,\] 
 where $\gra$ is a linear graph, and where $\mathcal{N}(m_n)$ and $\mathcal{N}'(m_n')$ denote the composition of the structural maps $\{m_n\}$ and $\{m_n'\}$ of $\cat{A}$ and $\cat{B}$ respectively, corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order.
@@ -1995,17 +2000,13 @@ h_n : (\cat{A}\otimes \cat{B})(X_0\times Y_0,X_1\times Y_1) \otimes  \cdots \oti
 \end{eqnarray*}
 defined by 
 \[h_n \coloneqq 
-\sum_{\substack{
-\mathcal{N},\mathcal{N}' \in \mathcal{N}_2(\gra), \ |\text{mono}(\mathcal{N})|+|\text{mono}(\mathcal{N}')|=|E(\gra)| \\
-\forall (I,J) \in D(n), \exists B \in B(\mathcal{N}), |B\cap I|>|B\cap J| \text{ or } \\
-\exists R \in R(\mathcal{N}), |(R\cup \{n\}) \cap I|>| (R\cup \{n\}) \cap J| \text{ or } \\
-\exists B' \in B(\mathcal{N}'), |B'\cap I|<|B'\cap J| \text{ or } \\
-\exists R' \in R(\mathcal{N}'), |(R'\cup \{n\}) \cap I|<| (R'\cup \{n\}) \cap J| 
- }} 
+\sum_{
+\mathcal{N},\mathcal{N}'} 
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}
 \mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})
 \mathcal{N}(f)\otimes \mathcal{N}'(g) \ \sigma_n \ ,\]
-where $\gra$ is a linear graph, and where $\mathcal{N}(f)$ and $\mathcal{N}'(g)$ denote the composition of the structural maps $\{f_n\}$ and $\{g_n\}$ corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order.
+where the sum runs over the pairs $\mathcal{N},\mathcal{N}' \in \mathcal{N}_2(\gra)$ such that $\ |\text{mono}(\mathcal{N})|+|\text{mono}(\mathcal{N}')|=|E(\gra)|$ which satisfy the conditions in \cref{thm:formuladiagonal}.
+Here, $\gra$ is a linear graph, and $\mathcal{N}(f)$ and $\mathcal{N}'(g)$ denote the composition of the structural maps $\{f_n\}$ and $\{g_n\}$ corresponding to the nests of $\mathcal{N}$ and $\mathcal{N}'$ in the left-levelwise order.
 \end{itemize}
 \end{proposition}
 
@@ -2014,39 +2015,70 @@ where $\gra$ is a linear graph, and where $\mathcal{N}(f)$ and $\mathcal{N}'(g)$
   The formula for the $h_n$'s stems from our choice of diagonal on the multiplihedra; the fact that they satisfy the $\mathrm{A}_\infty$ relations follows from the construction and the functoriality in \cref{prop:functoriality}. The signs depend on our choice of cellular orientations on the multiplihedra, and they are obtained via the computation of a determinant. We refer to \cite[Section 4.3]{LA21} for more details. 
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The introduction of this new algebraic structure raises questions about the properties that it satisfies. 
+For simplicity we focus on $\Ainf$-algebras, however all statements have an $\Ainf$-categorical counterpart. 
+We would like to know if the category of $\Ainf$-algebras is made into a symmetric monoidal category by the tensor product defined above.
 
-\subsection{Further directions} \label{sec:furtherdirections}
+\begin{enumerate}[leftmargin=*, itemsep=0.5em]
+\item We first look at the category $\Aalg$ of $\Ainf$-algebras with \emph{strict} morphisms, that is linear maps $f : A \to B$ which commute with the structure operations of $A$ and $B$ (equivalently, strict morphisms are $\Ainf$-morphisms with only one non-trivial component). 
+In this category, one checks directly that the previous tensor product defines a bifunctor $ - \otimes - : \Aalg \times \Aalg \to \Aalg$. 
+However, this tensor product is not, and in fact \emph{cannot} be monoidal, for the following reason:
+\begin{proposition}[{\cite[Theorem 13]{MarklShnider06}}]
+  \label{prop:nocoassoc}
+  There is no coassociative diagonal for the operad $\Ainf$. Therefore, the operad $\Ainf$ does not admit the structure of a Hopf operad.  
+\end{proposition} 
+The proof is a direct attempt to construct inductively a coassociative diagonal, a process which leads to a contradiction in arity $4$.
+One can prove with similar methods that there is no cocommutative diagonal.
 
-\subsubsection{"Homotopy" monoidal structure on the category $\mathtt{\Ainf-alg}$}
+\begin{remark}
+It would be interesting to know if the bifunctor $ - \otimes -$ admits a right adjoint. 
+\end{remark}
 
-Define $\mathtt{\Ainf -alg}$ to be the category whose objects are $\Ainf$-algebras and morphisms are $\Ainf$-morphisms between them (see \cite{LodayVallette12}). Given $A$ and $B$ two $\Ainf$-algebras, we write $A \otimes_\infty B$ for the dg-module $A \otimes B$ endowed with the $\Ainf$-algebra structure induced by the diagonal of~\cite{MTTV19}. 
-Given two $\Ainf$ -morphisms $F_1 : A_1 \rightarrow B_1$ and $F_2 : A_2 \rightarrow B_2$ we write similarly $F_1 \otimes_\infty F_2 : A_1 \otimes_\infty B_1 \rightarrow A_2 \otimes_\infty B_2$ for the $\Ainf$-morphism defined using the diagonal introduced in this article. 
-We will moreover denote $\Delta_{\Ainf}$ and $\Delta_{M_\infty}$.
+\item Let us write $\infAalg$ for the category of $\Ainf$-algebras and $\Ainf$-morphisms. 
+In this case the tensor product does not even define a bifunctor $ - \otimes - : \infAalg \times \infAalg \to \infAalg$, for the following reason:
+\begin{theorem}
+  There is no functorial diagonal of $\Minf$, that is there is no diagonal which is compatible with the composition of $\Ainf$-morphisms. 
+\end{theorem}
 
-We would like to know if the tensor product $\otimes_\infty$ defines a symmetric monoidal category structure on the category $\mathtt{\Ainf-alg}$ (where $\ZZ$ is taken to be the identity object). 
-More precisely, we have to prove that there exists functorial isomorphisms $\alpha_{A,B,C} : A \otimes_\infty ( B \otimes_\infty C) \rightarrow (A \otimes_\infty B) \otimes_\infty C$ and $\tau_{A,B} : A \otimes_\infty B \rightarrow B \otimes_\infty A$ that fit into the usual diagrams for a monoidal category, and that this tensor product is functorial i.e. that given $\Ainf$-morphisms $F_i : A_i \rightarrow B_i$ and $G_i : B_i \rightarrow C_i$ for $i=1,2$, the following identity is satisfied 
+\begin{proof} 
+  The proof is similar to the one of \cref{prop:nocoassoc}: we try to construct inductively a diagonal and we find a contradiction already in arity $2$. 
+
+  given $\Ainf$-morphisms $F_i : A_i \rightarrow B_i$ and $G_i : B_i \rightarrow C_i$ for $i=1,2$, the following identity is satisfied 
 \[ (G_1 \circ F_1) \otimes_\infty (G_2 \circ F_2) = (G_1 \otimes_\infty G_2) \circ (F_1 \otimes_\infty F_2) \ . \]
-
-Applying the theory of Hopf operads and minimal models to the Hopf operad $Ass$ endowed with the obvious diagonal and its minimal model $\Ainf \rightarrow Ass$, it is proven in~\cite{MarklShnider06} and \cite{MSS} that there exists an homotopy of morphisms of operads between $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}$ and $(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$. 
-Following for instance \cite{fukaya-cyclic-symmetry}, this means that there exists a quasi-isotopy between the $\Ainf$-algebras $A \otimes_\infty ( B \otimes_\infty C)$ and $(A \otimes_\infty B) \otimes_\infty C$, thus in particular that there exists an $\Ainf$ -quasi-isomorphism between them.  
-A similar method also shows that $A \otimes_\infty B \simeq B \otimes_\infty A$.  It is moreover proven in~\cite{MarklShnider06} that a diagonal on $\Ainf$ can in fact never be coassociative, i.e. that the equality $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}=(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$ can never hold.
-
-Using the fact that the operad $\Ainf$ and the operadic bimodule $M_\infty$ are contractible, R. Lipshitz, P. Osv\'ath and D. P. Thurston construct in \cite{LOT20} a morphism of operadic bimodules (a \emph{trigonal}) $M_\infty \rightarrow M_\infty \otimes M_\infty \otimes M_\infty$ compatible with $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}$ on the left and $(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$. This yields another proof the existence of a quasi-isomorphism $A \otimes_\infty ( B \otimes_\infty C) \simeq (A \otimes_\infty B) \otimes_\infty C$.
-
-It is however unclear why these collections of quasi-isomorphisms should fit into natural transformations $\alpha$ and $\tau$ defining the associator and the symmetry of a symmetric monoidal category. While a diagonal on $\Ainf$ can never be associative, \Thibaut{we moreover prove a general fact that a diagonal on $M_\infty$ can never be functorial} :
-
-\begin{proposition} \Guillaume{The diagonal of the multiplihedra defined by the formula of \cref{thm:formuladiagonal} is not compatible with the composition of $\Ainf$-morphisms.}
+\end{proof}
+It seems likely that one could show with a similar method that there are no coassociative nor cocommutative diagonals on $\Minf$.
+Nevertheless, in the category $\infAalg$ we have the following
+\begin{proposition}
+  For any tensor product of $\Ainf$-algebras, there exist $\Ainf$-isomorphisms
+  \[ (A \otimes B) \otimes C \cong A \otimes (B \otimes C) \text{  and  } A \otimes B \cong B \otimes A \ , \] for any $\Ainf$-algebras $A,B$ and $C$. 
 \end{proposition}
 
-\begin{proof} \Thibaut{petite arit\'e ou juste regarder F x id o id x G ?}
+\begin{proof}
+Using the fact that the operad $\Ainf$ is a cofibrant resolution of the associative operad, it is possible to show that there exists an homotopy between the two morphisms of operads $(\Delta \otimes \ide) \Delta$ and $(\ide \otimes \Delta ) \Delta$, see for instance \cite[Proposition 3.136]{MSS}. 
+This means that there exists an $\Ainf$-isotopy between the $\Ainf$-algebras $A \otimes ( B \otimes C)$ and $(A \otimes B) \otimes C$, which is in particular an $\Ainf$-isomorphism.    
+Alternatively, one can use the fact that the operad $\Ainf$ and the operadic bimodule $\Minf$ are contractible to deduce the existence a morphism of operadic bimodules (a "trigonal") $\Minf \rightarrow \Minf \otimes \Minf \otimes \Minf$ compatible with the morphisms of operads $(\Delta \otimes \ide) \Delta$ on the left and $(\ide \otimes \Delta ) \Delta$ on the right, see the proof of \cite[Theorem 1.1]{LOT20}. 
+Similar methods can be employed to show that there exists an $\Ainf$-isomorphism $A \otimes B \cong B \otimes A$.
 \end{proof}
 
-It is thus impossible to endow the category $\mathtt{\Ainf -alg)}$ with a monoidal category structure. The authors however expect that the data of a diagonal on $\Ainf$\ and of a compatible diagonal on $M_\infty$ should endow $\mathtt{\Ainf -alg)}$ with a "homotopy" monoidal category structure, although it is not yet clear to them which explicit model for such a category one has to choose.
-It would also be interesting to know how given diagonals $\Delta_{\Ainf}^i$ and $\Delta_{M_\infty}^i$ for $i=1,2$, the two "homotopy" monoidal category structures defined on $\mathtt{\Ainf -alg)}$ would then be related.
-A first result towards that direction is again given in \cite{MarklShnider06} : the diagonals $\Delta_{\Ainf}^1$ and $\Delta_{\Ainf}^2$ are always homotopic as morphism of operads, hence there exists a quasi-isomorphism $A \otimes_{\infty_1} B \simeq A \otimes_{\infty_2} B$.
+However, this kind of arguments cannot be used to determine if a certain choice of $\Ainf$-isomorphisms makes the pentagon or the hexagon diagrams commute, and there are a priori no reasons for them to do so. 
 
-\subsubsection{The work of Amorim}
+In summary, the category $\infAalg$ might be the right place to work in, but to do so one would have to come up with the right homotopical notions of bifunctor $- \otimes -$ and monoidal category. 
+A definition was proposed recently in the context of $\infty$-categories \cite[Definition A.5.3]{Pascaleff22}, which is far more general than the one we have considered here. 
+\end{enumerate}
+
+A first direction to solve these questions is to understand the obstruction to the coassociativity of the diagonal of the operad $\Ainf$. 
+
+\Guillaume{travail de Poliakova: integrated A-infinity algebras}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Applications to symplectic topology} \label{sec:furtherdirections}
+
+
+\subsubsection{Fukaya algebras}
 
 Let $M$ be a symplectic manifold (either compact of convex at infinity) and $L \subset M$ a (compact spin) Lagrangian submanifold. Using Lagrangian Floer theory and pseudo-holomorphic disks curves theory, Fukaya constructs in \cite{fukaya-cyclic-symmetry} a unital $\Ainf$-algebra $\mathcal{F}(L)$ associated to the Lagrangian $L$, called the \textit{Fukaya algebra of $L$}. In \cite{amorim-lagrangian}, Amorim shows that given two symplectic manifolds $M_1$ and $M_2$ together with Lagrangians $L_i \subset M_i$, the Fukaya algebra of the product Lagrangian $L_1 \times L_2$ is quasi-isomorphic to tensor product of their Fukaya algebras, i.e. $\mathcal{F}(L_1 \times L_2) \simeq \mathcal{F}(L_1) \otimes_\infty \mathcal{F}(L_2)$. His proof relies on a theorem that he proves in~\cite{amorim-tensor}, giving a criterion for an $\Ainf$-algebra $C$ to be quasi-isomorphic to the tensor product $A \otimes_\infty B$ of two commuting $\Ainf$ -subalgebras $A \subset C$ and $B \subset C$, that he applies to the two $\Ainf$ -subalgebras $\mathcal{F}(L_1) \subset \mathcal{F}(L_1 \times L_2)$ and $\mathcal{F}(L_2) \subset \mathcal{F}(L_1 \times L_2)$.
 
@@ -2064,7 +2096,7 @@ He finally shows that his construction recovers in fact exactly the diagonal of 
 It would be interesting to know whether the formula for the tensor product of $\Ainf$-morphisms introduced in this article could be recovered by a method similar to this one. 
 This diagonal might then prove useful to study the $\Ainf$-morphisms between the Fukaya algebras of products of two Lagrangian submanifolds, and more generally the $\Ainf$-functors between Fukaya categories of products of two symplectic manifolds.
 
-\subsubsection{The work of R. Lipshitz, P. Osv\'ath and D. P. Thurston}
+\subsubsection{Bordered Heegaard Floer homology}
 Given a 3-manifold $Y$ with two boundary components, R. Lipshitz, P. Osv\'ath and D. P. Thurston build in \cite{LOT20} a "bimodule twisted complex" $CFDD^{-}(Y)$, which involves a cellular approximation of the diagonal of the associahedra. 
 A diagonal of the multiplihedron is needed in order to relate the categories of bimodules with different associahedron diagonals. 
 Thus, it is expected that diagonals for the multiplihedra will also be useful for studying the bimodules $CFDD^{-}$ in bordered Heegaard Floer homology, associated to 3-dimensional cobordisms. 
@@ -2073,8 +2105,8 @@ We expect that diagonals for the multiplihedron are needed, in particular, when 
 \subsubsection{Lagrangian correspondences}
 Mau-Wehrheim-Woodward, 2-associahedra of Nate Bottman \Guillaume{TBC}
 
-\subsubsection{Hochschild homology}
-of the Fukaya category (Sheel Ganatra) \Guillaume{TBC}
+\subsubsection{Hochschild homology of Fukaya categories}
+Sheel Ganatra \Guillaume{TBC}
 
 
 \bibliographystyle{amsalpha}
