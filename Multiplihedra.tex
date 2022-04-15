@@ -6,6 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[lf]{Baskervaldx} % lining figures
 \usepackage[bigdelims,vvarbb]{newtxmath} % math italic letters from Nimbus Roman
+\let\Bbbk\relax
 \usepackage[cal=boondoxo]{mathalfa} % mathcal from STIX, unslanted a bit
 \renewcommand*\oldstylenums[1]{\textosf{#1}}
 
@@ -22,7 +23,7 @@
 \usepackage{enumitem}
 
 \usepackage{multirow}
-%\usepackage{color}
+\usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks,final,hyperindex]{hyperref}
 \usepackage[noabbrev,capitalize]{cleveref}
@@ -35,6 +36,30 @@
 \tikzset{J4/.style=
    {x= {(-0.87cm,-0.5cm)}, z={(0cm,1cm)},y={(0.87cm,-0.5cm)}}}
 
+
+\makeatletter
+\def\@tocline#1#2#3#4#5#6#7{\relax
+  \ifnum #1>\c@tocdepth % then omit
+  \else
+    \par \addpenalty\@secpenalty\addvspace{#2}%
+    \begingroup \hyphenpenalty\@M
+    \@ifempty{#4}{%
+      \@tempdima\csname r@tocindent\number#1\endcsname\relax
+    }{%
+      \@tempdima#4\relax
+    }%
+    \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
+    \rightskip\@pnumwidth plus4em \parfillskip-\@pnumwidth
+    #5\leavevmode\hskip-\@tempdima
+      \ifcase #1
+      \or\or \hskip 1em \or \hskip 2em \else \hskip 3em \fi%
+      #6\nobreak\relax
+    \dotfill\hbox to\@pnumwidth{\@tocpagenum{#7}}\par
+    \nobreak
+    \endgroup
+  \fi}
+\makeatother
+
 %MARGINS
 
 \setlength{\textwidth}{\paperwidth}
@@ -43,10 +68,10 @@
 
 % COLORS
 
-\definecolor{Chocolat}{rgb}{0.36, 0.2, 0.09}
+\definecolor{Chocolat}{rgb}{0.09, 0.09, 0.7}
 \definecolor{BleuTresFonce}{rgb}{0.215, 0.215, 0.36}
 \definecolor{RougeTresFonce}{rgb}{0.36, 0.215, 0.215}
-\hypersetup{citecolor=BleuTresFonce, linkcolor=black}
+\hypersetup{citecolor=BleuTresFonce, linkcolor=Chocolat}
 
 %%%%%%%% ENVIRONNEMENTS 
 
