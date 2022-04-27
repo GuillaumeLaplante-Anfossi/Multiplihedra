@@ -1,0 +1,479 @@
+%%%%%%%%%%     NEW COMMANDS
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\ZP}{\mathbb{Z}_{>0}}
+\newcommand{\K}{\mathrm{K}}
+\newcommand{\J}{\mathrm{J}}
+\newcommand{\La}{\mathcal{L}}
+\newcommand{\Tam}[1]{\mathrm{PBT}_{#1}}
+\newcommand{\PT}[1]{\mathrm{PT}_{#1}}
+\newcommand{\CT}[1]{\mathrm{CT}_{#1}}
+\newcommand{\CMT}[1]{\mathrm{CMT}_{#1}}
+\newcommand{\sC}{\mathcal{C}}
+\newcommand{\PolySub}{\mathsf{Poly}}
+\renewcommand{\Top}{\mathsf{Top}}
+\newcommand{\CW}{\mathsf{CW}}
+\newcommand{\sF}{\mathcal{F}}
+\DeclareMathOperator{\tp}{top}
+\DeclareMathOperator{\bm}{bot}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\diam}{diam}
+\newcommand{\ang}[1]{\langle #1\rangle}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Ve}{\mathcal{V}}
+\newcommand{\Bool}[1]{\{0, 1\}^{#1}}
+\newcommand{\sk}{\mathrm{sk}}
+\DeclareMathOperator{\vol}{vol}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\itd}[1]{\triangle^{(#1)}}
+\DeclareMathOperator*{\colim}{\mathrm{colim}}
+\DeclareMathOperator{\im}{\mathrm{Im}}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\DeclareMathOperator{\codim}{codim}
+\newcommand{\B}{\mathrm{B}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\iBT}{\mathrm{i}^\T_\B}
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\gra}{\ell}
+\newcommand{\Ainf}{\ensuremath{\mathrm{A}_\infty}} %A-infinity
+\newcommand{\AAinf}{\mathrm{AA}_\infty} %AA-infinity
+\newcommand{\Minf}{\ensuremath{\mathrm{M}_\infty}} %A-infinity bimodule
+\newcommand{\Aalg}{\ensuremath{\mathrm{A}_\infty\text{-}\mathsf{alg}}} %category A-infinity
+\newcommand{\infAalg}{\ensuremath{\infty\text{-}\mathrm{A}_\infty\text{-}\mathsf{alg}}} %category A-infinity with morphisms
+\newcommand{\ide}{\ensuremath{\mathrm{id}}}
+\newcommand{\mono}{\ensuremath{\mathrm{mono}}}
+\newcommand{\comp}{\ensuremath{\mathrm{comp}}}
+\newcommand{\ombas}{\ensuremath{\Omega B As}}
+
+%Mots parentheses colores
+\newcommand{\blue}[1]{\textcolor{MidnightBlue}{\textbf{(}} #1 \textcolor{MidnightBlue}{\textbf{)}}} 
+\newcommand{\red}[1]{\textcolor{BrickRed}{\textbf{(}} #1 \textcolor{BrickRed}{\textbf{)}}} 
+\newcommand{\purple}[1]{\textcolor{Purple}{\textbf{(}} #1 \textcolor{Purple}{\textbf{)}}} 
+\newcommand{\yellow}[1]{\textcolor{Dandelion}{\textbf{(}} #1 \textcolor{Dandelion}{\textbf{)}}} 
+\newcommand{\green}[1]{\textcolor{ForestGreen}{\textbf{(}} #1 \textcolor{ForestGreen}{\textbf{)}}}
+\newcommand{\orange}[1]{\textcolor{BurntOrange}{\textbf{(}} #1 \textcolor{BurntOrange}{\textbf{)}}} 
+
+%textes colorés
+\newcommand{\rouge}[1]{\textcolor{red}{#1}}
+
+%%%% Trees NEW
+
+\newcommand{\pointbullet}{
+\begin{tikzpicture}[very thick]
+\draw[fill,black] (0,0) circle (0.5) ;
+\end{tikzpicture}}
+
+\newcommand{\TreeLa}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,-0.5)--(0,0) -- (-2,2)--(-2,2.5);
+\draw[very thick, MidnightBlue] (-1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (0,0)--(1,1)--(1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,-1) ;
+%
+\draw (-0.5,-0.5) --(0.5, -0.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeLb}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (-0.5,0.5)--(-2,2)--(-2,2.5);
+\draw[very thick, MidnightBlue] (-1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (0.5,0.5)--(1,1)--(1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,0)--(0,-0.5) ;
+\draw[very thick, BrickRed] (0,0)--(-0.5, 0.5) ;
+\draw[very thick, BrickRed] (0,0)--(0.5,0.5) ;
+%
+\draw (-1,0.5) --(1, 0.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeLc}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (-2, 2.5)--(-2, 3) ;
+\draw[very thick, MidnightBlue] (0, 2.5)--(0, 3) ;
+\draw[very thick, MidnightBlue] (1, 2.5)--(1, 3) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) -- (-2,2)--(-2,2.5);
+\draw[very thick, BrickRed] (-1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, BrickRed] (0,0)--(1,1)--(1,2.5) ;
+%
+\draw (-2.5,2.5) --(1.5, 2.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeRa}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,-0.5)--(0,0) -- (2,2)--(2,2.5);
+\draw[very thick, MidnightBlue] (1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (0,0)--(-1,1)--(-1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,-1) ;
+%
+\draw (-0.5,-0.5) --(0.5, -0.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeRb}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0.5,0.5) -- (2,2)--(2,2.5);
+\draw[very thick, MidnightBlue] (1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (-0.5,0.5)--(-1,1)--(-1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) ;
+\draw[very thick, BrickRed] (0,0)--(0.5,0.5) ;
+\draw[very thick, BrickRed] (0,0)--(-0.5,0.5) ;
+%
+\draw (-1,0.5) --(1, 0.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeRc}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) -- (2,2)--(2,2.5);
+\draw[very thick, BrickRed] (1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, BrickRed] (0,0)--(-1,1)--(-1,2.5) ;
+%
+\draw[very thick, MidnightBlue] (2,2.5)--(2,3) ;
+\draw[very thick, MidnightBlue] (0,2.5)--(0,3) ;
+\draw[very thick, MidnightBlue] (-1,2.5)--(-1,3) ;
+%
+\draw (-1.5,2.5) --(2.5, 2.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeLab}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,0) -- (-2,2)--(-2,2.5);
+\draw[very thick, MidnightBlue] (-1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (0,0)--(1,1)--(1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,0)--(0,-0.5) ;
+%
+\draw (-0.5,0) --(0.5, 0);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeLbc}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (-1,1) -- (-2,2)--(-2,2.5);
+\draw[very thick, MidnightBlue] (-1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (1,1)--(1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) ;
+\draw[very thick, BrickRed] (0,0)--(-1,1) ;
+\draw[very thick, BrickRed] (0,0)--(1,1) ;
+%
+\draw (-1.5,1) --(1.5, 1);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeRab}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,0) -- (2,2)--(2,2.5);
+\draw[very thick, MidnightBlue] (1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (0,0)--(-1,1)--(-1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) ;
+%
+\draw (-0.5,0) --(0.5, 0);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeRbc}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (1,1) -- (2,2)--(2,2.5);
+\draw[very thick, MidnightBlue] (1,1)--(0,2)--(0,2.5) ;
+\draw[very thick, MidnightBlue] (-1,1)--(-1,2.5) ;
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) ;
+\draw[very thick, BrickRed] (0,0)--(1,1) ;
+\draw[very thick, BrickRed] (0,0)--(-1,1) ;
+%
+\draw (-1.5,1) --(1.5, 1);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeCa}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,-0.5) -- (0,1.5);
+\draw[very thick, MidnightBlue] (0,0) -- (-1,1)--(-1,1.5);
+\draw[very thick, MidnightBlue] (0,0) -- (1,1)--(1,1.5);
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,-1) ;
+%
+\draw (-0.5,-0.5) --(0.5, -0.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeCb}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,-0.5) -- (0,1.5);
+\draw[very thick, MidnightBlue] (0,0) -- (-1,1)--(-1,1.5);
+\draw[very thick, MidnightBlue] (0,0) -- (1,1)--(1,1.5);
+%
+\draw[very thick, BrickRed] (-1,1.5)--(-1,2) ;
+\draw[very thick, BrickRed] (0,1.5)--(0,2) ;
+\draw[very thick, BrickRed] (1,1.5)--(1,2) ;
+%
+\draw (-1.5,1.5) --(1.5, 1.5);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeCab}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,0) -- (0,1.5);
+\draw[very thick, MidnightBlue] (0,0) -- (-1,1)--(-1,1.5);
+\draw[very thick, MidnightBlue] (0,0) -- (1,1)--(1,1.5);
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) ;
+%
+\draw (-0.5,0) --(0.5, 0);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeIab}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.35]
+\draw[very thick, MidnightBlue] (0,0.5)--(0,0);
+%
+\draw[very thick, BrickRed] (0,-0.5)--(0,0) ;
+%
+\draw (-0.25,0) --(0.25, 0);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeBa}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,0.5)--(0,1);
+\draw[very thick, MidnightBlue] (0,1)--(-0.5,1.5)--(-0.5,2);
+\draw[very thick, MidnightBlue] (0,1)--(0.5,1.5)--(0.5,2);
+% 
+\draw[very thick, BrickRed] (0,0)--(0,0.5);
+\draw (-0.5,0.5) --(0.5, 0.5);\end{tikzpicture}}}}
+
+\newcommand{\TreeBb}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (-0.5,2)--(-0.5,2.5);
+\draw[very thick, MidnightBlue] (0.5,2)--(0.5,2.5);
+%
+\draw[very thick, BrickRed] (0,0.5)--(0,1);
+\draw[very thick, BrickRed] (0,1)--(-0.5,1.5)--(-0.5,2);
+\draw[very thick, BrickRed] (0,1)--(0.5,1.5)--(0.5,2);
+% 
+\draw (-1,2) --(1, 2);
+\end{tikzpicture}}}}
+
+\newcommand{\TreeBab}
+{\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.25]
+\draw[very thick, MidnightBlue] (0,1)--(-0.5,1.5)--(-0.5,2);
+\draw[very thick, MidnightBlue] (0,1)--(0.5,1.5)--(0.5,2);
+% 
+\draw[very thick, BrickRed] (0,0.5)--(0,1);
+\draw (-0.5,1) --(0.5,1);
+\end{tikzpicture}}}}
+
+%%%% Trees OLD
+
+\newcommand{\TreeR}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (2,2);
+\draw[thick] (1,1)--(0,2) ;
+\draw[thick] (0,0)--(-1,1) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (-1,1) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeL}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-2,2);
+\draw[thick] (-1,1)--(0,2) ;
+\draw[thick] (0,0)--(1,1) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (1,1) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeLL}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-3,3);
+\draw[thick] (-1,1)--(0,2) ;
+\draw[thick] (-2,2)--(-1,3) ;
+\draw[thick] (0,0)--(1,1) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (1,1) circle [radius=0.035];
+\draw [fill] (-3,3) circle [radius=0.035];
+\draw [fill] (-1,3) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeLR}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-2,2);
+\draw[thick] (-1,1)--(1,3) ;
+\draw[thick] (0,0)--(1,1) ;
+\draw[thick] (0,2)--(-1,3) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (1,1) circle [radius=0.035];
+\draw [fill] (-1,3) circle [radius=0.035];
+\draw [fill] (1,3) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeRR}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (3,3);
+\draw[thick] (1,1)--(0,2) ;
+\draw[thick] (2,2)--(1,3) ;
+\draw[thick] (0,0)--(-1,1) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (-1,1) circle [radius=0.035];
+\draw [fill] (3,3) circle [radius=0.035];
+\draw [fill] (1,3) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeRL}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (2,2);
+\draw[thick] (1,1)--(-1,3) ;
+\draw[thick] (0,0)--(-1,1) ;
+\draw[thick] (0,2)--(1,3) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (-1,1) circle [radius=0.035];
+\draw [fill] (1,3) circle [radius=0.035];
+\draw [fill] (-1,3) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeCC}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-2.5,2.5);
+\draw[thick] (-1.5,1.5)--(-0.5,2.5) ;
+\draw[thick] (1.5,1.5)--(0.5,2.5) ;
+\draw[thick] (0,0)--(2.5,2.5) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-2.5,2.5) circle [radius=0.035];
+\draw [fill] (-0.5,2.5) circle [radius=0.035];
+\draw [fill] (0.5,2.5) circle [radius=0.035];
+\draw [fill] (2.5,2.5) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeAL}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-2,2);
+\draw[thick] (-1,1)--(0,2) ;
+\draw[thick] (0,0)--(1,1) ;
+\draw[thick] (-1,1)--(-1,2) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (1,1) circle [radius=0.035];
+\draw [fill] (-1,2) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeRA}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (2,2);
+\draw[thick] (1,1)--(0,2) ;
+\draw[thick] (0,0)--(-1,1) ;
+\draw[thick] (1,1)--(1,2) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (-1,1) circle [radius=0.035];
+\draw [fill] (1,2) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeAR}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (2,2);
+\draw[thick] (1,1)--(0,2) ;
+\draw[thick] (0,0)--(-1,1) ;
+\draw[thick] (0,0)--(0,1) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (-1,1) circle [radius=0.035];
+\draw [fill] (0,1) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeLA}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-2,2);
+\draw[thick] (-1,1)--(0,2) ;
+\draw[thick] (0,0)--(1,1) ;
+\draw[thick] (0,0)--(0,1) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-2,2) circle [radius=0.035];
+\draw [fill] (0,2) circle [radius=0.035];
+\draw [fill] (1,1) circle [radius=0.035];
+\draw [fill] (0,1) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeCA}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1)--(0,0) -- (-1,1);
+\draw[thick] (0,1.5)--(1,2.5) ;
+\draw[thick] (0,1.5)--(-1,2.5) ;
+\draw[thick] (0,0)--(1,1) ;
+\draw[thick] (0,0)--(0,1.5) ;
+\draw [fill] (0,-1) circle [radius=0.035];
+\draw [fill] (-1,1) circle [radius=0.035];
+\draw [fill] (1,2.5) circle [radius=0.035];
+\draw [fill] (-1,2.5) circle [radius=0.035];
+\draw [fill] (1,1) circle [radius=0.035];
+\draw [fill] (0,1) circle [radius=0.035];
+\end{tikzpicture}}}}
+\newcommand{\TreeC}
+{\vcenter{\hbox{
+\begin{tikzpicture}[yscale=0.2,xscale=0.2]
+\draw[thick] (0,-1.5)--(0,0);
+\draw[thick] (0,0)--(1.5,1.5) ;
+\draw[thick] (0,0)--(0.5,1.5) ;
+\draw[thick] (0,0)--(-0.5,1.5) ;
+\draw[thick] (0,0)--(-1.5,1.5) ;
+\draw [fill] (0,-1.5) circle [radius=0.035];
+\draw [fill] (1.5,1.5) circle [radius=0.035];
+\draw [fill] (0.5,1.5) circle [radius=0.035];
+\draw [fill] (-1.5,1.5) circle [radius=0.035];
+\draw [fill] (-0.5,1.5) circle [radius=0.035];
+\end{tikzpicture}}}}
+
+%Drapeau européen
+
+\usepackage{graphicx,calc}
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+\newcommand*\inlinegraphics[1]{%
+  \settototalheight\myheight{Xygp}%
+  \settodepth\mydepth{Xygp}%
+  \raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
+}
+
+%%%%%%%%% Nouveau
+
+\DeclareMathOperator{\Ima}{Im} %Image d'une fonction
+\DeclareMathOperator{\cone}{Cone} %Cône
+
+%%%%%%%%%%%   Comments 
+
+\newcommand{\Thibaut}[1]{\textcolor{red}{#1}}
+\newcommand{\Guillaume}[1]{\textcolor{blue}{#1}}
