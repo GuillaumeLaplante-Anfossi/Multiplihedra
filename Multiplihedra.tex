@@ -6,15 +6,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[lf]{Baskervaldx} % lining figures
 \usepackage[bigdelims,vvarbb]{newtxmath} % math italic letters from Nimbus Roman
-\let\Bbbk\relax
 \usepackage[cal=boondoxo]{mathalfa} % mathcal from STIX, unslanted a bit
 \renewcommand*\oldstylenums[1]{\textosf{#1}}
 
-\usepackage{latexsym}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amscd}
+
 \usepackage{graphicx}
 \usepackage[all]{xy}
 \usepackage{a4wide}
@@ -26,7 +21,7 @@
 \usepackage{subcaption}
 
 \usepackage{multirow}
-\usepackage{color}
+%\usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks,final,hyperindex]{hyperref}
 \usepackage[noabbrev,capitalize]{cleveref}
@@ -39,30 +34,6 @@
 \tikzset{J4/.style=
    {x= {(-0.87cm,-0.5cm)}, z={(0cm,1cm)},y={(0.87cm,-0.5cm)}}}
 
-
-\makeatletter
-\def\@tocline#1#2#3#4#5#6#7{\relax
-  \ifnum #1>\c@tocdepth % then omit
-  \else
-    \par \addpenalty\@secpenalty\addvspace{#2}%
-    \begingroup \hyphenpenalty\@M
-    \@ifempty{#4}{%
-      \@tempdima\csname r@tocindent\number#1\endcsname\relax
-    }{%
-      \@tempdima#4\relax
-    }%
-    \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
-    \rightskip\@pnumwidth plus4em \parfillskip-\@pnumwidth
-    #5\leavevmode\hskip-\@tempdima
-      \ifcase #1
-      \or\or \hskip 1em \or \hskip 2em \else \hskip 3em \fi%
-      #6\nobreak\relax
-    \dotfill\hbox to\@pnumwidth{\@tocpagenum{#7}}\par
-    \nobreak
-    \endgroup
-  \fi}
-\makeatother
-
 %MARGINS
 
 \setlength{\textwidth}{\paperwidth}
@@ -71,10 +42,10 @@
 
 % COLORS
 
-\definecolor{Chocolat}{rgb}{0.09, 0.09, 0.7}
+\definecolor{Chocolat}{rgb}{0.36, 0.2, 0.09}
 \definecolor{BleuTresFonce}{rgb}{0.215, 0.215, 0.36}
 \definecolor{RougeTresFonce}{rgb}{0.36, 0.215, 0.215}
-\hypersetup{citecolor=BleuTresFonce, linkcolor=Chocolat}
+\hypersetup{citecolor=BleuTresFonce, linkcolor=black}
 
 %%%%%%%% ENVIRONNEMENTS 
 
@@ -1285,7 +1256,7 @@ There is a bijection between 2-colored trees with $n$ leaves and 2-colored neste
 
 \node (C) at (1.25,1.5) {$\longleftrightarrow$};
 
-\node (D) at (2.75,1.5) {$\red{ \bullet \purple{\blue{\bullet \bullet} \bullet}}$};
+\node (D) at (3.35,1.5) {$\red{ \bullet \purple{\blue{\bullet \bullet} \bullet}}$};
 
 \end{tikzpicture}}
 \caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations. \rouge{Corriger le dessin de gauche et les parenthésages inclinés (Proposition 4.13 aussi}}
@@ -1344,7 +1315,7 @@ and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by inversing the roles of $\m
 \end{enumerate}
 \end{definition}
 
-\subsection{Cellular formula for the diagonal}
+\subsection{Cellular formula for the diagonal} \label{ss:cellular-formula}
 
 \begin{definition}
 Let $(\gra,\mathcal{N})$ be a nested linear graph. We denote by 
@@ -1535,7 +1506,7 @@ Let now $A$, $B$ and $C$ be \Ainf -algebras and $F : A \rightsquigarrow B$ and $
 This composition is moreover associative.
 
 \begin{definition}
-We define $\mathsf{\Ainf -alg}$ to be the category whose objects are \Ainf -algebras, whose morphisms are \Ainf -morphisms and whose composition is defined in the previous paragraph.
+We define \Aalg\ to be the category whose objects are \Ainf -algebras, whose morphisms are \Ainf -morphisms and whose composition is defined in the previous paragraph.
 \end{definition}
 
 Representing the operations $m_n$ as corollae \arbreop{0.15} of arity $n$, the equations of \cref{def:ainf-alg} read as
@@ -1553,12 +1524,13 @@ Finally, representing the operations $f_n$ by \arbreopmorphcompun\ and the opera
 
 An \Ainf -algebra is simply a correct notion of a dg-algebra whose product is associative up to homotopy. The maps $m_n$ for $n \geq 3$ are the higher coherent homotopies arising from the fact that $m_2$ is homotopy-associative. An \Ainf -morphism is then a correct notion of a map $f_1$ which preserves the products $m_2$ up to homotopy, together with higher coherent homotopies $f_n$ for $n \geq 2$. For more details, we refer to \cite[Chapter 9]{LodayVallette12}. 
 
-\subsubsection{The operad \Ainf\ and the operadic bimodule \Minf}
+\subsubsection{The operad \Ainf\ and the operadic bimodule \Minf} \label{sss:operad-ainf-operadic-bimod-minf}
 
 Define $(\mathsf{dg\text{-}mod},\otimes)$ to be the symmetric monoidal category whose objects are dg-modules over $\mathbb{Z}$ and whose morphisms are degree 0 chain maps between dg-modules.
 An operad and an operadic bimodule in this category will respectively be called a \emph{dg-operad} and a \emph{dg-operadic bimodule}.
 
 Let $A$ be a dg-module. We define the operad $\End_A$ to be the dg-operad whose dg-module of operations of arity $n$ is $\End_A(n) := \Hom (A^{\otimes n},A)$ and whose partial composition maps are straightforward to define.
+Notice that e choose to write the arity $n$ with the notation $(n)$ and not with a subscript $\cdot_n$ for the sake of readability here.
 Given $P$ a dg-operad, we then define a \emph{$P$-algebra structure} on $A$ to be the datum a morphism of operads $P \rightarrow \End_A$. In other words the datum of a way to interpret each operation of $P_n$ in $\Hom (A^{\otimes n},A)$, such that abstract composition in $P$ coincides with actual composition in $\End_A$.
 \Ainf -algebras are in particular encoded by a dg-operad : 
 
@@ -1578,9 +1550,14 @@ and whose differential is defined by equations \ref{eq:ainf-morph}.
 \end{definition}
 
 Composition of \Ainf -morphisms can also be formulated at the level of the operadic bimodule \Minf\ as a morphism of $(\Ainf , \Ainf)$-operadic bimodules $\Minf \rightarrow \Minf \circ_{\Ainf} \Minf$.
-Here, the notation $\circ_{\Ainf}$ denotes the composite of the operadic bimodules \Minf\ and \Minf\ over the operad \Ainf\ in the sense of \cite[Chapter 5]{LodayVallette12}, i.e. the $(\Ainf ,\Ainf$)-operadic bimodule whose arity $n$ dg-module of operations is the dg-module
+The notation $\circ_{\Ainf}$ denotes the coequalizer of the following diagram
+\[ \begin{tikzcd}
+\Minf \circ \Ainf \circ \Minf \ar[r,shift left=.75ex,"\ide \circ \lambda"] \ar[r,shift right=.75ex,swap,"\mu \circ \ide"] & \Minf \circ \Minf \ ,
+\end{tikzcd} \]
+where the operation $\circ$ is defined in \cite[Chapter 5]{LodayVallette12} and the maps $\mu : \Minf \circ \Ainf \rightarrow \Minf$ and $\lambda : \Ainf \circ \Minf \rightarrow \Minf$ are the operadic maps defining the action-composition maps of \Minf .
+In other words, the dg-module of operations of arity $n$ of the $(\Ainf ,\Ainf$)-operadic bimodule $\Minf \circ_{\Ainf} \Minf$ is the dg-module
 \[ \bigoplus_{i_1 + \cdots + i_k = n} \Minf (k) \otimes \Minf (i_1) \otimes \cdots \otimes \Minf (i_k) \]
-quotiented by identifying the action of the operad \Ainf\ on the right of $\Minf (k)$ \rouge{notation $\cdot_k$ ou $(k)$ ?} with the action of the operad \Ainf\ on the left of $\Minf (i_1) \otimes \cdots \otimes \Minf (i_k)$. 
+quotiented by identifying the action of the operad \Ainf\ on the right of $\Minf (k)$ with the action of the operad \Ainf\ on the left of $\Minf (i_1) \otimes \cdots \otimes \Minf (i_k)$. 
 We write the first factor \Minf\ of $\Minf \circ_{\Ainf} \Minf$ as
 \[ \Minf :=  \mathcal{F}^{\Ainf , \Ainf}(\arbreopunmorphcompdeux , \arbreopdeuxmorphcompdeux , \arbreoptroismorphcompdeux , \arbreopquatremorphcompdeux , \cdots ) \ , \]
 and its second factor as
@@ -1612,7 +1589,19 @@ Let $t$ be a (2-colored) tree $t$. The \emph{left-levelwise order} on the vertic
 The left-levelwise order on the vertices of $t$ corresponds under the bijection of \cref{lemma:bijection} to the left-levelwise order of \cref{def:left-levelwise-graph} on the nesting of the associated nested linear graph.
 \end{remark}
 
-\rouge{DESSIN - décomposition en produit de polytopes et avec les compositions partielles d'arbres}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+    \centering
+    \exampleleftlevelwiseone
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+    \centering
+    \exampleleftlevelwisetwo
+    \end{subfigure}
+    \caption*{The tree on the left decomposes as $(\arbreopquatre \circ_3 \arbreopquatre ) \circ_3 \arbreoptrois$ and the orientation on the face it labels is determined by the product $K_4 \times K_4 \times K_3$. The tree on the right decomposes as $ (\arbreopquatre \circ_1 \arbreoptrois ) \circ_6 \arbreopquatre$ and defines the orientation determined by the product $K_4 \times K_3 \times K_4$.}
+    \label{fig:left-levelwise-order}
+\end{figure}
 
 Given a tree $t$, there is a unique decomposition $t=(\cdots ((c_{n_1} \circ_{i_1} c_{n_2})\circ_{i_2}c_{n_3})\cdots \circ_{i_k} c_{n_{k+1}})$ where the corollae $c_n$ are grafted according to this total order. Using the grafting operations defined in \cref{sss:grafting}, a 2-colored tree admits similarly a unique decomposition as a sequence of blue corollae, red corollae and 2-colored corollae ordered according to this total order. 
 We can then make the same choices of cellular orientations as in \cite[I, Section 4]{Mazuir21} :
@@ -1620,7 +1609,7 @@ We can then make the same choices of cellular orientations as in \cite[I, Sectio
   \item For the Loday associahedra $\K_n \subset \RR^{n-1}$ of \cite{MTTV19}, we choose the basis $\{e_1 - e_{j+1}\}_{1\leq j \leq n-2}$ as positively oriented basis of the top dimensional cell $\arbreop{0.15}$. We then choose the orientation of any other face $t$ of $\K_n$ to be the image of the positively oriented bases of the top cells of the polytopes $\K_{n_i}$ under the sequence of partial compositions following the left-levelwise order on $t$. 
   \item We choose the basis $\{- e_j\}_{1\leq j \leq n-1}$ as positively oriented basis of the top dimensional cell $\arbreopmorph{0.15}$ of the Forcey--Loday multiplihedra $\J_n \subset \RR^{n-1}$. We then choose the orientation of any other face $t$ of $\J_n$ to be the image of the positively oriented bases of the top cells of the polytopes $\K_{n_i}$ and $\J_{n_j}$ under the sequence of action-compositions following the left-levelwise order on $t$.
 \end{itemize}
-We refer to \ref{} for illustrations of these choices of cellular orientations.
+We refer to \ref{fig:left-levelwise-order} for illustrations of these choices of cellular orientations.
 
 \begin{proposition} 
 \label{prop:functoriality}
@@ -1656,19 +1645,17 @@ Consider indeed a diagonal $\triangle : \Ainf \rightarrow \Ainf \otimes \Ainf$. 
 \[ \Ainf \longrightarrow \Ainf \otimes \Ainf \longrightarrow \End_A \otimes \End_B \longrightarrow \End_{A \otimes B} \ , \]
 where the first arrow is the diagonal $\triangle$, the second arrow is the Hadamard product of the morphism of operads $\Ainf \rightarrow \End_A$ and $\Ainf \rightarrow \End_B$ defining the \Ainf -algebra structures on $A$ and $B$, and the third arrow is the natural morphism of operads transforming two maps $A^{\otimes n} \rightarrow A$ and $B^{\otimes n} \rightarrow B$ into a map $(A\otimes B)^{\otimes n} \rightarrow A \otimes B$.
 
-Diagonals on the operadic bimodule \Minf\ provide the correct framework to define tensor products of \Ainf -morphisms. Let indeed $A_1$, $A_2$, $B_1$ and $B_2$ be four \Ainf -algebras and $F_1 : A_1 \rightarrow B_1$ and $F_2 : A_2 \rightarrow B_2$ be two \Ainf -morphisms. We endow $A_1 \otimes A_2$ and $B_1 \otimes B_2$ with their \Ainf -algebra structures defined in the previous paragraph. 
-One can then define an \Ainf -morphism $F_1 \otimes F_2 : A_1 \otimes A_2 \rightarrow B_1 \otimes B_2$ by the following composition
+Diagonals on the operadic bimodule \Minf\ provide the correct framework to define tensor products of \Ainf -morphisms. Let indeed $A_1$, $A_2$, $B_1$ and $B_2$ be four \Ainf -algebras and $f_1 : A_1 \rightarrow B_1$ and $f_2 : A_2 \rightarrow B_2$ be two \Ainf -morphisms. We endow $A_1 \otimes A_2$ and $B_1 \otimes B_2$ with their \Ainf -algebra structures defined in the previous paragraph. 
+One can then define an \Ainf -morphism $f_1 \otimes f_2 : A_1 \otimes A_2 \rightarrow B_1 \otimes B_2$ by the following composition
 \[ \Minf \rightarrow \Minf \otimes \Minf \rightarrow \Hom (A_1 , B_1) \otimes \Hom (A_2,B_2) \rightarrow  \Hom (A_1 \otimes A_2 , B_1 \otimes B_2) \ , \]
 where the arrows are morphisms of $(\Ainf , \Ainf )$-operadic bimodules and are defined in a similar fashion to the maps of the previous paragraph.
 
 \subsubsection{The polytopal diagonals on \Ainf\ and \Minf}
 
-\rouge{Parenthèses grasses pour \Ainf }
-
 We will work in this section using the nested linear graphs conventions for the operad \Ainf\ and the operadic bimodule \Minf . In these notations, the operad \Ainf\ is the quasi-free dg-operad generated in arity $n \geq 2$ by one operation of degree $n-2$ represented by the trivially nested linear graph with $n$ vertices $(\bullet \cdots \bullet )$ 
-\[ \Ainf := \mathcal{F} \left( ( \bullet \bullet ) , ( \bullet \bullet \bullet ) ,  ( \bullet \bullet \bullet \bullet ) , \dots  \right) \ , \]
+\[ \Ainf := \mathcal{F} \left( \black{ \bullet \bullet } , \black{ \bullet \bullet \bullet } ,  \black{ \bullet \bullet \bullet \bullet } , \dots  \right) \ , \]
 and whose differential is defined by
-\[ \partial \left( ( \bullet \cdots \bullet ) \right) = - \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr}( \underbrace{\bullet \cdots \bullet}_p ( \underbrace{\bullet \cdots \bullet}_q ) \underbrace{\bullet \cdots \bullet}_r ) \ , \ n\geq 2 \ . \]
+\[ \partial \left( \black{ \bullet \cdots \bullet } \right) = - \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr} \black{ \underbrace{\bullet \cdots \bullet}_p \black{ \underbrace{\bullet \cdots \bullet}_q } \underbrace{\bullet \cdots \bullet}_r } \ , \ n\geq 2 \ . \]
 The operadic bimodule \Minf\ is the quasi-free $(\Ainf , \Ainf)$-operadic bimodule generated in arity $n \geq 1$ by one operation of degree $n-1$ represented by the trivial 2-colored nested linear graph with $n$ vertices $\purple{\bullet \cdots \bullet}$
 \[ \Minf := \mathcal{F}^{\Ainf , \Ainf} \left( \purple{\bullet} , \purple{\bullet \bullet} , \purple{\bullet \bullet \bullet} , \cdots \right)\]
 and whose differential is defined by
@@ -1680,8 +1667,8 @@ and whose differential is defined by
 
 \begin{proposition}
 \label{prop:diagonal-polytopale-a-infini}
-The image of the diagonal of \cite{MTTV19} on the Loday associahedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operad \Ainf , that we denote $\triangle_{poly}$. It is determined by the formula 
-\[ \triangle_{poly} \left( (\bullet \cdots \bullet) \right) = 
+The image of the diagonal of \cite{MTTV19} on the Loday associahedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operad \Ainf , that we denote \diagainf . It is determined by the formula 
+\[ \diagainf \left( (\bullet \cdots \bullet) \right) = 
 \sum_{\substack{
   \mathcal{N},\mathcal{N}' \in \mathcal{N}_n \\ 
   \tp(\mathcal{N}) \leq \bm(\mathcal{N'}) \\
@@ -1693,23 +1680,29 @@ where ... \rouge{Il faut harmoniser les notations de linear graph, ensemble des 
 
 \begin{proof}
 The image of the diagonal on the Loday associahedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operad \Ainf\ as this functor is strong monoidal. 
-The signs arise from the choices of cellular orientations on the Loday associahedra made in subsection \ref{sss:forcey--loday-realize}. We refer to the proof of \cite[Proposition 4.27]{LA21} for more details on the sign computations. The diagonal $\Delta_{poly} : \Ainf \rightarrow \Ainf \otimes \Ainf$ is finally determined by the image of the generating operations of the quasi-free operad \Ainf , which are the trivially nested linear graphs $\gra_n$.
+The signs arise from the choices of cellular orientations on the Loday associahedra made in subsection \ref{sss:forcey--loday-realize}. We refer to the proof of \cite[Proposition 4.27]{LA21} for more details on the sign computations. The diagonal $\diagainf : \Ainf \rightarrow \Ainf \otimes \Ainf$ is finally determined by the image of the generating operations of the quasi-free operad \Ainf , which are the trivially nested linear graphs $\gra_n$.
 \end{proof}
 
-\rouge{Exemples en petite arité avec les signes}
+We compute in particular that
+\[ \begin{matrix}
+\diagainf ( \black { \bullet \bullet } ) &=& & \black{\bullet \bullet} \otimes \black{\bullet \bullet} & & \\
+\diagainf ( \bullet \bullet \bullet ) &=& & \black{\black{\bullet \bullet} \bullet} \otimes \black{\bullet \bullet \bullet} &+& \black{\bullet \bullet \bullet} \otimes \black{\black{\bullet \bullet} \bullet} \\
+\diagainf ( \black{ \bullet \bullet \bullet \bullet} ) 
+&=& & \black{\bullet \bullet \bullet \bullet} \otimes \black{\bullet \black{ \bullet \black{ \bullet \bullet }} }  &+& \black{ \black{ \black{\bullet \bullet} \bullet } \bullet }  \otimes \black{ \bullet \bullet \bullet \bullet } \\
+& & +& \black{ \black{\bullet \bullet } \bullet \bullet } \otimes \black{ \bullet \bullet \black{ \bullet \bullet }}  &+& \black{ \black{ \bullet \bullet \bullet } \bullet }  \otimes \black{ \bullet \black{ \bullet \bullet } \bullet }  \\ 
+& & +& \black{ \black{ \bullet \bullet \bullet } \bullet }  \otimes \black{ \bullet \black{ \bullet \bullet \bullet }} &+& \black{ \bullet \black{ \bullet \bullet } \bullet } \otimes \black{ \bullet \black{ \bullet \bullet \bullet }}
+\end{matrix} \]
+\rouge{Calculer les signes - On retrouve en plus en fait la diagonale de MS (à signe près/à ordre près ?)}
 
-\begin{remark}
-\rouge{On retrouve en fait la diagonale de MS (à signe près/à ordre près ?)}
-\end{remark}
 
-\begin{definition}[Tensor product of \Ainf -algebras]
-Let $A$ and $B$ be two \Ainf -algebras. We define $A \otimes_\infty B$ to be the dg-module $A \otimes B$ endowed with the \Ainf -algebra structure defined by the diagonal $\Delta_{poly}$.
+\begin{definition}[Tensor product of \Ainf -algebras] \label{def:tensor-product-ainf-alg}
+Let $A$ and $B$ be two \Ainf -algebras. We define $A \otimes_\infty B$ to be the dg-module $A \otimes B$ endowed with the \Ainf -algebra structure defined by the diagonal \diagainf .
 \end{definition}
 
 \begin{proposition}
 \label{prop:diagonal-polytopale-m-infini}
-The image of the diagonal on the Forcey--Loday multiplihedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operadic bimodule \Minf , that we denote $\triangle_{poly}$. It is determined by the formula
-\[ \triangle_{poly} \left( \purple{\bullet \cdots \bullet} \right) = 
+The image of the diagonal on the Forcey--Loday multiplihedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operadic bimodule \Minf , that we denote \diagminf . It is determined by the formula
+\[ \diagminf \left( \purple{\bullet \cdots \bullet} \right) = 
 \sum_{
 \mathcal{N},\mathcal{N}'} 
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}
@@ -1722,23 +1715,34 @@ where the sum runs over the pairs $\mathcal{N},\mathcal{N}' \in \mathcal{N}^2_n$
 The proof is identical to the proof of \cref{prop:diagonal-polytopale-a-infini}. 
 \end{proof}
 
-\rouge{Exemples en petite arité avec les signes}
+We compute in particular that 
+\[
+\begin{matrix}
+    \diagminf ( \purple{ \bullet } )  &=&  & \purple{ \bullet } \otimes \purple{ \bullet } & &  \\
+    \diagminf ( \purple{ \bullet \bullet } ) &=& & \blue{\bullet \bullet} \otimes \purple{\bullet \bullet} & + & \purple{\bullet \bullet} \otimes \red{\bullet \bullet} \\
+    \diagminf (\purple{\bullet \bullet \bullet \bullet}) &=& 
+     & \blue{\blue{\blue{\bullet \bullet}\bullet}\bullet} \otimes \purple{\bullet \bullet \bullet \bullet} 
+      & + & \purple{\bullet \bullet \bullet \bullet} \otimes \red{\bullet \red{\bullet \red{\bullet \bullet}}} \\
+& &+ &  \blue{\bullet \bullet \bullet} \otimes \purple{\bullet \blue{\bullet \bullet}}    &  + & \blue{\bullet \bullet \bullet} \otimes \red{\bullet \purple{\bullet \bullet}}  \\  &   &+ & \purple{\bullet \blue{\bullet \bullet}} \otimes \red{\bullet \purple{\bullet \bullet}} 
+  &  + & \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\purple{\bullet \bullet} \bullet} \\ & &  + & \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet}   &  + & \red{\purple{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet} 
+  \end{matrix}
+\]
+\rouge{Corriger les signes également}
 
 \begin{definition}[Tensor product of \Ainf -morphisms]
-Let $A_1$, $A_2$, $B_1$ and $B_2$ be \Ainf -algebras and $F_1 : A_1 \rightarrow B_1$ and $F_2 : A_2 \rightarrow B_2$ be two \Ainf -morphisms. We define $A_1 \otimes_\infty A_2 \rightarrow B_1 \otimes_\infty B_2$ to be the \Ainf -morphism defined by the diagonal $\triangle_{poly}$ on \Minf .
+Let $A_1$, $A_2$, $B_1$ and $B_2$ be \Ainf -algebras and $f_1 : A_1 \rightarrow B_1$ and $f_2 : A_2 \rightarrow B_2$ be two \Ainf -morphisms. We define $f_1 \otimes_{\infty} f_2 : A_1 \otimes_\infty A_2 \rightarrow B_1 \otimes_\infty B_2$ to be the \Ainf -morphism defined by the diagonal \diagminf on \Minf .
 \end{definition}
 
 Recall from subsection \ref{ss:about} that any pair of faces $(F,G)$ of the multiplihedra satisfying the conditions of \cref{thm:formuladiagonal} always satisfies $\tp F \leq \bm G$. It would thereby be interesting to know whether the formula
 \begin{align*}
-\triangle_{poly} \left( \purple{\bullet \cdots \bullet} \right) = 
+\triangle \left( \purple{\bullet \cdots \bullet} \right) = 
 \sum_{\substack{
-  \mathcal{N},\mathcal{N}' \in \mathcal{N}_2(\gra) \\ 
-  \tp(\mathcal{N}) \leq \bm(\mathcal{N'}) \\
+    \tp(\mathcal{N}) \leq \bm(\mathcal{N'}) \\
   \ |\mono(\mathcal{N})|+|\mono(\mathcal{N}')|=n
 }}
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}\mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})\mathcal{N} \otimes \mathcal{N}' \ , \tag{$\star$}
 \label{eq:diagonal-top-bot}
-\end{align*}  
+\end{align*}
 also defines a diagonal on the operadic bimodule \Minf . In other words, to know if one can directly copy the dg-formula from the polytopal diagonal on \Ainf\ to obtain a diagonal on \Minf . We prove in the following proposition that this is not the case. \rouge{Absolument détailler un peu plus pour insister sur l'importance du résultat au niveau polytopal ! - Mettre aussi une phrase à ce sujet dans la section About this formula}
 
 \begin{proposition}
@@ -1746,13 +1750,19 @@ The formula \ref{eq:diagonal-top-bot} does not define a diagonal on \Minf .
 \end{proposition}
 
 \begin{proof}
-Recall that in dimension~$3$, the image $\Ima \triangle_4$ contains all pairs of faces $\tp F\leq \bm G$ except four of them: $\purple{\blue{\bullet \bullet \bullet} \bullet} \times \red{\bullet \red{\purple{\bullet \bullet} \bullet}}$, $\purple{\blue{\bullet \bullet \bullet}\bullet} \times \red{\bullet \blue{\bullet \bullet}\bullet}$, $\red{\blue{\bullet \bullet \bullet}\bullet} \times \red{\bullet \purple{\bullet \bullet}\bullet}$ and $\purple{\blue{\blue{\bullet \bullet}\bullet}\bullet} \times \red{\bullet \purple{\bullet \bullet}\bullet}$.
-\rouge{Terminer la preuve}
+We computed in subsection \ref{ss:cellular-formula} that in arity $\leq 3$, the image $\Ima \triangle$ contains all pairs of faces $\tp F\leq \bm G$ and that in arity 4, the image $\Ima \triangle_4$ contains all pairs of faces $\tp F\leq \bm G$ except four of them: \rouge{Liste ?} .
+The diagonal $\triangle$ defined by formula \ref{eq:diagonal-top-bot} thereby coincides with $\diagminf$ in arity $\leq 3$ and satisfies 
+\[ \triangle ( \purple{ \bullet \bullet \bullet \bullet} ) = \diagminf ( \purple{ \bullet \bullet \bullet \bullet} ) + \delta \]
+where $\delta$ is the signed sum of the previous four pairs of faces. 
+The map $\triangle : \Minf \rightarrow \Minf$ is a diagonal on \Minf\ if and only if it is compatible with the differential. In particular, it has to satisfy
+\[ \triangle \partial ( \purple{ \bullet \bullet \bullet \bullet} )  = \partial  \triangle (  \purple{ \bullet \bullet \bullet \bullet} )  \ . \]
+Using the fact that $\diagminf \partial = \partial \diagminf$ and that $\triangle = \diagminf$  in arity $\leq 3$, this equation is equivalent to the equation $\partial \delta = 0$. We compute that this last equation is not satisfied, i.e. that $\partial \delta \neq 0$, hence that the formula \ref{eq:diagonal-top-bot} does not define a diagonal on \Minf .
 \end{proof}
+
 
 \subsection{Tensor product of \Ainf -categories and \Ainf -functors}
 
-The natural categorified versions of the notions of \Ainf -algebra and \Ainf -morphism respectively are the notions of \Ainf -category and \Ainf -functor between two \Ainf -categories.
+The natural categorified versions of the notions of \Ainf -algebra and \Ainf -morphism respectively are the notions of \Ainf -category and \Ainf -functor.
 
 \begin{definition} 
 An $\mathrm{A}_\infty$-category $\cat{A}$ consists of 
@@ -1764,17 +1774,17 @@ An $\mathrm{A}_\infty$-category $\cat{A}$ consists of
 \end{definition}
 
 \begin{definition}
-An $\mathrm{A}_\infty$-functor $f : \cat{A} \rightsquigarrow \cat{B}$ between two $\mathrm{A}_\infty$-categories consists of \rouge{Pourquoi des $\rightsquigarrow$ ? Harmoniser}
+An $\mathrm{A}_\infty$-functor $f : \cat{A} \rightsquigarrow \cat{B}$ between two $\mathrm{A}_\infty$-categories $\cat{A}$ and $\cat{B}$ consists of
 \begin{itemize}[leftmargin=*]
 \item a function $\mathrm{Ob}(f) : \mathrm{Ob}(\cat{A}) \to \mathrm{Ob}(\cat{B})$,
 \item for each $n \geq 1$ and each family of objects $X_0, \ldots, X_n \in \mathrm{Ob}(\cat{A})$, a linear map \[f_n : \cat{A}(X_0,X_1) \otimes \cdots \otimes \cat{A}(X_{n-1},X_n) \to \cat{B}(f(X_0),f(X_n))\] of degree $|f_n|=n-1$, satisfying the equations of \cref{def:ainf-morph}.
 \end{itemize}
 \end{definition}
 
-An \Ainf -category $\cat{A}$ induces an ordinary category $H_*(\cat{A})$ in homology (in fact without identity morphisms, see \cref{rem:a-inf-unit}), while an \Ainf -functor induces an ordinary functor $H_*(f) : H_*(\cat{A}) \rightsquigarrow H_*(\cat{B})$ between ordinary categories. Hence, an \Ainf -category is simply a correct notion of a category whose composition is associative up to homotopy, while an \Ainf -functor is the correct notion of a \emph{homotopy} functor between such categories.
-An \Ainf -category can moreover be seen as the categorified version of an \Ainf -algebra, as an \Ainf -category with only has one object is an \Ainf -algebra, while an \Ainf -functor is the categorified version of an \Ainf -morphism, as an \Ainf -functor between \Ainf -algebras is exactly an \Ainf -morphism..
+An \Ainf -category $\cat{A}$ induces an ordinary category $H_*(\cat{A})$ in homology (in fact without identity morphisms, see the following paragraphs), while an \Ainf -functor induces an ordinary functor $H_*(f) : H_*(\cat{A}) \rightsquigarrow H_*(\cat{B})$ between ordinary categories. Hence, an \Ainf -category is simply a correct notion of a category whose composition is associative up to homotopy, while an \Ainf -functor is the correct notion of a \emph{homotopy} functor between such categories.
+An \Ainf -category with only one object is moreover exactly an \Ainf -algebra, while an \Ainf -functor between \Ainf -algebras is then exactly an \Ainf -morphism..
 
-\begin{definition}[Tensor product of \Ainf -categories]
+\begin{definition}[Tensor product of \Ainf -categories] \label{def:tensor-product-ainf-cat}
 The \emph{tensor product} of two $\mathrm{A}_\infty$-categories $\cat{A}$ and $\cat{B}$ is denoted $\cat{A} \otimes_\infty \cat{B}$ and given by 
 \begin{itemize}[leftmargin=*]
   \item the set of objects $\mathrm{Ob}(\cat{A}\otimes \cat{B})\coloneqq \mathrm{Ob}(\cat{A})\times\mathrm{Ob}(\cat{B})$,
@@ -1784,183 +1794,195 @@ The \emph{tensor product} of two $\mathrm{A}_\infty$-categories $\cat{A}$ and $\
 \end{definition}
 
 \begin{definition}[Tensor product of \Ainf -functors]
-The \emph{tensor product} of two $\mathrm{A}_\infty$-functors $f:\cat{A}_1 \rightsquigarrow \cat{B}_1$ and $g:\cat{A}_2 \rightsquigarrow \cat{B}_2$ is denoted $f\otimes g$ and given by 
+The \emph{tensor product} of two $\mathrm{A}_\infty$-functors $f:\cat{A}_1 \rightsquigarrow \cat{B}_1$ and $g:\cat{A}_2 \rightsquigarrow \cat{B}_2$ is denoted $f\otimes_\infty g$ and given by 
 \begin{itemize}[leftmargin=*]
 \item the function $\mathrm{Ob}(f\otimes g)\coloneqq \mathrm{Ob}(f)\times \mathrm{Ob}(g) : \mathrm{Ob}(\cat{A}\otimes\cat{B}) \to \mathrm{Ob}(\cat{A}'\otimes\cat{B}')$,
-\item by defining the operations $f_n$ as in \cref{prop:diagonal-polytopale-m-infini}
+\item by defining the operations $f_n$ as in \cref{prop:diagonal-polytopale-m-infini}.
 \end{itemize}
 \end{definition}
 
-\begin{remark} \label{rem:a-inf-unit}
-\rouge{Notion d'unité dans une \Ainf -catégorie et pour les \Ainf -foncteurs - Il faut alors en fait l'associaèdre unitaire pour faire le produit tensoriel de A-infini catégorie qui donne bien des catégories en homologie ?
-cf Muro-Tonks}
-\end{remark}
+The category $H_*(\cat{A})$ associated to an \Ainf -category $\cat{A}$ does not necessarily have identity morphisms. As explained in \cite[Section 1.2]{Seidel08}, there exist three notions of \Ainf -category with identity morphisms : \textit{strictly unital \Ainf -category}, \textit{cohomologically unital \Ainf -category} and \textit{homotopy unital \Ainf -category}. 
+A \textit{strictly unital} \Ainf -category is simply an \Ainf -category together with an element $e_X \in \cat{A} (X ,X )$ for every $X \in \mathrm{Ob}(\cat{A})$ such that \begin{align*}
+m_2 (e , \cdot ) = m_2 (\cdot , e ) &= \ide \ , \\
+m_n ( \cdots , e , \cdots ) &= 0 \text { for } n \geq 3 \ .
+\end{align*} 
+A \textit{cohomologically unital} \Ainf -category is an \Ainf -category $\cat{A}$ which is such that $H_*(A)$ has identity morphisms.
+A \textit{homotopy unital} \Ainf -category is finally defined to be an \Ainf -category together with elements $e_X \in \cat{A} (X ,X )$ and endowed with additional operations encoding the fact that the previous relations on the $m_n$ and the $e_X$ are satisfied only up to homotopy.
+We moreover have in particular that,
+\[  \text{unital} \Rightarrow \text{homotopy unital} \Rightarrow \text{cohomologically unital} \ . \]
 
-\subsection{Properties of the polytopal diagonals on \Ainf\ and \Minf}
+If $\cat{A}$ and $\cat{B}$ are cohomologically unital \Ainf -categories, the \Ainf -category $\cat{A} \otimes_\infty \cat{B}$ is again cohomologically unital. 
+If $\cat{A}$ and $\cat{B}$ are unital \Ainf -categories, the \Ainf -category $\cat{A} \otimes_\infty \cat{B}$ is also again unital, with identity morphisms $e_X \otimes e_Y$ for  $X \in \mathrm{Ob}(\cat{A})$ and $Y \in \mathrm{Ob}(\cat{B})$.
+If $\cat{A}$ and $\cat{B}$ are homotopy unital \Ainf -categories, we however have to define the additional operations associated to the fact that the elements $e_X \otimes e_Y$ are identity morphisms up to homotopy for the \Ainf -category $\cat{A} \otimes_\infty \cat{B}$. In other words, we have to define a diagonal on the operad \uAinf encoding homotopy unital \Ainf -algebras, which has not been done yet to the authors knowledge. An idea would be to define a diagonal on the unital associahedra, which are CW-complexes constructed by Muro and Tonks in \cite{MuroTonks} and which form an operad whose image under the cellular chains is the operad \uAinf . However, not all unital associahedra are polytopes, meaning that the techniques of \cite{MTTV19} cannot be applied to them. \rouge{Certainement trop long}
 
-\rouge{Harmoniser notation $\triangle^{poly}$}
+\subsection{Homotopy properties of diagonals on \Ainf\ and \Minf}
 
-\subsubsection{Motivations}
+Now that we have explained how to define tensor products of \Ainf -algebras and \Ainf -morphisms, we would like to know whether they endow the category \Aalg\ with the structure of a \textit{symmetric monoidal category}. We explain in the following subsections how the axioms for a symmetric monoidal category translate in the language of diagonals on the 2-colored operad $\Ainfdeux$ and discuss in the last subsection why these tensor products should define a \textit{homotopy symmetric monoidal} category structure on \Aalg .
 
-Now that we have defined a tensor product of \Ainf -algebras and a tensor product of \Ainf -morphisms, we would like to know which properties it satisfies.
+\subsubsection{The 2-colored viewpoint}
 
-First, we would like to know whether given three \Ainf -algebras $A$, $B$ and $C$, the two \Ainf -algebra structures $( A \otimes_\infty B) \otimes_\infty C$ and $A \otimes_\infty ( B \otimes_\infty C)$ on the same underlying dg-module $A \otimes B \otimes C$ are the same. In operadic terms, this amounts to ask if the diagonal $\triangle^{poly}$ on \Ainf\ is coassociative or not. The same question can be asked for the tensor product of three \Ainf -morphisms.
+The operad \Ainf\ together with the operadic bimodule \Minf\ define the quasi-free 2-colored operad 
+\[ A_\infty^2 := \mathcal{F} (\arbreopdeuxcol{red} , \arbreoptroiscol{red} , \arbreopquatrecol{red}, \cdots, \arbreopdeuxcol{blue} , \arbreoptroiscol{blue} , \arbreopquatrecol{blue} , \cdots, \arbreopunmorph , \arbreopdeuxmorph , \arbreoptroismorph , \arbreopquatremorph , \cdots ) \ , \]
+whose differential is given by the equations of \cref{def:ainf-alg} and \cref{def:ainf-morph}.
+We refer to \cite{yau-colored} for a complete definition of a 2-colored operad.
+The data of two \Ainf -algebras structures on dg-modules $A$ and $B$ together with an \Ainf -morphism can then be defined as a morphism of 2-colored operads
+\[ \Ainfdeux \longrightarrow \End ( A ; B) \ , \]
+where $\End ( A ; B)$ is the \textit{endomorphism 2-colored operad} naturally associated to $A$ and $B$.
 
-Given $A$ and $B$ two \Ainf -algebras, we would also like to know whether the \Ainf -algebra structure $B \otimes_\infty A$ on $B \otimes A$ can simply be obtained from the \Ainf -algebra structure on $A \otimes_\infty B$ on $A \otimes B$ from the maps \[ m_n^{A \otimes_\infty B} : ( A \otimes B)^{\otimes n} \rightarrow A \otimes B \] by rearranging $(A \otimes B)^{\otimes n}$ into $(B \otimes A)^{\otimes n}$ and $A \otimes B$ into $B \otimes A$. In operadic terms, this amounts to ask if the diagonal $\triangle^{poly}$ on \Ainf\ is cocommutative or not. Again, the same question can be asked for the tensor product of two \Ainf -morphisms. \rouge{juste ?}
+The data of a diagonal on the operad \Ainf\ and of a diagonal on the operadic bimodule \Minf\ is equivalent to the datum of a morphism of 2-colored operads 
+\[ \Ainfdeux \longrightarrow \Ainfdeux \otimes \Ainfdeux \ . \]
+The composition of \Ainf -morphisms is finally defined by a morphism of 2-colored operads 
+\[ \Ainfdeux \longrightarrow \Ainfdeux \circ_{\Ainf} \Ainfdeux \ , \]
+where \Ainfdeux\ and $\Ainfdeux \circ_{\Ainf} \Ainfdeux$ have colors $A$ and $C$, and $\Ainfdeux \circ_{\Ainf} \Ainfdeux$ is defined as the coequalizer
+\[ \begin{tikzcd}
+\Ainfdeux \circ \Ainf \circ \Ainfdeux \ar[r,shift left=.75ex,"\ide \circ \lambda"] \ar[r,shift right=.75ex,swap,"\mu \circ \ide"] & \Ainfdeux \circ \Ainfdeux \ ,
+\end{tikzcd} \]
+where the left factor \Ainfdeux\ has colors $A$ and $B$, the operad \Ainf\ is seen as a 1-colored operad with color $B$, and the right factor \Ainfdeux\ has colors $B$ and $C$.
 
-\rouge{Faire les rappels sur la composition de \Ainf -morphismes à la fin de la section 4.1.1 - Définir la composition au niveau \Minf\ à la fin de 4.1.2 - Reprendre des éléments de ton papier !}
 
-Finally, we would like to know whether the tensor product is functorial with respect to the composition of \Ainf -morphisms defined in subsection \ref{}. In other words, if given \Ainf -morphisms $F_1 : A_1 \rightarrow B_1$, 
-$G_1 : B_1 \rightarrow C_1$, $F_2 : A_2 \rightarrow B_2$ and
-$G_2 : B_2 \rightarrow C_2$ they satisfy the following equality
-\[ ( G_1 \otimes F_1) \circ (G_2 \otimes F_2) = (G_1 \otimes G_2) \circ (F_1 \otimes F_2) \ . \]
-In operadic terms, this amounts to ask if the diagonal $\triangle^{poly}$ on \Minf\ together with the composition morphism \rouge{notation} of subsection \ref{} ... 
-\[ \ . \]
+\subsubsection{Coassociativity and cocommutativity} \label{sss:coassoc-cocomm}
 
-\subsubsection{Properties} \label{sss:properties-polytopal}
+First, we would like to know whether given three \Ainf -algebras $A$, $B$ and $C$, the two \Ainf -algebra structures $( A \otimes_\infty B) \otimes_\infty C$ and $A \otimes_\infty ( B \otimes_\infty C)$ on the dg-module $A \otimes B \otimes C$ are the same. In operadic terms, this amounts to ask if the diagonal \diagainf\ on \Ainf\ is coassociative or not. 
 
-\begin{proposition} \label{prop:properties-diagonal-ainf}
-  The diagonal $\triangle^{poly} : \Ainf \rightarrow \Ainf \otimes \Ainf$ is not coassociative and is not cocommutative.
-\end{proposition}
-
-\begin{proof}
-\rouge{notations $\triangle$ - notation $\triangle^{J_n}$ ou $\triangle_{J_n}$ mieux ?}
-  We compute indeed that
-  \begin{align*}
-      \left( (\ide \otimes \triangle ) \triangle - (\triangle \otimes \ide) \triangle \right) \left( ( \bullet \bullet \bullet \bullet ) \right)  
-      = \partial \left( ( \bullet ( \bullet \bullet \bullet ) ) \otimes (\bullet ( \bullet \bullet ) \bullet ) \otimes ( ( \bullet \bullet \bullet ) \bullet )  \right) \ ,
-  \end{align*}
-  and that \[ \left( \triangle - \tau \triangle \right) \left( ( \bullet \bullet \bullet ) \right) = \partial \left( ( \bullet \bullet \bullet ) \otimes ( \bullet \bullet \bullet ) \right) \ . \]
-\end{proof}
-
-\begin{remark}
-\rouge{dire que déjà dans MS}
-\end{remark}
-
-\begin{proposition} \label{prop:properties-diagonal-minf}
-  The diagonal $\triangle^{poly} : \Minf \rightarrow \Minf \otimes \Minf$ is not coassociative, is not cocommutative and is not compatible with the composition of \Ainf -morphisms.
-\end{proposition}
-
-\begin{proof}
-\rouge{notations $\triangle$ - conflit notations $\circ$}
-  We compute indeed that
-  \begin{align*}
-      &\left( (\ide \otimes \triangle ) \triangle - (\triangle \otimes \ide) \triangle \right) \left( \purple{\bullet \bullet \bullet} \right)  \\
-      &= \partial \left(
-  \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\purple{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet}
-  + \blue{\bullet \bullet \bullet} \otimes \purple{ \bullet \blue{\bullet \bullet}} \otimes \red{\bullet \purple{\bullet \bullet}}
-  \right) \ ,
-  \end{align*} 
-  that
-  \[ \left( \triangle - \tau \triangle \right) \left( \purple{\bullet \bullet} \right) = \partial \left( \purple{\bullet \bullet} \otimes \purple{\bullet \bullet} \right) \]
-  and that 
-  \[ \left( \comp  \circ \triangle - (\triangle \circ_{\Ainf} \triangle ) \circ \comp \right) \left( \arbreopdeuxmorph  \right) = \partial \left( \arbreopcompun \otimes \arbreopcompdeux \right)  \ . \]
-  \rouge{Attention en introduisant le langage des arbres 3-colorés : pas de contrepartie nested ! seulement des arbres}
-\end{proof}
-
-\rouge{Mentionner à un endroit que déjà un travail en cours sur ses relations - et que le projet catégorie monoidale à homotopie près est un projet pour plus tard}
-
-\subsection{General properties of diagonals on the operadic bimodule \Minf}
-
-We show in this subsection that the results of \cref{prop:properties-diagonal-ainf} and \cref{prop:properties-diagonal-minf} still hold for any diagonal on the operad \Ainf\ and any diagonal on the operadic bimodule \Minf . The generalization of \cref{prop:properties-diagonal-ainf} was already proven in \cite{MarklShnider06} :
-
-\begin{proposition}[{\cite[Theorem 13]{MarklShnider06}}]
+\begin{proposition}[{\cite[Theorem 13]{MarklShnider06}}] \label{prop:pas-coassoc}
   \label{prop:nocoassoc}
-  A diagonal $\triangle$ on the operad \Ainf\ is never coassociative and is never cocommutative.  
+  A diagonal $\triangle$ on the operad \Ainf\ is never coassociative.  
 \end{proposition} 
 
-\begin{proof}
-nous renvoyons à leur papier pour la preuve détaillée de la coassociativité
-elle repose sur un calcul ...
-la cocommutativité n'est pas montrée dans leur papier (vérifier)
-elle découle directement du calcul de toutes les diagonales possibles en arité ...
-un calcul rapide montre en effet que la compatibilité avec ... implique que a=... et a=...
-\end{proof}
+This proposition implies that a diagonal on the 2-colored operad \Ainfdeux\ can in particular never be coassociative.
+In the case of \diagainf\ and \diagminf\ we compute in particular that
+  \begin{align*}
+      &\left( (\ide \otimes \diagainf ) \diagainf - (\diagainf \otimes \ide) \diagainf \right) \left( \black{ \bullet \bullet \bullet \bullet } \right)  \\
+      = \  &\partial \left( \black{ \bullet \black{ \bullet \bullet \bullet } } \otimes \black{ \bullet \black{ \bullet \bullet } \bullet } \otimes \black{ \black{ \bullet \bullet \bullet } \bullet }  \right) \ ,
+  \end{align*}
+and that 
+\begin{align*}
+      &\left( (\ide \otimes \diagminf ) \diagminf - (\diagminf \otimes \ide) \diagminf \right) \left( \purple{\bullet \bullet \bullet} \right)  \\
+      = \ &\partial \left(
+  \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\purple{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet}
+  + \blue{\bullet \bullet \bullet} \otimes \purple{ \bullet \blue{\bullet \bullet}} \otimes \red{\bullet \purple{\bullet \bullet}}
+  \right) \ .
+\end{align*} 
+  
+Given $A$ and $B$ two \Ainf -algebras, we would also like to know whether the \Ainf -algebra structure $B \otimes_\infty A$ on $B \otimes A$ can simply be obtained from the maps defining the \Ainf -algebra structure $A \otimes_\infty B$ on $A \otimes B$ \[ m_n^{A \otimes_\infty B} : ( A \otimes B)^{\otimes n} \rightarrow A \otimes B \] by rearranging $(A \otimes B)^{\otimes n}$ into $(B \otimes A)^{\otimes n}$ and $A \otimes B$ into $B \otimes A$. In operadic terms, this amounts to ask if the diagonal \diagainf\ on \Ainf\ is cocommutative or not. The diagonal \diagainf\ is not cocommutative, as 
+\[ \left( \diagainf - \tau \diagainf \right) \left( \black{ \bullet \bullet \bullet } \right) = \partial \left( \black{ \bullet \bullet \bullet } \otimes \black{ \bullet \bullet \bullet } \right) \ , \]
+where $\tau$ acts by the permutation $(1 \ 2)$ on the operad $\Ainf \otimes \Ainf$.
+In the case of the tensor product of \Ainf -morphisms, we also have that
+\[ \left( \diagminf - \tau \diagminf \right) \left( \purple{\bullet \bullet} \right) = \partial \left( \purple{\bullet \bullet} \otimes \purple{\bullet \bullet} \right) \ . \]
+We however do not prove a counterpart of \cref{prop:pas-coassoc} in general.
+ 
+\subsubsection{Compatibility with the composition} \label{sss:comp-composition}
 
-\rouge{Paragraphe de transition - En fait la proposition précédente implique la proposition pour \Minf ?}
+We would finally like to know whether the tensor product is functorial with respect to the composition of \Ainf -morphisms. In other words, if given \Ainf -morphisms $f_1 : A_1 \rightsquigarrow B_1$, 
+$g_1 : B_1 \rightsquigarrow C_1$, $f_2 : A_2 \rightsquigarrow B_2$ and
+$g_2 : B_2 \rightsquigarrow C_2$ they satisfy the following equality
+\[ ( g_1 \otimes f_1) \circ (g_2 \otimes f_2) = (g_1 \otimes g_2) \circ (f_1 \otimes f_2) \ . \]
+In operadic terms, this amounts to ask if the diagonal \diagminf\ on \Minf\ together with the composition morphism \comp\ of subsection \ref{sss:operad-ainf-operadic-bimod-minf} satisfy the following equality 
+\[ ( \comp \otimes \comp ) \diagminf = (\diagminf \circ_{\Ainf} \diagminf ) \comp   \ . \]
 
 \begin{theorem} 
   \label{thm:nofunctorial}
-  A diagonal $\triangle$ on the operadic bimodule \Minf\ is never coassociative, is never cocommutative and is never compatible with the composition of \Ainf -morphisms.  
+  A diagonal $\triangle$ on the operadic bimodule \Minf\ is never compatible with the composition of \Ainf -morphisms.  
 \end{theorem}
 
 \begin{proof} 
-  The proof is a straightforward computation, similar to the one of \cref{prop:nocoassoc}. 
-  We try to construct inductively a diagonal $\triangle$ which respects the following condition: given two $\Ainf$-morphisms $f^i : A_i \rightsquigarrow B_i$ and $g^i : B_i \rightsquigarrow C_i$ for $i=1,2$, the following identity is satisfied \[ (g^1 \circ f^1) \otimes (g^2 \circ f^2) = (g^1 \otimes g^2) \circ (f^1 \otimes f^2) \ , \tag{$\star$}\]
-  where $\circ$ denotes the composition of $\Ainf$-morphisms. 
-  In arity $1$, there is only one possible diagonal $\triangle(\purple{x})=\purple{x} \otimes \purple{x}$ and the equation ($\star$) is directly seen to be satisfied. 
-  In arity $2$, the most general diagonal has the form \[ \triangle(\purple{xy})=\purple{xy} \otimes [\alpha \red{xy} + \beta \blue{xy}] + [\gamma \red{xy}+ \delta \blue{xy}]\otimes \purple{xy} \ . \]
-  Compatibility with the differential imposes $\beta + \delta =1$, $\alpha=\delta$, $\beta=\gamma$ and $\alpha + \gamma =~1$.
-  Thus, we have \[\triangle (\purple{xy})= \alpha [\blue{xy}\otimes \purple{xy} + \purple{xy}\otimes\red{xy}] + (1-\alpha)[\red{xy}\otimes \purple{xy}+\purple{xy}\otimes \blue{xy}] \ . \] 
-  Applying this formula to both sides of $(\star)$ and comparing the terms, we obtain that in order for the equality to hold, we must have both $\alpha=0$ and $1-\alpha=0$, a contradiction. 
+  Let indeed $\triangle$ be a diagonal $\Minf \rightarrow \Minf \otimes \Minf$.
+  Compatibility with the differential implies that $\triangle$ is necessarily of the form
+  \[
+      \triangle(\purple{\bullet }) = \purple{\bullet } \otimes \purple{\bullet } \]
+and
+\[ \begin{matrix}
+      \triangle (\purple{\bullet \bullet }) &= &\alpha (\blue{\bullet \bullet }\otimes \purple{\bullet \bullet } + \purple{\bullet \bullet }\otimes\red{\bullet \bullet }) \\ & &+ \ (1-\alpha)(\red{\bullet \bullet }\otimes \purple{\bullet \bullet }+\purple{\bullet \bullet}\otimes \blue{\bullet \bullet}) \ ,
+  \end{matrix} \]
+  where $\alpha \in \mathbb{Z}$.
+  We compute that if the equality
+  \[ ( \comp \otimes \comp ) \triangle ( \purple{\bullet \bullet} ) = (\triangle \circ_{\Ainf} \triangle ) \comp  ( \purple{\bullet \bullet} ) \]
+  holds, we necessarily have that $\alpha = 0$ and that $\alpha =1$, which is not possible.
 \end{proof}
 
-Définition homotopie entre morphismes d'opérades
-En fait MS montre que les propriétés sont vraies à homotopie près :
+\noindent In the case of the diagonals \diagainf\ and \diagminf , we compute in particular that 
+  \[ \left( \comp  \circ \diagminf - (\diagminf \circ_{\Ainf} \diagminf ) \circ \comp \right) \left( \arbreopdeuxmorph  \right) = \partial \left( \arbreopcompun \otimes \arbreopcompdeux \right)  \ , \]
+where we choose to write the formulae with trees and not nestings, as we did not introduce the definition of a 3-colored nesting of a linear graph in this paper.
 
-\begin{proposition}[{\cite{MSS}}]
-\rouge{Compléter}
-\end{proposition}
+\subsubsection{Homotopy properties}
 
-Leur preuve repose sur la théorie des modèles minimaux pour les opérades détaillée dans
-Définition homotopie entre morphismes de bimodules opéradiques
-Leur résultat s'adapte alors à M-infini
+While coassociativity, cocommutativity and compatibility with the composition are not satisfied on the nose by the diagonals \diagainf\ and \diagminf , we will now prove that a diagonal on the 2-colored operad \Ainfdeux\ always satisfies these properties up to homotopy.
 
-\begin{proposition}
-\rouge{Compléter}
-\end{proposition}
+We begin by recalling the notion of homotopy between morphisms of 2-colored operads as defined in \cite[Section 3.10]{MSS}. Introduce $\mathbb{Z}[t,dt]$ to be the dg-commutative algebra generated by $t$ and $dt$, where $|t|=0$, $|dt|=-1$, and whose differential is defined as $\partial (t) = dt$ and $\partial (dt) = 0$. An element of $\mathbb{Z}[t,dt]$ writes uniquely as a sum $p(t)+q(t)dt$ where $p(t)$ and $q(t)$ are polynomials in $t$. For $i=0,1$, define $ev_i : \mathbb{Z}[t,dt] \rightarrow \mathbb{Z}$ to be the morphism of dg-commutative algebras given by $ev_i ( p(t) + q(t)dt ) = p(i)$.
+Let now $P$ and $Q$ be two (2-colored) dg-operads and $\alpha , \beta : P \rightarrow Q$ be two morphisms of (2-colored) dg-operads.
+An \textit{elementary homotopy} between $\alpha$ and $\beta$ is defined to a morphism of (2-colored) operads $h : P \rightarrow \mathbb{Z}[t,dt] \otimes Q$ such that $\alpha = ev_0 h$ and $\beta = ev_1 h$.
+Two morphisms of operads $\alpha$ and $\beta$ are then said to be \textit{homotopic} if there exists a sequence of elementary homotopies connecting $P$ and $Q$
+\[ P = P_0 \rightarrow P_1 \rightarrow \cdots \rightarrow P_n = Q \ . \]
+
+\begin{theorem} \label{th:homotopy-properties}
+Let $\triangle$ be a diagonal on the 2-colored operad \Ainfdeux . 
+\begin{enumerate}
+    \item The morphisms of operads $(\triangle \otimes \ide ) \triangle)$ and $(\ide \otimes \triangle) \triangle)$ are homotopic. In other words, a diagonal on \Ainfdeux\ is always coassociative up to homotopy.
+    \item The morphisms of operads $\triangle$ and $\tau \triangle$ are homotopic. In other words, a diagonal on \Ainfdeux\ is always cocommutative up to homotopy.
+    \item The morphisms of operads $\comp  \circ \diagminf$ and $( \diagminf \circ_{\Ainf} \diagminf ) \circ \comp$ are homotopic. In other words, a diagonal on \Ainfdeux\ is always compatible with the composition of \Ainf -morphisms up to homotopy.
+\end{enumerate}
+\end{theorem}
 
 \begin{proof}
-\rouge{Ecrire à Fresse !}
+The proof of this theorem is a simple adaptation of the results of \cite[Section 2]{MarklShnider06} in the context of 2-colored operads, applied to the minimal model \Ainfdeux\ for the 2-colored dg-operad $As^2$ encoding dg-algebras together with morphisms of dg-algebras.
 \end{proof}
 
-\subsection{The homotopy monoidal category structure on the category $\mathsf{\Ainf -alg}$ ?}
+\subsubsection{The homotopy monoidal category structure on the category \Aalg\ ?} 
 
-\rouge{Copier-coller de la thèse}
-
-We would now like to know if the tensor product $\otimes_\infty$ defined using the diagonal $\Delta_{\Ainf}$ introduced in \cite{markl-assoc} and the diagonal $\Delta_{M_\infty}$ that we construct in \cite{masuda-diagonal-multipl}, endows the category $\mathsf{\Ainf -alg}$ with a symmetric monoidal category structure, where $\mathrm{Z}$ is taken to be the identity object. More precisely, we have to prove that there exist functorial isomorphisms $\alpha_{A,B,C} : A \otimes_\infty ( B \otimes_\infty C) \rightarrow (A \otimes_\infty B) \otimes_\infty C$ and $\tau_{A,B} : A \otimes_\infty B \rightarrow B \otimes_\infty A$ that fit into the usual diagrams for a monoidal category, and that this tensor product is functorial i.e. that given \Ainf -morphisms $F_i : A_i \rightarrow B_i$ and $G_i : B_i \rightarrow C_i$ for $i=1,2$, the following identity is satisfied 
-\[ (G_1 \circ F_1) \otimes_\infty (G_2 \circ F_2) = (G_1 \otimes_\infty G_2) \circ (F_1 \otimes_\infty F_2) \ . \]
+As explained in the introduction of this section, we would like to know whether the diagonals \diagainf\ and \diagminf\ endow the category \Aalg\ with a symmetric monoidal category structure, where $\mathbb{Z}$ is taken to be the identity object. More precisely, we have to prove that there exist functorial isomorphisms $\alpha_{A,B,C} : A \otimes_\infty ( B \otimes_\infty C) \rightarrow (A \otimes_\infty B) \otimes_\infty C$ and $\tau_{A,B} : A \otimes_\infty B \rightarrow B \otimes_\infty A$ that fit into the usual diagrams for a monoidal category, and that this tensor product is functorial i.e. that given \Ainf -morphisms $f_i : A_i \rightsquigarrow B_i$ and $g_i : B_i \rightsquigarrow C_i$ for $i=1,2$, the following identity is satisfied 
+\[ (g_1 \circ f_1) \otimes_\infty (g_2 \circ f_2) = (g_1 \otimes_\infty g_2) \circ (f_1 \otimes_\infty f_2) \ . \]
 We refer to \cite{MacLane98} for the complete definition of a symmetric monoidal category structure.
 
-Applying the theory of Hopf operads and minimal models to the Hopf operad $Ass$ endowed with the obvious diagonal and its minimal model $\Ainf \rightarrow Ass$, it is proven in \cite{markl-shnider-stasheff} and \cite{markl-assoc} that there exists a homotopy of morphisms of operads between $(\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf}$ and $(\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf}$. Following for instance \cite{fukaya-cyclic-symmetry}, this means that there exists a quasi-isotopy between the \Ainf -algebras $A \otimes_\infty ( B \otimes_\infty C)$ and $(A \otimes_\infty B) \otimes_\infty C$ whose underlying dg-module is $A \otimes B \otimes C$, thus in particular that there exists an \Ainf -quasi-isomorphism between them.  A similar method also shows that $A \otimes_\infty B \simeq B \otimes_\infty A$.
-It is however unclear why these collections of quasi-isomorphisms should fit into natural transformations $\alpha$ and $\tau$ defining the associator and the symmetry of a symmetric monoidal category structure on $\mathtt{\Ainf -alg}$. 
-It is moreover proven in~\cite{markl-assoc} that a diagonal on \Ainf\ can in fact never be coassociative, i.e. that for any morphism of operads $\Delta_{\Ainf} : \Ainf \rightarrow \Ainf \otimes \Ainf$ we have that \[ (\Delta_{\Ainf} \otimes \ide) \circ \Delta_{\Ainf} \neq (\ide \otimes \Delta_{\Ainf} ) \circ \Delta_{\Ainf} \ . \]
-We also prove in \cite{masuda-diagonal-multipl} that a diagonal on $M_\infty$ can never be functorial.
+As proven in \cref{thm:nofunctorial}, a tensor product defined by a diagonal on \Minf\ can never be functorial. It is thus impossible to endow the category $\mathtt{\Ainf -alg}$ with a symmetric monoidal category structure from the perspective of diagonals.
+Following \cite{fukaya-cyclic-symmetry} and \cite{MarklShnider06}, \cref{th:homotopy-properties} implies however that there exists a quasi-isotopy between the \Ainf -algebras $A \otimes_\infty ( B \otimes_\infty C)$ and $(A \otimes_\infty B) \otimes_\infty C$ whose underlying dg-module is $A \otimes B \otimes C$, hence that there exists an \Ainf -quasi-isomorphism between them.  In a similar fashion, we have that $A \otimes_\infty B \simeq B \otimes_\infty A$.
+It is however unclear why these collections of quasi-isomorphisms (and not isomorphisms !) should fit into natural transformations $\alpha$ and $\tau$ satisfying the relations for the associator and the symmetry of a symmetric monoidal category structure on $\mathtt{\Ainf -alg}$. 
 
-It is thus impossible to endow the category $\mathtt{\Ainf -alg}$ with a symmetric monoidal category structure from the perspective of diagonals on the operad $\Ainf$ and the operadic bimodule $\Minf$. Guillaume Laplante-Anfossi and myself therefore plan to inspect in which sense this data would endow $\mathtt{\Ainf -alg}$ with a "homotopy" monoidal category structure. It is not yet clear to us which explicit model for such a category one would have to choose. Understanding which higher coherent homotopies arise from the lack of associativity of $\Delta_{K_n}$ and $\Delta_{J_n}$ on the level of polytopes could for instance be a first step towards solving that problem.
-Given two diagonals $\Delta_{\Ainf}^i$ and $\Delta_{M_\infty}^i$ for $i=1,2$, it would also be interesting to know how the two "homotopy" monoidal category structures defined on $\mathtt{\Ainf -alg}$ would then be related.
-A first result in that direction is again given in \cite{markl-assoc}. Two diagonals $\Delta_{\Ainf}^1$ and $\Delta_{\Ainf}^2$ on the operad \Ainf\ are always homotopic as morphisms of operads, which implies that the \Ainf -algebras $A \otimes_{\infty_1} B$ and $A \otimes_{\infty_2} B$ are always quasi-isomorphic. We finally point out that such a homotopy monoidal category structure on $\mathtt{\Ainf -alg}$ could then be easily adapted to define a homotopy monoidal category structure on the category of \Ainf -categories with \Ainf -functors.
+In the light of the results of \cref{th:homotopy-properties}, we plan to inspect in a future work in which sense the diagonals \diagainf\ and \diagminf\ endow $\mathtt{\Ainf -alg}$ with a \textit{homotopy monoidal} category structure. It is not yet clear to us which explicit model for such a category one would have to choose. See for instance \cite[Definition A.5.2]{Pascaleff18} for the notion of a monoidal $\infty$-category. As a first step towards solving that problem, we will inspect in an upcoming paper which higher coherent homotopies arise from the lack of associativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes, and how to understand the boundary relations given in subsection \ref{sss:coassoc-cocomm} and \ref{sss:comp-composition}.
+We point out that such a homotopy monoidal category structure on $\mathtt{\Ainf -alg}$ could then be easily adapted to define a homotopy monoidal category structure on the category of \Ainf -categories with \Ainf -functors.
 
-\rouge{Dire directement ici ce que les résultats de la section précédente implique sur les dg-modules}
-
-\rouge{Dire qu'un des espoirs est que tout comme on pouvait pas construire la diagonale \Minf\ sans polytopes, on ait besoin des polytopes pour faire la suite et comprendre les bonnes notions à considérer}
-
-\rouge{Dire que c'est un travail en cours de rédaction, et ne pas donner les arguments clef}
-
-~
-
-\noindent \rouge{Discuter des paragraphes qui suivent ensemble}
-
-A definition of "monoidal $\Ainf$-category" was proposed recently in the context of $\infty$-categories \cite[Definition A.5.3]{Pascaleff18}.
-It would be interesting to know if the image of our tensor product under the Faonte--Lurie nerve \cite{Faonte17} makes the category of $\Ainf$-algebras into a monoidal $\Ainf$-category in this sense. \rouge{Faonte-Lurie ?}
-
-A third idea is to see $\Ainf$-algebras as particular instances of a more general structure, where the preceding tensor product extends to a symmetric monoidal one.  
+\rouge{A third idea is to see $\Ainf$-algebras as particular instances of a more general structure, where the preceding tensor product extends to a symmetric monoidal one.  
 One can see \cref{prop:nocoassoc} as saying that the operad $\Ainf$ cannot be an operad in coassociative coalgebras. 
 It is then tempting to ask if $\Ainf$ could be an operad in $\Ainf$-coalgebras; however, this cannot be since (by \cref{prop:nocoassoc}) there is no symmetric monoidal structure on the category of $\Ainf$-coalgebras.
 One could then consider the category of $\AAinf$-algebras, that is algebras over the bar-cobar resolution (also called $W$-construction, or Boardman--Vogt resolution) of the associative operad, which is symmetric monoidal with respect to the tensor product defined by J.-P. Serre's cubical diagonal. 
-Alternatively, S. Arkhipov and D. Poliakova propose in \cite{PoliakovaArkhipov21} the category of integrated $\Ainf$-coalgebras, which is also symmetric monoidal, as an appropriate setting to study the operad $\Ainf$. 
+Alternatively, S. Arkhipov and D. Poliakova propose in \cite{PoliakovaArkhipov21} the category of integrated $\Ainf$-coalgebras, which is also symmetric monoidal, as an appropriate setting to study the operad $\Ainf$.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Further applications} \label{sec:furtherdirections}
 
-\rouge{A écrire à la fin - Ganatra ?}
+\rouge{A écrire à la fin}
 
 \subsection{Convolution \Ainf -algebra}
 
+\subsubsection{Retractions and diagonals}
+
+Recall that the operad \Ainf\ can be equivalently defined as the operad $\Ainf := \Omega As^{\text{!`}}$. 
+The theory of Koszul duality implies that it provides an alternative cofibrant replacement $\Ainf \rightarrow As$ to the universal cofibrant replacement $\ombas \rightarrow As$. 
+Following \cite[Section 9.3]{LodayVallette12}, the operad \ombas\ can in fact be defined as the quasi-free operad 
+\[ \ombas := \mathcal{F} (\premiertermecobarbarA , \premiertermecobarbarD , \premiertermecobarbarB , \premiertermecobarbarC , \cdots , \mathrm{PT_n}, \cdots ) \ , \] 
+where $\mathrm{PT_n}$ is the set of planar rooted trees of arity $n$ and the degree of a tree is defined as the number of its internal edges.
+See also \cite{Mazuir21} for a complete definition of the operad \ombas . 
+As proven in \cite{MarklShnider06} and \cite{Mazuir21} there exists in fact an elementary morphism of operads $\Ainf \rightarrow \ombas$. The problem of the construction of a morphism of operads $\ombas \rightarrow \Ainf$ is more complicated and is the object of the following proposition. We will call such a morphism a \textit{retraction} of \ombas\ onto \Ainf .
+
+\begin{proposition}\label{prop:retract}
+The datum of a diagonal on the operad \Ainf\ is equivalent to the datum of a morphism of dg-operads $\ombas \rightarrow \Ainf$ sending $\arbreopdeux$ to $\arbreopdeux$.
+\end{proposition}
+
+\begin{proof}
+\rouge{voir avec Bruno}
+\end{proof}
+
+\cref{prop:retract} clarifies in particular the construction of the diagonal on the operad \Ainf\ in \cite{MarklShnider06}. 
+The operad \ombas\ can indeed be seen as the cellular chains on the cubical realization of the associahedra (\cite{} BV, BM03a, LV, Maz1). 
+It comes with an elementary diagonal $\ombas \rightarrow \ombas \otimes \ombas$ defined using the Serre cubical diagonal of \cite{Serre51}.
+Markl and Shnider then define a retraction $\ombas \rightarrow \Ainf$ and deduce a diagonal on the operad \Ainf\ as 
+\[ \Ainf \longrightarrow \ombas \longrightarrow \ombas \otimes \ombas \longrightarrow \Ainf \otimes \Ainf \ , \]
+where the last arrow is the Hadamard product of two copies of the retraction $\ombas \rightarrow \Ainf$. 
+Under the equivalence of \cref{prop:retract}, their choice of retraction corresponds exactly to the diagonal constructed directly on the level of the associahedra in \cite{MTTV19}.
+A similar proof would however not adapt to the case of the multiplihedra, as they are not simple hence do not admit a cubical realization.
+
 \subsubsection{Convolution algebra}
 
-\rouge{Citer LV}
 Let $A$ be a dg-algebra and $C$ be a dg-coalgebra. 
 Consider $\Hom (C,A)$ to be the dg-module of chain maps $C \rightarrow A$ whose elements of degree $i$ are the chain maps of degree $i$ and whose differential is defined by 
 \[ \partial (f) := [ \partial , f ] = \partial_A f - (-1)^{|f|} f \partial_C \ . \]
@@ -1972,60 +1994,60 @@ The map $\star : \Hom (C,A) \otimes \Hom (C,A) \rightarrow \Hom (C,A)$ is then a
 Let $A$ be a dg-algebra and $C$ a dg-coalgebra. The \emph{convolution algebra of $C$ and $A$} is defined to be the dg-algebra $(\Hom (C,A) , [ \partial , \cdot ] , \star)$.
 \end{definition}
 
-Rappels : algèbre de convolution d'une dg-cogèbre et dg-algèbre et pourquoi c'est important
-Intérêt des algèbres de convolution en un paragraphe en citant LV
+A Maurer-Cartan element $\alpha$ of $\Hom (C,A)$, i.e. a map $\alpha : C \rightarrow A$ such that 
+\[ [ \partial , \alpha ] + \alpha \star \alpha  = 0 \ , \]
+will be called a \emph{twisting morphism}. Twisting morphisms define twisted differentials on the tensor product $C \otimes A$
+\[ \partial_\alpha := \partial_{C \otimes A} + (\ide \otimes \mu_A ) ( \ide \otimes \alpha \otimes \ide ) ( \Delta_C \otimes \ide ) \ . \]
+These differentials appear in the computation of the singular homology of fiber spaces in \cite{Brown59}. 
+Given a fibration $F \rightarrow X \rightarrow B$ \rouge{satisfying some mild assumptions}, the singular homology of $X$ can then be computed as the homology of the tensor product $C_*(B) \otimes C_*(F)$ endowed with a twisted differential, where $C_*(F)$ is seen as a dg-module over the dg-algebra $C_*(\Omega B)$.
 
-Let now $A_1$ and $A_2$ be dg-algebras, $C_1$ and $C_2$ be two dg-coalgebras and $f : A_1 \rightarrow A_2$ and $g : C_2 \rightarrow C_1$ respectively be morphisms of dg-algebras and dg-coalgebras.
+Let now $A_1$ and $A_2$ be dg-algebras, $C_1$ and $C_2$ be dg-coalgebras and $f : A_1 \rightarrow A_2$ and $g : C_2 \rightarrow C_1$ respectively be morphisms of dg-algebras and dg-coalgebras.
 The map
 \[ h \in \Hom (C_1 , A_1) \longmapsto f \circ h \circ g \in \Hom (C_2,A_2) \]
 can then be proven to be a morphism of dg-algebras.
 
 \begin{proposition}
-The previous construction defines a bifunctor $\mathsf{(dg-cog)^{op}} \times \mathsf{dg-alg} \rightarrow \mathsf{dg-alg}$. It is defined on objects as $(C,A) \mapsto \Hom (C,A)$ and on morphisms as in the previous paragraph.
+The previous construction yields a bifunctor $\mathsf{(dg-cog)^{op}} \times \mathsf{dg-alg} \rightarrow \mathsf{dg-alg}$ defined on objects as $(C,A) \mapsto \Hom (C,A)$.
 \end{proposition}
 
 \subsubsection{Convolution \Ainf -algebra}
 
-We begin by recalling the definition of \Ainf -coalgebra, which defines a correct homotopy notion of a dg-coalgebra whose coproduct is coassociative up to homotopy.
+We now show how to extend the convolution algebra construction when $C$ is an \Ainf -coalgebra and $A$ is an \Ainf -algebra.
 
-\begin{definition}[$\mathrm{A}_\infty$-coalgebra] \label{def:ainf-alg} An \emph{$\mathrm{A}_\infty$-coalgebra} is the data of a dg-module $(C,\partial)$ together with operations \[ \Delta_n : A \to A^{\otimes n} \ , \ n \geq 2 \] of degree $|c_n|=n-2$, satisfying the equations 
+\begin{definition}[$\mathrm{A}_\infty$-coalgebra] \label{def:ainf-coalg} An \emph{$\mathrm{A}_\infty$-coalgebra} is the data of a dg-module $(C,\partial)$ together with operations \[ \Delta_n : A \to A^{\otimes n} \ , \ n \geq 2 \] of degree $|c_n|=n-2$, satisfying the equations 
 \[ [ \partial , \Delta_n ] = - \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr}(\id^{\otimes p} \otimes \Delta_q \otimes \id^{\otimes r})\Delta_{p+1+r} \ , \ n\geq 2 \ . \]
 \end{definition}
 
-The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a similar fashion.
-
-\rouge{Définition en termes opéradiques}
+\noindent The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a similar fashion.
 
 \begin{proposition} \label{prop:convolution-ainf}
-Let $C$ be an \Ainf -coalgebra and $A$ be an \Ainf -algebra. The datum of a diagonal $\triangle$ on the operad \Ainf\ defines an \Ainf -algebra structure on the dg-module $(\Hom (C,A) , [ \partial , \cdot ])$. We call this \Ainf -algebra the \emph{convolution \Ainf -algebra of $C$ and $A$} defined by the diagonal $\triangle$.
+Let $C$ be an \Ainf -coalgebra and $A$ be an \Ainf -algebra. A diagonal $\triangle$ on the operad \Ainf\ defines an \Ainf -algebra structure on the dg-module $(\Hom (C,A) , [ \partial , \cdot ])$. We call this \Ainf -algebra the \emph{convolution \Ainf -algebra of $C$ and $A$} defined by the diagonal $\triangle$.
 \end{proposition}
 
 \begin{proof} 
-\rouge{Compléter, et essayer de le faire sans lire la preuve de Bruno}
+\rouge{A discuter avec Bruno, mais faire court}
 \end{proof}
 
 \begin{proposition} \label{prop:convolution-minf}
-Let $F : A_1 \rightsquigarrow A_2$ be an \Ainf -morphisms between two \Ainf -algebras $A_1$ and $A_2$ and $G : C_2 \rightsquigarrow C_1$. The datum of a diagonal $\triangle$ on the operad \Minf\ defines an \Ainf -morphism between the convolution \Ainf -algebras $\Hom (C_1,A_1)$ and $\Hom (C_2,A_2)$. 
+Let $f : A_1 \rightsquigarrow A_2$ be an \Ainf -morphism between two \Ainf -algebras $A_1$ and $A_2$ and $g : C_2 \rightsquigarrow C_1$ be an \Ainf -morphism between \Ainf -coalgebras $C_2$ and $C_1$. A diagonal $\triangle$ on the operad \Minf\ defines an \Ainf -morphism between the convolution \Ainf -algebras $\Hom (C_1,A_1)$ and $\Hom (C_2,A_2)$. 
 \end{proposition}
 
 \begin{proof}
-\rouge{Compléter, et essayer de le faire sans lire la preuve de Bruno}
+The proof is similar to the proof of \cref{prop:convolution-ainf}. We moreover point out that \cref{thm:nofunctorial} implies that the constructions of \cref{prop:convolution-ainf} and \cref{prop:convolution-minf} cannot fit into a bifunctor $\mathsf{(\Ainf -cog)^{op}} \times \Aalg \rightarrow \Aalg$.
 \end{proof}
 
-\noindent As proven in \ref{} a diagonal on the operadic bimodule \Minf\ can never be functorial. This implies in particular that the constructions of \cref{prop:convolution-ainf} and \cref{prop:convolution-minf} cannot fit into a bifunctor $\mathsf{(\Ainf -cog)^{op}} \times \mathsf{\Ainf -alg} \rightarrow \Ainf -alg$. \rouge{Remarque à homotopie près en citant la section concernée}
+\cref{prop:convolution-ainf} implies in particular that when $C$ is an \Ainf -coalgebra and $A$ an \Ainf -algebra, one can still define \textit{twisting cochains} $\alpha : C \rightarrow A$ as Maurer-Cartan elements of the \Ainf -algebra $\Hom (C,A)$. 
+\cref{prop:convolution-minf} then implies that the \Ainf -morphism $\Hom (C_1,A_1) \rightarrow \Hom (C_2,A_2)$, defined by the \Ainf -morphism $f : A_1 \rightsquigarrow A_2$ and $g : C_2 \rightsquigarrow C_1$, sends twisting cochains $C_1 \rightarrow A_1$ to twisting cochains $C_2 \rightarrow A_2$.
+Following \cite[Section 5.5]{Proute86}, this result should have direct applications to the computations of the homology of fiber spaces $H_*(X)$, using the homologies of the base space $H_*(B)$ and of the fiber $H_*(F)$ (whereas the chain complexes $C_*(B)$ and $C_*(F)$ were used in \cite{Brown59}). This idea is a work under progress and will be adressed in an upcoming paper.
 
-\subsection{Retractions and diagonals}
+\subsection{Diagonals in symplectic topology}
 
-\rouge{Théorème équivalence rétraction et diagonale (avec l’accord de Bruno)}
-
-\subsection{ K\"unneth theorems in Lagrangian Floer theory and Morse theory}
-
-\subsubsection{K\"unneth theorem in Lagrangian Floer theory}
+\subsubsection{K\"unneth theorems in Lagrangian Floer theory}
 
 Let $(M,\omega)$ be a closed symplectic manifold, i.e. a closed manifold $M$ together with a closed non-degenerate 2-form $\omega$ on $M$. 
 The \emph{Fukaya category} $\mathrm{Fuk}(M,\omega)$ of $(M,\omega)$  is defined to be the (curved filtered unital) \Ainf -category whose objects are (unobstructed) Lagrangian submanifolds of $M$ and higher compositions are defined by counting pseudo-holomorphic disks with Lagrangian boundary conditions and marked points on their boundary, as represented in Figure \ref{fig:pseudo-hol-disk-bord-lagrang}. 
 We refer for instance to~\cite{smith-prolegomenon}~and~\cite{auroux-fukaya} for introductions to the subject.
-Given a closed spin Lagrangian submanifold $L \subset M$, Fukaya also constructs in \cite{fukaya-cyclic-symmetry} a unital \Ainf -algebra $\mathcal{F}(L)$ associated to the Lagrangian $L$ whose higher multiplications are again defined by counting pseudo-holomorphic disks, called the \emph{Fukaya algebra of $L$}. 
+Given a closed spin Lagrangian submanifold $L \subset M$, Fukaya also constructs in \cite{fukaya-cyclic-symmetry} a strictly unital \Ainf -algebra $\mathcal{F}(L)$ associated to the Lagrangian $L$ whose higher multiplications are again defined by counting pseudo-holomorphic disks, called the \emph{Fukaya algebra of $L$}. 
 
 \begin{figure}[h]
 \centering
@@ -2104,81 +2126,33 @@ Given a closed spin Lagrangian submanifold $L \subset M$, Fukaya also constructs
 
 \end{subfigure}
 
-\caption{\rouge{On the left, a quilted disk in $\mathcal{QD}_{3,1}$.} On the right, a pseudo-holomorphic quilted disk with Lagrangian boundary conditions on the $L_i$, seam condition on $\mathcal{L}_{01}$ and $n+1$ marked boundary points} \label{fig:pseudo-hol-disk-bord-lagrang}
+\caption{On the left, a pseudo-holomorphic disk defining the \Ainf -category structure on $\mathrm{Fuk}(M)$. On the right, a pseudo-holomorphic quilted disk defining an \Ainf -functor $\mathrm{Fuk}(M_0)\rightsquigarrow\mathrm{Fuk}(M_1)$} \label{fig:pseudo-hol-disk-bord-lagrang}
 \end{figure}
 
-\rouge{Bien mettre l'accent sur le fait que c'est le produit tensoriel de MS qui est utilisé}
-
-In \cite{amorim-lagrangian}, Amorim shows that given two symplectic manifolds $M_1$ and $M_2$ together with Lagrangians $L_i \subset M_i$, the Fukaya algebra of the product Lagrangian $L_1 \times L_2$ is quasi-isomorphic to the tensor product of their Fukaya algebras, i.e. $\mathcal{F}(L_1 \times L_2) \simeq \mathcal{F}(L_1) \otimes_\infty \mathcal{F}(L_2)$. His proof relies on a theorem that he proves in~\cite{amorim-tensor}, giving a criterion for an \Ainf -algebra $C$ to be quasi-isomorphic to the tensor product $A \otimes_\infty B$ of two commuting \Ainf -subalgebras $A \subset C$ and $B \subset C$, which he then applies to the two \Ainf -subalgebras $\mathcal{F}(L_1) \subset \mathcal{F}(L_1 \times L_2)$ and $\mathcal{F}(L_2) \subset \mathcal{F}(L_1 \times L_2)$.
+In \cite{amorim-lagrangian}, Amorim shows that given two symplectic manifolds $M_1$ and $M_2$ together with Lagrangians $L_i \subset M_i$, the Fukaya algebra of the product Lagrangian $L_1 \times L_2$ is quasi-isomorphic to the tensor product of their Fukaya algebras, i.e. $\mathcal{F}(L_1 \times L_2) \simeq \mathcal{F}(L_1) \otimes_\infty \mathcal{F}(L_2)$. His proof relies on a theorem that he proves in~\cite{amorim-tensor}, giving a criterion for an \Ainf -algebra $C$ to be quasi-isomorphic to the tensor product $A \otimes_\infty B$ (see \cref{def:tensor-product-ainf-alg}) of two commuting \Ainf -subalgebras $A \subset C$ and $B \subset C$, which he then applies to the two \Ainf -subalgebras $\mathcal{F}(L_1) \subset \mathcal{F}(L_1 \times L_2)$ and $\mathcal{F}(L_2) \subset \mathcal{F}(L_1 \times L_2)$.
 Fukaya generalizes this result in \cite{fukaya-unobstructed}, working this time on the level of Fukaya categories. He proves that for two closed symplectic manifolds $M_0$ and $M_1$ there exists a unital \Ainf -functor
 \[ \mathrm{Fuk}(M_0) \otimes \mathrm{Fuk}(M_1) \longrightarrow \mathrm{Fuk}(M_0^- \times M_1) \]
 which is a homotopy equivalence to its image. 
 
-\begin{remark}
-Write $\mathcal{M}_{n,1}$ for the moduli space of disks with $n+1$ marked points on their boundary, where $n$ points are seen as incoming, and 1 as outgoing. The moduli space $\mathcal{M}_{n,1}$ can in fact be compactified and topologized in such a way that its image under the cellular chains functor yields the operad \Ainf. In other words, the compactified moduli spaces $\overline{\mathcal{M}}_{n,1}$ give a geometric realization of the associahedra. See~\cite{Seidel08} for instance. It is for this reason that the operations of the Fukaya category, defined by realizing these disks in the realm of symplectic geometry, fit into an \Ainf -category structure.
-\end{remark}
-
-\subsubsection{K\"unneth theorem in Morse theory}
-
-\rouge{Résumé rapide de ce que tu prévois de taper}
-
-\subsubsection{Constructing tensor products of \Ainf -algebras and \Ainf -morphisms using rectifications}
-
-In \cite{}, Amorim defines in fact the tensor product of \Ainf -algebras in an alternative fashion, drawing from an idea by Kontsevich and Soibelman in \cite{}. 
-For every unital \Ainf -algebra $A$, he defines a unital dg-algebra $End_A$ which is quasi-isomorphic to $A$. We do not give the details of the definition of $End_A$ but simply stress that it should not be confused with the operad $\mathrm{End}(A)$ defined in subsection \ref{}. 
-
-Given $A$ and $B$ two unital \Ainf -algebras, one can then consider the tensor product $End_A \otimes End_B$ which is again a unital dg-algebra. It fits together with the tensor product $A \otimes B$ into a homotopy retract diagram 
-\begin{center} 
-\begin{tikzcd}
-\arrow[loop left,"h"] End_A \otimes End_B \arrow[r, shift left, "p"] & \arrow[l,shift left,"i"] A \otimes B \ .
-\end{tikzcd}
-\end{center}
-One can then apply the homotopy transfer theorem in \cite{} to transfer the dg-algebra structure on $End_A \otimes End_B$ to an $\Ainf$-algebra structure on $A \otimes B$. 
-Computing explicit formulae for the \Ainf\ operations on $A \otimes B$ as in \cite{}, Amorim proves that this \Ainf -algebra structure corresponds exactly to the \Ainf -algebra structure defined in \cite{MarklShnider06,MTTV19}, see \cite[Corollary 4.2]{amorim-tensor}.
-We point out that one recovers in particular a formula that holds for non-necessarily unital \Ainf -algebras from a construction relying crucially on the fact that the \Ainf -algebras $A$ and $B$ are unital.
-
-The construction of Amorim should be understood as follows. As we know how to define the tensor product of dg-algebras, we first rectify the \Ainf -algebras $A$ and $B$ into quasi-isomorphic dg-algebras $Rect_A$ and $Rect_B$, consider the tensor dg-algebra $Rect_A \otimes Rect_B$ and then apply the homotopy transfer theorem to define an \Ainf -algebra structure on $A \otimes B$. This rectification procedure could also be used to construct the tensor product of \Ainf -morphisms $f_1 : A_1 \rightarrow B_1$ and $f_2 : A_2 \rightarrow B_2$ as follows. Suppose that $Rect_A$ is functorial in \Ainf -morphisms. Then, one can use the following extended homotopy retract diagram
-\begin{center} 
-\begin{tikzcd}
-\arrow[loop left,"h"] \quad \ \ Rect_{A_1} \otimes Rect_{B_1} \arrow[r, shift left, "p"] \arrow[d,"Rect_{f_1} \otimes Rect_{f_2}"]& \arrow[l,shift left,"i"] A_1 \otimes B_1 \arrow[d,"f \otimes g",dashed] \\
-\arrow[loop left,"h"] \quad \ \ Rect_{A_2} \otimes Rect_{B_2} \arrow[r, shift left, "p"] & \arrow[l,shift left,"i"] A_2 \otimes B_2
-\end{tikzcd}
-\end{center}
-in order to define the tensor product of \Ainf -morphisms $f_1 \otimes f_2 : A_1 \otimes A_2 \rightarrow B_1 \otimes B_2$.
-
-Unfortunately, the rectification $End_A$ defined by Amorim is not functorial in \Ainf -morphisms. It would thereby be an interesting question to find an alternative rectification $Rect_A$ of \Ainf -algebras into dg-algebras, which is moreover functorial in $A$, that respectively recovers the formula of \cite{MarklShnider06,MTTV19} and the formula introduced in this paper for the tensor product of \Ainf -morphisms. This problem might be the object of a future work by the authors of this paper.
-
-\subsection{Tensor products of geometric \Ainf -morphisms and geometric \Ainf -functors}
-
-Let $M_0$ and $M_1$ be two compact symplectic manifolds. Define a \emph{Lagrangian correspondences} from $M_0$ to $M_1$ to be a Lagrangian submanifold $\mathcal{L} \subset M_0^{-} \times M_1$.
-In \cite{mau-wehrheim-woodward}, Mau, Wehrheim and Woodward associate to a Lagrangian correspondence $\mathcal{L}$ (with additional technical assumptions) an \Ainf -functor $\phi_{\mathcal{L}} : \mathrm{Fuk}(M_0) \rightarrow \mathrm{Fuk}(M_1)$  It is defined on objects as 
+Let now $M_0$ and $M_1$ be two compact symplectic manifolds. Define a \emph{Lagrangian correspondences} from $M_0$ to $M_1$ to be a Lagrangian submanifold $\mathcal{L} \subset M_0^{-} \times M_1$.
+In \cite{mau-wehrheim-woodward}, Mau, Wehrheim and Woodward associate to a Lagrangian correspondence $\mathcal{L}$ (with additional technical assumptions) an \Ainf -functor $\phi_{\mathcal{L}} : \mathrm{Fuk}(M_0) \rightsquigarrow \mathrm{Fuk}(M_1)$.  
+It is defined on objects as 
 \[ \phi_{\mathcal{L}} (L_0) := \pi_{M_1} ( L_0 \times_{M_0} \mathcal{L} ) \ , \]
 where $\pi_{M_1}$ denotes the projection $M_0 \times M_0^{-} \times M_1 \rightarrow M_1$ and $\times_{M_0}$ is the fiber product over $M_0$. The operations of $\phi_{\mathcal{L}}$ are defined by counting pseudo-holomorphic quilted disks with Lagrangian boundary conditions, seam condition on $\mathcal{L}$ and marked points on their boundary, as represented in Figure \ref{fig:pseudo-hol-disk-bord-lagrang}. 
 
-\begin{remark}
-Mau and Woodward provide an extensive study of the moduli spaces of quilted disks $\mathcal{QD}_{n,1}$ in \cite{mau-woodward} and show in particular that the compactified moduli spaces $\overline{\mathcal{QD}}_{n,1}$ provide a geometric realization of the multiplihedra. See also Remark \ref{}.
-\end{remark}
-
-Drawing from the results of Amorim and Fukaya described in the subsubsection \ref{}, it would in particular be interesting to know whether (\rouge{and in which sense}) the following diagram commutes up to homotopy
+Drawing from the results of Amorim and Fukaya, it would in particular be interesting to know whether and in which sense the following diagram commutes up to homotopy
 \begin{center} 
 \begin{tikzcd}[column sep = large]
-\mathrm{Fuk}(M_0) \otimes \mathrm{Fuk}(N_0) \arrow[d] \arrow[r,"\phi_{\mathcal{L}_M} \otimes \phi_{\mathcal{L}_N}"] & \mathrm{Fuk}(M_1) \otimes \mathrm{Fuk}(N_1) \arrow[d] \\
- \mathrm{Fuk}(M_0 \times N_0) \arrow[r,"\phi_{\tau ( \mathcal{L}_M \times \mathcal{L}_N)}"] & \mathrm{Fuk}(M_1 \times N_1)
+\mathrm{Fuk}(M_0) \otimes_\infty \mathrm{Fuk}(N_0) \arrow[d,squiggly] \arrow[r,"\phi_{\mathcal{L}_M} \otimes_\infty \phi_{\mathcal{L}_N}",squiggly] & \mathrm{Fuk}(M_1) \otimes_\infty \mathrm{Fuk}(N_1) \arrow[d,squiggly] \\
+ \mathrm{Fuk}(M_0 \times N_0) \arrow[r,below,"\phi_{\tau ( \mathcal{L}_M \times \mathcal{L}_N)}",squiggly] & \mathrm{Fuk}(M_1 \times N_1)
 \end{tikzcd}
 \end{center}
-Here $\mathcal{L}_M \subset M_0^{-} \times M_1$ and $\mathcal{L}_N \subset N_0^- \times N_1$, $\tau$ is the symplectomorphism rearranging the factors of $M_0^{-} \times M_1 \times N_0^- \times N_1$ into the factors of $M_0^{-} \times N_0^- \times M_1 \times N_1$, and the vertical arrows are the \Ainf -functors defined at the end of subsubsection \ref{}.
+Here $\mathcal{L}_M \subset M_0^{-} \times M_1$ and $\mathcal{L}_N \subset N_0^- \times N_1$, $\tau$ is the symplectomorphism rearranging the factors of $M_0^{-} \times M_1 \times N_0^- \times N_1$ into the factors of $M_0^{-} \times N_0^- \times M_1 \times N_1$.
 
-Voir Maz pour la construction de morphismes entre cochaînes de Morse (deux phrases en mentionnant espaces de modules d'arbres jaugés)
-On pourrait poser une question similaire en Morse : $\phi_{\mathbb{Y} \times \mathbb{Y}'}$ et $\phi_{\mathbb{Y}} \otimes \phi_{\mathbb{Y}'}$
+\subsubsection{The work of Lipshitz, {Oszv\'ath} and Thurston}
 
-\subsection{The work of Lipshitz, {Oszv\'ath} and Thurston}
-
-In \cite{LOT20}, Lipshitz, Oszv\'ath and Thurston also study diagonals on the operad \Ainf\ and on the operadic bimodule \Minf . They however work exclusively on the dg-level, constructing abstract diagonals by using the fact that \Ainf\ and \Minf\ are contractible. They show in particular that one can construct a trigonal $\Minf \rightarrow \Minf^{\otimes 3}$ in order to produce a natural quasi-isomorphism
-\[ A_0 \otimes_\infty (A_2 \otimes_\infty A_3) \simeq (A_1 \otimes_\infty A_2) \otimes_\infty A_3 \ . \]
-This provides an alternative construction for a quasi-isomorphism of this form, which has already been constructed in subsection \ref{} using the theory of Hopf operads and minimal models. \rouge{Adapter en fonction de la section précédente}
-
-The goal of their work is to study bordered Heegaard Floer homology of 3-manifolds.
-Given a 3-manifold $Y$ with two boundary components, they are working to construct a \emph{bimodule twisted complex} $CFDD^-(Y)$, also called a \emph{type $DD$-bimodule}. The definition of such an object uses a diagonal on \Ainf . A diagonal on \Minf\ is then needed in order to relate the categories of bimodules defined with different diagonals on \Ainf , which in turn is needed for properties like associativity of tensor products. The authors also expect that diagonals on \Minf\ could be needed in a distant future to define \Ainf -morphisms between bimodule twisted complexes arising from a cobordism between two 3-manifolds $Y_1$ and $Y_2$.
+In \cite{LOT20}, Lipshitz, Oszv\'ath and Thurston also study diagonals on the operad \Ainf\ and on the operadic bimodule \Minf . They however work exclusively on the dg-level, constructing abstract diagonals by using the fact that \Ainf\ and \Minf\ are contractible. The goal of their work is to study bordered Heegaard Floer homology of 3-manifolds.
+Given a 3-manifold $Y$ with two boundary components, they are working to construct a \emph{bimodule twisted complex} $CFDD^-(Y)$, also called a \emph{type $DD$-bimodule}. The definition of such an object uses a diagonal on \Ainf . A diagonal on \Minf\ is then needed in order to relate the categories of bimodules defined with different diagonals on \Ainf , which in turn is needed for properties like associativity of tensor products. They also expect that diagonals on \Minf\ could be needed in a distant future to define \Ainf -morphisms between bimodule twisted complexes arising from a cobordism between two 3-manifolds $Y_1$ and $Y_2$.
 
 The previous paragraph is drawn from a private communication with Robert Lipshitz and remains very vague as their work on Heegaard Floer homology relying on \cite{LOT20} is still in progress. We however insist that their construction differs greatly from the one explained in subsection \ref{sss:amorim-fukaya}. Amorim and Fukaya use a diagonal on \Ainf\ in order to respectively prove a K\"unneth theorem for Fukaya algebras and Fukaya categories, while Lipshitz, Oszv\'ath and Thurston resort to diagonals on \Ainf\ and \Minf\ in order to define and study the properties of the bimodule twisted complex $CFDD^-(Y)$. 
 

@@ -14,7 +14,96 @@
 \end{tikzpicture}
 }
 
+\newcommand{\premiertermecobarbarA}{
+\begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+
+\end{tikzpicture}
+}
+
+\newcommand{\premiertermecobarbarAprime}{
+\begin{tikzpicture}[scale=0.07,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+
+\end{tikzpicture}
+}
+
+\newcommand{\premiertermecobarbarB}{
+\begin{tikzpicture}[scale = 0.15,baseline = (O.base)]
+\node (K) at (-0.625,0.625) {} ;
+\node (L) at (0,0) {} ;
+\draw (-0.625,0.625) -- (0,1.25) ;
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+\node (O) at (0,-0.5) {} ;
+\end{tikzpicture}
+}
+
+\newcommand{\premiertermecobarbarC}{
+\begin{tikzpicture}[scale = 0.15,baseline = (O.base)]
+\node (K) at (0.625,0.625) {} ;
+\node (L) at (0,0) {} ;
+\draw (0.625,0.625) -- (0,1.25) ;
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+\node (O) at (0,-0.5) {} ;
+\end{tikzpicture}
+}
+
+\newcommand{\premiertermecobarbarD}{
+\begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw (0,1.25) -- (0,0) ;
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+
+\end{tikzpicture}
+}
+
+\newcommand{\arbreopdeuxcol}[1]{
+\begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw[#1] (-1.25,1.25) -- (0,0) ;
+\draw[#1] (1.25,1.25) -- (0,0) ;
+\draw[#1] (0,-1.25) -- (0,0) ;
+
+\end{tikzpicture}
+}
+
+% Opération ternaire colorée de l'opérade A-infini
+
+\newcommand{\arbreoptroiscol}[1]{
+\begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw[#1] (0,1.25) -- (0,0) ;
+\draw[#1] (-1.25,1.25) -- (0,0) ;
+\draw[#1] (1.25,1.25) -- (0,0) ;
+\draw[#1] (0,-1.25) -- (0,0) ;
+
+\end{tikzpicture}
+}
+
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{decorations.pathmorphing}
 
 \newcommand{\compositionlabelIJ}{
 \begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
@@ -728,55 +817,6 @@ node[near end,right]{\tiny $- \nabla f$} node[midway,sloped,allow upside down,sc
 \draw (0.5,0.5) -- (-0.5,-0.5) ;
 \draw (-0.5,0.5) -- (0.5,-0.5) ;
 \end{tikzpicture}}
-
-\newcommand{\premiertermecobarbarA}{
-\begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
-
-\coordinate (pt_base) at (0,-0.5) ;
-
-\draw (-1.25,1.25) -- (0,0) ;
-\draw (1.25,1.25) -- (0,0) ;
-\draw (0,-1.25) -- (0,0) ;
-
-\end{tikzpicture}
-}
-
-\newcommand{\premiertermecobarbarB}{
-\begin{tikzpicture}[scale = 0.15,baseline = (O.base)]
-\node (K) at (-0.625,0.625) {} ;
-\node (L) at (0,0) {} ;
-\draw (-0.625,0.625) -- (0,1.25) ;
-\draw (-1.25,1.25) -- (0,0) ;
-\draw (1.25,1.25) -- (0,0) ;
-\draw (0,-1.25) -- (0,0) ;
-\node (O) at (0,-0.5) {} ;
-\end{tikzpicture}
-}
-
-\newcommand{\premiertermecobarbarC}{
-\begin{tikzpicture}[scale = 0.15,baseline = (O.base)]
-\node (K) at (0.625,0.625) {} ;
-\node (L) at (0,0) {} ;
-\draw (0.625,0.625) -- (0,1.25) ;
-\draw (-1.25,1.25) -- (0,0) ;
-\draw (1.25,1.25) -- (0,0) ;
-\draw (0,-1.25) -- (0,0) ;
-\node (O) at (0,-0.5) {} ;
-\end{tikzpicture}
-}
-
-\newcommand{\premiertermecobarbarD}{
-\begin{tikzpicture}[scale=0.15,baseline=(pt_base.base)]
-
-\coordinate (pt_base) at (0,-0.5) ;
-
-\draw (0,1.25) -- (0,0) ;
-\draw (-1.25,1.25) -- (0,0) ;
-\draw (1.25,1.25) -- (0,0) ;
-\draw (0,-1.25) -- (0,0) ;
-
-\end{tikzpicture}
-}
 
 \newcommand{\eqainfnmorphun}{
 \begin{tikzpicture}[scale=0.25,baseline=(pt_base.base)]
@@ -2310,6 +2350,64 @@ node[near end,right]{\tiny $- \nabla f$} node[midway,sloped,allow upside down,sc
 \draw (-0.5,1.25) -- (0,0) ;
 \draw (0.5,1.25) -- (0,0) ;
 \draw (0,-1.25) -- (0,0) ;
+
+\end{tikzpicture}
+}
+
+\newcommand{\exampleleftlevelwisetwo}{
+\begin{tikzpicture}[scale=0.3,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw (-1.5,1.25) -- (0,0) ;
+\draw (1.5,1.25) -- (0,0) ;
+\draw (-0.5,1.25) -- (0,0) ;
+\draw (0.5,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+
+\begin{scope}[xshift = -1.5cm , yshift = 2.5cm]
+\draw (0,1.25) -- (0,0) ;
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+\end{scope}
+
+\begin{scope}[xshift = 1.5cm , yshift = 2.5cm]
+\draw (-1.5,1.25) -- (0,0) ;
+\draw (1.5,1.25) -- (0,0) ;
+\draw (-0.5,1.25) -- (0,0) ;
+\draw (0.5,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+\end{scope}
+
+\end{tikzpicture}
+}
+
+\newcommand{\exampleleftlevelwiseone}{
+\begin{tikzpicture}[scale=0.3,baseline=(pt_base.base)]
+
+\coordinate (pt_base) at (0,-0.5) ;
+
+\draw (-1.5,1.25) -- (0,0) ;
+\draw (1.5,1.25) -- (0,0) ;
+\draw (-0.5,1.25) -- (0,0) ;
+\draw (0.5,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+
+\begin{scope}[xshift = 0.5cm , yshift = 2.5cm]
+\draw (-1.5,1.25) -- (0,0) ;
+\draw (1.5,1.25) -- (0,0) ;
+\draw (-0.5,1.25) -- (0,0) ;
+\draw (0.5,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+\end{scope}
+
+\begin{scope}[xshift = -1cm , yshift = 5cm]
+\draw (0,1.25) -- (0,0) ;
+\draw (-1.25,1.25) -- (0,0) ;
+\draw (1.25,1.25) -- (0,0) ;
+\draw (0,-1.25) -- (0,0) ;
+\end{scope}
 
 \end{tikzpicture}
 }
