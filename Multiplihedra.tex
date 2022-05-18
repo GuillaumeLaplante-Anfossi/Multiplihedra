@@ -758,12 +758,16 @@ We can finally conclude the proof with these decompositions of facets of $\J_\om
 
 \begin{definition}[Permutahedron] The \emph{$(n-1)$-dimensional permutahedron} is the polytope in $\RR^n$ equivalently defined as:
 \begin{itemize}[leftmargin=*]
-  \item the convex hull of the points $\displaystyle \sum_{i=1}^{n}i\vec e_{\sigma(i)}$ for all permutations $\sigma \in \mathbb{S}_n$, or
+  \item the convex hull of the points $\displaystyle \sum_{i=1}^{n}i e_{\sigma(i)}$ for all permutations $\sigma \in \mathbb{S}_n$, or
   \item the intersection of the hyperplane $\displaystyle  \left\{x \in \RR^n \ \bigg| \ \sum_{i=1}^{n} x_i = \binom{n+1}{2}\right\}$ with the affine half-spaces $\displaystyle \left\{x \in \RR^n \ \bigg| \ \sum_{i \in I} x_i \geq \binom{|I|+1}{2}\right\}$ for all $\emptyset\neq I \subseteq [n]$.
 \end{itemize}
 \end{definition}
 
-\rouge{Rappeler ici les définitions de cône normal et éventail normal}
+For a face $F$ of a polytope $P\subset\RR^n$, the \emph{normal cone} of $F$ is the cone 
+\[\mathcal{N}_P(F)\coloneqq \left\{ c \in (\RR^n)^{*} \ \bigg | \ F \subseteq \{ x \in P \ | \ c x =\max_{y \in P} c y \}\right\}  \ . \]  
+The codimension of $\mathcal{N}_P(F)$ is equal to the dimension of $F$. 
+The \emph{normal fan} of $P$ is the collection of the normal cones $\mathcal{N}_P \coloneqq \{\mathcal{N}_P(F) \ | \ F \in \mathcal{L}(P)\setminus\emptyset \}$. 
+We refer to \cite[Chapter 7]{Ziegler95} for more details. 
 
 \begin{definition}[Generalized permutahedron]
 A \emph{generalized permutahedron} is a polytope equivalently defined as:
@@ -774,11 +778,7 @@ where $\{ z_I \}_{I \subseteq [n]}$ are real numbers which satisfy the inequalit
 \end{itemize}
 \end{definition}
 
-Generalized permutahedra were introduced by A. Postnikov \cite{Postnikov09}, and are subject of a vast literature. 
-They present many interesting combinatorial, geometric and algebraic properties. 
-For instance, they are the universal family of polytopes possessing a certain Hopf algebraic structure \cite{AguiarArdila17}. \rouge{soit étoffer ce paragraphe, soit le supprimer}
-
-Loday realizations of the associahedra are all generalized permutahedra as proven in \cite{}, while Forcey--Loday realizations of the multiplihedra are not. 
+Loday realizations of the associahedra are all generalized permutahedra (see for instance \cite[Corollary 2.16]{LA21}), while Forcey--Loday realizations of the multiplihedra are not. 
 However, F. Ardila and J. Doker introduced in \cite{AD13} realizations of the multiplihedra that are generalized permutahedra. 
 They are obtained from the Loday realizations of the associahedra via the operation of \emph{$q$-lifting}. 
 We will consider the special case $q=1/2$ of their construction.
@@ -1269,22 +1269,33 @@ This is a simple generalization of the bijection between planar trees and nested
 Under this bijection, vertices of 2-colored trees correspond to nests, and their colors agree under the previous conventions. 
 \end{proof}
 
-\subsubsection{\rouge{Titre}}
+\subsubsection{Admissible edges and permutations}
+\Guillaume{mettre cette section plus loin!}
+We consider a subfamily of the deges of a (2-colored) nested linear graph $(\gra,\mathcal{N})$, and define a permutation associated to a pair of (2-colored) nested linear graphs $(\mathcal{N},\mathcal{N}')$ in the image of the diagonal of the associahedra (resp. the multiplihedra). 
+These permutations will appear in the signs of the formulas of \cref{prop:diagonal-polytopale-a-infini,prop:diagonal-polytopale-m-infini}.
+The reader is invited to skip this subsection in first reading. 
 
-\rouge{Phrase de transition, où on dit qu'on définit ... , et qu'on en aura besoin dans la sous-section ... }
+We fix a (2-colored) nested linear graph $(\gra,\mathcal{N})$.
+We denote by $N_i$ the unique minimal nest of $\mathcal{N}$ containing the edge $i$, with respect to nest inclusion. 
 
-\begin{definition} \label{def:left-levelwise-graph}
-Let $(\gra,\mathcal{N})$ be a nested linear graph. The \emph{left-levelwise order} on $\mathcal{N}$ is defined as follows: we order the nests by decreasing cardinality, and we order two nests of same cardinality by comparing their minimal elements. 
+\begin{definition}
+For a nested linear graph, an edge $i$ is \emph{admissible} if $i \neq \min N_i$. 
+For a 2-colored nested linear graph, an edge $i$ is \emph{admissible} when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome.
+We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
 \end{definition}
 
 \begin{definition} 
-\label{def:signs}
-Let $\gra$ be a linear graph.  \rouge{problème ordre sur les arêtes}
-\begin{enumerate}[leftmargin=*]
-\item For a nesting $\mathcal{N}$ of $\gra$, we denote by $N_i$ the unique minimal nest of $\mathcal{N}$ containing the edge $i$, with respect to nest inclusion. 
-\item An edge $i$ of $\gra$ is \emph{admissible} if $i \neq \min N_i$. We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
-\item Given two nestings $\mathcal{N}, \mathcal{N}'$ of $\gra$, we endow the set $\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')$ with the total order defined by the left-levelwise order on the nestings and defined within a nest by following the numbering of the edges in increasing order. \rouge{Il faut reformuler cette définition qui n'est pas claire}
-\item Define the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
+\label{def:left-levelwise-graph}
+The \emph{left-levelwise order} on $\mathcal{N}$ is defined as follows: we order the nests by decreasing order of cardinality, and we order two nests of the same cardinality according to the increasing order on their minimal elements. 
+\end{definition}
+
+Consider the left-levelwise order $N^1<N^2<\cdots < N^k$ on the nesting $\mathcal{N}=\{N^j\}_{1\leq j \leq k}$.
+We give the set $\mathrm{Ad}(\mathcal{N})$ a total order as follows: order the admissible edges of $N_1 \setminus \cup_{2\leq j \leq k} N_j$ in increasing order, then the admissible edges of $N_2 \setminus \cup_{3\leq j \leq k} N_j$ in increasing order, and so on. 
+Given two nestings $\mathcal{N}, \mathcal{N}'$ of $\gra$, we endow the set $\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')$ with the total order given by following the total order on $\mathrm{Ad}(\mathcal{N})$ and then the total order on $\mathrm{Ad}(\mathcal{N}')$. 
+
+\begin{proposition} 
+\label{prop:signs-ass}
+For a pair of nestings \Guillaume{of complementary dimensions} $(\mathcal{N}, \mathcal{N}')\in \Ima\triangle^K$, the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
 \begin{equation*}
   \sigma_{\mathcal{N}\mathcal{N}'}(i)= 
   \begin{cases}
@@ -1292,17 +1303,15 @@ Let $\gra$ be a linear graph.  \rouge{problème ordre sur les arêtes}
     i-1 & \text{ otherwise ,} 
   \end{cases}
 \end{equation*}
-and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by inversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
-\end{enumerate}
-\end{definition}
+and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by reversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will still denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
+\end{proposition}
 
-\rouge{Il faut reformuler et réorganiser cette dernière définition (en plusieurs environnements et paragraphes par exemple), c'est trop fourre-tout pour le moment}
+\begin{proof}
+\end{proof}
 
-\begin{definition} 
-\rouge{Revoir 3.6 en fonction} For 2-colored nestings $\mathcal{N}$ and $\mathcal{N}'$, we use the same definitions as in \cref{def:signs}, but with the following two modifications:
-\begin{enumerate}[leftmargin=*]
-\item[(2)] We say that an edge $i$ of $g$ is \emph{admissible} when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome. 
-\item[(4)] The function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ is defined on $i \in \mathrm{Ad}(\mathcal{N})$ by \rouge{mise en page}
+\begin{proposition} 
+\label{prop:signs-mul}
+For a pair of 2-colored nestings \Guillaume{of complementary dimensions} $(\mathcal{N},\mathcal{N}')\in \Ima\triangle^J$, the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
 \begin{equation*}
   \sigma_{\mathcal{N}\mathcal{N}'}(i)= 
   \begin{cases}
@@ -1311,9 +1320,12 @@ and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by inversing the roles of $\m
     i & \text{ otherwise ,} 
   \end{cases}
 \end{equation*}
-and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by inversing the roles of $\mathcal{N}$ and $\mathcal{N}'$.
-\end{enumerate}
-\end{definition}
+and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by reversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will still denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
+\end{proposition}
+
+\begin{proof}
+  The proof is similar to the proof of \cref{prop:signs-ass}.
+\end{proof}
 
 \subsection{Cellular formula for the diagonal} \label{ss:cellular-formula}
 
