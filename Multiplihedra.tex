@@ -88,7 +88,7 @@
 \begin{document}
 
 \begin{abstract}
-\rouge{Réécrire à la toute fin}
+\rouge{R\'e\'ecrire \`a la toute fin}
 The goal of this article is to define a cellular approximation to the diagonal of Forcey--Loday realizations of the multiplihedra, and to endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra. 
 This gives a model for topological and algebraic A-infinity morphisms, and an explicit formula for their tensor product.
 In this way, one can consider for the first time a tensor product of A-infinity categories defined by explicit formulae, and its potential applications in symplectic topology. 
@@ -99,7 +99,7 @@ Along the way, we prove that there is no tensor product of A-infinity morphisms 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{J4.png} 
+\includegraphics[width=0.6\linewidth]{J4.png} 
 %\caption{The polytopal subdivision of $\J_4$.}
 \label{Fig5:J4}
 \end{figure}
@@ -111,11 +111,11 @@ Along the way, we prove that there is no tensor product of A-infinity morphisms 
 
 \section*{Introduction}
 
-\rouge{Retaper l'introduction à la toute fin}
+\rouge{Retaper l'introduction \`a la toute fin}
 
-\rouge{Corriger leftmargin partout où nécessaire}
+\rouge{Corriger leftmargin partout o\`u n\'ecessaire}
 
-\rouge{Décider à la fin ce qu'on met en Théorème et en Proposition}
+\rouge{D\'ecider \`a la fin ce qu'on met en Th\'eor\`eme et en Proposition}
 
 The $n$-dimensional associahedron, a polytope whose faces are in bijection with planar trees with $n+1$ leaves, was first introduced as a topological cell complex by J. Stasheff to describe algebras whose product is associative only up to homotopy \cite{Stasheff63}.
 The problem of giving polytopal realizations of these CW-complexes has a rich history \cite{CeballosZiegler12}, and the algebras that they encode, called $\mathrm{A}_\infty$-algebras, are classical objects in algebraic topology. 
@@ -667,8 +667,7 @@ By convention, we define the polytope $\J_\omega$ with weight $\omega=(\omega_1)
 \draw[fill, opacity=0.06] (2,8,2)--(1,8,2)--(1,4,6)--(2,4,6)--cycle;
 \end{tikzpicture}
 \]
-\caption{The Forcey--Loday realization of the multiplihedron $\J_4$%, see \cref{prop:OrientationVector} for the definition of the $\vec e_i$.}
-}
+\caption{The Forcey--Loday realization of the multiplihedron $\J_4$ .}
 \end{figure}
 
 
@@ -778,7 +777,7 @@ where $\{ z_I \}_{I \subseteq [n]}$ are real numbers which satisfy the inequalit
 \end{itemize}
 \end{definition}
 
-Loday realizations of the associahedra are all generalized permutahedra (see for instance \cite[Corollary 2.16]{LA21}), while Forcey--Loday realizations of the multiplihedra are not. 
+Loday realizations of the associahedra are all generalized permutahedra (see \cite[Corollary 8.2]{Postnikov09}), while Forcey--Loday realizations of the multiplihedra are not. 
 However, F. Ardila and J. Doker introduced in \cite{AD13} realizations of the multiplihedra that are generalized permutahedra. 
 They are obtained from the Loday realizations of the associahedra via the operation of \emph{$q$-lifting}. 
 We will consider the special case $q=1/2$ of their construction.
@@ -855,47 +854,49 @@ such that $f^{-1}(\mathcal D)$ defines a polytopal subdivision of $P$.
 \end{description}
 The category $\PolySub$ is in fact a monoidal subcategory of the symmetric monoidal category $(\mathsf{CW},\times )$ whose objects are finite CW-complexes and whose morphisms are CW-maps between CW-complexes.
 
-\subsubsection{Operads and operadic bimodules}
+\subsubsection{Operads and operadic bimodules} \Guillaume{Retirer?}
 
-Let $(\mathcal{C},\boxtimes )$ be a symmetric monoidal category.
-
-\begin{definition}[Operad]
+\begin{definition}[Operad] Let $(\mathcal{C},\otimes )$ be a symmetric monoidal category.
 \begin{enumerate}[leftmargin=*]
 \item A \emph{(non-symmetric) $\mathcal{C}$-operad} $P$ consists in the data of a collection of objects $\{ P_n \}_{n \geqslant 1}$ of $\mathcal{C}$ together with a unit element $e \in P_1$ and with partial composition maps
-\[ \circ_i : P_k \boxtimes P_h \longrightarrow P_{h+k-1} \ , \ 1 \leqslant i \leqslant k  \]
+\[ \circ_i : P_k \otimes P_h \longrightarrow P_{h+k-1} \ , \ 1 \leqslant i \leqslant k  \]
 which are unital and associative.
-\item A \emph{morphism of operads} $P \rightarrow Q$ is a sequence of maps $P_n \rightarrow Q_n$ compatible with the partial composition maps and preserving the identity.
+\item A \emph{morphism of (non-symmetric) operads} $P \rightarrow Q$ is a family of maps $P_n \rightarrow Q_n$ which are compatible with the partial composition maps and preserve the identity.
 \end{enumerate}
 \end{definition}
 
-We refer for instance to \cite[Chapter 5]{LodayVallette12} for more details on this definition. We simply stress here that the objects $P_n$ are to be thought as spaces encoding arity $n$ operations, while the partial compositions $\circ_i$ define how to compose these operations together. See also subsection \ref{}.
+The objects $P_n$ can be thought of as spaces encoding arity $n$ operations, while the partial compositions $\circ_i$ define how to compose these operations together, see \cite[Chapter 5]{LodayVallette12} for details. \Guillaume{See also subsection X}
 
-\begin{definition}[Operadic bimodule]
+\begin{definition}[Operadic bimodule] Let $P$ and $Q$ be two $\mathcal{C}$-operads.
 \begin{enumerate}[leftmargin=*]
-\item Let $P$ and $Q$ be two $\mathcal{C}$-operads. A \emph{$(P,Q)$-operadic bimodule} is the data of a collection of objects $\{ R_n \}_{n \geqslant 1}$ of $\mathcal{C}$ together with \emph{action-composition maps}
+\item A \emph{$(P,Q)$-operadic bimodule} is the data of a collection of objects $\{ R_n \}_{n \geqslant 1}$ of $\mathcal{C}$ together with \emph{action-composition maps}
 \begin{align*}
-R_k \boxtimes Q_h &\underset{\circ_i}{\longrightarrow} R_{h+k-1} \ \ 1 \leqslant i \leqslant k \ ,  \\
-P_h \boxtimes R_{j_1} \boxtimes \cdots \boxtimes R_{j_h} &\underset{\lambda_{j_1,\dots,j_h}}{\longrightarrow} R_{j_1 + \dots + j_h} \ ,
+R_k \otimes Q_h &\underset{\circ_i}{\longrightarrow} R_{h+k-1} \ \ 1 \leqslant i \leqslant k \ ,  \\
+P_h \otimes R_{j_1} \otimes \cdots \otimes R_{j_h} &\underset{\lambda_{j_1,\dots,j_h}}{\longrightarrow} R_{j_1 + \dots + j_h} \ ,
 \end{align*}
-which are compatible with one another, with identities, and with compositions in $P$ and $Q$. 
+which are compatible with one another, with identities, and with compositions in $P$ and~$Q$. 
 \item A \emph{morphism of operadic bimodules} $R \rightarrow R'$ is a sequence of maps $R_n \rightarrow R'_n$ compatible with the action-composition maps.
 \end{enumerate}
 \end{definition}
 
-The grafting of trees endows planar trees with an operad structure in the category $\mathsf{Sets}$, whose arity $n$ space of operations is $\mathrm{PT}_n$ the set of planar trees of arity $n$. The grafting of trees described in subsection \ref{sss:grafting} endows similarly 2-colored trees with a $(\mathrm{PT},\mathrm{PT})$-operadic bimodule structure. 
+\begin{example}
+The grafting of trees endows the set of planar trees with an operad structure in the category of sets, whose arity $n$ space of operations is the set $\mathrm{PT}_n$ of planar trees with $n$ leaves. 
+The grafting of trees described in subsection \ref{sss:grafting} endows similarly the set of 2-colored trees with a $(\mathrm{PT},\mathrm{PT})$-operadic bimodule structure. 
+\end{example}
 
-\begin{definition} \label{def:hadamard-product}
+\begin{definition} \label{def:hadamard-product} Let $P$ and $P'$ be two $\mathcal{C}$-operads.
 \begin{enumerate}[leftmargin=*]
-    \item Let $P$ and $P'$ be two $\mathcal{C}$-operads. The Hadamard product of $P$ and $P'$, denoted $P \boxtimes P'$ is the operad whose arity $n$ space of operations is $P_n \boxtimes P'_n$ and whose partial compositions are defined by the following diagram
-    \[ (P_k \boxtimes P'_k) \boxtimes (P_h \boxtimes P'_h) \longrightarrow (P_k \boxtimes P_h) \boxtimes (P'_k \boxtimes P'_h) \longrightarrow P_{h+k-1} \boxtimes P'_{h+k-1} \ , \]
-    where the first arrow is the map rearranging the factors $P_k$, $P_k'$, $P_h$ and $P'_h$ and the second map is $\circ_i \boxtimes \circ_i'$.
-    \item The Hadamard product of two operadic bimodules $R$ and $R'$ is defined in a similar fashion. It is again denoted $R \boxtimes R'$ and is a $(P \boxtimes P' , Q \boxtimes Q')$-operadic bimodule.
+    \item The \emph{Hadamard product} $P \otimes P'$ of $P$ and $P'$ is the operad whose arity $n$ space of operations is $P_n \otimes P'_n$ and whose partial compositions are defined by
+    \[ (P_k \otimes P'_k) \otimes (P_h \otimes P'_h) \overset{\id \otimes \tau \otimes \id}{\longrightarrow} (P_k \otimes P_h) \otimes (P'_k \otimes P'_h) \overset{\circ_i \otimes \circ_i'}{\longrightarrow} P_{h+k-1} \otimes P'_{h+k-1} \ , \]
+    where the first arrow permutes the middle two factors.
+    \item The \emph{Hadamard product} $R \otimes R'$ of two operadic bimodules $R$ and $R'$ is defined in a similar fashion. It is a $(P \otimes P' , Q \otimes Q')$-operadic bimodule.
 \end{enumerate}
 \end{definition}
 
 \subsection{Positively oriented polytopes and diagonal maps}
 
-We will denote by $\rho_z (P) \coloneqq 2z-P$ the reflection with respect to any point $z$ of a polytope~$P$. 
+Let $P$ be a polytope.
+We will denote by $\rho_z P \coloneqq 2z-P$ its reflection with respect to a point $z \in P$. 
 
 \begin{definition}
 A \emph{positively oriented polytope} $(P, \vec v)$ is a polytope $P \subset \RR^n$ together with a vector $\vec v\in \RR^n$ which is not perpendicular to any edge of $P\cap \rho_z P$, for any $z \in P$.
@@ -909,8 +910,8 @@ Any positively oriented polytope admits a diagonal map of the form
 \bigl(\bm_{\vec v}(P\cap \rho_zP),\,  \tp_{\vec v}(P\cap \rho_z P)\bigr) \ .
 \end{array}
 \end{align*}
-Such a diagonal map is a morphism in $\PolySub$, coincides with the usual diagonal $x\mapsto (x, x)$ on vertices, and is fiber-homotopic to it, as shown in \cite[Proposition~5]{MTTV19}.
-Its cellular image admits moreover a combinatorial description in terms of the fundamental hyperplane arrangement of $P$, as we will now recall.
+Such a diagonal map is a morphism in $\PolySub$, coincides with the usual diagonal $x\mapsto (x, x)$ on vertices, and is fiber-homotopic to it, see \cite[Proposition~5]{MTTV19} and \cite[Proposition 1.1]{LA21}.
+Its cellular image admits a combinatorial description in terms of the fundamental hyperplane arrangement of $P$, as we will now recall.
 
 \begin{definition}[Fundamental hyperplane arrangement]
   \label{def:fundamentalhyperplane} 
@@ -948,7 +949,7 @@ Moreover, the coarsening projection from $P$ to $Q$ commutes with the diagonal m
 \end{eqnarray*} 
 \end{proposition}
 
-\noindent We will apply \cref{prop:refinementofnormalfans} with $P$ the permutahedron and $Q$ the Ardila--Doker multiplihedron, in order to define a diagonal map on the Forcey--Loday multiplihedron and to compute an explicit cellular formula for its image in \cref{thm:formuladiagonal}.
+We will apply \cref{prop:refinementofnormalfans} to $P$ the permutahedron and $Q$ the Ardila--Doker multiplihedron, in order to define a diagonal map on the Forcey--Loday multiplihedron and to compute an explicit formula for its cellular image in \cref{thm:formuladiagonal}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -966,7 +967,7 @@ We restrict our attention to a certain class of orientation vectors for which th
 A \emph{good orientation vector} is a vector $\vec v=(v_1, \ldots, v_{n+1})\in \RR^{n+1}$ satisfying \[v_{i}\geqslant2v_{i+1}\ , \ \text{for any}\  1\leqslant i\leqslant n\ , \quad \text{and}\quad  v_{n+1}>0 \ . \]
 \end{definition}
 
- Observe that the family of good orientation vectors is stable under the projection forgetting the last coordinate: if $\vec v$ is a good orientation vector, then so is $\pi(\vec v)$.
+Observe that the family of good orientation vectors is stable under the projection forgetting the last coordinate: if $\vec v$ is a good orientation vector, then so is $\pi(\vec v)$.
 Being a good orientation vector is a more restrictive condition than being a principal orientation vector in the sense of \cite[Definition 3.15]{LA21}. Thus, a good orientation vector orients positively any generalized permutahedron. 
 
 \begin{proposition} 
@@ -1023,7 +1024,7 @@ which preserves homeomorphically the faces of the same type and which commutes w
 
 \begin{proof}
 The arguments of \cite[Sections~3.1-3.2]{MTTV19} hold in the present case using \cref{prop:PropertiesKLoday}. 
-We simply stress that the condition that the map $\tr$ commutes with the respective diagonals ensures that it is unique.
+We note that the crucial condition above is that the map $\tr$ commutes with the respective diagonals: this makes the map $\tr$ unique and highly non-trivial to construct, see the proof of \cite[Proposition 7]{MTTV19}.
 \end{proof}
 
 \begin{definition} \label{def:diagonal-multipl-forcey-loday}
@@ -1034,8 +1035,8 @@ We define $\triangle_n : \J_n \to \J_n\times \J_n$ to be the diagonal induced by
 
 \subsection{Operadic bimodule structure on the Forcey--Loday multiplihedra}
 
-We will use the transition maps $\tr$ of \cite[Definition 12]{MTTV19} and of \cref{prop:transitionmap} to endow the family of standard weight Forcey--Loday multiplihedra with an operadic bimodule structure over the standard weight Loday associahedra. 
-The uniqueness property of the map $\tr$ will be used in a crucial way.. 
+We will use the transition maps $\tr$ of \cref{prop:transitionmap} above to endow the family of standard weight Forcey--Loday multiplihedra with an operadic bimodule structure over the standard weight Loday associahedra. 
+The uniqueness property of the map $\tr$ will be used in a crucial way.
 
 \begin{definition}[Action-composition maps] \label{def:action-composition}
 For any $n,m\geq 1$ and any $1\leq i \leq m$, for any $k\geq 2$ and any $i_1,\ldots,i_k \geq 1$, we define the \emph{action-composition maps}  by 
@@ -1068,8 +1069,8 @@ For any $n,m\geq 1$ and any $1\leq i \leq m$, for any $k\geq 2$ and any $i_1,\ld
 where the last inclusions are given by the block permutations of the coordinates introduced in the proof of \cref{prop:PropertiesKLoday}. 
 \end{definition}
 
-Recall from \cite[Theorem 1]{MTTV19} that the diagonal maps $\triangle_n : \K_n \to \K_n \times \K_n$ define in fact a morphism of operads, where the operad $\{ \K_n \times \K_n \}$ is to be understood as the Hadamard product $\{ \K_n \} \times \{ \K_n \}$.
-The diagonal maps $\triangle_n : \K_n \to \K_n \times \K_n$ and $\triangle_n : \J_n \to \J_n \times \J_n$ are in fact also compatible with the action-composition maps introduced in \cref{def:action-composition} :
+Recall from \cite[Theorem 1]{MTTV19} that the diagonal maps $\triangle_n : \K_n \to \K_n \times \K_n$ define a morphism of operads, where the operad $\{ \K_n \times \K_n \}$ is to be understood as the Hadamard product $\{ \K_n \} \times \{ \K_n \}$.
+The next proposition shows that the diagonal maps $\triangle_n : \K_n \to \K_n \times \K_n$ and $\triangle_n : \J_n \to \J_n \times \J_n$ are compatible with the action-composition maps introduced in \cref{def:action-composition}.
 
 \begin{proposition} 
 \label{prop:thetacommutes}
@@ -1095,14 +1096,14 @@ This is easily seen to be the case from the definition of $\Theta$, in the proof
 Using \cref{prop:thetacommutes}, we can apply the proof of \cite[Theorem~1]{MTTV19} \emph{mutatis mutandis}. The uniqueness of the transition map $\tr$ is the key argument, as it forces the operadic axioms to hold. We also point out that $\{ \J_n\times \J_n \}$ is to be understood as the Hadamard product $\{ \J_n \} \times \{ \J_n \}$, and that its $(\{\K_n\},\{\K_n\})$-operadic bimodule structure is defined as the pullback of its natural $(\{\K_n \times \K_n\},\{\K_n \times \K_n\})$-operadic bimodule structure under the diagonal maps $\{ \triangle_n : \K_n \to \K_n \times \K_n \}$.
 \end{proof}
 
-Point \textit{(1)} of \cref{thm:MainOperad} was already mentioned in \cite{Mazuir21}, where associahedra and multiplihedra are realized as compactifications of moduli spaces of metric trees and used to construct $\mathrm{A}_\infty$-structures on the Morse cochains of a closed manifold.
+Point (1) of \cref{thm:MainOperad} was already mentioned in \cite{Mazuir21}, where associahedra and multiplihedra are realized as compactifications of moduli spaces of metric trees and used to construct $\Ainf$-structures on the Morse cochains of a closed manifold.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Cellular formula for the diagonal of the multiplihedra} \label{sec:III}
 
 We provide in this section an explicit cellular formula for the diagonal of the Forcey--Loday multiplihedra. 
-The key fact that the Ardila--Doker multiplihedron is a generalized permutahedron allows us to avoid the computation of the fundamental hyperplane arrangement of the Forcey--Loday multiplihedron itself, by using \cref{prop:refinementofnormalfans} and the computation of the fundamental hyperplane arrangement of the permutahedra from \cite{LA21}. \rouge{reprendre l'introduction à la fin}
+The key fact that the Ardila--Doker multiplihedron is a generalized permutahedron allows us to avoid the computation of the fundamental hyperplane arrangement of the Forcey--Loday multiplihedron itself, by using \cref{prop:refinementofnormalfans} and the computation of the fundamental hyperplane arrangement of the permutahedra from \cite{LA21}. \rouge{reprendre l'introduction \`a la fin}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1259,7 +1260,7 @@ There is a bijection between 2-colored trees with $n$ leaves and 2-colored neste
 \node (D) at (3.35,1.5) {$\red{ \bullet \purple{\blue{\bullet \bullet} \bullet}}$};
 
 \end{tikzpicture}}
-\caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations. \rouge{Corriger le dessin de gauche et les parenthésages inclinés (Proposition 4.13 aussi}}
+\caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations. \rouge{Corriger le dessin de gauche et les parenth\'esages inclin\'es (Proposition 4.13 aussi}}
 \label{fig:bijections}
 \end{figure}
 \end{lemma}
@@ -1269,63 +1270,7 @@ This is a simple generalization of the bijection between planar trees and nested
 Under this bijection, vertices of 2-colored trees correspond to nests, and their colors agree under the previous conventions. 
 \end{proof}
 
-\subsubsection{Admissible edges and permutations}
-\Guillaume{mettre cette section plus loin!}
-We consider a subfamily of the deges of a (2-colored) nested linear graph $(\gra,\mathcal{N})$, and define a permutation associated to a pair of (2-colored) nested linear graphs $(\mathcal{N},\mathcal{N}')$ in the image of the diagonal of the associahedra (resp. the multiplihedra). 
-These permutations will appear in the signs of the formulas of \cref{prop:diagonal-polytopale-a-infini,prop:diagonal-polytopale-m-infini}.
-The reader is invited to skip this subsection in first reading. 
 
-We fix a (2-colored) nested linear graph $(\gra,\mathcal{N})$.
-We denote by $N_i$ the unique minimal nest of $\mathcal{N}$ containing the edge $i$, with respect to nest inclusion. 
-
-\begin{definition}
-For a nested linear graph, an edge $i$ is \emph{admissible} if $i \neq \min N_i$. 
-For a 2-colored nested linear graph, an edge $i$ is \emph{admissible} when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome.
-We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
-\end{definition}
-
-\begin{definition} 
-\label{def:left-levelwise-graph}
-The \emph{left-levelwise order} on $\mathcal{N}$ is defined as follows: we order the nests by decreasing order of cardinality, and we order two nests of the same cardinality according to the increasing order on their minimal elements. 
-\end{definition}
-
-Consider the left-levelwise order $N^1<N^2<\cdots < N^k$ on the nesting $\mathcal{N}=\{N^j\}_{1\leq j \leq k}$.
-We give the set $\mathrm{Ad}(\mathcal{N})$ a total order as follows: order the admissible edges of $N_1 \setminus \cup_{2\leq j \leq k} N_j$ in increasing order, then the admissible edges of $N_2 \setminus \cup_{3\leq j \leq k} N_j$ in increasing order, and so on. 
-Given two nestings $\mathcal{N}, \mathcal{N}'$ of $\gra$, we endow the set $\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')$ with the total order given by following the total order on $\mathrm{Ad}(\mathcal{N})$ and then the total order on $\mathrm{Ad}(\mathcal{N}')$. 
-
-\begin{proposition} 
-\label{prop:signs-ass}
-For a pair of nestings \Guillaume{of complementary dimensions} $(\mathcal{N}, \mathcal{N}')\in \Ima\triangle^K$, the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
-\begin{equation*}
-  \sigma_{\mathcal{N}\mathcal{N}'}(i)= 
-  \begin{cases}
-    \min N_i -1 & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}') \text{ and } 1 \neq \min N_i < \min N_i' \\ 
-    i-1 & \text{ otherwise ,} 
-  \end{cases}
-\end{equation*}
-and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by reversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will still denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
-\end{proposition}
-
-\begin{proof}
-\end{proof}
-
-\begin{proposition} 
-\label{prop:signs-mul}
-For a pair of 2-colored nestings \Guillaume{of complementary dimensions} $(\mathcal{N},\mathcal{N}')\in \Ima\triangle^J$, the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
-\begin{equation*}
-  \sigma_{\mathcal{N}\mathcal{N}'}(i)= 
-  \begin{cases}
-    \min N_i & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}') , N_i \text{ is monochrome and } N_i' \text{ is not} \\
-    \min N_i & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}'), N_i \text{ and } N_i' \text{ are monochrome and } \min N_i < \min N_i' \\ 
-    i & \text{ otherwise ,} 
-  \end{cases}
-\end{equation*}
-and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by reversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will still denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
-\end{proposition}
-
-\begin{proof}
-  The proof is similar to the proof of \cref{prop:signs-ass}.
-\end{proof}
 
 \subsection{Cellular formula for the diagonal} \label{ss:cellular-formula}
 
@@ -1337,15 +1282,14 @@ Let $(\gra,\mathcal{N})$ be a nested linear graph. We denote by
 \end{itemize}
 \end{definition}
 
-To each blue nest $B \in B(\mathcal{N})$ and to each disjoint union of red and purple nests $R \in R(\mathcal{N})$, we can respectively associate \emph{characteristic vectors} $\vec B$ and $\vec R$ which have a $1$ in position $i$ if $i \in B$ (resp. if $i \in \vec R$) and $0$ otherwise. 
-We denote by $\vec n \coloneqq (1,\ldots,1)$ the characteristic vector of the trivial nest. \rouge{Tout cela vit dans $R^n$ c'est bien ça ?}
+To each blue nest $B \in B(\mathcal{N})$ in a 2-colored nesting $\mathcal{N}$ of a linear graph with $n$ vertices, we can associate its \emph{characteristic vector} $\vec B\in \RR^n$ wich has a $1$ in position $i$ if $i \in B$ and $0$ otherwise.
+To each disjoint union of red and purple nests $R \in R(\mathcal{N})$, we associate the vector $\vec R \in \RR^n$ which has a $1$ in position $i$ for $i \in R$, a $1$ in the last ($n$th) position, and $0$ otherwise. 
+We denote by $\vec n \coloneqq (1,\ldots,1) \in \RR^n$ the characteristic vector of the trivial nest.
 
 \begin{lemma} 
 \label{lemma:normalcones}
-The normal cone of a the face of the Ardila--Doker realization of the multiplihedron labeled by the 2-colored nesting  $\mathcal{N}$ is given by \rouge{$- n$ aussi ?} \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})} \cup \{\vec n\} \right) \ . \]
-\end{lemma}
-
-\rouge{D'après la formule pour la diagonale, il doit y avoir un 1 en position finale pour R et un 0 pour B ; de plus cela doit être R dans le Cone, et pas -R. A confirmer ensemble}
+The normal cone of a the face of the Ardila--Doker realization of the multiplihedron labeled by the 2-colored nesting  $\mathcal{N}$ is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})} \cup \{\vec n, - \vec n\} \right) \ . \]
+\end{lemma} 
 
 \begin{proof} 
 This follows from the description of the Ardila--Doker multiplihedron as a generalized permutahedron: 
@@ -1359,7 +1303,7 @@ We moreover number the edges of the linear graph wit $n$ vertices from bottom to
 \begin{theorem}
 \label{thm:formuladiagonal}
 The image of the diagonal map $\triangle_n : \J_n \to \J_n \times \J_n$ introduced in \cref{def:diagonal-multipl-forcey-loday} admits the following description.
-For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph with $n$ vertices \rouge{pas de condition de dimension ?}, we have that
+For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph with $n$ vertices \Guillaume{Sans condition de dimensions!}, we have that
 \begin{eqnarray*}
   (\mathcal{N},\mathcal{N}') \in \Ima\triangle_n 
   & \iff & \forall (I,J) \in D(n), \\
@@ -1368,7 +1312,7 @@ For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph 
   && \exists B' \in B(\mathcal{N}'), |B'\cap I|<|B'\cap J| \text{ or } \nonumber \\
   && \exists R' \in R(\mathcal{N}'), |(R'\cup \{n\}) \cap I|<| (R'\cup \{n\}) \cap J| \ .
 \end{eqnarray*}
-\rouge{Formule à revérifier ensemble}
+\rouge{Formule \`a rev\'erifier ensemble}
 \end{theorem}
 
 \begin{proof} 
@@ -1382,7 +1326,7 @@ The essential ingredient is the computation of the fundamental hyperplane arrang
 
 Let us make this formula explicit in low dimensions. 
 We write 2-colored nestings of a linear graph with $n$ vertices as 2-colored parenthesizations of a word with $n$ symbols $\bullet$, which are easier to read and shorter to type. See \cref{fig:bijections}. 
-We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$. \rouge{Revérifier que pas de problème de parenthésages}
+We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$. \rouge{Rev\'erifier que pas de probl\`eme de parenth\'esages}
 
 \begin{equation*}
   \begin{matrix}
@@ -1390,7 +1334,9 @@ We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim 
   \end{matrix}
 \end{equation*}
 
-\begin{equation*}
+\centerline{
+\begin{minipage}{\linewidth}
+\begin{align*}
   \renewcommand*{\arraystretch}{1.5}
   \begin{matrix}
       \triangle_3(\purple{\bullet \bullet \bullet}) 
@@ -1403,9 +1349,13 @@ We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim 
       & \cup & \purple{\blue{\bullet \bullet} \bullet} \times \red{\bullet \bullet \bullet} 
       & \cup & \red{\purple{\bullet \bullet} \bullet} \times \red{\bullet \bullet \bullet} 
   \end{matrix}
-\end{equation*}
+\end{align*}
+\end{minipage}
+}
 
-\begin{equation*}
+\centerline{
+\begin{minipage}{\linewidth}
+\begin{align*}
   \renewcommand*{\arraystretch}{1.5}
   \begin{matrix}
       & & & & \triangle_4(\purple{\bullet \bullet \bullet \bullet}) =  \\
@@ -1452,51 +1402,225 @@ We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim 
       & \cup & \red{\blue{\bullet \bullet \bullet}\bullet} \times \red{\bullet \purple{\bullet \bullet}\bullet}  %topbot
       & \cup & \purple{\blue{\blue{\bullet \bullet}\bullet}\bullet} \times \red{\bullet \purple{\bullet \bullet}\bullet} %topbot
   \end{matrix}
-\end{equation*}
+\end{align*}
+\end{minipage}
+}
 
+\bigskip
 
-\medskip
+\cref{table:numerology} shows the number of faces of complementary dimensions, as well as the number of pairs of vertices, in the cellular image of the diagonal for the multiplihedra induced by any good orientation vector in dimensions $0$ to $6$, and compares them with the same data for the associahedra and the permutahedra.
+\Guillaume{Code for this data??}
 
-\noindent The number of pairs of faces of complementary dimensions in the image of $\triangle_n$ are respectively given for $n=0$ to $6$ by $1,2,8,42,254,1678$ and $11 790$. This sequence does not (yet) appear in the Online Encyclopedia of Integer Sequences (OEIS). 
+\begin{table}[h]
+\centerline{\begin{tabular}{c|c|rrrrrrr|l}
+\text{Pairs} $(F,G) \in \Ima\triangle_{(P,\vec v)}$ & \text{Polytopes} & 0 & 1 & 2 & 3 & 4 & 5 & 6 &  \\
+\hline
+& \text{Associahedra} & 1 & 2 & 6 &  &  &  &  &   \\
+$\dim F + \dim G = \dim P$  & \text{Multiplihedra} & 1 & 2 & 8 & 42 & 254 & 1678 & 11790 &  ?? \\
+  & \text{Permutahedra} & 1 & 2 & 8 & 50 & 432 & 4802 & 65536 &  \OEIS{A007334} \\
+\hline
+ & \text{Associahedra} & 1 & 3 & 13 & 68 & 399 & 2530 & 16965 &  \OEIS{A000260} \\
+ $\dim F=\dim G =0$ & \text{Multiplihedra} & 1 & 3 & 17 & & & & &  \\
+  & \text{Permutahedra} & 1 & 3 & 17 & 149 & 1809 & 28399 & 550297 &  \OEIS{A213507} 
+\end{tabular}}
+\caption{Number of pairs of faces in the cellular image of the diagonal of the associahedra, multiplihedra and permutahedra of dimension $0\leq n \leq 6$, induced by any good orientation vector $\vec v$. \Guillaume{A completer!!}}
+\label{table:numerology}
+\end{table}
 
-\medskip
-
-The cellular image of $\triangle_n$ can in fact be represented on the polytope $\J_n$ as follows: for each pair of faces $(F,G) \in \Ima \triangle_n$, draw the polytope $(F+G)/2$. 
+The diagonal $\triangle_n$ being a section of the projection $\pi : P\times P \to P, (x,y) \mapsto (x+y)/2$ \cite[Proposition 1.1]{LA21}, one can represent its cellular image by projecting it via $\pi$: for each pair of faces $(F,G) \in \Ima \triangle_n$, one draws the polytope $(F+G)/2$. 
 This defines a polytopal subdivision of $\J_n$.
-The polytopal subdivision of $\J_4$ is illustrated on the first page of this article. \rouge{Retravailler et étoffer ce paragraphe - Il faut également faire un dessin en dimension 2 et l'étiqueter}
+The polytopal subdivision of $\J_3$ looks like the subdivision in \cite[Figure 3]{LA21}, and the one of $\J_4$ is illustrated on the first page of this article.
 
-\subsection{About this formula} \label{ss:about}
+\subsection{About this formula} 
+\label{ss:about}
 
 Given a positively oriented polytope $(P, \vec v)$ and a face $F \subset P$, the orientation vector $\vec v$ defines a unique vertex $\tp F$ (resp. $\bm F$) which maximizes (resp. minimizes) the scalar product $\langle - , \vec v \rangle$. 
 By \cite[Proposition 1.15]{LA21}, we have that any pair of faces $(F,G) \in \Ima \triangle_{(P,\vec v)}$ satisfies $\tp F \leq \bm G$. 
-In the case of the simplices, the cubes and the associahedra, the converse also holds: the image of the diagonal is given by $$(F,G) \in \Ima \triangle_n \iff \tp F\leq \bm G \ . $$
-
-This formula however does not hold for the diagonal of the Forcey--Loday multiplihedra ! 
-In dimension~$3$, the image $\Ima \triangle_4$ contains indeed all pairs of faces $\tp F\leq \bm G$ except four of them: $\purple{\blue{abc}d} \times \red{a\red{\purple{bc}d}}$, $\purple{\blue{abc}d} \times \red{a\blue{bc}d}$, $\red{\blue{abc}d} \times \red{a\purple{bc}d}$ and $\purple{\blue{\blue{ab}c}d} \times \red{a\purple{bc}d}$.
-Recall from \cite{LA21} that the $\tp F\leq \bm G$ formula also does not hold for the operahedra, and in particular for the permutahedra.
-\rouge{Explication du fait qu'on sélectionne un chemin et dessin}
-
-We conjecture in fact that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$. This was already the case for the permutahedra as shown in \cite[Proposition 3.17]{LA21}. \rouge{Parler également de l'associaèdre, puis des idées sur les I,J supérieurs}
-
-\rouge{The formula above, even though easily implemented in the computer, is not optimal. For instance, one could use Equation (1) in \cite[Theorem 1.23]{LA21} to reduce the number of pairs $(I,J)$ on which the conditions have to be tested. 
-One could also compute directly the fundamental hyperplane arrangement of the Ardila--Doker or Forcey--Loday multiplihedron.}
+In the case of the simplices, the cubes and the associahedra, the converse also holds: the image of the diagonal is given by the "magical formula" 
+\begin{align}
+\label{eq:magical-formula}
+(F,G) \in \Ima \triangle_n \iff \tp F\leq \bm G \ . 
+\end{align}
+This formula, however, does not hold for the diagonal of the Forcey--Loday multiplihedra. 
+In dimension~$3$, the pairs of faces $(F,G)$ that satisfy $\dim F + \dim G = \dim P$ and $\tp F\leq \bm G$ include the four pairs 
+\begin{equation} \label{eq:quatre-paires-inclues}
+\begin{matrix}
+\purple{\blue{\bullet \bullet \bullet}\bullet} \times \red{\purple{\bullet\blue{\bullet\bullet}}\bullet} & 
+\red{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}  \\
+\purple{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\blue{\bullet\bullet}\bullet} &
+\red{\purple{\bullet\blue{\bullet\bullet}}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}  
+\end{matrix}
+\end{equation}
+and the four pairs
+\begin{equation} \label{eq:quatre-paires-exclues}
+\begin{matrix}
+\purple{\blue{\bullet \bullet \bullet}\bullet} \times \red{\red{\bullet\purple{\bullet\bullet}}\bullet} & 
+\blue{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}  \\
+\purple{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\red{\bullet\bullet}\bullet} &
+\purple{\blue{\bullet\blue{\bullet\bullet}}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}  \ .
+\end{matrix}
+\end{equation}
+While the image $\Ima \triangle_4$ contains the four pairs in (\ref{eq:quatre-paires-inclues}), it does \emph{not} include the four pairs in (\ref{eq:quatre-paires-exclues}).
 
 \begin{remark}
-Observe that our choice of diagonal differs from the one of \cite{SaneblidzeUmble04}. 
-For instance, the four pairs of faces above are not part of the image of the Saneblidze--Umble diagonal in dimension $3$. \rouge{Je ne comprends pas cette phrase}
-A way to relate the diagonal constructed in this article to the diagonal of \cite{SaneblidzeUmble04} would be to find a choice of chamber in the fundamental hyperplane arrangement of the permutahedra (or the multiplihedra) recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
+Note that the formula (\ref{eq:magical-formula}) does not hold for the permutahedra either, nor does it hold for many operahedra, see \cite[Section 3.2]{LA21}.
 \end{remark}
+
+%quatre paires qui SONT dans la diagonale
+%$\purple{\blue{\bullet \bullet \bullet}\bullet} \times \red{\bullet\red{\purple{\bullet\bullet}\bullet}}$, $\purple{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\blue{\bullet\bullet}\bullet}$, $\red{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}$ and $\purple{\blue{\blue{\bullet\bullet}\bullet}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}$.
+
+Observe that our choice of diagonal differs from the one in \cite[Section 5]{SaneblidzeUmble04}. 
+For instance, the four pairs in (\ref{eq:quatre-paires-inclues}) are not part of the image of the Saneblidze--Umble diagonal in dimension $3$ while the four pairs in (\ref{eq:quatre-paires-exclues}) are. 
+
+This situation can be illustrated geometrically as follows. 
+There are two distinct diagonals on the 3-dimensional multiplihedron, which agree with the Tamari-type order on the vertices. 
+The first one, which corresponds to our choice in this paper, is selected by any vector $\vec v=(v_1,v_2,v_3,v_4)$ such that $v_1>v_2>v_3>v_4$ and $v_1 + v_4 > v_2+v_3$ (here, we consider the Ardila--Doker realization of the multiplihedron).
+Changing the last condition for $v_1 + v_4 < v_2+v_3$ gives the second choice of diagonal, which is the one of Saneblidze--Umble \cite[Section 5]{SaneblidzeUmble04}. 
+
+\begin{remark}
+  These two families of orientation vectors correspond to two adjacent chambers in the fundamental hyperplane arrangement of the permutahedron \cite[Theorem 3.6]{LA21}, separated by one of the blue hyperplanes in \cite[Figure 12]{LA21}, the hyperplane $x_1+x_4=x_2+x_3$, .
+  A way to relate the diagonal constructed in this article to the diagonal of \cite[Section 5]{SaneblidzeUmble04} would be to find a choice of chambers in the fundamental hyperplane arrangements of the permutahedra (or the multiplihedra) recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
+\end{remark}
+
+The two diagonals differ exactly by four pairs of faces, represented in~\cref{fig:four-pairs} : the first one includes the pairs of~(\ref{eq:quatre-paires-inclues}), while the second one includes the pairs of~(\ref{eq:quatre-paires-exclues}).
+Under the projection $\pi : P\times P \to P, (x,y) \mapsto (x+y)/2$, these two families of faces induce two distinct polytopal subdivisions of the same "diamond", represented in \cref{fig:diamonds}. 
+Since diagonal maps are sections of $\pi$, only one of these two incompatible subdivisions can be chosen, i.e. four pairs must be chosen, within a set of eight pairs that all satisfy $\tp F \leq \bm G$. 
+Hence, the formula~(\ref{eq:magical-formula}) does not define a diagonal on the multiplihedra, see \cref{prop:non-a-topbot} for an algebraic proof of this fact.
+
+
+\begin{figure}[h]
+\resizebox{0.7\linewidth}{!}{
+\begin{tikzpicture}[scale=0.5, J4]
+\draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
+\draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(4,2,6);
+\draw[thick, opacity=0.2] (6,1,2)--(3,1,2);
+\draw[thick, opacity=0.2] (6,2,1)--(3,2,1);
+\draw[thick, opacity=0.2] (6,4,1)--(6,4,2);
+\draw[thick, opacity=0.2] (2,8,1)--(2,8,2)--(1,8,2);
+\draw[thick, opacity=0.2] (1,8,1)--(1,4,1);
+\draw[thick, opacity=0.2] (1,4,6)--(2,4,6);
+
+%zones colorées
+\draw[very thick, blue] (4,1,6)--(6,1,4);
+\draw[very thick, blue] (6,1,4)--(6,2,4);
+
+\draw[very thick, blue] (1,2,6)--(1,2,3);
+\draw[very thick, blue] (1,2,6)--(2,1,6);
+\draw[very thick, blue] (2,1,6)--(2,1,3);
+\draw[very thick, blue] (1,2,3)--(2,1,3);
+\draw[fill=blue, opacity=0.12] (1,2,3)--(2,1,3)--(2,1,6)--(1,2,6)--cycle;
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.5, J4]
+\draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
+\draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(4,2,6);
+\draw[thick, opacity=0.2] (6,1,2)--(3,1,2);
+\draw[thick, opacity=0.2] (6,2,1)--(3,2,1);
+\draw[thick, opacity=0.2] (6,4,1)--(6,4,2);
+\draw[thick, opacity=0.2] (2,8,1)--(2,8,2)--(1,8,2);
+\draw[thick, opacity=0.2] (1,8,1)--(1,4,1);
+\draw[thick, opacity=0.2] (1,4,6)--(2,4,6);
+\draw[thick, opacity=0.2] (2,1,6)--(2,1,3);
+\draw[thick, opacity=0.2] (1,2,3)--(2,1,3);
+
+%zones colorées
+\draw[very thick, blue] (4,1,6)--(6,1,4);
+\draw[very thick, blue] (6,1,4)--(6,2,4);
+\draw[very thick, blue] (4,1,6)--(4,2,6);
+\draw[very thick, blue] (4,2,6)--(6,2,4);
+\draw[fill=blue, opacity=0.12] (4,1,6)--(6,1,4)--(6,2,4)--(4,2,6)--cycle;
+
+\draw[very thick, blue] (1,2,6)--(1,2,3);
+\draw[very thick, blue] (1,2,6)--(2,1,6);
+\end{tikzpicture}}
+\[\]
+\resizebox{0.7\linewidth}{!}{
+\begin{tikzpicture}[scale=0.5, J4]
+\draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
+\draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(4,2,6);
+\draw[thick, opacity=0.2] (6,1,2)--(3,1,2);
+\draw[thick, opacity=0.2] (6,2,1)--(3,2,1);
+\draw[thick, opacity=0.2] (6,4,1)--(6,4,2);
+\draw[thick, opacity=0.2] (2,8,1)--(2,8,2)--(1,8,2);
+\draw[thick, opacity=0.2] (1,8,1)--(1,4,1);
+\draw[thick, opacity=0.2] (1,4,6)--(2,4,6);
+\draw[thick, opacity=0.2] (6,1,4)--(6,2,4);
+
+%zones colorées
+\draw[very thick, red] (4,1,6)--(4,2,6);
+\draw[very thick, red] (4,2,6)--(6,2,4);
+
+\draw[very thick, red] (1,2,6)--(1,2,3);
+\draw[very thick, red] (1,2,6)--(2,1,6);
+\draw[very thick, red] (2,1,6)--(2,1,3);
+\draw[very thick, red] (1,2,3)--(2,1,3);
+\draw[fill=red, opacity=0.12] (1,2,3)--(2,1,3)--(2,1,6)--(1,2,6)--cycle;
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.5, J4]
+\draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
+\draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
+\draw[thick, opacity=0.2] (4,1,6)--(4,2,6);
+\draw[thick, opacity=0.2] (6,1,2)--(3,1,2);
+\draw[thick, opacity=0.2] (6,2,1)--(3,2,1);
+\draw[thick, opacity=0.2] (6,4,1)--(6,4,2);
+\draw[thick, opacity=0.2] (2,8,1)--(2,8,2)--(1,8,2);
+\draw[thick, opacity=0.2] (1,8,1)--(1,4,1);
+\draw[thick, opacity=0.2] (1,4,6)--(2,4,6);
+\draw[thick, opacity=0.2] (2,1,6)--(2,1,3);
+\draw[thick, opacity=0.2] (1,2,3)--(2,1,3);
+\draw[thick, opacity=0.2] (1,2,6)--(1,2,3);
+\draw[thick, opacity=0.2] (1,2,6)--(2,1,6);
+
+%zones colorées
+\draw[very thick, red, ->] (4,1,6)--(6,1,4);
+\draw[very thick, red, ->] (6,1,4)--(6,2,4);
+\draw[very thick, red] (4,1,6)--(4,2,6);
+\draw[very thick, red, ->] (4,2,6)--(6,2,4);
+\draw[fill=red, opacity=0.12] (4,1,6)--(6,1,4)--(6,2,4)--(4,2,6)--cycle;
+
+\draw[very thick, red, <-] (2,1,3)--(1,2,3);
+\draw[very thick, red] (2,1,3)--(2,1,6);
+\end{tikzpicture}}
+\caption{The four pairs of~(\ref{eq:quatre-paires-inclues}) -above, in blue- and the four pairs of~(\ref{eq:quatre-paires-exclues}) -below, in red- distinguish the two possible diagonals on $\J_4$. Arrows are drawn according to the Tamari-type order. \Guillaume{Ajouter les fleches} }
+\label{fig:four-pairs}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\resizebox{0.55\linewidth}{!}{
+\includegraphics[width=0.4\linewidth]{paires-choisies.png} 
+\includegraphics[width=0.38\linewidth]{paires-exclues.png}}
+\caption{The two distinct subdivisions of the same "diamond" induced by the pairs of~(\ref{eq:quatre-paires-inclues}) and~(\ref{eq:quatre-paires-exclues}).}
+\label{fig:diamonds}
+\end{figure}
+
+By analogy with the case of the permutahedra \cite[Proposition 3.17]{LA21}, we conjecture that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$. 
+\rouge{Parler \'egalement de l'associa\`edre, puis des id\'ees sur les I,J sup\'erieurs}
+
+The formula in \cref{thm:formuladiagonal}, even though easily implemented in the computer, is not optimal. 
+For instance, one could use Equation (1) in \cite[Theorem 1.23]{LA21} to reduce the number of pairs $(I,J)$ on which the conditions have to be tested. 
+One could also compute directly the fundamental hyperplane arrangement of the Ardila--Doker or Forcey--Loday multiplihedron.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Tensor product of \Ainf -morphisms and \Ainf -functors}
 \label{sec:IV}
 
-\rouge{Après avoir tapé tout cela, reprendre le OneNote pour voir s'il y a des idées supplémentaires à inclure}
+\rouge{Apr\`es avoir tap\'e tout cela, reprendre le OneNote pour voir s'il y a des id\'ees suppl\'ementaires \`a inclure}
 
 Applying the cellular chains functor, we obtain an explicit and universal formula for the tensor product of $\mathrm{A}_\infty$-morphisms between $\mathrm{A}_\infty$-algebras, and at the same time for $\mathrm{A}_\infty$-functors between $\mathrm{A}_\infty$-categories. 
 However, this formula is not strictly compatible with the composition of $\Ainf$-morphisms. 
-We prove in section \ref{} that this is in fact the case for \emph{any} operadic tensor product, and we discuss some perspectives regarding the possibility of endowing the category of $\Ainf$-algebras with a (homotopy) symmetric monoidal structure. \rouge{Réécrire à la fin}
+We prove in section \ref{} that this is in fact the case for \emph{any} operadic tensor product, and we discuss some perspectives regarding the possibility of endowing the category of $\Ainf$-algebras with a (homotopy) symmetric monoidal structure. \rouge{R\'e\'ecrire \`a la fin}
 
 \subsection{\Ainf -algebras and \Ainf -morphisms}
 
@@ -1522,17 +1646,17 @@ We define \Aalg\ to be the category whose objects are \Ainf -algebras, whose mor
 \end{definition}
 
 Representing the operations $m_n$ as corollae \arbreop{0.15} of arity $n$, the equations of \cref{def:ainf-alg} read as
-\begin{align*}
-    [ \partial , \arbreop{0.15} ] = - \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr} \eqainf   \ . \tag{$\star$} \label{eq:ainf-alg}
-\end{align*} 
+\begin{equation}
+    [ \partial , \arbreop{0.15} ] = - \sum_{\substack{p+q+r=n \\ 2 \leq q \leq n-1}} (-1)^{p+qr} \eqainf   \ .  \label{eq:ainf-alg}
+\end{equation} 
 Representing the operations $m_n$ in blue \arbreopbleu{0.15}, the operations $m'_n$ in red \arbreoprouge{0.15} and the operations $f_n$ by \arbreopmorph{0.15}, the equations of \cref{def:ainf-morph} can be rewritten as
-\begin{align*} 
-[ \partial , \arbreopmorph{0.15} ] = \sum_{\substack{p+q+r=n \\ q \geq 2}} (-1)^{p+qr} \eqainfmorphun \ -  \sum_{\substack{i_1+\cdots+i_k=n \\ k \geq 2}} (-1)^{\varepsilon} \eqainfmorphdeux \ . \tag{$\star \star$} \label{eq:ainf-morph}
-\end{align*}
+\begin{align} 
+[ \partial , \arbreopmorph{0.15} ] = \sum_{\substack{p+q+r=n \\ q \geq 2}} (-1)^{p+qr} \eqainfmorphun \ -  \sum_{\substack{i_1+\cdots+i_k=n \\ k \geq 2}} (-1)^{\varepsilon} \eqainfmorphdeux \ .  \label{eq:ainf-morph}
+\end{align}
 Finally, representing the operations $f_n$ by \arbreopmorphcompun\ and the operations $g_n$ by \arbreopmorphcompdeux, the formula for the composition of \Ainf -morphisms reads as
-\begin{align*}
-     \sum_{i_1+\cdots+i_k=n} (-1)^{\varepsilon} \compainf \ . \tag{$\star \star \star$} \label{eq:ainf-comp}
-\end{align*}
+\begin{align}
+     \sum_{i_1+\cdots+i_k=n} (-1)^{\varepsilon} \compainf \ .  \label{eq:ainf-comp}
+\end{align}
 
 An \Ainf -algebra is simply a correct notion of a dg-algebra whose product is associative up to homotopy. The maps $m_n$ for $n \geq 3$ are the higher coherent homotopies arising from the fact that $m_2$ is homotopy-associative. An \Ainf -morphism is then a correct notion of a map $f_1$ which preserves the products $m_2$ up to homotopy, together with higher coherent homotopies $f_n$ for $n \geq 2$. For more details, we refer to \cite[Chapter 9]{LodayVallette12}. 
 
@@ -1549,7 +1673,7 @@ Given $P$ a dg-operad, we then define a \emph{$P$-algebra structure} on $A$ to b
 \begin{definition}[Operad \Ainf]
 The \emph{operad \Ainf} is the quasi-free dg-operad generated in arity $n \geqslant 2$ by one operation $\arbreop{0.15}$ of degree $n-2$ 
 \[ \Ainf := \mathcal{F}( \arbreopdeux , \arbreoptrois, \arbreopquatre , \cdots ) \ , \]
-and whose differential is defined by equations \ref{eq:ainf-alg}.
+and whose differential is defined by equations (\ref{eq:ainf-alg}).
 \end{definition}
 
 In a similar fashion, let $A$ and $B$ be two dg-modules. They respectively determine the operads $\End_A$ and $ \End_B$. We define the dg-operadic bimodule $\Hom (A ,B)$ to be the $(\End_B , \End_A)$-operadic bimodule whose dg-module of operations of arity $n$ is $ \Hom (A ,B)_n := \Hom (A^{\otimes n},B)$ and whose action-composition maps are again straightforward to define.
@@ -1558,7 +1682,7 @@ Let $R$ be a $(P,Q)$-operadic bimodule and suppose that $A$ and $B$ are respecti
 \begin{definition}
 The operadic bimodule \Minf\ is the quasi-free $(\Ainf ,\Ainf )$-operadic bimodule generated in arity $n \geqslant 1$ by one operation $\arbreopmorph{0.15}$ of degree $n-1$ 
 \[ \Minf :=  \mathcal{F}^{\Ainf , \Ainf}(\arbreopunmorph , \arbreopdeuxmorph , \arbreoptroismorph , \arbreopquatremorph , \cdots ) \ , \]
-and whose differential is defined by equations \ref{eq:ainf-morph}.
+and whose differential is defined by equations (\ref{eq:ainf-morph}).
 \end{definition}
 
 Composition of \Ainf -morphisms can also be formulated at the level of the operadic bimodule \Minf\ as a morphism of $(\Ainf , \Ainf)$-operadic bimodules $\Minf \rightarrow \Minf \circ_{\Ainf} \Minf$.
@@ -1643,7 +1767,7 @@ We compute the image of the polytopal diagonals on the Loday associahedra and th
 Given $P$ and $Q$ two dg-operads and $R$ and $R'$ two dg-operadic bimodules, recall that we have defined in \cref{def:hadamard-product} their Hadamard product $P \otimes Q$ and $R \otimes R'$.
 
 \begin{definition}
-\begin{enumerate}[leftmargin=*]
+\begin{enumerate}[leftmargin=*] $ $
     \item A \emph{diagonal on the operad \Ainf} is defined to be a morphism of operads $\triangle : \Ainf \rightarrow \Ainf \otimes \Ainf$. 
     \item Given a diagonal on the operad \Ainf, a \emph{diagonal on the operadic bimodule \Minf} is defined to be a morphism of operadic bimodules $\triangle : \Minf \rightarrow \Minf \otimes \Minf$ where $\Minf \otimes \Minf$ is endowed with its $(\Ainf , \Ainf)$-operadic bimodule structure induced by the diagonal on \Ainf .
 \end{enumerate}
@@ -1661,6 +1785,71 @@ Diagonals on the operadic bimodule \Minf\ provide the correct framework to defin
 One can then define an \Ainf -morphism $f_1 \otimes f_2 : A_1 \otimes A_2 \rightarrow B_1 \otimes B_2$ by the following composition
 \[ \Minf \rightarrow \Minf \otimes \Minf \rightarrow \Hom (A_1 , B_1) \otimes \Hom (A_2,B_2) \rightarrow  \Hom (A_1 \otimes A_2 , B_1 \otimes B_2) \ , \]
 where the arrows are morphisms of $(\Ainf , \Ainf )$-operadic bimodules and are defined in a similar fashion to the maps of the previous paragraph.
+
+\subsubsection{Admissible edges and permutations}
+\Guillaume{mettre cette section plus loin!}
+We consider a subfamily of the deges of a (2-colored) nested linear graph $(\gra,\mathcal{N})$, and define a permutation associated to a pair of (2-colored) nested linear graphs $(\mathcal{N},\mathcal{N}')$ in the image of the diagonal of the associahedra (resp. the multiplihedra). 
+These permutations will appear in the signs of the formulas of \cref{prop:diagonal-polytopale-a-infini,prop:diagonal-polytopale-m-infini}.
+
+We fix a (2-colored) nested linear graph $(\gra,\mathcal{N})$.
+We denote by $N_i$ the unique minimal nest of $\mathcal{N}$ containing the edge $i$, with respect to nest inclusion. 
+
+\begin{definition}
+For a nested linear graph, an edge $i$ is \emph{admissible} if $i \neq \min N_i$. 
+For a 2-colored nested linear graph, an edge $i$ is \emph{admissible} when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome.
+We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
+\end{definition}
+
+\begin{definition} 
+\label{def:left-levelwise-graph}
+The \emph{left-levelwise order} on $\mathcal{N}$ is defined as follows: we order the nests by decreasing order of cardinality, and we order two nests of the same cardinality according to the increasing order on their minimal elements. 
+\end{definition}
+
+Consider the left-levelwise order $N^1<N^2<\cdots < N^k$ on the nesting $\mathcal{N}=\{N^j\}_{1\leq j \leq k}$.
+We give the set $\mathrm{Ad}(\mathcal{N})$ a total order as follows: order the admissible edges of $N_1 \setminus \cup_{2\leq j \leq k} N_j$ in increasing order, then the admissible edges of $N_2 \setminus \cup_{3\leq j \leq k} N_j$ in increasing order, and so on. 
+Given two nestings $\mathcal{N}, \mathcal{N}'$ of $\gra$, we endow the set $\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')$ with the total order given by following the total order on $\mathrm{Ad}(\mathcal{N})$ and then the total order on $\mathrm{Ad}(\mathcal{N}')$. 
+
+\begin{proposition} 
+\label{prop:signs-ass}
+For a pair of nestings \Guillaume{of complementary dimensions} $(\mathcal{N}, \mathcal{N}')\in \Ima\triangle^K$, the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
+\begin{equation*}
+  \sigma_{\mathcal{N}\mathcal{N}'}(i)= 
+  \begin{cases}
+    \min N_i -1 & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}') \text{ and } 1 \neq \min N_i < \min N_i' \\ 
+    i-1 & \text{ otherwise ,} 
+  \end{cases}
+\end{equation*}
+and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by reversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will still denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
+\end{proposition}
+
+\begin{proof}
+  The second part of the proof of \cite[Theorem 1.26]{LA21} shows that the pair of faces $(F,G)$ associated to $(\mathcal{N},\mathcal{N}')$ is such that $\dim(F\cap \rho_z G)=0$, for any $z \in (\mathring F+ \mathring G)/2$.
+  Combined with the fact that $\dim F + \dim G = \dim K$, this implies that the two bases $e_j^F, e_j^G$ determining the cellular orientations of $F$ and $G$ together form a basis of the linear span of $K$. 
+  Writing horizontally the $e_j^F$ and then the $e_j^G$ in the basis $e_j$ determining the cellular orientation of the top cell of $K$ thus defines a matrix.
+  The positions of the rightmost non-zero entries of each line are given by the admissible edges of $\mathcal{N}$ and $\mathcal{N}'$.
+  The permutation $\sigma_{\mathcal{N}\mathcal{N}'}$ corresponds to a permutation of the lines of this matrix, sending these righmost entries to the diagonal, 
+  $n-1$ edges, $n-2$ vectors, so substract $1$ to put on the diagonal
+  at most two same admissible
+  linear independence garantees that it works
+\end{proof}
+
+\begin{proposition} 
+\label{prop:signs-mul}
+For a pair of 2-colored nestings \Guillaume{of complementary dimensions} $(\mathcal{N},\mathcal{N}')\in \Ima\triangle^J$, the function $\sigma_{\mathcal{N}\mathcal{N}'}: \mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}') \to (1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|)$ defined on $i \in \mathrm{Ad}(\mathcal{N})$ by 
+\begin{equation*}
+  \sigma_{\mathcal{N}\mathcal{N}'}(i)= 
+  \begin{cases}
+    \min N_i & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}') , N_i \text{ is monochrome and } N_i' \text{ is not} \\
+    \min N_i & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}'), N_i \text{ and } N_i' \text{ are monochrome and } \min N_i < \min N_i' \\ 
+    i & \text{ otherwise ,} 
+  \end{cases}
+\end{equation*}
+and similarly on $i \in \mathrm{Ad}(\mathcal{N}')$ by reversing the roles of $\mathcal{N}$ and $\mathcal{N}'$, induces a permutation of the set $\{1,2,\ldots,|\mathrm{Ad}(\mathcal{N})\sqcup \mathrm{Ad}(\mathcal{N}')|\}$ that we will still denote by $\sigma_{\mathcal{N}\mathcal{N}'}$.
+\end{proposition}
+
+\begin{proof}
+  The proof is similar to the proof of \cref{prop:signs-ass}.
+\end{proof}
 
 \subsubsection{The polytopal diagonals on \Ainf\ and \Minf}
 
@@ -1687,7 +1876,7 @@ The image of the diagonal of \cite{MTTV19} on the Loday associahedra under the f
   |\mathcal{N}|+|\mathcal{N}'|=n
 }}
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}\mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})\mathcal{N} \otimes \mathcal{N}' \ , \] 
-where ... \rouge{Il faut harmoniser les notations de linear graph, ensemble des nestings, etc.}. \rouge{vérifier la formule ensemble}
+where ... \rouge{Il faut harmoniser les notations de linear graph, ensemble des nestings, etc.}. \rouge{v\'erifier la formule ensemble}
 \end{proposition}
 
 \begin{proof}
@@ -1697,14 +1886,18 @@ The signs arise from the choices of cellular orientations on the Loday associahe
 
 We compute in particular that
 \[ \begin{matrix}
-\diagainf ( \black { \bullet \bullet } ) &=& & \black{\bullet \bullet} \otimes \black{\bullet \bullet} & & \\
-\diagainf ( \bullet \bullet \bullet ) &=& & \black{\black{\bullet \bullet} \bullet} \otimes \black{\bullet \bullet \bullet} &+& \black{\bullet \bullet \bullet} \otimes \black{\black{\bullet \bullet} \bullet} \\
+\diagainf ( \black { \bullet \bullet } ) 
+&=& & \black{\bullet \bullet} \otimes \black{\bullet \bullet} & & \\
+\diagainf ( \bullet \bullet \bullet ) 
+&=& & \black{\black{\bullet \bullet} \bullet} \otimes \black{\bullet \bullet \bullet} &+& \black{\bullet \bullet \bullet} \otimes \black{\black{\bullet \bullet} \bullet} \\
 \diagainf ( \black{ \bullet \bullet \bullet \bullet} ) 
-&=& & \black{\bullet \bullet \bullet \bullet} \otimes \black{\bullet \black{ \bullet \black{ \bullet \bullet }} }  &+& \black{ \black{ \black{\bullet \bullet} \bullet } \bullet }  \otimes \black{ \bullet \bullet \bullet \bullet } \\
-& & +& \black{ \black{\bullet \bullet } \bullet \bullet } \otimes \black{ \bullet \bullet \black{ \bullet \bullet }}  &+& \black{ \black{ \bullet \bullet \bullet } \bullet }  \otimes \black{ \bullet \black{ \bullet \bullet } \bullet }  \\ 
+&=& & 
+\black{\bullet \bullet \bullet \bullet} \otimes \black{\bullet \black{ \bullet \black{ \bullet \bullet }} }  
+&+& \black{ \black{ \black{\bullet \bullet} \bullet } \bullet }  \otimes \black{ \bullet \bullet \bullet \bullet } \\
+& & -& \black{ \black{\bullet \bullet } \bullet \bullet } \otimes \black{ \bullet \bullet \black{ \bullet \bullet }}  &+& \black{ \black{ \bullet \bullet \bullet } \bullet }  \otimes \black{ \bullet \black{ \bullet \bullet } \bullet }  \\ 
 & & +& \black{ \black{ \bullet \bullet \bullet } \bullet }  \otimes \black{ \bullet \black{ \bullet \bullet \bullet }} &+& \black{ \bullet \black{ \bullet \bullet } \bullet } \otimes \black{ \bullet \black{ \bullet \bullet \bullet }}
 \end{matrix} \]
-\rouge{Calculer les signes - On retrouve en plus en fait la diagonale de MS (à signe près/à ordre près ?)}
+\Guillaume{On a les memes signes que MS et SU}
 
 
 \begin{definition}[Tensor product of \Ainf -algebras] \label{def:tensor-product-ainf-alg}
@@ -1720,7 +1913,7 @@ The image of the diagonal on the Forcey--Loday multiplihedra under the functor $
 (-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}
 \mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})
 \mathcal{N} \otimes \mathcal{N}' \ ,\]
-where the sum runs over the pairs $\mathcal{N},\mathcal{N}' \in \mathcal{N}^2_n$ such that $\ |\mono(\mathcal{N})|+|\mono(\mathcal{N}')|=n$ and which satisfy the conditions in \cref{thm:formuladiagonal}, and where $\mono(\mathcal{N})$ denotes the set of monochrome nests of a nesting $\mathcal{N}$. \rouge{définir cette notation dans la section 3 ? ainsi les nouvelles notations $N_n$ - régler le problème des parenthésages en italique}
+where the sum runs over the pairs $\mathcal{N},\mathcal{N}' \in \mathcal{N}^2_n$ such that $\ |\mono(\mathcal{N})|+|\mono(\mathcal{N}')|=n$ and which satisfy the conditions in \cref{thm:formuladiagonal}, and where $\mono(\mathcal{N})$ denotes the set of monochrome nests of a nesting $\mathcal{N}$. \rouge{d\'efinir cette notation dans la section 3 ? ainsi les nouvelles notations $N_n$ - r\'egler le probl\`eme des parenth\'esages en italique}
 \end{proposition}
 
 \begin{proof}
@@ -1730,40 +1923,44 @@ The proof is identical to the proof of \cref{prop:diagonal-polytopale-a-infini}.
 We compute in particular that 
 \[
 \begin{matrix}
-    \diagminf ( \purple{ \bullet } )  &=&  & \purple{ \bullet } \otimes \purple{ \bullet } & &  \\
-    \diagminf ( \purple{ \bullet \bullet } ) &=& & \blue{\bullet \bullet} \otimes \purple{\bullet \bullet} & + & \purple{\bullet \bullet} \otimes \red{\bullet \bullet} \\
-    \diagminf (\purple{\bullet \bullet \bullet \bullet}) &=& 
-     & \blue{\blue{\blue{\bullet \bullet}\bullet}\bullet} \otimes \purple{\bullet \bullet \bullet \bullet} 
-      & + & \purple{\bullet \bullet \bullet \bullet} \otimes \red{\bullet \red{\bullet \red{\bullet \bullet}}} \\
-& &+ &  \blue{\bullet \bullet \bullet} \otimes \purple{\bullet \blue{\bullet \bullet}}    &  + & \blue{\bullet \bullet \bullet} \otimes \red{\bullet \purple{\bullet \bullet}}  \\  &   &+ & \purple{\bullet \blue{\bullet \bullet}} \otimes \red{\bullet \purple{\bullet \bullet}} 
-  &  + & \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\purple{\bullet \bullet} \bullet} \\ & &  + & \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet}   &  + & \red{\purple{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet} 
+\diagminf ( \purple{ \bullet } )  
+&=&  & \purple{ \bullet } \otimes \purple{ \bullet } & &  \\
+\diagminf ( \purple{ \bullet \bullet } ) 
+&=& & \blue{\bullet \bullet} \otimes \purple{\bullet \bullet} & + & \purple{\bullet \bullet} \otimes \red{\bullet \bullet} \\
+\diagminf (\purple{\bullet \bullet \bullet}) 
+&=& 
+& \blue{\blue{\bullet \bullet}\bullet} \otimes \purple{\bullet \bullet \bullet} 
+& + & \purple{\bullet \bullet \bullet} \otimes \red{\bullet \red{\bullet \bullet}} \\
+& &- &  \blue{\bullet \bullet \bullet} \otimes \purple{\bullet \blue{\bullet \bullet}}    &  - & \blue{\bullet \bullet \bullet} \otimes \red{\bullet \purple{\bullet \bullet}}  \\  &   &+ & \purple{\bullet \blue{\bullet \bullet}} \otimes \red{\bullet \purple{\bullet \bullet}} 
+  &  - & \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\purple{\bullet \bullet} \bullet} \\ & &  + & \purple{\blue{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet}   &  + & \red{\purple{\bullet \bullet} \bullet} \otimes \red{\bullet \bullet \bullet} 
   \end{matrix}
 \]
-\rouge{Corriger les signes également}
+\Guillaume{On a les memes signes que SU}
 
 \begin{definition}[Tensor product of \Ainf -morphisms]
 Let $A_1$, $A_2$, $B_1$ and $B_2$ be \Ainf -algebras and $f_1 : A_1 \rightarrow B_1$ and $f_2 : A_2 \rightarrow B_2$ be two \Ainf -morphisms. We define $f_1 \otimes_{\infty} f_2 : A_1 \otimes_\infty A_2 \rightarrow B_1 \otimes_\infty B_2$ to be the \Ainf -morphism defined by the diagonal \diagminf on \Minf .
 \end{definition}
 
 Recall from subsection \ref{ss:about} that any pair of faces $(F,G)$ of the multiplihedra satisfying the conditions of \cref{thm:formuladiagonal} always satisfies $\tp F \leq \bm G$. It would thereby be interesting to know whether the formula
-\begin{align*}
+\begin{align}
 \triangle \left( \purple{\bullet \cdots \bullet} \right) = 
 \sum_{\substack{
     \tp(\mathcal{N}) \leq \bm(\mathcal{N'}) \\
   \ |\mono(\mathcal{N})|+|\mono(\mathcal{N}')|=n
 }}
-(-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}\mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})\mathcal{N} \otimes \mathcal{N}' \ , \tag{$\star$}
+(-1)^{|\mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}')|}\mathrm{sgn}(\sigma_{\mathcal{N}\mathcal{N}'})\mathcal{N} \otimes \mathcal{N}' \ , 
 \label{eq:diagonal-top-bot}
-\end{align*}
-also defines a diagonal on the operadic bimodule \Minf . In other words, to know if one can directly copy the dg-formula from the polytopal diagonal on \Ainf\ to obtain a diagonal on \Minf . We prove in the following proposition that this is not the case. \rouge{Absolument détailler un peu plus pour insister sur l'importance du résultat au niveau polytopal ! - Mettre aussi une phrase à ce sujet dans la section About this formula}
+\end{align}
+also defines a diagonal on the operadic bimodule \Minf . In other words, to know if one can directly copy the dg-formula from the polytopal diagonal on \Ainf\ to obtain a diagonal on \Minf . We prove in the following proposition that this is not the case. \rouge{Absolument d\'etailler un peu plus pour insister sur l'importance du r\'esultat au niveau polytopal ! - Mettre aussi une phrase \`a ce sujet dans la section About this formula}
 
 \begin{proposition}
-The formula \ref{eq:diagonal-top-bot} does not define a diagonal on \Minf .
+\label{prop:non-a-topbot}
+The formula (\ref{eq:diagonal-top-bot}) does not define a diagonal on \Minf .
 \end{proposition}
 
 \begin{proof}
-We computed in subsection \ref{ss:cellular-formula} that in arity $\leq 3$, the image $\Ima \triangle$ contains all pairs of faces $\tp F\leq \bm G$ and that in arity 4, the image $\Ima \triangle_4$ contains all pairs of faces $\tp F\leq \bm G$ except four of them: \rouge{Liste ?} .
-The diagonal $\triangle$ defined by formula \ref{eq:diagonal-top-bot} thereby coincides with $\diagminf$ in arity $\leq 3$ and satisfies 
+We computed in subsection \ref{ss:cellular-formula} that in arity $\leq 3$, the image $\Ima \triangle$ contains all pairs of faces $\tp F\leq \bm G$ and that in arity 4, the image $\Ima \triangle_4$ contains all pairs of faces $\tp F\leq \bm G$ except the four pairs (\ref{eq:quatre-paires-exclues}).
+The diagonal $\triangle$ defined by formula (\ref{eq:diagonal-top-bot}) thereby coincides with $\diagminf$ in arity $\leq 3$ and satisfies 
 \[ \triangle ( \purple{ \bullet \bullet \bullet \bullet} ) = \diagminf ( \purple{ \bullet \bullet \bullet \bullet} ) + \delta \]
 where $\delta$ is the signed sum of the previous four pairs of faces. 
 The map $\triangle : \Minf \rightarrow \Minf$ is a diagonal on \Minf\ if and only if it is compatible with the differential. In particular, it has to satisfy
@@ -1962,7 +2159,7 @@ Alternatively, S. Arkhipov and D. Poliakova propose in \cite{PoliakovaArkhipov21
 
 \section{Further applications} \label{sec:furtherdirections}
 
-\rouge{A écrire à la fin}
+\rouge{A \'ecrire \`a la fin}
 
 \subsection{Convolution \Ainf -algebra}
 
