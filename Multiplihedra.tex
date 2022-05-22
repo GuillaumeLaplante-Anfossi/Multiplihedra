@@ -1109,8 +1109,6 @@ The key fact that the Ardila--Doker multiplihedron is a generalized permutahedro
 
 \subsection{2-colored nested linear graphs}
 
-\rouge{harmoniser les $abcd$ en $\bullet$}
-
 \subsubsection{2-colored nested linear graphs}
 
 Let $\gra$ be a \emph{linear graph} with $n$ vertices, as represented in Figure \ref{fig:bijections}.
@@ -1144,67 +1142,20 @@ A \emph{2-colored nesting} is a nesting where each nest is either colored in blu
 \end{enumerate}
 \end{definition}
 One should think of purple nests as being colored in both red and blue. 
+We call \emph{monochrome} the nests that are either blue or red, and \emph{bicolored} the purple nests. 
 We denote by $\mathcal{N}_2(\gra)$ the set of 2-colored nestings of $\gra$. 
 A 2-colored nesting is moreover \emph{maximal} if it has maximal cardinality, and it is made of blue and red nests only. 
 
 \begin{remark} 
-The data of a 2-colored nesting on a graph is equivalent to the data of a marked tubings on its line graph, as defined in \cite{DevadossForcey08}. 
-See also \cite[Remark 2.4]{LA21}.
+The data of a 2-colored nesting on a graph is equivalent to the data of a marked tubing on its line graph, as defined in \cite{DevadossForcey08}. See also \cite[Remark 2.4]{LA21}.
 \end{remark}
 
 \begin{lemma} 
 \label{lemma:bijection}
-There is a bijection between 2-colored trees with $n$ leaves and 2-colored nested linear graphs with $n$ vertices. Also, 2-colored maximal trees are in bijection with maximal 2-colored nested linear graphs.
+There is a bijection between 2-colored trees with $n$ leaves and 2-colored nested linear graphs with $n$ vertices. 
+Under this map, 2-colored maximal trees are in bijection with maximal 2-colored nested linear graphs.
 \begin{figure}[h!]
 \resizebox{0.8\linewidth}{!}{
-%\begin{tikzpicture}
-%\node (b1) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (-2,3) {};
-%\node (b2) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (-2,2) {};
-%\node (b3) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (-2,1) {};
-%\node (b4) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (-2,0) {};
-%\node (b5) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (-6,1.5) {};   
-
-
-%\node (c1) [circle,draw=black,minimum size=4mm,inner sep=0.1mm] at (-3.5,2) {\small $23$}; 
-%\node (c3) [circle,draw=black,minimum size=4mm,inner sep=0.1mm] at (-5,1.5) {\small $1$}; 
-
-%\draw[MidnightBlue] (b1)--(c1) node {};
-%\draw[MidnightBlue] (b2)--(c1) node {};
-%\draw[MidnightBlue] (b3)--(c1) node {};
-
-%\draw[BrickRed] (c3)--(-4.25,1.75) ;
-%\draw[MidnightBlue] (-4.25,1.75)--(c1) node {};
-
-%\draw[BrickRed] (c3)--(-4.25,1.12) ;
-%\draw[MidnightBlue] (b4)--(-4.25,1.12) ;
-
-%\draw[BrickRed] (c3)--(b5) node {}; %racine
-
-%\draw[-] (-4.25,3)--(-4.25,0);
-
-
-%\node (B) at (-1.25,1.5) {$\longleftrightarrow$};
-
-%\node (x1) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (0.15,2.55) {\small $3$};
-%\node (x2) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (0.15,1.5) {\small $2$};
-%\node (x3) [circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (0.15,0.38) {\small $1$};
-
-%\node (t4) [circle,draw=black,minimum size=4mm,inner sep=0.1mm] at (-0,0) {};
-%\node (t3) [circle,draw=black,minimum size=4mm,inner sep=0.1mm] at (0,1) {};
-%\node (t2) [circle,draw=black,minimum size=4mm,inner sep=0.1mm] at (0,2) {};
-%\node (t1) [circle,draw=black,minimum size=4mm,inner sep=0.1mm] at (0,3) {};  
-
-
-%\draw[-] (t4)--(t3) node {};
-%\draw[-] (t3)--(t2) node {};
-%\draw[-] (t2)--(t1) node {};
-
-
-%\draw [MidnightBlue,rounded corners,thick] (-0.15,0.6) -- (-0.4,0.8) -- (-0.4,3.1) -- (-0.15,3.3) -- (.15,3.3) -- (0.4,3.1) -- (.4,.8) -- (.15,.6) -- cycle;
-%\draw [BrickRed,rounded corners,thick] (-0.15,-0.35) -- (-0.5,-0.1) -- (-0.5,3.15) -- (-0.15,3.4) -- (.15,3.4) -- (0.5,3.15) -- (0.5,-0.1) -- (0.15,-0.35) -- cycle;
-
-    
-%\end{tikzpicture} \quad \quad \raisebox{0em}{
 \begin{tikzpicture}
 
 \node (b1)[circle,draw=none,minimum size=4mm,inner sep=0.1mm] at (-2,3) {};
@@ -1260,7 +1211,7 @@ There is a bijection between 2-colored trees with $n$ leaves and 2-colored neste
 \node (D) at (3.35,1.5) {$\red{ \bullet \purple{\blue{\bullet \bullet} \bullet}}$};
 
 \end{tikzpicture}}
-\caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations. \rouge{Corriger le dessin de gauche et les parenth\'esages inclin\'es (Proposition 4.13 aussi}}
+\caption{Bijections between 2-colored trees, 2-colored nested linear graphs, and 2-colored parenthesizations. \rouge{Corriger le dessin de gauche et les parenth\'esages inclin\'es}}
 \label{fig:bijections}
 \end{figure}
 \end{lemma}
@@ -1288,7 +1239,7 @@ We denote by $\vec n \coloneqq (1,\ldots,1) \in \RR^n$ the characteristic vector
 
 \begin{lemma} 
 \label{lemma:normalcones}
-The normal cone of a the face of the Ardila--Doker realization of the multiplihedron labeled by the 2-colored nesting  $\mathcal{N}$ is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})} \cup \{\vec n, - \vec n\} \right) \ . \]
+The normal cone of the face of the Ardila--Doker realization of the multiplihedron labeled by the 2-colored nesting $\mathcal{N}$ is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})} \cup \{\vec n, - \vec n\} \right) \ . \]
 \end{lemma} 
 
 \begin{proof} 
@@ -1298,12 +1249,13 @@ These faces can be easily determined from the projection from the permutahedron 
 \end{proof}
 
 We are now ready to compute the cellular formula for the diagonal of the Forcey--Loday multiplihedra. We introduce \[ D(n)\coloneqq \{(I,J) \ | \ I,J\subset\{1,\ldots,n\}, |I|=|J|, I\cap J=\emptyset, \min(I\cup J)\in I \}. \]
-We moreover number the edges of the linear graph wit $n$ vertices from bottom to top, starting at $1$ and ending at $n-1$. Blue nests and disjoint unions of red and purple nests can then in particular be seen as subsets of $\{1,\ldots,n-1\}$ hence of $\{1,\ldots,n\}$.
+We number the edges of the linear graph wit $n$ vertices from bottom to top, starting at $1$ and ending at $n-1$. 
+Blue nests and disjoint unions of red and purple nests can then in particular be seen as subsets of $\{1,\ldots,n-1\}$, hence of $\{1,\ldots,n\}$.
 
 \begin{theorem}
 \label{thm:formuladiagonal}
-The image of the diagonal map $\triangle_n : \J_n \to \J_n \times \J_n$ introduced in \cref{def:diagonal-multipl-forcey-loday} admits the following description.
-For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph with $n$ vertices \Guillaume{Sans condition de dimensions!}, we have that
+The cellular image of the diagonal map $\triangle_n : \J_n \to \J_n \times \J_n$ introduced in \cref{def:diagonal-multipl-forcey-loday} admits the following description.
+For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph with $n$ vertices, we have that
 \begin{eqnarray*}
   (\mathcal{N},\mathcal{N}') \in \Ima\triangle_n 
   & \iff & \forall (I,J) \in D(n), \\
@@ -1312,11 +1264,10 @@ For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph 
   && \exists B' \in B(\mathcal{N}'), |B'\cap I|<|B'\cap J| \text{ or } \nonumber \\
   && \exists R' \in R(\mathcal{N}'), |(R'\cup \{n\}) \cap I|<| (R'\cup \{n\}) \cap J| \ .
 \end{eqnarray*}
-\rouge{Formule \`a rev\'erifier ensemble}
 \end{theorem}
 
 \begin{proof} 
-The essential ingredient is the computation of the fundamental hyperplane arrangement of the permutahedron, which was already done in \cite[Section 3.1]{LA21}. The result follows in four steps:
+The essential ingredient is the computation of the fundamental hyperplane arrangement of the permutahedron, which was done in \cite[Section 3.1]{LA21}. The result follows in three steps:
 \begin{enumerate}[leftmargin=*]
 \item Since a good orientation vector $\vec v$ is also a principal orientation vector \cite[Definition 3.15]{LA21}, it orients positively the permutahedron. 
 \item Using \cref{prop:refinementofnormalfans} and the description of the normal cones of the faces of the multiplihedron in \cref{lemma:normalcones}, we get the above formula for the Ardila--Doker realizations of the multiplihedra. 
@@ -1325,8 +1276,8 @@ The essential ingredient is the computation of the fundamental hyperplane arrang
 \end{proof}
 
 Let us make this formula explicit in low dimensions. 
-We write 2-colored nestings of a linear graph with $n$ vertices as 2-colored parenthesizations of a word with $n$ symbols $\bullet$, which are easier to read and shorter to type. See \cref{fig:bijections}. 
-We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$. \rouge{Rev\'erifier que pas de probl\`eme de parenth\'esages}
+We write 2-colored nestings of a linear graph with $n$ vertices as 2-colored parenthesizations of a word with $n$ symbols $\bullet$, which are easier to read and shorter to type, see \cref{fig:bijections}. 
+We write only pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$, the others can be deduced by taking faces. \rouge{Rev\'erifier que pas de probl\`eme de parenth\'esages}
 
 \begin{equation*}
   \begin{matrix}
@@ -1408,12 +1359,13 @@ We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim 
 
 \bigskip
 
-\cref{table:numerology} shows the number of faces of complementary dimensions, as well as the number of pairs of vertices, in the cellular image of the diagonal for the multiplihedra induced by any good orientation vector in dimensions $0$ to $6$, and compares them with the same data for the associahedra and the permutahedra.
-\Guillaume{Code for this data??}
+\cref{table:numerology} shows the number of faces of complementary dimensions, as well as the number of pairs of vertices, in the cellular image of the diagonal for the multiplihedra in low dimensions.
+They are compared with diagonals induced by the same orientation vector for the Loday associahedra and the permutahedra.
+\Guillaume{Code for this??}
 
 \begin{table}[h]
 \centerline{\begin{tabular}{c|c|rrrrrrr|l}
-\text{Pairs} $(F,G) \in \Ima\triangle_{(P,\vec v)}$ & \text{Polytopes} & 0 & 1 & 2 & 3 & 4 & 5 & 6 &  \\
+\text{Pairs} $(F,G) \in \Ima\triangle_{(P,\vec v)}$ & \text{Polytopes} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & \cite{OEIS} \\
 \hline
 & \text{Associahedra} & 1 & 2 & 6 &  &  &  &  &   \\
 $\dim F + \dim G = \dim P$  & \text{Multiplihedra} & 1 & 2 & 8 & 42 & 254 & 1678 & 11790 &  ?? \\
@@ -1427,14 +1379,14 @@ $\dim F + \dim G = \dim P$  & \text{Multiplihedra} & 1 & 2 & 8 & 42 & 254 & 1678
 \label{table:numerology}
 \end{table}
 
-The diagonal $\triangle_n$ being a section of the projection $\pi : P\times P \to P, (x,y) \mapsto (x+y)/2$ \cite[Proposition 1.1]{LA21}, one can represent its cellular image by projecting it via $\pi$: for each pair of faces $(F,G) \in \Ima \triangle_n$, one draws the polytope $(F+G)/2$. 
+The diagonal $\triangle_n$ being a section of the projection $\pi : P\times P \to P, (x,y) \mapsto (x+y)/2$ \cite[Proposition 1.1]{LA21}, one can represent its cellular image by projecting it: for each pair of faces $(F,G) \in \Ima \triangle_n$, one draws the polytope $(F+G)/2$. 
 This defines a polytopal subdivision of $\J_n$.
 The polytopal subdivision of $\J_3$ looks like the subdivision in \cite[Figure 3]{LA21}, and the one of $\J_4$ is illustrated on the first page of this article.
 
-\subsection{About this formula} 
+\subsection{About the cellular formula} 
 \label{ss:about}
 
-Given a positively oriented polytope $(P, \vec v)$ and a face $F \subset P$, the orientation vector $\vec v$ defines a unique vertex $\tp F$ (resp. $\bm F$) which maximizes (resp. minimizes) the scalar product $\langle - , \vec v \rangle$. 
+Given a positively oriented polytope $(P, \vec v)$ and a face $F \subset P$, the orientation vector $\vec v$ defines a unique vertex $\tp F$ (resp. $\bm F$) which maximizes (resp. minimizes) the scalar product $\langle - , \vec v \rangle$ over $F$. 
 By \cite[Proposition 1.15]{LA21}, we have that any pair of faces $(F,G) \in \Ima \triangle_{(P,\vec v)}$ satisfies $\tp F \leq \bm G$. 
 In the case of the simplices, the cubes and the associahedra, the converse also holds: the image of the diagonal is given by the "magical formula" 
 \begin{align}
@@ -1463,11 +1415,8 @@ and the four pairs
 While the image $\Ima \triangle_4$ contains the four pairs in (\ref{eq:quatre-paires-inclues}), it does \emph{not} include the four pairs in (\ref{eq:quatre-paires-exclues}).
 
 \begin{remark}
-Note that the formula (\ref{eq:magical-formula}) does not hold for the permutahedra either, nor does it hold for many operahedra, see \cite[Section 3.2]{LA21}.
+Note that the formula (\ref{eq:magical-formula}) does not hold for the permutahedra either, nor does it hold for the operahedra in general, see \cite[Section 3.2]{LA21}.
 \end{remark}
-
-%quatre paires qui SONT dans la diagonale
-%$\purple{\blue{\bullet \bullet \bullet}\bullet} \times \red{\bullet\red{\purple{\bullet\bullet}\bullet}}$, $\purple{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\blue{\bullet\bullet}\bullet}$, $\red{\blue{\bullet\bullet\bullet}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}$ and $\purple{\blue{\blue{\bullet\bullet}\bullet}\bullet} \times \red{\bullet\purple{\bullet\bullet}\bullet}$.
 
 Observe that our choice of diagonal differs from the one in \cite[Section 5]{SaneblidzeUmble04}. 
 For instance, the four pairs in (\ref{eq:quatre-paires-inclues}) are not part of the image of the Saneblidze--Umble diagonal in dimension $3$ while the four pairs in (\ref{eq:quatre-paires-exclues}) are. 
@@ -1479,10 +1428,10 @@ Changing the last condition for $v_1 + v_4 < v_2+v_3$ gives the second choice of
 
 \begin{remark}
   These two families of orientation vectors correspond to two adjacent chambers in the fundamental hyperplane arrangement of the permutahedron \cite[Theorem 3.6]{LA21}, separated by one of the blue hyperplanes in \cite[Figure 12]{LA21}, the hyperplane $x_1+x_4=x_2+x_3$, .
-  A way to relate the diagonal constructed in this article to the diagonal of \cite[Section 5]{SaneblidzeUmble04} would be to find a choice of chambers in the fundamental hyperplane arrangements of the permutahedra (or the multiplihedra) recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
+  A way to relate the diagonal constructed in this article to the diagonal of \cite[Section 5]{SaneblidzeUmble04} would be to find further choices of chambers in the fundamental hyperplane arrangements of the permutahedra (or the multiplihedra) in all dimensions $n \geq 4$ recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
 \end{remark}
 
-The two diagonals differ exactly by four pairs of faces, represented in~\cref{fig:four-pairs} : the first one includes the pairs of~(\ref{eq:quatre-paires-inclues}), while the second one includes the pairs of~(\ref{eq:quatre-paires-exclues}).
+The two diagonals differ exactly by four pairs of faces, represented in~\cref{fig:four-pairs} : the first diagonal includes the pairs of~(\ref{eq:quatre-paires-inclues}), while the second diagonal includes the pairs of~(\ref{eq:quatre-paires-exclues}).
 Under the projection $\pi : P\times P \to P, (x,y) \mapsto (x+y)/2$, these two families of faces induce two distinct polytopal subdivisions of the same "diamond", represented in \cref{fig:diamonds}. 
 Since diagonal maps are sections of $\pi$, only one of these two incompatible subdivisions can be chosen, i.e. four pairs must be chosen, within a set of eight pairs that all satisfy $\tp F \leq \bm G$. 
 Hence, the formula~(\ref{eq:magical-formula}) does not define a diagonal on the multiplihedra, see \cref{prop:non-a-topbot} for an algebraic proof of this fact.
@@ -1603,7 +1552,7 @@ Hence, the formula~(\ref{eq:magical-formula}) does not define a diagonal on the 
 \end{figure}
 
 By analogy with the case of the permutahedra \cite[Proposition 3.17]{LA21}, we conjecture that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$. 
-\rouge{Parler \'egalement de l'associa\`edre, puis des id\'ees sur les I,J sup\'erieurs}
+\rouge{Parler \'egalement de l'associa\`edre, puis des id\'ees sur les I,J sup\'erieurs} \Guillaume{je te laisse cela!}
 
 The formula in \cref{thm:formuladiagonal}, even though easily implemented in the computer, is not optimal. 
 For instance, one could use Equation (1) in \cite[Theorem 1.23]{LA21} to reduce the number of pairs $(I,J)$ on which the conditions have to be tested. 
