@@ -1,5 +1,5 @@
 
-\documentclass[twoside, 12pt]{amsart}
+\documentclass[twoside, 11pt]{amsart}
 
 % Font
 
@@ -52,7 +52,7 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{theorem}{Theorem}
-\newtheorem*{problem}{Problem}
+\newtheorem{problem}{Problem}
 \newtheorem{corollary}{Corollary}
 
 \newtheorem{lemma}[definition]{Lemma}
@@ -77,22 +77,20 @@
 \address{Sorbonne Universit\'e, Institut de Math\'ematiques de Jussieu-Paris Rive Gauche CNRS, Campus Pierre et Marie Curie, 75005 Paris, France.}
 \email{thibaut.mazuir@imj-prg.fr}
 
-\date{\today}
+ \date{\today}
 
-\subjclass[2010]{Primary 52B11; Secondary 18M70, 53D37}
+ \subjclass[2010]{Primary 52B11, 18M70}
 
-\keywords{Multiplihedra, A-infinity categories, approximation of the diagonal, operads.}
+ \keywords{Multiplihedra, approximation of the diagonal, associahedra, operads, tensor product, A-infinity algebras, A-infinity morphisms, A-infinity categories.}
 
-\thanks{The first author was supported by the European Union's Horizon 2020 research and innovation program under the Marie Sklodowska-Curie grant agreement No 754362 \inlinegraphics{EU.png}, by the Natural Sciences and Engineering Research Council of Canada (NSERC) and by the ANR-20-CE40-0016 Higher Algebra, Geometry and Topology.}
+ \thanks{The first author was supported by the European Union's Horizon 2020 research and innovation program under the Marie Sklodowska-Curie grant agreement No 754362 \inlinegraphics{EU.png}, by the Natural Sciences and Engineering Research Council of Canada (NSERC) and by the ANR-20-CE40-0016 (Higher Algebra, Geometry and Topology). The second author was supported by the ANR-21-CE40-0002 COSY (New challenges in Symplectic and Contact Topology).}
 
 \begin{document}
 
 \begin{abstract}
-\rouge{R\'e\'ecrire \`a la toute fin}
-The goal of this article is to define a cellular approximation to the diagonal of Forcey--Loday realizations of the multiplihedra, and to endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra. 
-This gives a model for topological and algebraic A-infinity morphisms, and an explicit formula for their tensor product.
-In this way, one can consider for the first time a tensor product of A-infinity categories defined by explicit formulae, and its potential applications in symplectic topology. 
-Along the way, we prove that there is no tensor product of A-infinity morphisms that is strictly compatible with their composition. 
+We define in this article a cellular approximation for the diagonal of Forcey--Loday realizations of the multiplihedra, and endow these realizations with a compatible polytopal operadic bimodule structure over the Loday realizations of the associahedra. 
+We then compute an explicit combinatorial formula for the image of this cellular diagonal under the cellular chains functor.
+This provides an operadic model for topological and algebraic \Ainf -morphisms, as well as an explicit formula for their tensor product. We subsequently study the monoidal properties of this newly defined tensor product. We finally provide several applications to our work, notably in symplectic topology.
 \end{abstract}
 
 \maketitle
@@ -104,6 +102,8 @@ Along the way, we prove that there is no tensor product of A-infinity morphisms 
 \label{Fig5:J4}
 \end{figure}
 
+\newpage
+
 \setcounter{tocdepth}{1}
 \tableofcontents
 
@@ -111,92 +111,86 @@ Along the way, we prove that there is no tensor product of A-infinity morphisms 
 
 \section*{Introduction}
 
-\rouge{Retaper l'introduction \`a la toute fin}
+\Thibaut{Etoffer une dernière fois l'Introduction pour expliquer de façon claire les difficultés qui ont été levées dans le papier}
 
-\rouge{Corriger leftmargin partout o\`u n\'ecessaire}
-
-\rouge{D\'ecider \`a la fin ce qu'on met en Th\'eor\`eme et en Proposition}
-
-The $n$-dimensional associahedron, a polytope whose faces are in bijection with planar trees with $n+1$ leaves, was first introduced as a topological cell complex by J. Stasheff to describe algebras whose product is associative only up to homotopy \cite{Stasheff63}.
-The problem of giving polytopal realizations of these CW-complexes has a rich history \cite{CeballosZiegler12}, and the algebras that they encode, called $\mathrm{A}_\infty$-algebras, are classical objects in algebraic topology. 
-They have found many applications, from iterated loop spaces \cite{May72} to Fukaya categories \cite{Seidel08}, through the interpretation of the associahedra as moduli spaces of metric trees \cite{MauWoodward10}.
-Today, this notion is ubiquitous and appears in different branches of mathematics such as symplectic topology, mathematical physics, mirror symmetry, Galois cohomology or non-commutative probability.
+The $n$-dimensional associahedron, a polytope whose faces are in bijection with planar trees with $n+2$ leaves, was first introduced as a topological cell complex by J. Stasheff to describe algebras whose product is associative up to homotopy \cite{Stasheff63}.
+The problem of giving polytopal realizations of these CW-complexes has a rich history \cite{CeballosZiegler12}, and the algebras that they encode, called $\mathrm{A}_\infty$-algebras, have been extensively studied in various branches of mathematics. They were used in algebraic topology for the study of iterated loop spaces \cite{May72} or the study of homotopy theory of dg (associative) algebras \cite{LefevreHasegawa03,Vallette14} ; in symplectic topology to define Fukaya categories of symplectic manifolds \cite{Seidel08,fo3-I,fo3-II}, through the interpretation of the associahedra as moduli spaces of disks with marked boundary points; and more recently, in mathematical physics, mirror symmetry, Galois cohomology or non-commutative probability.
 
 \medskip
 
-The $n$-dimensional multiplihedron, a polytope whose faces are in bijection with 2-colored planar trees with $n$ leaves (see \cref{def:2coloredtree}), was first introduced as a topological cell complex by J. Stasheff to describe morphisms between $\mathrm{A}_\infty$-algebras \cite{Stasheff70}.
-It was only realized as a convex polytope recently, through the work of S. Forcey \cite{Forcey08}, and later S. Forcey and S. Devadoss \cite{DevadossForcey08}, F. Ardila and J. Doker \cite{AD13}, and F. Chapoton and V. Pilaud \cite{CP22}.
-The family of multiplihedra was studied both in algebraic topology \cite{BoardmanVogt73} and symplectic topology \cite{MauWoodward10,Mazuir21}, through their interpretation as moduli spaces of 2-colored metric trees. 
+The $n$-dimensional multiplihedron is a polytope whose faces are in bijection with 2-colored planar trees with $n+1$ leaves. It was first introduced as a topological cell complex by J. Stasheff to describe morphisms between $\mathrm{A}_\infty$-algebras \cite{Stasheff70}.
+It was only recently realized as a convex polytope in the work of S. Forcey \cite{Forcey08}. See also the work of S. Forcey and S. Devadoss \cite{DevadossForcey08}, F. Ardila and J. Doker \cite{AD13}, and F. Chapoton and V. Pilaud \cite{CP22}.
+The multiplihedra were studied in algebraic topology \cite{BoardmanVogt73}, as well as in symplectic topology \cite{MauWoodward10,mau-wehrheim-woodward} and Morse theory \cite{mazuir-I,mazuir-II}, as they can be respectively realized as moduli spaces of quilted disks with marked boundary points and as moduli spaces of 2-colored metric trees. 
 
 \medskip
 
-In this paper, we define and study a cellular approximation to the diagonal of the multiplihedron. 
-The need for such an approximation comes from the general fact that the set-theoretic diagonal $\triangle_P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular, that is, its image is not a union of faces of $P\times P$. 
-A cellular approximation of the diagonal is a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
+In this paper, we define and study a \textit{cellular approximation} for the diagonal of the multiplihedra. 
+Our motivation is the observation that the standard thin diagonal $\triangle_P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular in general, i.e. its image is not a union of faces of $P\times P$. 
+A cellular approximation of the diagonal is then defined to be a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
 
 \medskip
 
-The Alexander--Whitney map \cite{EilenbergMacLane53} and the Serre diagonal \cite{Serre51} are cellular approximations of the diagonal of the simplices and the cubes, respectively. 
-They allow one to define the cup product in cohomology.
-A cellular approximation of the diagonal of the associahedra allows one to define the tensor product of two $\mathrm{A}_\infty$-algebras \cite{SaneblidzeUmble04,MarklShnider06,MTTV19}. 
-Our goal here is to make this tensor product COMPLETER
+The Alexander--Whitney map \cite{EilenbergMacLane53} and the Serre diagonal \cite{Serre51} respectively define cellular approximations for the diagonal of the simplices and of the cubes. 
+They respectively yield the cup product in singular cohomology and in cubical cohomology.
+A cellular approximation for the diagonal of the associahedra yields a natural tensor product of two $\mathrm{A}_\infty$-algebras, and was constructed in \cite{SaneblidzeUmble04,MarklShnider06,MTTV19}. 
+In a similar fashion, the cellular approximation for the diagonal of the multiplihedra will be used to define natural tensor products of \Ainf -morphisms in this paper.
 
 \medskip
 
-Our results can be summarized as follows.
-\begin{enumerate}[leftmargin=*]
-  \item We define a cellular approximation of the diagonal of the Forcey--Loday realizations of the multiplihedra (\cref{prop:OrientationVector});
-  \item We endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra (\cref{thm:MainOperad});
-  \item We describe combinatorially the cellular image of the diagonal (\cref{thm:formuladiagonal});
-  \item We apply the cellular chains functor to define the tensor product of $\mathrm{A}_\infty$-algebras and their categorification, known as $\mathrm{A}_\infty$-categories (\cref{prop:tensorproduct}).
+Our main results can be summarized as follows.
+\begin{enumerate}
+  \item We define a cellular approximation of the diagonal on Forcey--Loday realizations of the multiplihedra (\cref{def:ForceyLoday} and \cref{def:diagonal-multipl-forcey-loday}).
+  \item We endow them with a compatible operadic bimodule structure over the Loday realizations of the associahedra (\cref{thm:MainOperad}).
+  \item We compute an explicit combinatorial formula for the cellular image of the diagonal (\cref{thm:formuladiagonal}).
+  \item We apply the cellular chains functor to the diagonal in order to define a tensor product of $\mathrm{A}_\infty$-morphisms (\cref{prop:diagonal-polytopale-m-infini}), and we study its properties.
 \end{enumerate}
 
 
-To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, based on the method introduced in \cite{MTTV19}.
-For this purpose, we use the extra idea that the Forcey--Loday realization of the multiplihedron, as defined in \cite{Forcey08}, can be obtained from the Ardila--Doker realization of the multiplihedron \cite{AD13} by projection.
-This last realization is a generalized permutahedron, in the sense of A. Postnikov \cite{Postnikov09}, which allows us to apply the results of \cite{LA21} directly, both for the purpose of defining a cellular approximation of the diagonal, and to describe its cellular image combinatorially.
+To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, which is based on the method introduced in \cite{MTTV19}.
+We prove that the Forcey--Loday realizations of the multiplihedra, which generalize the realizations of \cite{Forcey08}, can be obtained from the Ardila--Doker realization of the multiplihedra \cite{AD13} by projection (\cref{prop:lifting}).
+These last realizations are generalized permutahedra, in the sense of A. Postnikov \cite{Postnikov09}, which allows us to apply the results of \cite{LA21} directly, in order to define a cellular approximation of the diagonal and to describe its cellular image combinatorially.
 
 \medskip
 
-Our methods provide us with an universal tensor product, in the sense that its formula applies to any pair of $\Ainf$-morphisms.
-Let us call such a tensor product \emph{operadic}. 
-Unfortunately, our tensor product does not define a functor, since it is not strictly compatible with the composition of $\Ainf$-morphisms. 
-This is not a defect of our construction: in \cref{thm:nofunctorial}, we prove that there is no operadic tensor product satisfying this property. 
-The proof is similar to a result of M. Markl and S. Schnider saying that there is no operadic tensor product of $\Ainf$-algebras that satisfies associativity \cite[Theorem 13]{MarklShnider06}.
-Our tensor product of $\Ainf$-morphisms could still be a functor in some homotopical sense, and we examine in \cref{sec:monoidality} different perspectives regarding the possibility of endowing the category of $\Ainf$-algebras with a (homotopy) symmetric monoidal structure. 
+The natural tensor product of \Ainf -morphisms defined by this diagonal does however not define a symmetric monoidal category structure on the category of \Ainf -algebras, since it is not strictly compatible with the composition of $\Ainf$-morphisms. 
+This is not a defect of our construction: in \cref{thm:nofunctorial}, we prove that a tensor product of \Ainf -morphisms can never be compatible with the composition of \Ainf -morphisms. 
+This proposition has to be put into perspective with a similar result by M. Markl and S. Schnider proven in \cite[Theorem 13]{MarklShnider06}: a tensor product of $\Ainf$-algebras can never be strictly associative.
+We prove in \cref{th:homotopy-properties} that these two properties are in fact always satisfied up to homotopy, which points towards the fact that the category $\Aalg$ should be some kind of \textit{homotopy symmetric monoidal category}.. 
 
 \medskip
 
-Our results can readily be applied to different fields, prominently to symplectic topology. 
-First, the operadic bimodule structure in~(2) above was used in the work of the second author, where the structures of $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms are unraveled in the context of Morse theory \cite{Mazuir21}. 
-Second, our definition of a tensor product of $\mathrm{A}_\infty$-categories by explicit formulae can be used to study the product of Fukaya algebras of Lagrangians \cite{amorim-lagrangian}, and more generally the product of Fukaya categories of symplectic manifolds. 
-%deformations of bordered Riemann surfaces and the work of Liu
-It could also be used in the context of bordered Heegaard Floer homology \cite{LOT20}. 
-These applications are sketched in more details in \cref{sec:furtherdirections}.
-One could also think to applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}.
+Our results can be readily applied to different fields. 
+The operadic bimodule structure of~(2) was used in the work of the second author, in order to realize $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms in Morse theory \cite{mazuir-I,mazuir-II}. 
+Drawing from the work of K. Fukaya \cite{fukaya-unobstructed} and of L. Amorim \cite{amorim-lagrangian}, it would also be interesting to compare the algebraic and geometric tensor products of \Ainf -functors between Fukaya categories defined in the work of S. Mau, K. Wehrheim and C. Woodward \cite{mau-wehrheim-woodward}, as explained in \cref{problem}. 
+We also expect future applications of our work to the computation of the homology of fiber spaces, using the construction of the convolution \Ainf -algebra of an \Ainf -coalgebra and an \Ainf -algebra in \cref{prop:convolution-ainf}.
+\Guillaume{One could also think of applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}. - Compléter avec les nouvelles remarques (Robert-Nicoud--Wiejstra et Morse)}
 
 \medskip
 
-Finally, the methods of this paper can be straightfowardly extended to the "multiploperahedra", a family of polytopes which is to the operahedra of \cite{LA21} what the multiplihedra are to the associahedra. 
-They belong to both the families of graph-multiplihedra \cite{DevadossForcey08} and nestomultiplihedra \cite{AD13}.  
+Finally, the methods of this paper can be straightforwardly extended to the "multiploperahedra", a family of polytopes which is to the operahedra of \cite{LA21} what the multiplihedra are to the associahedra. 
+They belong at the same time to the families of graph-multiplihedra \cite{DevadossForcey08} and of nestomultiplihedra \cite{AD13}.  
 Together with the results of \cite{LA21}, one would obtain a tensor product of $\infty$-morphisms between homotopy operads, defined by explicit formulae. 
 
 \subsection*{Layout} 
-We define the realizations of the multiplihedra we will work with in \cref{sec:I}. 
-We define a cellular approximation of their diagonal and endow them with an operadic bimodule structure over the associahedra in \cref{sec:II}.
-We describe explicitly the image of our diagonal combinatorially, define the tensor product of $\mathrm{A}_\infty$-morphisms, and sketch applications to symplectic topology in \cref{sec:III}. 
+We introduce the Forcey--Loday realizations of the multiplihedra and recall the Ardila-Doker realizations of the multiplihedra in \cref{sec:I}. 
+We define a cellular approximation of their diagonal and endow the Forcey--Loday multiplihedra with an operadic bimodule structure over the Loday associahedra in \cref{sec:II}.
+We compute an explicit combinatorial formula for the image of our diagonal in \cref{sec:III}. 
+We define a tensor product of \Ainf -algebras and of \Ainf -morphisms and study its properties in \cref{sec:IV}.
+We finally sketch several further applications of our work in \cref{sec:V}.
 
 \subsection*{Conventions} We use the conventions and notations of \cite{Ziegler95} for convex polytopes and the ones of \cite{LodayVallette12} for operads. We denote by $[n]\coloneqq \{1,\ldots,n\}$ and by $\{ e_i\}_{i \in [n]}$ the standard basis of $\RR^n$.
 
 \subsection*{Acknowledgements} 
-We would like to thank Bruno Vallette for numerous discussions and for his careful reading of the manuscript, and Eric Hoffbeck for his comments on an earlier version.
-We are indebted to Lino Amorim and Robert Lipshitz, for explaining to us their work and for their detailed insights about possible applications of our results in symplectic topology. \rouge{+ Sushmita}
+We would like to thank Bruno Vallette for numerous discussions and for his careful reading of our paper, as well as Alexandru Oancea and Eric Hoffbeck for their comments on earlier versions.
+We are also indebted to Lino Amorim and Robert Lipshitz, for explaining to us their work and for their detailed insights on possible applications of our results in symplectic topology. We finally express our gratitude to Sushmita Venugopalan, for taking the time to discuss potential connections between our work and results on toric varieties.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Realizations of the multiplihedra} 
 \label{sec:I}
+
+\Thibaut{Changer les niveaux de gris des couleurs}
 
 Drawing from the work of Forcey in \cite{Forcey08} and from the ideas of \cite{MTTV19}, we define weighted Forcey--Loday realizations of the multiplihedra and describe their general properties.
 We then show how they can be recovered from the Ardila--Doker realizations of the multiplihedra, which are in particular generalized permutahedra.
@@ -213,7 +207,7 @@ We consider in this section \textit{planar rooted trees}, which we simply abbrev
 A \emph{cut} of a tree is a subset of edges or vertices which contains precisely one edge or vertex in each non-self crossing path from an incoming edge to the root.
 \end{definition}
 
-\noindent A cut divides a tree into an upper part that we color in blue and a lower part that we color in red. The edges and vertices of the cut are moreover represented by drawing a black line over them. See Figure \ref{Fig1:2ColTree} for an example. 
+\noindent A cut divides a tree into an upper part that we color in blue and a lower part that we color in red. The edges and vertices of the cut are moreover represented by drawing a black line over them. See \cref{Fig1:2ColTree} for an example. 
 
 \begin{definition}[2-colored tree] \label{def:2coloredtree}
 A \emph{2-colored tree} is a tree together with a cut. We call \emph{2-colored maximal tree} a 2-colored binary tree whose cut is made of edges only. 
@@ -758,7 +752,7 @@ We can finally conclude the proof with these decompositions of facets of $\J_\om
 \begin{definition}[Permutahedron] The \emph{$(n-1)$-dimensional permutahedron} is the polytope in $\RR^n$ equivalently defined as:
 \begin{itemize}[leftmargin=*]
   \item the convex hull of the points $\displaystyle \sum_{i=1}^{n}i e_{\sigma(i)}$ for all permutations $\sigma \in \mathbb{S}_n$, or
-  \item the intersection of the hyperplane $\displaystyle  \left\{x \in \RR^n \ \bigg| \ \sum_{i=1}^{n} x_i = \binom{n+1}{2}\right\}$ with the affine half-spaces $\displaystyle \left\{x \in \RR^n \ \bigg| \ \sum_{i \in I} x_i \geq \binom{|I|+1}{2}\right\}$ for all $\emptyset\neq I \subseteq [n]$.
+  \item the intersection of the hyperplane $\displaystyle  \left\{x \in \RR^n \ \bigg| \ \sum_{i=1}^{n} x_i = \binom{n+1}{2}\right\}$ with the affine half-spaces \\ $\displaystyle \left\{x \in \RR^n \ \bigg| \ \sum_{i \in I} x_i \geq \binom{|I|+1}{2}\right\}$ for all $\emptyset\neq I \subseteq [n]$.
 \end{itemize}
 \end{definition}
 
@@ -839,6 +833,7 @@ In summary, we have the following diagram:
 
 In this section, we define a cellular approximation of the diagonal of the Forcey--Loday realizations of the multiplihedra, and we endow them with an operadic bimodule structure over the Loday realizations of the associahedra in the category $\PolySub$. 
 We use the methods of \cite{MTTV19} and the general theory developed in \cite{LA21}.
+Our construction of the cellular approximation relies crucially on the fact that the Forcey–-Loday multiplihedra, are obtained from the Ardila–Doker multiplihedra by projection (\cref{prop:lifting}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
@@ -852,9 +847,9 @@ such that $f^{-1}(\mathcal D)$ defines a polytopal subdivision of $P$.
 \end{description}
 The category $\PolySub$ is in fact a monoidal subcategory of the symmetric monoidal category $(\mathsf{CW},\times )$ whose objects are finite CW-complexes and whose morphisms are CW-maps between CW-complexes.
 
-We will use the notion of \textit{operad}, \textit{operadic bimodule} and \textit{Hadamard product} of operads and operadic bimodules in the rest of this paper. For the sake of concision, we refer respectively to \cite[I, Section 1.1.1]{Mazuir21}, \cite[I, Section 1.1.3]{Mazuir21} and \cite[Section 5.1.12]{LodayVallette12} for a complete definition of these notions. An operad will in particular be a non-symmetric operad in the language of \cite{LodayVallette12}. The fact that the category $\PolySub$ is monoidal will moreover allow us to define operads and operadic bimodules in polytopes. 
+We will use the notion of \textit{operad}, \textit{operadic bimodule} and \textit{Hadamard product} of operads and operadic bimodules in the rest of this paper. For the sake of concision, we refer respectively to \cite[Section 1.1.1]{mazuir-I}, \cite[Section 1.1.3]{mazuir-I} and \cite[Section 5.1.12]{LodayVallette12} for a complete definition of these notions. An operad will in particular be a non-symmetric operad in the language of \cite{LodayVallette12}. The fact that the category $\PolySub$ is monoidal will moreover allow us to define operads and operadic bimodules in polytopes. 
 We finally point out that the grafting of trees endows the set of planar trees with an operad structure in the category of sets, whose arity $n$ space of operations is the set $\mathrm{PT}_n$ of planar trees with $n$ leaves. 
-The grafting of trees described in subsection \ref{sss:grafting} endows similarly the set of 2-colored trees with a $(\mathrm{PT},\mathrm{PT})$-operadic bimodule structure. 
+The grafting of trees described in \cref{sss:grafting} endows similarly the set of 2-colored trees with a $(\mathrm{PT},\mathrm{PT})$-operadic bimodule structure. 
 
 \subsection{Positively oriented polytopes and diagonal maps}
 
@@ -884,14 +879,14 @@ Its cellular image admits a combinatorial description in terms of the fundamenta
 Recall that a face $F$ of a polytope $P \subset \RR^n$ is equal to the intersection of a family of facets $\{F_i\}$. 
 If we choose an outward pointing normal vector $\vec F_i$ for each facet $F_i$ (see \cite[Definition 1.24]{LA21}) and a basis $\{b_k\}$ of the orthogonal complement of the affine hull of $P$ in $\RR^n$, then the normal cone of $F$ is given by $\mathcal{N}_P(F)=\cone(\{\vec F_i\} \cup \{b_k,-b_k\})$. 
 
-\begin{theorem}[{\cite[Theorem 1.23]{LA21}}]
+\begin{proposition}[{\cite[Theorem 1.23]{LA21}}]
   \label{thm:universalformula} 
   Let $(P,\vec v)$ be a positively oriented polytope in $\RR^n$. For each $H\in\mathcal{H}_P$, we choose a normal vector $\vec d_H$ such that $\langle \vec d_H, \vec v \rangle >0$. We have 
 \begin{eqnarray*}
   (F,G) \in \Ima \triangle_{(P,\vec v)} 
   &\iff&  \forall H \in \mathcal{H}_P , \ \exists i , \ \langle \vec F_i, \vec d_H \rangle < 0  \text{ or } \exists j , \ \langle \vec G_j, \vec d_H \rangle > 0 \ . 
 \end{eqnarray*} 
-\end{theorem}
+\end{proposition}
 
 We finally recall general facts from \cite[Section 1.6]{LA21}. 
 
@@ -1059,19 +1054,19 @@ This is easily seen to be the case from the definition of $\Theta$, in the proof
 Using \cref{prop:thetacommutes}, we can apply the proof of \cite[Theorem~1]{MTTV19} \emph{mutatis mutandis}. The uniqueness of the transition map $\tr$ is the key argument, as it forces the operadic axioms to hold. We also point out that $\{ \J_n\times \J_n \}$ is to be understood as the Hadamard product $\{ \J_n \} \times \{ \J_n \}$, and that its $(\{\K_n\},\{\K_n\})$-operadic bimodule structure is defined as the pullback of its natural $(\{\K_n \times \K_n\},\{\K_n \times \K_n\})$-operadic bimodule structure under the diagonal maps $\{ \triangle_n : \K_n \to \K_n \times \K_n \}$.
 \end{proof}
 
-Point (1) of \cref{thm:MainOperad} was already mentioned in \cite[I, Section 1.2]{Mazuir21}, where associahedra and multiplihedra are realized as compactifications of moduli spaces of metric trees and used to construct $\Ainf$-structures on the Morse cochains of a closed manifold.
+Point (1) of \cref{thm:MainOperad} was already mentioned in \cite[Section 1.2]{mazuir-I}, where associahedra and multiplihedra are realized as compactifications of moduli spaces of metric trees and used to construct $\Ainf$-structures on the Morse cochains of a closed manifold.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Cellular formula for the diagonal of the multiplihedra} \label{sec:III}
 
-We compute in \cref{thm:formuladiagonal} an explicit cellular formula for the diagonal of the Forcey--Loday multiplihedra, using the key fact that the Ardila--Doker multiplihedron is a generalized permutahedron to which one can apply \cref{prop:refinementofnormalfans} and the results of \cite{LA21}. We then explain geometrically why this formula necessarily has to differ from the "magical formula" computed for the associahedra in \cite{MTTV19}.
+We compute in \cref{thm:formuladiagonal} an explicit cellular formula for the diagonal of the Forcey--Loday multiplihedra, using again the key fact that the Ardila--Doker multiplihedron is a generalized permutahedron to which one can apply \cref{prop:refinementofnormalfans} and the results of \cite{LA21}. We then explain geometrically why this formula necessarily has to differ from the "magical formula" computed for the associahedra in \cite{MTTV19}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{2-colored nested linear graphs} \label{ss:2-col}
 
-Let $\gra$ be a \emph{linear graph} with $n$ vertices, as represented in Figure \ref{fig:bijections}.
+Let $\gra$ be a \emph{linear graph} with $n$ vertices, as represented in \cref{fig:bijections}.
 We respectively write $V(\gra)$ and $E(\gra)$ for its sets of vertices and edges.
 Any subset of edges $N\subset E(\gra)$ defines a subgraph of $g$ whose edges are $N$ and whose vertices are all the vertices adjacent to an edge in $N$. 
 We call this graph the \emph{closure} of~$N$. 
@@ -1501,15 +1496,13 @@ We also refer to \cref{rmk:non-a-topbot} for an algebraic counterpart of \cref{p
 \label{fig:diamonds}
 \end{figure}
 
-By analogy with the case of the permutahedra \cite[Proposition 3.17]{LA21}, we conjecture that the condition $\tp F\leq \bm G$ is equivalent to the conditions in \cref{thm:formuladiagonal} for the pairs $(I,J)$ such that $|I|=|J|=1$. \rouge{Soit le prouver soit l'enlever}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Tensor product of \Ainf -morphisms and \Ainf -functors}
 \label{sec:IV}
 
-We begin by proving that the cellular chains functor maps the Loday associahedra to the operad \Ainf\ encoding \Ainf -algebras and the Forcey-Loday multiplihedra to the operadic bimodule \Minf\ encoding \Ainf -morphisms between them.
-We then use the formalism of diagonals on the operad \Ainf\ and the operadic bimodule \Minf\ to define tensor products of \Ainf -algebras and \Ainf -morphisms, and explicitly compute the dg diagonals obtained from the diagonals on the Loday associahedra and the Forcey-Loday multiplihedra.
+We begin by proving that the cellular chains functor maps the Loday associahedra to the operad \Ainf\ encoding \Ainf -algebras and the Forcey--Loday multiplihedra to the operadic bimodule \Minf\ encoding \Ainf -morphisms between them.
+We then use the formalism of diagonals on the operad \Ainf\ and the operadic bimodule \Minf\ to define tensor products of \Ainf -algebras and \Ainf -morphisms, and explicitly compute the dg diagonals obtained from the diagonals on the Loday associahedra and the Forcey--Loday multiplihedra.
 Tensor product of \Ainf -categories and \Ainf -categories are defined in a similar fashion, and we provide an extensive discussion on tensor product of different notions of \Ainf -categories with identities.
 We finally study coassociativity, cocommutativity and compatibility with composition of \Ainf -morphisms for these diagonals. We show that these properties are always satisfied up to homotopy, hence that the category $\Aalg$ should be some kind of \textit{homotopy symmetric monoidal category}.
 
@@ -1591,7 +1584,7 @@ Let $P\subset\RR^n$ be a polytope, and let $F$ be a face of $P$. A \emph{cellula
 \end{definition}
 
 \begin{definition}[Left-levelwise order] \label{def:left-levelwise-tree}
-Let $t$ be a (2-colored) tree $t$. The \emph{left-levelwise order} on the vertices of $t$ is defined by ordering them from bottom to top and from left to right, proceeding one level at a time.
+Let $t$ be a (2-colored) tree $t$. The \emph{left-levelwise order} on the vertices of $t$ is defined by ordering them from bottom to top and from left to right, proceeding one level at a time. \Guillaume{Expliquer ou juste donner référence}
 \end{definition}
 
 \begin{figure}[h!]
@@ -1617,7 +1610,7 @@ The tree on the right decomposes as $ (c_4\circ_1 c_3)\circ_6 c_4$ and defines t
 %$ (\arbreopquatre \circ_1 \arbreoptrois ) \circ_6 \arbreopquatre$
 
 Given a tree $t$, there is a unique decomposition $t=(\cdots ((c_{n_1} \circ_{i_1} c_{n_2})\circ_{i_2}c_{n_3})\cdots \circ_{i_k} c_{n_{k+1}})$ where the corollae $c_n$ are grafted according to this total order. Using the grafting operations defined in \cref{sss:grafting}, a 2-colored tree admits similarly a unique decomposition as a sequence of blue corollae, red corollae and 2-colored corollae ordered according to this total order. 
-We can then make the same choices of cellular orientations as in \cite[I, Section 1.4]{Mazuir21}, illustrated in \cref{fig:left-levelwise-order} :
+We can then make the same choices of cellular orientations as in \cite[Section 1.4]{mazuir-I}, illustrated in \cref{fig:left-levelwise-order} :
 \begin{itemize}
   \item For the Loday associahedra $\K_n \subset \RR^{n-1}$ of \cite{MTTV19}, we choose the basis $\{e_1 - e_{j+1}\}_{1\leq j \leq n-2}$ as positively oriented basis of the top dimensional cell $\arbreop{0.15}$. We then choose the orientation of any other face $t$ of $\K_n$ to be the image of the positively oriented bases of the top cells of the polytopes $\K_{n_i}$ under the sequence of partial compositions following the left-levelwise order on $t$. 
   \item We choose the basis $\{- e_j\}_{1\leq j \leq n-1}$ as positively oriented basis of the top dimensional cell $\arbreopmorph{0.15}$ of the Forcey--Loday multiplihedra $\J_n \subset \RR^{n-1}$. We then choose the orientation of any other face $t$ of $\J_n$ to be the image of the positively oriented bases of the top cells of the polytopes $\K_{n_i}$ and $\J_{n_j}$ under the sequence of action-compositions following the left-levelwise order on $t$.
@@ -1625,12 +1618,12 @@ We can then make the same choices of cellular orientations as in \cite[I, Sectio
 
 \begin{proposition} 
 \label{prop:cellular-chains}
-These cellular orientations on the Loday associahedra and the Forcey-Loday multiplihedra provide an isomorphism of dg operads $C_\bullet^{cell}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of dg operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong \Minf$. 
+These cellular orientations on the Loday associahedra and the Forcey--Loday multiplihedra provide an isomorphism of dg operads $C_\bullet^{cell}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of dg operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong \Minf$. 
 \end{proposition}
 
 \begin{proof}
 Our choice of cellular orientation using the left-levelwise order on trees ensures that we recover precisely the usual sign conventions for the partial compositions of the quasi-free operad $\mathrm{A}_\infty$ and for the action-composition maps of the quasi-free operadic bimodule $\Minf$. 
-The signs for the differential were already computed in \cite[I, Section 1.4]{Mazuir21}.
+The signs for the differential were already computed in \cite[Section 1.4]{mazuir-I}.
 \end{proof}
 
 \subsection{Tensor product of \Ainf -algebras and \Ainf -morphisms}
@@ -1668,7 +1661,6 @@ The \emph{left-levelwise order} on $\mathcal{N}$ is defined by ordering the nest
 \end{definition}
 
 \begin{remark}
-\rouge{Coïncide bien avec celui pour les arbres ? Si oui le dire - Pas de problème dans le cas 2-coloré ?}
 The left-levelwise order on the nesting of a nested linear graph is equivalent under the bijection of \cref{lemma:bijection} to the left-levelwise order on the vertices of the corresponding tree $t$ of \cref{def:left-levelwise-tree} .
 \end{remark}
 
@@ -1697,7 +1689,7 @@ For a pair of 2-colored nestings of complementary dimensions $(\mathcal{N},\math
     \min N_i & \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}') , N_i \text{ is monochrome and } N_i' \text{ is not} \\
     \min N_i & \begin{array}{l}
          \text{ if } i \in \mathrm{Ad}(\mathcal{N})\cap \mathrm{Ad}(\mathcal{N}'), N_i \text{ and } N_i' \text{ are monochrome} \\
-         \text{ and } \min N_i < \min N_i' \ , \text{\rouge{Bien $\min N_i$ ?}}
+         \text{ and } \min N_i < \min N_i' \ , \text{\Guillaume{Bien $\min N_i$ ?}}
     \end{array}   \\ 
     i & \text{ otherwise ,} 
   \end{cases}
@@ -1713,7 +1705,7 @@ We use the formalism of nested linear graphs introduced in \cref{ss:2-col} to wo
 
 \begin{proposition}
 \label{prop:diagonal-polytopale-a-infini}
-The image of the diagonal of the Loday associahedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operad \Ainf , that we denote \diagainf . It is determined by the formula 
+The image under the functor $C_\bullet^{cell}$ of the diagonal of the Loday associahedra constructed in \cite{MTTV19} defines a diagonal on the operad \Ainf , that we denote \diagainf . It is determined by the formula 
 \[ \diagainf \left( (\bullet \cdots \bullet) \right) = 
 \sum_{\substack{
   \mathcal{N},\mathcal{N}' \in \mathcal{N}_n \\ 
@@ -1726,7 +1718,7 @@ where $\bullet \cdots \bullet$ stands for the linear graph with $n$ vertices.
 
 \begin{proof}
 The image of the diagonal on the Loday associahedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operad \Ainf\ as this functor is strong monoidal. 
-This diagonal $\diagainf : \Ainf \rightarrow \Ainf \otimes \Ainf$ is determined by the image of the generating operations of the quasi-free operad \Ainf , which are the trivially nested linear graphs $\gra_n$. 
+This diagonal $\diagainf : \Ainf \rightarrow \Ainf \otimes \Ainf$ is determined by the image of the generating operations of the quasi-free operad \Ainf , which are the trivially nested linear graphs. 
 The signs arise from the choices of cellular orientations on the Loday associahedra made in \cref{sss:forcey--loday-realize} as follows. 
 As explained in the proof of \cite[Proposition 4.27]{LA21}, the computation of the signs boils down to the computation of the determinant of the bases $e_j^{F}, e_j^{G}$ determining the cellular orientations of the faces $F$ and $G$ associated to the nestings $\mathcal{N}$ and $\mathcal{N}'$, expressed in the basis $e_j$ of the top dimensional cell of $\K_n$. 
 The second part of the proof of \cite[Theorem 1.26]{LA21} shows that  $\dim(F\cap \rho_z G)=0$, for any $z \in (\mathring F+ \mathring G)/2$.
@@ -1734,8 +1726,8 @@ Combined with the fact that $\dim F + \dim G = \dim \K_n$, this implies that the
 Writing horizontally the $e_j^F$ and then the $e_j^G$ in the basis $e_j$ defines a square matrix.
 The positions of the rightmost non-zero entries of each line are given by the admissible edges of $\mathcal{N}$ and $\mathcal{N}'$. 
 The permutation $\sigma_{\mathcal{N}\mathcal{N}'}$ corresponds to a permutation of the lines of this matrix, sending these righmost entries to the diagonal, except for one case: when $\mathcal{N}$ and $\mathcal{N}'$ share the same admissible edge. 
-In this case, linear independence garantees that the two vectors differ in another place.
-Note that the factor $-1$ comes from the fact that $\K_n$ is defined in $\RR^{n-1}$ but has dimension $n-2$. \rouge{Relire ensemble - Je ne comprends pas cette dernière phrase}
+In this case, linear independence guarantees that the two vectors differ in another place.
+We moreover point out that that the $-1$ term in the definition of the permutation $\sigma_{\mathcal{N}\mathcal{N}'}$ in \cref{prop:signs-ass} stems from the fact that $\K_n$ is defined in $\RR^{n-1}$ but has dimension $n-2$. 
 \end{proof}
 
 We compute in particular 
@@ -1754,7 +1746,7 @@ We compute in particular
 %On a les memes signes que MS et SU
 
 \begin{remark}
-\rouge{Lien avec les diagonales de MS et SU + dire qu'on a ajouté les signes par rapport à l'article MTTV}
+\cref{prop:diagonal-polytopale-a-infini} completes the work of \cite{MTTV19}, by explicitly computing the signs for the polytopal diagonal on the dg level. This formula corresponds in fact to the formula originally computed in \cite{MarklShnider06}, up to signs verification. We also conjecture that it is equal to the diagonal constructed in \cite{SaneblidzeUmble04}.
 \end{remark}
 
 \begin{definition}[Tensor product of \Ainf -algebras] \label{def:tensor-product-ainf-alg}
@@ -1763,7 +1755,7 @@ Given $A$ and $B$ two \Ainf -algebras, their tensor product as \Ainf -algebras i
 
 \begin{proposition}
 \label{prop:diagonal-polytopale-m-infini}
-The image of the diagonal on the Forcey--Loday multiplihedra under the functor $C_\bullet^{cell}$ defines a diagonal on the operadic bimodule \Minf , that we denote \diagminf . It is determined by the formula
+The image under the functor $C_\bullet^{cell}$ of the diagonal on the Forcey--Loday multiplihedra constructed in this paper defines a diagonal on the operadic bimodule \Minf , that we denote \diagminf . It is determined by the formula
 \[ \diagminf \left( \purple{\bullet \cdots \bullet} \right) = 
 \sum_{
 \mathcal{N},\mathcal{N}'} 
@@ -1830,27 +1822,27 @@ The \emph{tensor product} of two $\mathrm{A}_\infty$-functors $\cat{F}:\cat{A}_1
 \subsubsection{Identities}
 
 The category $H_*(\cat{A})$ associated to an \Ainf -category $\cat{A}$ does not necessarily have identity morphisms. As explained in \cite[Section 1.2]{Seidel08}, there exist three notions of \Ainf -category with identity morphisms : \textit{strictly unital \Ainf -category}, \textit{cohomologically unital \Ainf -category} and \textit{homotopy unital \Ainf -category}. 
-\begin{enumerate}[leftmargin=*,label=(\roman*)]
+\begin{enumerate}[leftmargin=*]
 \item A \textit{cohomologically unital} \Ainf -category is an \Ainf -category $\cat{A}$ which is such that $H_*(A)$ has identity morphisms.
 \item A \textit{strictly unital} \Ainf -category is simply an \Ainf -category together with an element $e_X \in \cat{A} (X ,X )$ for every $X \in \mathrm{Ob}(\cat{A})$ such that $\partial (e_X) = 0$, $m_2 (e , \cdot ) = m_2 (\cdot , e ) = \ide$ and $m_n ( \cdots , e , \cdots ) = 0 \text { for } n \geq 3$.
 \item A \textit{homotopy unital} \Ainf -category is finally defined to be an \Ainf -category together with elements $e_X \in \cat{A} (X ,X )$ and endowed with additional operations encoding the fact that the previous relations on the $m_n$ and the $e_X$ are satisfied only up to higher coherent homotopies. See also \cite[Section 6.1]{HirshMilles12}.
 \end{enumerate}
 We have in particular that
 \[  \text{unital} \Rightarrow \text{homotopy unital} \Rightarrow \text{cohomologically unital} \ . \]
-The proof of the following lemma is straightforward.
+The proof of the following proposition is straightforward.
 
-\begin{lemma}
-\begin{enumerate}[leftmargin=*,label=(\roman*)]
+\begin{proposition}
+\begin{enumerate}[leftmargin=*]
 \item If $\cat{A}$ and $\cat{B}$ are cohomologically unital \Ainf -categories, the tensor \Ainf -category $\cat{A} \otimes \cat{B}$ is again cohomologically unital. 
 \item If $\cat{A}$ and $\cat{B}$ are unital \Ainf -categories, the tensor \Ainf -category $\cat{A} \otimes \cat{B}$ is again unital, with identity morphisms $e_{X \times Y} := e_X \otimes e_Y$ for  $X \in \mathrm{Ob}(\cat{A})$ and $Y \in \mathrm{Ob}(\cat{B})$.
 \end{enumerate}
-\end{lemma}
+\end{proposition}
 
 If $\cat{A}$ and $\cat{B}$ are homotopy unital \Ainf -categories, we have to define the additional operations associated to the fact that the elements $e_X \otimes e_Y$ are identity morphisms up to homotopy in order to endow the \Ainf -category $\cat{A} \otimes \cat{B}$ with a homotopy unital \Ainf -category structure. In other words, we have to define a diagonal on the operad \uAinf\ encoding homotopy unital \Ainf -algebras, which has not been done yet to the authors knowledge. An idea would be to define a diagonal on the unital associahedra, which are CW-complexes constructed by Muro and Tonks in \cite{MuroTonks} and which form an operad whose image under the cellular chains is the operad \uAinf\ . However, not all unital associahedra are polytopes, meaning that the techniques of \cite{MTTV19} cannot be directly applied to them. 
 
 \subsection{Homotopy properties of diagonals on \Ainf\ and \Minf}
 
-\rouge{Reste preuve coassociativité et vérification signes}
+\Thibaut{Reste preuve coassociativité et vérification signes}
 
 Now that we have explained how to define tensor products of \Ainf -algebras and \Ainf -morphisms, we would like to know whether they endow the category \Aalg\ with the structure of a \textit{symmetric monoidal category}. We explain in the following subsections how the axioms for a symmetric monoidal category translate in the language of diagonals on the 2-colored operad $\Ainfdeux$ and discuss in the last subsection why these tensor products should define some kind of \textit{homotopy symmetric monoidal} category structure on \Aalg .
 
@@ -1871,9 +1863,9 @@ In operadic terms, this amounts to ask if the diagonal on \Ainf\ is coassociativ
 
 \begin{proposition} \label{prop:pas-coassoc}
   \label{prop:nocoassoc}
-  \begin{enumerate}[leftmargin=*,label=(\roman*)]
-  \item A diagonal on the operad \Ainf\ is never coassociative. 
-  \item A diagonal on the operadic bimodule \Minf\ is never coassociative.
+  \begin{enumerate}[leftmargin=*]
+  \item There is no diagonal on the operad \Ainf\ which is coassociative. 
+  \item There is no diagonal on the operadic bimodule \Minf\ which is coassociative.
   \end{enumerate}
 \end{proposition} 
 
@@ -1916,10 +1908,6 @@ We also compute that
 \end{proof}
 
 \noindent We conjecture in fact that \cref{prop:not-cocomm} holds for any diagonal on the operad \Ainf\ and for any diagonal on the operadic bimodule \Minf .
-
-\begin{remark}
-\rouge{Robert-Nicoud-Wierstra}
-\end{remark}
  
 \subsubsection{Compatibility with the composition} \label{sss:comp-composition}
 
@@ -1928,12 +1916,12 @@ In other words, if given four \Ainf -morphisms $F_1 : A_1 \rightsquigarrow B_1$,
 $G_1 : B_1 \rightsquigarrow C_1$, $F_2 : A_2 \rightsquigarrow B_2$ and
 $G_2 : B_2 \rightsquigarrow C_2$ they satisfy the following equality
 \[ ( G_1 \otimes F_1) \circ (G_2 \otimes F_2) = (G_1 \otimes G_2) \circ (F_1 \otimes F_2) \ . \]
-In operadic terms, this amounts to ask if the diagonal $\triangle$ on \Minf\ together with the composition morphism \comp\ of subsection \ref{sss:operad-ainf-operadic-bimod-minf} satisfy the following equality 
+In operadic terms, this amounts to ask if the diagonal $\triangle$ on \Minf\ together with the composition morphism \comp\ of \cref{sss:operad-ainf-operadic-bimod-minf} satisfy the following equality 
 \[ ( \comp \otimes \comp ) \triangle = (\triangle \circ_{\Ainf} \triangle ) \comp   \ . \]
 
 \begin{proposition} 
   \label{thm:nofunctorial}
-  A diagonal on the operadic bimodule \Minf\ is never compatible with the composition of \Ainf -morphisms.  
+  There is no diagonal on the operadic bimodule \Minf\ which is compatible with the composition of \Ainf -morphisms.  
 \end{proposition}
 
 \begin{proof} 
@@ -1953,6 +1941,10 @@ and
 
 \noindent In the case of the diagonals \diagainf\ and \diagminf , we compute that 
   \[ \left( \comp  \circ \diagminf - (\diagminf \circ_{\Ainf} \diagminf ) \circ \comp \right) \left( \arbreopdeuxmorph  \right) = \partial \left( \arbreopcompun \otimes \arbreopcompdeux \right)  \ . \]
+  
+\begin{remark}
+\Guillaume{Robert-Nicoud-Wierstra}
+\end{remark}
 
 \subsubsection{Homotopy properties}
 
@@ -1978,12 +1970,12 @@ The proof of this proposition is a simple adaptation of the results of \cite[Sec
 
 \begin{remark}
 While \cref{thm:nofunctorial} shows that it is not possible to endow the category $\Aalg$ with a symmetric monoidal category structure using the viewpoint of diagonals, \cref{th:homotopy-properties} exhibits a first level of homotopies that could be involved in the definition of some kind of \textit{homotopy symmetric monoidal} category structure on \Aalg . 
-This question will be studied in a future work by the two authors of this paper. As a first step towards solving that problem, we will inspect in particular inspect which higher coherent homotopies arise from the lack of coassociativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes. 
+This question will be studied in a future work by the two authors of this paper. As a first step towards solving that problem, we will inspect in particular which higher coherent homotopies arise from the lack of coassociativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes. 
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Further applications} \label{sec:furtherdirections}
+\section{Further applications} \label{sec:V}
 
 We prove in \cref{ss:retract-diag} that a diagonal on the dg operad \Ainf\ is equivalent to a retraction of the bar-cobar resolution $\AAinf$ onto the operad \Ainf . 
 We then explain in \cref{ss:conv-ainf-alg} how to associate a convolution \Ainf -algebra to an \Ainf coalgebra and an \Ainf -algebra, as well as \Ainf -morphisms between convolution \Ainf -algebras, using diagonals on \Ainf\ and \Minf \ .
@@ -1996,7 +1988,7 @@ Another cofibrant replacement of the operad $As$ is given by the bar-cobar (or B
 \[ \AAinf := \left( \mathcal{T} (\premiertermecobarbarA , \premiertermecobarbarD , \premiertermecobarbarB , \premiertermecobarbarC , \cdots , \mathrm{PT_n} \text{\hspace{2pt}}, \cdots ) , \partial \right) \ , \] 
 where $\mathrm{PT_n}$ is the set of planar rooted trees of arity $n$ and the degree of a tree is defined as the number of its internal edges.
 We refer to \cite[Section 9.3]{LodayVallette12} for a complete study of the operad $\AAinf$, and in particular for a definition of its differential.
-There exists in fact an explicit embedding of dg operads $\Ainf \rightarrow \AAinf$, as constructed in \cite[Section 4]{MarklShnider06} and in \cite[I, Section 1.3.1.5]{Mazuir21}.
+There exists in fact an explicit embedding of dg operads $\Ainf \rightarrow \AAinf$, as constructed in \cite[Section 4]{MarklShnider06} and in \cite[Section 1.3.1.5]{mazuir-I}.
 The problem of the construction of an explicit morphism of dg operads $\AAinf \rightarrow \Ainf$ is more complicated and is the subject of the following proposition. 
 
 \begin{definition}[Retraction]
@@ -2036,8 +2028,7 @@ A similar proof would however not adapt to the case of the multiplihedra, as the
 \end{remark}
 
 \begin{remark}
-  It seems likely that \cref{prop:retract} admits an interpretation in terms of Morse theory, and discrete Morse theory. \Guillaume{..., citer Anibal, Martin Frankland}, see \cite[Remark 1.6]{LA21}.
-  One of our future goals is to make this interpretation precise. 
+We expect an interpretation of \cref{prop:retract} in terms of Morse theory and/or discrete Morse theory. See for instance \Guillaume{Anibal, Fulton-Sturmfels, Sushmita, Thorngren}.
 \end{remark}
 
 \subsection{Convolution \Ainf -algebra} \label{ss:conv-ainf-alg}
@@ -2062,7 +2053,7 @@ We will now explain how to extend the convolution algebra construction when $C$ 
 
 \begin{proposition} 
 \label{prop:convolution-ainf}
-\begin{enumerate}[leftmargin=*,label=(\roman*)]
+\begin{enumerate}[leftmargin=*]
     \item Let $C$ be an \Ainf -coalgebra and $A$ be an \Ainf -algebra. 
 A diagonal on the operad \Ainf\ yields an \Ainf -algebra structure on the dg module $(\Hom (C,A) , [ \partial , \cdot ])$. 
 We call this \Ainf -algebra the \emph{convolution \Ainf -algebra of $C$ and $A$}.
@@ -2071,7 +2062,7 @@ We call this \Ainf -algebra the \emph{convolution \Ainf -algebra of $C$ and $A$}
 \end{proposition}
 
 \begin{proof} 
-\begin{enumerate}[leftmargin=*,label=(\roman*)]
+\begin{enumerate}[leftmargin=*]
 \item Given a diagonal $\Ainf \rightarrow \Ainf \otimes \Ainf$, the following composite of morphism of operads defines the \Ainf -algebra structure on $\Hom(C,A)$ : 
 \[ \Ainf \to \Ainf \otimes \Ainf \to \coEnd_C\otimes \End_A \to \End_{\Hom(C,A)} \ , \]
 where the morphism of dg operads $\coEnd_C \otimes \End_A \to \End_{\Hom(C,A)}$ is straightforward to define.
@@ -2100,7 +2091,7 @@ Given a 3-manifold $Y$ with two boundary components, they aim to construct a \em
 \label{sss:amorim-fukaya}
 
 Let $(M,\omega)$ be a closed symplectic manifold, i.e. a closed manifold $M$ together with a closed non-degenerate 2-form $\omega$ on $M$. 
-The \emph{Fukaya category} $\mathrm{Fuk}(M,\omega)$ of $(M,\omega)$ is defined to be the (curved filtered unital) \Ainf -category whose objects are (unobstructed) Lagrangian submanifolds of $M$ and higher compositions are defined by counting pseudo-holomorphic disks with Lagrangian boundary conditions and marked points on their boundary, as represented in Figure \ref{fig:pseudo-hol-disk-bord-lagrang}. 
+The \emph{Fukaya category} $\mathrm{Fuk}(M,\omega)$ of $(M,\omega)$ is defined to be the (curved filtered unital) \Ainf -category whose objects are (unobstructed) Lagrangian submanifolds of $M$ and higher compositions are defined by counting pseudo-holomorphic disks with Lagrangian boundary conditions and marked points on their boundary, as represented in \cref{fig:pseudo-hol-disk-bord-lagrang}. 
 We refer for instance to~\cite{smith-prolegomenon}~and~\cite{auroux-fukaya} for introductions to this subject.
 Given a closed spin Lagrangian submanifold $L \subset M$, K. Fukaya also constructs in \cite{fukaya-cyclic-symmetry} a strictly unital \Ainf -algebra $\mathcal{F}(L)$, the \emph{Fukaya algebra} of the Lagrangian $L$, whose higher multiplications are again defined by counting pseudo-holomorphic disks. 
 
@@ -2193,18 +2184,21 @@ Let now $M_0$ and $M_1$ be two compact symplectic manifolds. Define a \emph{Lagr
 In \cite{mau-wehrheim-woodward}, S. Mau, K. Wehrheim and C. Woodward associate to a Lagrangian correspondence $\mathcal{L}$ (with additional technical assumptions) an \Ainf -functor $\Phi_{\mathcal{L}} : \mathrm{Fuk}(M_0) \rightsquigarrow \mathrm{Fuk}(M_1)$.  
 It is defined on objects as 
 \[ \Phi_{\mathcal{L}} (L_0) := \pi_{M_1} ( L_0 \times_{M_0} \mathcal{L} ) \ , \]
-where $\pi_{M_1}$ denotes the projection $M_0 \times M_0^{-} \times M_1 \rightarrow M_1$ and $\times_{M_0}$ is the fiber product over $M_0$. The operations of $\Phi_{\mathcal{L}}$ are defined by counting pseudo-holomorphic quilted disks with Lagrangian boundary conditions, seam condition on $\mathcal{L}$ and marked points on their boundary, as represented in Figure \ref{fig:pseudo-hol-disk-bord-lagrang}. 
+where $\pi_{M_1}$ denotes the projection $M_0 \times M_0^{-} \times M_1 \rightarrow M_1$ and $\times_{M_0}$ is the fiber product over $M_0$. The operations of $\Phi_{\mathcal{L}}$ are defined by counting pseudo-holomorphic quilted disks with Lagrangian boundary conditions, seam condition on $\mathcal{L}$ and marked points on their boundary, as represented in \cref{fig:pseudo-hol-disk-bord-lagrang}. 
 
-\begin{problem}
-Drawing from the results of Amorim and Fukaya, and from the construction of Mau, Wehrheim and Woodward, it would be interesting to know whether the diagram
+\begin{problem} \label{problem}
+Does the diagram
 \begin{center} 
 \begin{tikzcd}[column sep = large]
 \mathrm{Fuk}(M_0) \otimes \mathrm{Fuk}(N_0) \arrow[d,squiggly] \arrow[r,"\Phi_{\mathcal{L}_M} \otimes \Phi_{\mathcal{L}_N}",squiggly] & \mathrm{Fuk}(M_1) \otimes \mathrm{Fuk}(N_1) \arrow[d,squiggly] \\
  \mathrm{Fuk}(M_0 \times N_0) \arrow[r,below,"\Phi_{\tau ( \mathcal{L}_M \times \mathcal{L}_N)}",squiggly] & \mathrm{Fuk}(M_1 \times N_1)
 \end{tikzcd}
 \end{center}
-commutes up to homotopy of \Ainf -functors. In this diagram, $\mathcal{L}_M \subset M_0^{-} \times M_1$, $\mathcal{L}_N \subset N_0^- \times N_1$ and the symplectomorphism $\tau$ is defined by rearranging the factors of $M_0^{-} \times M_1 \times N_0^- \times N_1$ into the factors of $M_0^{-} \times N_0^- \times M_1 \times N_1$. In other words, whether the \emph{algebraic (tensor) product} of geometric \Ainf -functors between Fukaya categories defined in this paper is homotopic to the \Ainf -functor defined by the \emph{geometric product} of the Lagrangian correspondences. We refer moreover to \cite[Section 13]{fukaya-unobstructed} for a discussion on two definitions of the notion of a homotopy between \Ainf -functors.
+commutes up to homotopy of \Ainf -functors ? 
 \end{problem}
+
+In this diagram, $\mathcal{L}_M \subset M_0^{-} \times M_1$, $\mathcal{L}_N \subset N_0^- \times N_1$ and the symplectomorphism $\tau$ is defined by rearranging the factors of $M_0^{-} \times M_1 \times N_0^- \times N_1$ into the factors of $M_0^{-} \times N_0^- \times M_1 \times N_1$. In other words, we would like to know whether the \emph{algebraic (tensor) product} of geometric \Ainf -functors between Fukaya categories defined in this paper is homotopic to the \Ainf -functor defined by the \emph{geometric product} of the Lagrangian correspondences. 
+We refer to \cite[Section 13]{fukaya-unobstructed} for a discussion on two definitions of the notion of a homotopy between \Ainf -functors.
 
 \newpage
 
