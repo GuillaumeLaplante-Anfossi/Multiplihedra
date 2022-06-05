@@ -47,20 +47,24 @@
 \definecolor{RougeTresFonce}{rgb}{0.36, 0.215, 0.215}
 \hypersetup{citecolor=BleuTresFonce, linkcolor=black}
 
-%%%%%%%% ENVIRONNEMENTS 
 
+
+%%%%%%%% ENVIRONNEMENTS 
 \newtheorem{definition}{Definition}[section]
 \newtheorem{proposition}[definition]{Proposition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{corollary}{Corollary}
-
 \newtheorem{lemma}[definition]{Lemma}
-\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem*{problem}{Problem}
+
+\newtheorem{conjecture}{Conjecture}[section]
+
 
 \theoremstyle{remark}
 \newtheorem{example}[definition]{\sc Example}
 \newtheorem{remark}[definition]{\sc Remark}
+
+%Commandes
 
 \input{commandes_un.tex}
 \input{commandes_deux.tex}
@@ -88,9 +92,9 @@
 \begin{document}
 
 \begin{abstract}
-We define in this article a cellular approximation for the diagonal of Forcey--Loday realizations of the multiplihedra, and endow these realizations with a compatible polytopal operadic bimodule structure over the Loday realizations of the associahedra. 
-We then compute an explicit combinatorial formula for the image of this cellular diagonal under the cellular chains functor.
-This provides an operadic model for topological and algebraic \Ainf -morphisms, as well as an explicit formula for their tensor product. We subsequently study the monoidal properties of this newly defined tensor product. We finally provide several applications to our work, notably in symplectic topology.
+We define a cellular approximation of the diagonal for the Forcey--Loday realizations of the multiplihedra, and endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra. 
+This provides a model for topological and algebraic \Ainf -morphisms along with their tensor product, defined by a universal and explicit formula. 
+After studying the homotopy and monoidal properties of this newly defined tensor product, we conclude by outlining several applications, notably in symplectic topology.
 \end{abstract}
 
 \maketitle
@@ -182,7 +186,8 @@ We finally sketch several further applications of our work in \cref{sec:V}.
 
 \subsection*{Acknowledgements} 
 We would like to thank Bruno Vallette for numerous discussions and for his careful reading of our paper, as well as Alexandru Oancea and Eric Hoffbeck for their comments on earlier versions.
-We are also indebted to Lino Amorim and Robert Lipshitz, for explaining to us their work and for their detailed insights on possible applications of our results in symplectic topology. We finally express our gratitude to Sushmita Venugopalan, for taking the time to discuss potential connections between our work and results on toric varieties.
+We are also indebted to Lino Amorim and Robert Lipshitz, for explaining to us their work and for their detailed insights on possible applications of our results in symplectic topology. 
+We finally express our gratitude to Sushmita Venugopalan, for taking the time to discuss potential connections between our work and results on toric varieties, and to Daniel Robert-Nicoud, for discussing his work with us and enthusiastically suggesting new directions of research. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1300,7 +1305,7 @@ We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim 
   \end{matrix} }$} \]
   
 We also compute in \cref{table:numerology} the number of faces of complementary dimensions and the number of pairs of vertices in the cellular image of the diagonal of the multiplihedra in dimension 0 to 6.
-They are compared with the numbers obtained for the diagonals induced by the same orientation vector on the Loday associahedra and the permutahedra. \Guillaume{Code for this??}
+They are compared with the numbers obtained for the diagonals induced by the same orientation vector on the Loday associahedra and the permutahedra. \Guillaume{Were not on OEIS before!}
 
 \begin{remark} \label{rmk:representing}
 The diagonal $\triangle_n$ being a section of the projection $\pi : \J_n \times \J_n \to \J_n , (x,y) \mapsto (x+y)/2$ \cite[Proposition 1.1]{LA21}, one can in fact represent its cellular image by projecting it to $\J_n$: for each pair of faces $(F,G) \in \Ima \triangle_n$, one draws the polytope $(F+G)/2$ in $\J_n$. This defines a polytopal subdivision of $\J_n$. The polytopal subdivision of $\J_3$ can be found in \cite[Figure 3]{LA21}, while the polytopal subdivision of $\J_4$ is illustrated on the first page of this article.
@@ -1315,10 +1320,10 @@ $\dim F + \dim G = \dim P$  & \text{Multiplihedra} & 1 & 2 & 8 & 42 & 254 & 1678
   & \text{Permutahedra} & 1 & 2 & 8 & 50 & 432 & 4802 & 65536 &  \OEIS{A007334} \\
 \hline
  & \text{Associahedra} & 1 & 3 & 13 & 68 & 399 & 2530 & 16965 &  \OEIS{A000260} \\
- $\dim F=\dim G =0$ & \text{Multiplihedra} & 1 & 3 & 17 & 122 & 992 & 8721 & & ?? \\
+ $\dim F=\dim G =0$ & \text{Multiplihedra} & 1 & 3 & 17 & 122 & 992 & 8721 & 80920 & ?? \\
   & \text{Permutahedra} & 1 & 3 & 17 & 149 & 1809 & 28399 & 550297 &  \OEIS{A213507} 
 \end{tabular}}
-\caption{Number of pairs of faces in the cellular image of the diagonal of the associahedra, multiplihedra and permutahedra of dimension $0\leq n \leq 6$, induced by any good orientation vector $\vec v$. \Guillaume{A completer!!}}
+\caption{Number of pairs of faces in the cellular image of the diagonal of the associahedra, multiplihedra and permutahedra of dimension $0\leq n \leq 6$, induced by any good orientation vector $\vec v$.}
 \label{table:numerology}
 \end{table}
 
@@ -1941,10 +1946,6 @@ and
 
 \noindent In the case of the diagonals \diagainf\ and \diagminf , we compute that 
   \[ \left( \comp  \circ \diagminf - (\diagminf \circ_{\Ainf} \diagminf ) \circ \comp \right) \left( \arbreopdeuxmorph  \right) = \partial \left( \arbreopcompun \otimes \arbreopcompdeux \right)  \ . \]
-  
-\begin{remark}
-\Guillaume{Robert-Nicoud-Wierstra}
-\end{remark}
 
 \subsubsection{Homotopy properties}
 
@@ -1955,7 +1956,8 @@ Let now $P$ and $Q$ be two (2-colored) dg operads and $\alpha , \beta : P \right
 An \textit{elementary homotopy} between $\alpha$ and $\beta$ is defined to a morphism of (2-colored) operads $h : P \rightarrow \mathbb{Z}[t,dt] \otimes Q$ such that $\alpha = ev_0 h$ and $\beta = ev_1 h$.
 Two morphisms of operads $\alpha$ and $\beta$ are then said to be \textit{homotopic} if there exists a sequence of elementary homotopies connecting $P$ and $Q$.
 
-\begin{proposition} \label{th:homotopy-properties}
+\begin{proposition} 
+\label{th:homotopy-properties}
 Let $\triangle$ be a diagonal on the 2-colored operad \Ainfdeux . 
 \begin{enumerate}
     \item The morphisms of operads $(\triangle \otimes \ide ) \triangle)$ and $(\ide \otimes \triangle) \triangle)$ are homotopic. In other words, a diagonal on \Ainfdeux\ is always coassociative up to homotopy.
@@ -1995,7 +1997,8 @@ The problem of the construction of an explicit morphism of dg operads $\AAinf \r
 A morphism of dg operads $\AAinf \rightarrow \Ainf$ sending $\premiertermecobarbarA$ to $\premiertermecobarbarA$ will be called a \emph{retraction of the operad $\AAinf$ onto the operad \Ainf }.
 \end{definition}
 
-\begin{proposition}\label{prop:retract}
+\begin{proposition}
+\label{prop:retract}
 The datum of a diagonal on the operad \Ainf\ is equivalent to the datum of a retraction $r : \AAinf \rightarrow \Ainf$.
 \end{proposition}
 
@@ -2017,7 +2020,11 @@ This isomorphism of dg operads implies the isomorphism on the level of the Maure
 We finally check that the condition $\triangle (\premiertermecobarbarA) = \premiertermecobarbarA \otimes \premiertermecobarbarA$ is equivalent to the condition $r(\premiertermecobarbarA)=\premiertermecobarbarA$.
 \end{proof}
 
-\begin{remark}
+\begin{corollary}
+  \label{coroll:twisting}
+  The datum of a diagonal on $\Ainf$ is equivalent to the datum of a twisting morphism $\alpha \in \mathrm{Tw}(B As,\Omega As^{\text{!`}})$ sending $\premiertermecobarbarA$ to $\premiertermecobarbarA$. 
+\end{corollary}
+
 \cref{prop:retract} clarifies in particular the construction of the diagonal on the operad \Ainf\ given in \cite{MarklShnider06}. 
 The operad $\AAinf$ can indeed be seen as the cellular chains on the cubical realization of the associahedra \cite[Section 9.3.1]{LodayVallette12}. 
 It comes with an elementary diagonal $\AAinf \rightarrow \AAinf \otimes \AAinf$ defined using the Serre cubical diagonal of \cite{Serre51}.
@@ -2025,11 +2032,16 @@ M. Markl and S. Shnider then define a retraction $\AAinf \rightarrow \Ainf$ and 
 \[ \Ainf \longrightarrow \AAinf \longrightarrow \AAinf \otimes \AAinf \overset{r \otimes r}{\longrightarrow} \Ainf \otimes \Ainf \ . \]
 Their choice of retraction recovers the diagonal constructed directly on the level of the associahedra in \cite[Theorem 2]{MTTV19}.
 A similar proof would however not adapt to the case of the multiplihedra, as they are not simple polytopes hence do not admit a cubical realization.
-\end{remark}
 
 \begin{remark}
-We expect an interpretation of \cref{prop:retract} in terms of Morse theory and/or discrete Morse theory. See for instance \Guillaume{Anibal, Fulton-Sturmfels, Sushmita, Thorngren}.
+As observed in \cite[Remark 1.6]{LA21}, the geometric method leading to our cellular approximation of the diagonal appears to be very closely related to the Fulton--Sturmfels formula \cite[Theorem 4.2]{FultonSturmfels97}, central to the intersection theory on toric varieties.
+We thus expect an interpretation of \cref{prop:retract} in terms of Morse theory, in the vein of \cite{FriedmanMardonesSinha21,Frankland07}. 
+There should also be an interpretation in terms of discrete Morse theory as in \cite[Section 1.1.4]{Thorngren18} for the case of the standard simplices.  
 \end{remark}
+
+
+
+
 
 \subsection{Convolution \Ainf -algebra} \label{ss:conv-ainf-alg}
 
@@ -2052,7 +2064,7 @@ The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a simil
 We will now explain how to extend the convolution algebra construction when $C$ is an \Ainf -coalgebra and $A$ is an \Ainf -algebra.
 
 \begin{proposition} 
-\label{prop:convolution-ainf}
+\label{prop:convolution-ainf} $ $
 \begin{enumerate}[leftmargin=*]
     \item Let $C$ be an \Ainf -coalgebra and $A$ be an \Ainf -algebra. 
 A diagonal on the operad \Ainf\ yields an \Ainf -algebra structure on the dg module $(\Hom (C,A) , [ \partial , \cdot ])$. 
@@ -2061,7 +2073,7 @@ We call this \Ainf -algebra the \emph{convolution \Ainf -algebra of $C$ and $A$}
 \end{enumerate}
 \end{proposition}
 
-\begin{proof} 
+\begin{proof} $ $
 \begin{enumerate}[leftmargin=*]
 \item Given a diagonal $\Ainf \rightarrow \Ainf \otimes \Ainf$, the following composite of morphism of operads defines the \Ainf -algebra structure on $\Hom(C,A)$ : 
 \[ \Ainf \to \Ainf \otimes \Ainf \to \coEnd_C\otimes \End_A \to \End_{\Hom(C,A)} \ , \]
@@ -2071,13 +2083,41 @@ where the morphism of dg operads $\coEnd_C \otimes \End_A \to \End_{\Hom(C,A)}$ 
 \end{enumerate}
 \end{proof}
 
-\noindent We point out that \cref{thm:nofunctorial} however implies that the constructions of \cref{prop:convolution-ainf} cannot fit into a bifunctor $\mathsf{(\Ainf -cog)^{op}} \times \Aalg \rightarrow \Aalg$.
+\begin{corollary}
+  \label{coroll:nobifunctor}
+  For any diagonal on $\Ainf$, and for any diagonal on $\Minf$, the convolution $\Ainf$-algebra $\Hom(C,A)$ does not define a bifunctor $\mathsf{(\Ainf -cog)^{op}} \times \Aalg \rightarrow \Aalg$.
+\end{corollary}
+\begin{proof}
+  This is a direct consequence of \cref{thm:nofunctorial}.
+\end{proof}
 
 \begin{remark}
 \cref{prop:convolution-ainf} implies in particular that for an \Ainf -coalgebra $C$ and an \Ainf -algebra $A$, it is still possible to define \textit{twisting morphisms} $\alpha : C \rightarrow A$ as Maurer-Cartan elements in the \Ainf -algebra $\Hom (C,A)$.
 It also implies that the \Ainf -morphism $\Hom (C_1,A_1) \rightsquigarrow \Hom (C_2,A_2)$ defined by the \Ainf -morphism $F : A_1 \rightsquigarrow A_2$ and $G : C_2 \rightsquigarrow C_1$, sends twisting morphisms $C_1 \rightarrow A_1$ to twisting morphisms $C_2 \rightarrow A_2$.
 We will use this key property in order to pursue the work of Brown \cite{Brown59} and \cite{Proute86} on the homology of fiber spaces in a forthcoming paper.
 \end{remark}
+
+A common interpretation of the preceding results can be found in a more general framework, developed by D. Robert-Nicoud and F. Wierstra in \cite{RobertNicoudWierstraI,RobertNicoudWierstraII}. 
+Taking $\mathcal{C}=B As$ and $\mathcal{P}=\Omega As^{\text{!`}}$, and working in the context of non-symmetric operads where the role of $\Linf$ is taken by $\Ainf$, one recovers \cref{coroll:twisting} (and thus \cref{prop:retract}) via \cite[Theorem 7.1]{RobertNicoudWierstraI} and Point~(1) of \cref{prop:convolution-ainf} via \cite[Theorem 4.1]{RobertNicoudWierstraI}.
+Moreover, \cite[Corollary 5.4]{RobertNicoudWierstraI} says that the the assignments
+\begin{eqnarray}
+  \Hom(-,\id) &:& \mathsf{(\infAcog)^{op}} \times \Aalg \to \Aalg \label{eq:bif1} \\
+  \Hom(\id, -) &:& \mathsf{(\Acog)^{op}} \times \infAalg \to \Aalg \label{eq:bif2}
+\end{eqnarray}
+given by the convolution $\Ainf$-algebra extend to bifunctors. 
+However, the authors exhibit a counterexample, showing that these two binfunctors do not extend to a bifunctor 
+\begin{eqnarray}
+  \Hom(-,-) &:& \mathsf{(\infAcog)^{op}} \times \infAalg \to \infAalg \label{eq:bifunctor}
+\end{eqnarray}
+in general since it is not compatible with the composition of $\infty$-morphisms \cite[Theorem 6.6]{RobertNicoudWierstraI}.
+Point~(2) of \cref{prop:convolution-ainf} allows us to define the assignment (\ref{eq:bifunctor}) directly, and \cref{coroll:nobifunctor} can be seen as a stronger version of \cite[Theorem 6.6]{RobertNicoudWierstraI}, in the special case of $\Ainf$-algebras. 
+Now, the main result of \cite{RobertNicoudWierstraII} says that if the twisting morphism $\alpha \in \mathrm{Tw}(B As,\Omega As^{\text{!`}})$ is Koszul, then the two bifunctors (\ref{eq:bif1}) and (\ref{eq:bif2}) are homotopic and that they extend to a bifunctor on the level of the homotopy categories \cite[Theorem 3.6 and Corollary 3.8]{RobertNicoudWierstraII}. 
+This should be seen as a statement analogous to Point (3) of \cref{th:homotopy-properties}. 
+These facts raise interesting questions that deserve further investigation. 
+For instance, is there geometric interpretation of the property "being Koszul" for a twisting morphism $\alpha \in \mathrm{Tw}(B As,\Omega As^{\text{!`}})$, seen as a diagonal on $\Ainf$? 
+Do the bifunctors (\ref{eq:bif1}) and (\ref{eq:bif2}) come from geometric diagonals on the multiplihedra? 
+Can they be related to one another, and to the diagonal defined in the present paper, by an explicit geometric construction?
+
 
 
 \subsection{Diagonals in symplectic topology} \label{ss:diag-symp}
