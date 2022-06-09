@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Multiplihedra.aux
+The style file: amsalpha.bst
+Database file #1: bib.bib
+Warning--missing journal name in OEIS
+Warning--missing journal, volume, and year in OEIS
+You've used 49 entries,
+            2624 wiz_defined-function locations,
+            908 strings with 11473 characters,
+and the built_in function-call counts, 18148 in all, are:
+= -- 1704
+> -- 665
+< -- 35
++ -- 214
+- -- 207
+* -- 1549
+:= -- 2844
+add.period$ -- 49
+call.type$ -- 49
+change.case$ -- 277
+chr.to.int$ -- 46
+cite$ -- 51
+duplicate$ -- 757
+empty$ -- 1532
+format.name$ -- 282
+if$ -- 3687
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 99
+newline$ -- 158
+num.names$ -- 142
+pop$ -- 328
+preamble$ -- 2
+purify$ -- 326
+quote$ -- 0
+skip$ -- 518
+stack$ -- 0
+substring$ -- 1348
+swap$ -- 85
+text.length$ -- 35
+text.prefix$ -- 26
+top$ -- 0
+type$ -- 352
+warning$ -- 2
+while$ -- 173
+width$ -- 54
+write$ -- 548
+(There were 2 warnings)

@@ -122,15 +122,14 @@ The $n$-dimensional multiplihedron is a polytope whose faces are in bijection wi
 It was only recently realized as a convex polytope in the work of S. Forcey \cite{Forcey08}, followed by the work of S. Forcey and S. Devadoss \cite{DevadossForcey08}, F. Ardila and J. Doker \cite{AD13}, and F. Chapoton and V. Pilaud \cite{CP22}.
 The multiplihedra were studied in algebraic topology \cite{BoardmanVogt73}, as well as in symplectic topology \cite{MauWoodward10,mau-wehrheim-woodward} and Morse theory \cite{mazuir-I,mazuir-II}, as they can be respectively realized as moduli spaces of quilted disks with marked boundary points and as moduli spaces of 2-colored metric trees. 
 
-In this paper, we define and study a \textit{cellular approximation} of the diagonal of the multiplihedra. 
-The need for such an approximation comes from the fact that the standard thin diagonal $\triangle^P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular in general, i.e. its image is not a union of faces of $P\times P$. 
-A cellular approximation of the diagonal is a cellular map $\triangle^P_{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle^P$ and which agrees with $\triangle^P$ on the vertices of $P$.
+In this paper, we define and study a cellular approximation of the diagonal of the multiplihedra. 
+The need for such an approximation comes from the fact that the standard thin diagonal $\triangle_P:P\to P\times P, x\mapsto (x,x)$ of a polytope $P$ is not cellular in general, i.e. its image is not a union of faces of $P\times P$. 
+A cellular approximation of the diagonal is a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
 
 The Alexander--Whitney map \cite{EilenbergMacLane53} and the Serre diagonal \cite{Serre51} respectively define cellular approximations for the diagonal of the simplices and for the diagonal of the cubes, yielding the cup product in singular cohomology and the cup product in cubical cohomology.
 A cellular approximation for the diagonal of the associahedra yields a universal formula for the tensor product of two $\Ainf$-algebras, and was constructed in \cite{SaneblidzeUmble04,MarklShnider06,MTTV19}. 
 By the term \textit{universal}, we mean that the same formula applies to any pair of $\Ainf$-algebras.
 In a similar fashion, the cellular approximation of the diagonal of the multiplihedra will be used to define universal tensor product of $\Ainf$-morphisms in this paper.
-
 Our main results can be summarized as follows.
 \begin{enumerate}
   \item We define a cellular approximation of the diagonal on Forcey--Loday realizations of the multiplihedra (\cref{def:diagonal-multipl-forcey-loday}).
@@ -153,17 +152,11 @@ Our results can be readily applied to different fields.
 The operadic bimodule structure of Point~(2) above was used in the work of the second author, in order to realize $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms in Morse theory \cite{mazuir-I,mazuir-II}. 
 The algebraic tensor product in Point~(4) has applications in Heegaard Floer homology and could be used to relate the Fukaya categories of products of symplectic manifolds via Lagrangian correspondences, see \cref{ss:diag-symp}.
 We also expect future applications of our work to the computation of the homology of fibered spaces, using the construction of the convolution $\Ainf$-algebra associated to an $\Ainf$-coalgebra and an $\Ainf$-algebra in \cref{prop:convolution-ainf}.
-
-The construction of the convolution $\Ainf$-algebra can in fact be performed for any pair of $\mathcal{C}$-coalgebra and $\mathcal{P}$-algebra, where $\mathcal{C}$ is a cooperad and $\mathcal{P}$ is an operad. 
-This general framework was studied by D. Robert-Nicoud and F. Wierstra in \cite{RobertNicoudWierstraI,RobertNicoudWierstraII}, where the authors also investigate the question of the compatibility with the composition of $\infty$-morphisms. 
-The relation of our results to theirs raises new questions, which deserve further study (see \cref{ss:conv-ainf-alg}). 
-Also, our proof of the fact that a diagonal on $\Ainf$ is equivalent to a retraction $\AAinf \to \Ainf$ from the Boardman--Vogt resolution of the associative operad to its minimal model (\cref{prop:retract}) raises the question of relating our constructions to discrete et continuous Morse theory (see \cref{rem:Morse}). 
-
-
+Our geometric methods shed new light on a result of M. Markl and S. Schnider \cite{MarklShnider06} (XX), pointing towards possible links with discrete et continuous Morse theory (\cref{rem:Morse}), while they raise new questions related to the deformation theory of $\infty$-morphisms \cite{RobertNicoudWierstraI,RobertNicoudWierstraII} (YY). 
 
 %One could also think of applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}.
 
-Finally, the methods of this paper can be straightforwardly extended to the "multiploperahedra", a family of polytopes which are to the operahedra of \cite{LA21} what the multiplihedra are to the associahedra. 
+Finally, the results of this paper can be straightforwardly extended to the "multiploperahedra", a family of polytopes which is to the operahedra of \cite{LA21} what the multiplihedra are to the associahedra. 
 They belong at the same time to the families of graph-multiplihedra \cite{DevadossForcey08} and of nestomultiplihedra \cite{AD13}.  
 Together with the results of \cite[Section 4]{LA21}, one would obtain a tensor product of $\infty$-morphisms between homotopy operads, defined by explicit formul\ae. 
 
@@ -176,7 +169,7 @@ We finally sketch future applications of our work in \cref{sec:V}.
 
 \subsection*{Conventions} 
 We use the conventions and notations of \cite{Ziegler95} for convex polytopes and the ones of \cite{LodayVallette12} for operads. 
-The word operad will always mean non-symmetric operad in this paper. 
+The word operad will always mean non-symmetric operad \cite[Section 5.2.8]{LodayVallette12} in this paper. 
 We denote by $[n]\coloneqq \{1,\ldots,n\}$ and by $\{ e_i\}_{i \in [n]}$ the standard basis of $\RR^n$.
 The abbreviation "dg" will stand for the words "differential graded". 
 
@@ -206,45 +199,13 @@ We consider in this section \textit{planar rooted trees}, which we simply abbrev
 A \emph{cut} of a tree is a subset of edges or vertices which contains precisely one edge or vertex in each non-self crossing path from an incoming edge to the root.
 \end{definition}
 
-A cut divides a tree into an upper part that we color in blue and a lower part that we color in red. The edges and vertices of the cut are represented by drawing a black line over them, as pictured in \cref{Fig1:2ColTree}. 
+A cut divides a tree into an upper part that we color in blue and a lower part that we color in red. 
+The edges and vertices of the cut are represented by drawing a black line over them, as pictured in \cref{Fig2:InclusionOrder}. 
 
 \begin{definition}[2-colored tree] \label{def:2coloredtree}
 A \emph{2-colored tree} is a tree together with a cut. We call \emph{2-colored maximal tree} a 2-colored binary tree whose cut is made of edges only. 
 \end{definition}
 We denote by $\CT{n}$ (resp. $\CMT{n}$) the set of 2-colored trees (resp. 2-colored maximal trees) with $n$ leaves, for $n\geq 1$. 
-
-\begin{figure}[h]
-\[\vcenter{\hbox{
-\begin{tikzpicture}[yscale=0.7,xscale=1]
-%\draw[help lines] (-3,-1) grid (4,3);
-%TOP
-\draw[very thick, MidnightBlue] (-2.5,3.5)--(-2,2.5);
-\draw[very thick, MidnightBlue] (-1.5,3.5)--(-2,2.5);
-\draw[very thick, MidnightBlue] (-2,2.5) -- (-1.75,2);
-\draw[very thick, MidnightBlue] (-1.25, 2) -- (-1,2.5);
-\draw[very thick, MidnightBlue] (-0.5,2.5) -- (0,1.5);
-\draw[very thick, MidnightBlue] (0,1.5)--(0,2.5);
-\draw[very thick, MidnightBlue] (0,1.5)--(0.5,2.5);
-\draw[very thick, MidnightBlue] (1,1)--(1.5,1.5);
-\draw[very thick, MidnightBlue] (1.5,1.5)--(1,2.5);
-\draw[very thick, MidnightBlue] (1.5,1.5)--(2,2.5);
-\draw[very thick, MidnightBlue] (2,2.5)--(1.5,3.5);
-\draw[very thick, MidnightBlue] (2,2.5)--(2,3.5);
-\draw[very thick, MidnightBlue] (2,2.5)--(2.5,3.5);
-%BOT
-\draw[very thick, BrickRed] (0,-1)--(0, 1.5); 
-\draw[very thick, BrickRed] (0,0)--(-1.5,1.5);
-\draw[very thick, BrickRed] (-1.5,1.5)--(-1.75, 2); 
-\draw[very thick, BrickRed] (-1.5,1.5)--(-1.25, 2); 
-\draw[very thick, BrickRed] (0,0)--(1, 1);
-% Frontier
-\draw (-2,2) to (-1,2); 
-\draw (-0.25,1.5)-- (0.25, 1.5) ; 
-\draw (0.75,1) to (1.25,1);
-\end{tikzpicture}}}\]
-\caption{An example of a 2-colored tree.}
-\label{Fig1:2ColTree}
-\end{figure}
 
 \begin{definition}[Face order]\leavevmode
 The \emph{face order} $s\subset t$ on 2-colored trees is defined as follows: a 2-colored tree $s$ is less than a 2-colored tree $t$ if $t$ can be obtained from $s$ by a sequence of contractions of monochrome edges or moves of the cut from a family of edges to an adjacent vertex.
@@ -304,7 +265,7 @@ The \emph{face order} $s\subset t$ on 2-colored trees is defined as follows: a 2
 \draw (0.75,1) to (1.25,1);
 \end{tikzpicture}}}
 \]
-\caption{An example of the face order $s\subset t$.}
+\caption{Two 2-colored trees, related by the face order.}
 \label{Fig2:InclusionOrder}
 \end{figure}
 
@@ -413,18 +374,6 @@ The \emph{Tamari-type order} $s<t$ on  2-colored maximal trees is generated by t
 where each $t_i$, $1\leq i\leq 4$, is a binary tree of the appropriate color. 
 \end{definition}
 
-\begin{figure}[h]
-\[\vcenter{\hbox{
-\begin{tikzcd}[column sep=0.5cm, row sep=0.5cm]
-& \TreeLa \arrow[ld, thin] \arrow[rr, thin]&& \TreeRa \arrow[rd, thin]& \\
-\TreeLb \arrow[rd, thin] &&&& \TreeRb \arrow[ld, thin] \\
-& \TreeLc \arrow[rr, thin] && \TreeRc &
-\end{tikzcd}
-}}\]
-\caption{The Tamari-type poset $(\CMT{3}, <)$ with minimum at the top.}
-\label{Fig3:Tam}
-\end{figure}
-
 We add a minimum element $\emptyset_n$ to the poset of 2-colored trees $(\CT{n}, \subset)$. 
 
 \begin{proposition}
@@ -505,7 +454,6 @@ of 2-colored trees with $n$ leaves.
 \begin{figure}[h]
 \[
 \begin{tikzpicture}[xscale=0.8,yscale=1]
-\draw[thick] (-2,2)--(2,2)--(4,0)--(2,-2)--(-2,-2)--(-4,0)--cycle;
 \draw[fill, opacity=0.12] (-2,2)--(2,2)--(4,0)--(2,-2)--(-2,-2)--(-4,0)--cycle;
 \draw (-2,2) node[above left] {$\TreeLa$};
 \draw (2,2) node[above right] {$\TreeRa$};
@@ -520,9 +468,20 @@ of 2-colored trees with $n$ leaves.
 \draw (0,2.1) node[above] {$\TreeCa$};
 \draw (0,-2.1) node[below] {$\TreeCb$};
 \draw (0,0) node  {$\TreeCab$};
+
+\draw (-1.99,1.99) node  {$\bullet$};
+\draw (1.99,-1.99) node  {$\bullet$};
+
+\draw[thick] (-2,2)--(2,2) node[midway,sloped,allow upside down,scale=0.1]{\thickmidarrow};
+\draw[thick] (2,2)--(4,0) node[midway,sloped,allow upside down,scale=0.1]{\thickmidarrow};
+\draw[thick] (4,0)--(2,-2) node[midway,sloped,allow upside down,scale=0.1]{\thickmidarrow};
+
+\draw[thick] (-2,2)--(-4,0) node[midway,sloped,allow upside down,scale=0.1]{\thickmidarrow};
+\draw[thick] (-4,0)--(-2,-2) node[midway,sloped,allow upside down,scale=0.1]{\thickmidarrow};
+\draw[thick] (-2,-2)--(2,-2) node[midway,sloped,allow upside down,scale=0.1]{\thickmidarrow};
 \end{tikzpicture}
 \]
-\caption{A 2-dimensional multiplihedron.}
+\caption{A 2-dimensional multiplihedron and the Tamari-type poset $(\CMT{3}, <)$ on its oriented 1-skeleton.}
 \label{Fig4:J3}
 \end{figure}
 
@@ -559,7 +518,7 @@ The dimension of a face labeled by a 2-colored tree is given by the sum of the d
 \end{tikzpicture}}}}\right|=k-1\ .
 \]
 The codimension of a 2-colored tree is then equal to the number of blue and red vertices. 
-In the example of the 2-colored tree depicted on \cref{Fig1:2ColTree}, the dimension is equal to 4 and the codimension is equal to 5. 
+In the example of the 2-colored tree depicted on the left of \cref{Fig2:InclusionOrder}, the dimension is equal to 4 and the codimension is equal to 5. 
 As proven in \cite[Proposition 117]{CP22}, the oriented $1$-skeleton of a multiplihedron is the Hasse diagram of the Tamari-type poset. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -618,7 +577,7 @@ The associated string produces a point with integer coordinates :
 \draw (4,1) node[below right] {$\TreeRb$};
 \end{tikzpicture}}}
 \]
-\caption{Examples of points associated to 2-colored maximal trees, with trivial weight.}
+\caption{Examples of points associated to 2-colored maximal trees, with standard weight.}
 \end{figure}
 
 
@@ -628,7 +587,7 @@ The associated string produces a point with integer coordinates :
 \end{definition}
 
 The Forcey--Loday realization associated to the standard weight $(1, \ldots, 1)$ will simply be denoted by $\J_n$.
-By convention, we define the polytope $\J_\omega$ with weight $\omega=(\omega_1)$ of length $1$  to be made up of one point labeled by the 2-colored  tree $\iBT\coloneq \TreeIab$\ .
+By convention, we define the polytope $\J_\omega$ with weight $\omega=(\omega_1)$ of length $1$  to be made up of one point labeled by the 2-colored  tree $\iBT\coloneqq \TreeIab$\ .
 \begin{figure}[h]
 \[
 \begin{tikzpicture}[scale=0.8, J4]
@@ -678,7 +637,7 @@ with equality if and only if the 2-colored maximal tree $t$ can be decomposed as
 x_{i_1}+x_{i_1+i_2}+\cdots+x_{i_1+\cdots+i_{k-1}}\leq 
 2\sum_{1\leq j<l\leq k} \omega_{I_j} \omega_{I_l}\ , 
 \end{equation}
-where $I_j=[i_1+\cdots +i_{j-1}+1, \ldots, i_1+\cdots +i_j]$ and $\omega_{I_j}\coloneq\sum_{a\in I_j} \omega_a$, with equality if and only if the 2-colored maximal tree $t$ can be decomposed as $t=u(v_1, \ldots, v_k)$, where $u\in\Tam{k}$ and $v_j\in \CMT{i_j}$, for $1\leq j\leq k$. 
+where $I_j=[i_1+\cdots +i_{j-1}+1, \ldots, i_1+\cdots +i_j]$ and $\omega_{I_j}\coloneqq\sum_{a\in I_j} \omega_a$, with equality if and only if the 2-colored maximal tree $t$ can be decomposed as $t=u(v_1, \ldots, v_k)$, where $u\in\Tam{k}$ and $v_j\in \CMT{i_j}$, for $1\leq j\leq k$. 
 
 
 \item The polytope $\J_\omega$ is the intersection of the half-spaces defined in  \emph{(1)}. 
@@ -1368,6 +1327,10 @@ We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic coun
 \begin{figure}[h]
 \resizebox{0.7\linewidth}{!}{
 \begin{tikzpicture}[scale=0.5, J4]
+
+\draw (1,2,3) node {$\bullet$}; %bot
+\draw (6,4,2) node {$\bullet$}; %top
+
 \draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
 \draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
 \draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
@@ -1391,6 +1354,7 @@ We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic coun
 \end{tikzpicture}
 
 \begin{tikzpicture}[scale=0.5, J4]
+
 \draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
 \draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
 \draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
@@ -1417,6 +1381,7 @@ We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic coun
 \[\]
 \resizebox{0.7\linewidth}{!}{
 \begin{tikzpicture}[scale=0.5, J4]
+
 \draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
 \draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
 \draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
@@ -1441,6 +1406,7 @@ We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic coun
 \end{tikzpicture}
 
 \begin{tikzpicture}[scale=0.5, J4]
+
 \draw[thick, opacity=0.2] (1,4,1)--(1,2,3)--(2,1,3)--(3,1,2)--(3,2,1)--cycle;
 \draw[thick, opacity=0.2] (2,8,2)--(2,4,6)--(4,2,6)--(6,2,4)--(6,4,2)--cycle;
 \draw[thick, opacity=0.2] (4,1,6)--(6,1,4)--(6,1,2)--(6,2,1)--(6,4,1)--(2,8,1)--(1,8,1)--(1,8,2)--(1,4,6)--(1,2,6)--(2,1,6)--cycle;
@@ -1466,7 +1432,8 @@ We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic coun
 \draw[very thick, red, -] (2,1,3)--(1,2,3);
 \draw[very thick, red] (2,1,3)--(2,1,6);
 \end{tikzpicture}}
-\caption{The four pairs of~(\ref{eq:quatre-paires-inclues}) represented in blue on the two top copies of $\J_4$ and the four pairs of~(\ref{eq:quatre-paires-exclues}) represented in red on the two bottom copies of $\J_4$. Arrows are drawn according to the Tamari-type order. }
+\caption{The four pairs of~(\ref{eq:quatre-paires-inclues}) represented in blue on the two top copies of $\J_4$ and the four pairs of~(\ref{eq:quatre-paires-exclues}) represented in red on the two bottom copies of $\J_4$. 
+The minimal and maximal vertices for the Tamari-type order are drawn in black, in the top left copy.}
 \label{fig:four-pairs}
 \end{figure}
 
@@ -1639,8 +1606,8 @@ We fix a (2-colored) nested linear graph $(\gra,\mathcal{N})$.
 We denote by $N_i$ the unique minimal nest of $\mathcal{N}$ with respect to nest inclusion, which contains the edge $i$.  
 
 \begin{definition}[Admissible edge]
-For a nested linear graph, an edge $i$ is \emph{admissible} if $i \neq \min N_i$. 
-For a 2-colored nested linear graph, an edge $i$ is \emph{admissible} when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome.
+For a nested linear graph $(\gra,\mathcal{N})$, an edge $i$ is \emph{admissible} with respect to $\mathcal{N}$ if $i \neq \min N_i$. 
+For a 2-colored nested linear graph $(\gra,\mathcal{N})$, an edge $i$ is \emph{admissible} with respect to $\mathcal{N}$ when $N_i$ is bicolored, or if $i \neq \min N_i$ when $N_i$ is monochrome.
 We denote the set of admissible edges of $\mathcal{N}$ by $\mathrm{Ad}(\mathcal{N})$. 
 \end{definition}
 

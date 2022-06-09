@@ -1,0 +1,229 @@
+\def\cprime{$'$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{FOOO09b}
+
+\bibitem[AD13]{AD13}
+Federico Ardila and Jeffrey Doker, \emph{Lifted generalized permutahedra and
+  composition polynomials}, Adv. in Appl. Math. \textbf{50} (2013), no.~4,
+  607--633.
+
+\bibitem[{Amo}16]{amorim-tensor}
+Lino {Amorim}, \emph{{Tensor product of filtered \(A_\infty\)-algebras}}, {J.
+  Pure Appl. Algebra} \textbf{220} (2016), no.~12, 3984--4016 (English).
+
+\bibitem[{Amo}17]{amorim-lagrangian}
+\bysame, \emph{{The K\"unneth theorem for the Fukaya algebra of a product of
+  Lagrangians}}, {Int. J. Math.} \textbf{28} (2017), no.~4, 38 (English), Id/No
+  1750026.
+
+\bibitem[Aur14]{auroux-fukaya}
+Denis Auroux, \emph{A beginner's introduction to {F}ukaya categories}, Contact
+  and symplectic topology, Bolyai Soc. Math. Stud., vol.~26, J\'{a}nos Bolyai
+  Math. Soc., Budapest, 2014, pp.~85--136. \MR{3220941}
+
+\bibitem[Bro59]{Brown59}
+Edgar~H. Brown, Jr., \emph{Twisted tensor products. {I}}, Ann. of Math. (2)
+  \textbf{69} (1959), 223--246.
+
+\bibitem[BV73]{BoardmanVogt73}
+John~M. Boardman and Rainer~M. Vogt, \emph{Homotopy invariant algebraic
+  structures on topological spaces}, Lecture Notes in Mathematics, Vol. 347,
+  Springer-Verlag, Berlin, 1973.
+
+\bibitem[CP22]{CP22}
+Fr\'ed\'eric Chapoton and Vincent Pilaud, \emph{{Shuffles of deformed
+  permutahedra, multiplihedra, constrainahedra, and biassociahedra}}, 2022,
+  {arXiv:2201.06896}.
+
+\bibitem[CZ12]{CeballosZiegler12}
+Cesar Ceballos and G\"{u}nter~M. Ziegler, \emph{Realizing the associahedron:
+  mysteries and questions}, Associahedra, {T}amari lattices and related
+  structures, Progr. Math., vol. 299, Birkh\"{a}user/Springer, Basel, 2012,
+  pp.~119--127.
+
+\bibitem[DF08]{DevadossForcey08}
+Satyan Devadoss and Stefan Forcey, \emph{Marked tubes and the graph
+  multiplihedron}, Algebr. Geom. Topol. \textbf{8} (2008), no.~4, 2081--2108.
+
+\bibitem[Dok11]{Doker11}
+Jeffrey~Samuel Doker, \emph{Geometry of generalized permutohedra}, Ph.D.
+  thesis, University of California, Berkeley, 2011.
+
+\bibitem[EML53]{EilenbergMacLane53}
+S.~Eilenberg and S.~Mac~Lane, \emph{On the groups of {$H(\Pi,n)$}. {I}}, Ann.
+  of Math. (2) \textbf{58} (1953), 55--106.
+
+\bibitem[FMMS21]{FriedmanMardonesSinha21}
+Greg Friedman, Anibal~M. Medina-Mardones, and Dev Sinha, \emph{Flowing from
+  intersection product to cup product}, ArXiv e-prints (2021),
+  \texttt{arXiv:2106.05986}.
+
+\bibitem[FOOO09a]{fo3-I}
+Kenji {Fukaya}, Yong-Geun {Oh}, Hiroshi {Ohta}, and Kaoru {Ono},
+  \emph{{Lagrangian intersection Floer theory. Anomaly and obstruction. I}},
+  vol.~46, Providence, RI: American Mathematical Society (AMS); Somerville, MA:
+  International Press, 2009 (English).
+
+\bibitem[FOOO09b]{fo3-II}
+\bysame, \emph{{Lagrangian intersection Floer theory. Anomaly and obstruction.
+  II}}, vol.~46, Providence, RI: American Mathematical Society (AMS);
+  Somerville, MA: International Press, 2009 (English).
+
+\bibitem[For08]{Forcey08}
+Stefan Forcey, \emph{Convex hull realizations of the multiplihedra}, Topology
+  Appl. \textbf{156} (2008), no.~2, 326--347.
+
+\bibitem[Fra07]{Frankland07}
+Martin Frankland, \emph{Th\'eor\`eme de k\"unneth en homologie de {M}orse},
+  Ann. Sci. Math. Qu\'ebec \textbf{31} (2007), 31--39.
+
+\bibitem[FS97]{FultonSturmfels97}
+William Fulton and Bernd Sturmfels, \emph{Intersection theory on toric
+  varieties}, Topology \textbf{36} (1997), 335--353.
+
+\bibitem[{Fuk}10]{fukaya-cyclic-symmetry}
+Kenji {Fukaya}, \emph{{Cyclic symmetry and adic convergence in Lagrangian Floer
+  theory}}, {Kyoto J. Math.} \textbf{50} (2010), no.~3, 521--590 (English).
+
+\bibitem[Fuk17]{fukaya-unobstructed}
+Kenji Fukaya, \emph{Unobstructed immersed {Lagrangian} correspondence and
+  filtered {$A_\infty$} functor}, 2017, arXiv:1706.02131.
+
+\bibitem[HM12]{HirshMilles12}
+Joseph Hirsh and Joan Mill{\`e}s, \emph{Curved {K}oszul duality theory}, Math.
+  Ann. \textbf{354} (2012), no.~4, 1465--1520.
+
+\bibitem[{Lap}22]{LA21}
+Guillaume {Laplante-Anfossi}, \emph{{The diagonal of the operahedra}}, Advances
+  in Mathematics (2022), to appear.
+
+\bibitem[LH03]{LefevreHasegawa03}
+Kenji Lef\`evre-Hasegawa, \emph{Sur les {$A_\infty$}-cat{\'e}gories}, Ph.D.
+  thesis, Universit{\'e} Paris 7, UFR de Math{\'e}matiques, 2003.
+
+\bibitem[Lod04]{Loday04a}
+Jean-Louis Loday, \emph{Realization of the {S}tasheff polytope}, Arch. Math.
+  (Basel) \textbf{83} (2004), no.~3, 267--278.
+
+\bibitem[LOT20]{LOT20}
+Robert Lipshitz, Peter Ozsv\'ath, and Dylan~P. Thurston, \emph{Diagonals and
+  {A}-infinity tensor products}, 2020, {arXiv:2009.05222}.
+
+\bibitem[LV12]{LodayVallette12}
+Jean-Louis Loday and Bruno Vallette, \emph{Algebraic operads}, Grundlehren der
+  Mathematischen Wissenschaften [Fundamental Principles of Mathematical
+  Sciences], vol. 346, Springer-Verlag, Berlin, 2012.
+
+\bibitem[May72]{May72}
+J.P. May, \emph{The geometry of iterated loop spaces}, Springer-Verlag, Berlin,
+  1972, Lectures Notes in Mathematics, Vol. 271.
+
+\bibitem[Maz21a]{mazuir-I}
+Thibaut Mazuir, \emph{Higher algebra of {$A_\infty$} and {$\Omega B
+  As$}-algebras in {Morse} theory {I}}, 2021, {arXiv:2102.06654}.
+
+\bibitem[Maz21b]{mazuir-II}
+\bysame, \emph{Higher algebra of {$A_\infty$} and {$\Omega B As$}-algebras in
+  {Morse} theory {II}}, 2021, {arXiv:2102.08996}.
+
+\bibitem[MS06]{MarklShnider06}
+Martin Markl and Steve Shnider, \emph{Associahedra, cellular {$W$}-construction
+  and products of {$A_\infty$}-algebras}, Trans. Amer. Math. Soc. \textbf{358}
+  (2006), no.~6, 2353--2372 (electronic).
+
+\bibitem[MSS02]{MSS}
+Martin Markl, Steve Shnider, and James~D. Stasheff, \emph{Operads in algebra,
+  topology and physics}, Mathematical Surveys and Monographs, vol.~96, American
+  Mathematical Society, Providence, RI, 2002.
+
+\bibitem[MT14]{MuroTonks}
+Fernando Muro and Andrew Tonks, \emph{Unital associahedra}, Forum Math.
+  \textbf{26} (2014), no.~2, 593--620. \MR{3176644}
+
+\bibitem[MTTV21]{MTTV19}
+Naruki {Masuda}, Hugh {Thomas}, Andy {Tonks}, and Bruno {Vallette}, \emph{{The
+  diagonal of the associahedra}}, {J. \'Ec. Polytech., Math.} \textbf{8}
+  (2021), 121--146.
+
+\bibitem[MW10]{MauWoodward10}
+S.~Ma'u and C.~Woodward., \emph{Geometric realizations of the multiplihedra},
+  Compos. Math. \textbf{146} (2010), no.~4, 1002--1028.
+
+\bibitem[MWW18]{mau-wehrheim-woodward}
+S.~Ma'u, K.~Wehrheim, and C.~Woodward, \emph{{$A_\infty$} functors for
+  {L}agrangian correspondences}, Selecta Math. (N.S.) \textbf{24} (2018),
+  no.~3, 1913--2002. \MR{3816496}
+
+\bibitem[OEI22]{OEIS}
+OEIS, \emph{The on-line encyclopedia of integer sequences}, Published
+  electronically at \texttt{http://oeis.org}.
+
+\bibitem[Pos09]{Postnikov09}
+Alexander Postnikov, \emph{Permutohedra, associahedra, and beyond}, Int. Math.
+  Res. Not. IMRN \textbf{6} (2009), 1026--1106.
+
+\bibitem[Pro86]{Proute86}
+Alain Prout\'e, \emph{${A}_\infty$-structures, mod\`ele minimal de
+  {B}aues-{L}emaire et homologie des fibrations}, Ph.D. thesis, {Universit{\'e}
+  Paris 7, UFR de Math{\'e}matiques}, 1986.
+
+\bibitem[RNW19a]{RobertNicoudWierstraII}
+Daniel Robert-Nicoud and Felix Wierstra, \emph{Convolution algebras and the
+  deformation theory of infinity-morphisms}, Homology, Homotopy and
+  Applications \textbf{21} (2019), 351--373.
+
+\bibitem[RNW19b]{RobertNicoudWierstraI}
+\bysame, \emph{Homotopy morphisms between convolution homotopy {L}ie algebras},
+  Journal of Noncommutative Geometry \textbf{13} (2019), 1435--1462.
+
+\bibitem[Sei08]{Seidel08}
+Paul Seidel, \emph{Fukaya categories and {P}icard-{L}efschetz theory}, Zurich
+  Lectures in Advanced Mathematics, European Mathematical Society (EMS),
+  Z\"urich, 2008.
+
+\bibitem[Ser51]{Serre51}
+Jean-Pierre Serre, \emph{Homologie singuli\`ere des espaces fibr\'es.
+  {A}pplications}, Ann. of Math. (2) \textbf{54} (1951), 425--505.
+
+\bibitem[Smi15]{smith-prolegomenon}
+Ivan Smith, \emph{A symplectic prolegomenon}, Bull. Amer. Math. Soc. (N.S.)
+  \textbf{52} (2015), no.~3, 415--464. \MR{3348443}
+
+\bibitem[Sta63]{Stasheff63}
+James~D. Stasheff, \emph{Homotopy associativity of {$H$}-spaces. {I}, {II}},
+  Trans. Amer. Math. Soc. 108 (1963), 275-292; ibid. \textbf{108} (1963),
+  293--312.
+
+\bibitem[Sta70]{Stasheff70}
+\bysame, \emph{{$H$}-spaces from a homotopy point of view}, Lecture Notes in
+  Mathematics, Vol. 161, Springer-Verlag, Berlin, 1970.
+
+\bibitem[SU04]{SaneblidzeUmble04}
+Samson Saneblidze and Ronald Umble, \emph{Diagonals on the permutahedra,
+  multiplihedra and associahedra}, Homology Homotopy Appl. \textbf{6} (2004),
+  no.~1, 363--411.
+
+\bibitem[Tho18]{Thorngren18}
+Ryan~George Thorngren, \emph{Combinatorial topology and applications to quantum
+  field theory}, Ph.D. thesis, UC Berkeley, 2018, Available online at
+  \texttt{https://escholarship.org/uc/item/7r44w49f}.
+
+\bibitem[Val20]{Vallette14}
+Bruno Vallette, \emph{Homotopy theory of homotopy algebras}, Ann. Inst. Fourier
+  (Grenoble) \textbf{70} (2020), no.~2, 683--738. \MR{4105949}
+
+\bibitem[Yau16]{yau-colored}
+Donald Yau, \emph{Colored operads}, Graduate Studies in Mathematics, vol. 170,
+  American Mathematical Society, Providence, RI, 2016. \MR{3444662}
+
+\bibitem[Zie95]{Ziegler95}
+G\"{u}nter~M. Ziegler, \emph{Lectures on polytopes}, Graduate Texts in
+  Mathematics, vol. 152, Springer-Verlag, New York, 1995.
+
+\end{thebibliography}
