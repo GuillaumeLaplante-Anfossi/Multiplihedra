@@ -152,7 +152,8 @@ Our results can be readily applied to different fields.
 The operadic bimodule structure of Point~(2) above was used in the work of the second author, in order to realize $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms in Morse theory \cite{mazuir-I,mazuir-II}. 
 The algebraic tensor product in Point~(4) has applications in Heegaard Floer homology and could be used to relate the Fukaya categories of products of symplectic manifolds via Lagrangian correspondences, see \cref{ss:diag-symp}.
 We also expect future applications of our work to the computation of the homology of fibered spaces, using the construction of the convolution $\Ainf$-algebra associated to an $\Ainf$-coalgebra and an $\Ainf$-algebra in \cref{prop:convolution-ainf}.
-Our geometric methods shed new light on a result of M. Markl and S. Schnider \cite{MarklShnider06} (XX), pointing towards possible links with discrete et continuous Morse theory (\cref{rem:Morse}), while they raise new questions related to the deformation theory of $\infty$-morphisms \cite{RobertNicoudWierstraI,RobertNicoudWierstraII} (YY). 
+This last construction can also be related to the deformation theory of $\infty$-morphisms developed in \cite{RobertNicoudWierstraI,RobertNicoudWierstraII}, see \cref{sec:RNW}.
+Moreover, our geometric methods shed a new light on a result of M. Markl and S. Schnider \cite{MarklShnider06}, pointing towards possible links with discrete and continuous Morse theory (\cref{rem:Morse}). 
 
 %One could also think of applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}.
 
@@ -803,7 +804,7 @@ Let us recall the definition of the symmetric monoidal category $(\PolySub, \tim
 such that $f^{-1}(\mathcal D)$ defines a polytopal subdivision of $P$.
 \end{description}
 
-We will use the notion of \textit{operad}, \textit{operadic bimodule} and \textit{Hadamard product} of operads and operadic bimodules in the rest of this paper. For the sake of concision, we refer respectively to \cite[Section 1.1.1]{mazuir-I}, \cite[Section 1.1.3]{mazuir-I} and \cite[Section 5.1.12]{LodayVallette12} for a complete definition of these notions. An operad will in particular be a non-symmetric operad in the language of \cite{LodayVallette12}. The fact that the category $\PolySub$ is monoidal will moreover allow us to define operads and operadic bimodules in polytopes. 
+We will use the notion of \textit{operad}, \textit{operadic bimodule} and \textit{Hadamard product} of operads and operadic bimodules in the rest of this paper. For the sake of concision, we refer respectively to \cite[Section 1.1.1]{mazuir-I}, \cite[Section 1.1.3]{mazuir-I} and \cite[Section 5.1.12]{LodayVallette12} for a complete definition of these notions. An operad will in particular be a non-symmetric operad in the language of \cite[Section 5.2.8]{LodayVallette12}. The fact that the category $\PolySub$ is monoidal will moreover allow us to define operads and operadic bimodules in polytopes. 
 
 \subsection{Positively oriented polytopes and diagonal maps}
 
@@ -1178,7 +1179,6 @@ The essential ingredient is the computation of the fundamental hyperplane arrang
 We now make this formula explicit in dimension 1, 2 and 3. 
 We write 2-colored nestings of a linear graph with $n$ vertices as 2-colored parenthesizations of a word with $n$ symbols $\bullet$, which are easier to read and shorter to type, see \cref{fig:bijections}. 
 We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim P$.
-
 \begin{equation*}
   \begin{matrix}
       \triangle_2(\purple{\bullet \bullet}) & = & \blue{\bullet \bullet} \times \purple{\bullet \bullet} \cup \purple{\bullet \bullet} \times \red{\bullet \bullet}
@@ -1249,7 +1249,9 @@ We moreover only write pairs of faces $(F,G)$ such that $\dim F + \dim G = \dim 
   
 We also compute in \cref{table:numerology} the number of faces of complementary dimensions and the number of pairs of vertices in the cellular image of the diagonal of the multiplihedra in dimensions $0$ to $6$.
 They are compared with the diagonals induced by the same orientation vector on the Loday associahedra and the permutahedra. 
-The two sequences of numbers that we obtain were not considered before in \cite{OEIS}.
+The two sequences of numbers that we obtain did not appear before in \cite{OEIS}.
+
+\medskip
 
 \begin{table}[h]
 \centerline{\begin{tabular}{c|c|rrrrrrr|l}
@@ -1433,7 +1435,7 @@ We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic coun
 \draw[very thick, red] (2,1,3)--(2,1,6);
 \end{tikzpicture}}
 \caption{The four pairs of~(\ref{eq:quatre-paires-inclues}) represented in blue on the two top copies of $\J_4$ and the four pairs of~(\ref{eq:quatre-paires-exclues}) represented in red on the two bottom copies of $\J_4$. 
-The minimal and maximal vertices for the Tamari-type order are drawn in black, in the top left copy.}
+The minimal (top right) and maximal (bottom left) vertices for the Tamari-type order are drawn in black, in the top left copy.}
 \label{fig:four-pairs}
 \end{figure}
 
@@ -1539,8 +1541,9 @@ The \emph{composition morphism} is the morphism of $(\Ainf ,\Ainf )$-operadic bi
 Let $P\subset\RR^n$ be a polytope, and let $F$ be a face of $P$. A \emph{cellular orientation of $F$} is a choice of orientation of its linear span. A \emph{cellular orientation of $P$} is a choice of cellular orientation for each face $F$ of $P$. 
 \end{definition}
 
-Define $\mathsf{dg-mod}$ to be the symmetric monoidal category whose objects are dg-modules over $\mathbb{Z}$.
-The cellular chains functors $C_\bullet^{cell} : \mathsf{CW} \rightarrow \mathsf{dg-mod}$ is then a strong monoidal functor. We choose a cellular orientation for every polytope $P \in \mathsf{Poly}$ to define an inclusion $\mathsf{Poly} \subset \mathsf{CW}$. We thereby have in particular that the functor $C_\bullet^{cell}$ sends operads in polytopes to dg operads and operadic bimodules in polytopes to dg operadic bimodules. 
+We respectively denote by $\mathsf{CW}$ and $\mathsf{dg-mod}$ the symmetric monoidal categories of CW complexes and of dg modules over $\mathbb{Z}$, and by $C_\bullet^{\mathrm{cell}} : \mathsf{CW} \rightarrow \mathsf{dg-mod}$ the cellular chains functor. 
+A choice of a cellular orientation for every polytope $P \in \mathsf{Poly}$ defines an inclusion $\mathsf{Poly} \subset \mathsf{CW}$. 
+Then, the strong symmetric monoidal functor $C_\bullet^{\mathrm{cell}}$ respectively sends operads and operadic bimodules in polytopes to dg operads and dg operadic bimodules. 
 
 \begin{definition}[Left-levelwise order] \label{def:left-levelwise-tree}
 Let $t$ be a (2-colored) tree $t$. The \emph{left-levelwise order} on the vertices of $t$ is defined by ordering them from bottom to top and from left to right, proceeding one level at a time.
@@ -1573,7 +1576,7 @@ We can then make the same choices of cellular orientations as in \cite[Section 1
 
 \begin{proposition} 
 \label{prop:cellular-chains}
-These cellular orientations on the Loday associahedra and the Forcey--Loday multiplihedra provide an isomorphism of dg operads $C_\bullet^{cell}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of dg operadic bimodules $C_\bullet^{cell}(\{\J_n\})\cong \Minf$. 
+These cellular orientations on the Loday associahedra and the Forcey--Loday multiplihedra provide an isomorphism of dg operads $C_\bullet^{\mathrm{cell}}(\{\K_n\})\cong \mathrm{A}_\infty$ and an isomorphism of dg operadic bimodules $C_\bullet^{\mathrm{cell}}(\{\J_n\})\cong \Minf$. 
 \end{proposition}
 
 \begin{proof}
@@ -1829,7 +1832,7 @@ The non-existence of a coassociative diagonal on the operad \Ainf\ implies the n
 Given indeed diagonals $\triangle^{\Ainf}$ and $\triangle^{\Minf}$, it is not possible to compare the two morphisms of dg operadic bimodules $ ( \triangle^{\Minf} \otimes \triangle^{\Minf} ) \triangle^{\Minf}$ and $\triangle^{\Minf} \otimes (\triangle^{\Minf} \otimes \triangle^{\Minf} )$, as the $(\Ainf , \Ainf)$-operadic bimodule structures induced on $\Minf^{\otimes 3}$ by $ ( \triangle^{\Ainf} \otimes \triangle^{\Ainf} ) \triangle^{\Ainf}$ and $\triangle^{\Ainf} \otimes (\triangle^{\Ainf} \otimes \triangle^{\Ainf} )$ do not coincide.
 We can in fact prove a stronger result:  for any diagonal $\triangle : \Minf \to \Minf \otimes \Minf$, we have that
 \[ \left( (\ide \otimes \triangle ) \triangle - (\triangle \otimes \ide) \triangle \right) \left( \purple{\bullet \bullet \bullet} \right) \neq 0 \ . \]
-The proof of this result involves computations similar to the ones of \cite[Section 6]{MarklShnider06}, that we do not include for the sake of concision. 
+The proof of this result involves computations identical to the ones of \cite[Section 6]{MarklShnider06}, that we do not include for the sake of concision. 
 \end{proof}
 
 This proposition implies in particular that a diagonal on the 2-colored operad \Ainfdeux\ is never coassociative.
@@ -2034,7 +2037,8 @@ where the morphism of dg operads $\coEnd_C \otimes \End_A \to \End_{\Hom(C,A)}$ 
 It also implies that the \Ainf -morphism $\Hom (C_1,A_1) \rightsquigarrow \Hom (C_2,A_2)$ defined by the \Ainf -morphism $F : A_1 \rightsquigarrow A_2$ and $G : C_2 \rightsquigarrow C_1$, sends a twisting morphism $C_1 \rightarrow A_1$ to a twisting morphism $C_2 \rightarrow A_2$.
 We will use this key property in order to pursue the work of Brown \cite{Brown59} and \cite{Proute86} on the homology of fibered spaces in a forthcoming paper.
 
-\subsubsection{The diagonal as a twisting morphism}
+\subsubsection{Diagonals as twisting morphisms}
+\label{sec:RNW}
 
 The results of \cref{sss:conv-ainf-alg} can be interpreted in a more general framework, developed by D. Robert-Nicoud and F. Wierstra in \cite{RobertNicoudWierstraI,RobertNicoudWierstraII}. 
 
@@ -2048,13 +2052,14 @@ This result was proven in the proof of \cref{prop:retract}.
 \end{proof}
 
 Setting $\mathcal{C}=B As$ and $\mathcal{P}=\Omega As^{\text{!`}}$ and working in the context of non-symmetric operads where the operad $\Linf$ of \cite{RobertNicoudWierstraI,RobertNicoudWierstraII} is replaced by the operad $\Ainf$, we recover \cref{coroll:twisting} (and thus \cref{prop:retract}) via \cite[Theorem 7.1]{RobertNicoudWierstraI} and Point~(1) of \cref{prop:convolution-ainf} via \cite[Theorem 4.1]{RobertNicoudWierstraI}.
-Moreover, \cite[Corollary 5.4]{RobertNicoudWierstraI} shows that the assignments
+We denote by $\Aalg$ the category of $\Ainf$-algebras and their \emph{strict} morphisms \cite[Section 10.2.1]{LodayVallette12}.
+It is shown in \cite[Corollary 5.4]{RobertNicoudWierstraI} that the assignments
 \begin{eqnarray}
   \Hom(-,\id) &:& (\infAcog)^{\mathrm{op}} \times \Aalg \to \Aalg \label{eq:bif1} \\
   \Hom(\id, -) &:& (\Acog)^{\mathrm{op}} \times \infAalg \to \Aalg \label{eq:bif2}
 \end{eqnarray}
 given by the convolution $\Ainf$-algebra extend to bifunctors. 
-The authors also show that these two bifunctors however do not extend to a bifunctor 
+The authors also show that these two bifunctors do \emph{not} extend to a bifunctor 
 \begin{eqnarray}
   \Hom(-,-) &:& \mathsf{(\infAcog)^{op}} \times \infAalg \to \infAalg \label{eq:bifunctor}
 \end{eqnarray}
@@ -2172,6 +2177,7 @@ It is defined on objects as
 where $\pi_{M_1}$ denotes the projection $M_0 \times M_0^{-} \times M_1 \rightarrow M_1$ and $\times_{M_0}$ is the fiber product over $M_0$. The operations of $\Phi_{\mathcal{L}}$ are defined by counting pseudo-holomorphic quilted disks with Lagrangian boundary conditions, seam condition on $\mathcal{L}$ and marked points on their boundary, as represented in \cref{fig:pseudo-hol-disk-bord-lagrang}. 
 The tensor product of $\Ainf$-functors defined in the present paper allows one to consider the $\Ainf$-functor $\Phi_{\mathcal{L}_M} \otimes \Phi_{\mathcal{L}_N}$ associated to a pair of Lagrangian correspondences, raising the following question. 
 
+\begin{samepage}
 \begin{problem} \label{problem}
 Does the diagram
 \begin{center} 
@@ -2182,6 +2188,7 @@ Does the diagram
 \end{center}
 commutes up to homotopy of \Ainf -functors ? 
 \end{problem}
+\end{samepage}
 
 In this diagram, $\mathcal{L}_M \subset M_0^{-} \times M_1$, $\mathcal{L}_N \subset N_0^- \times N_1$ and the symplectomorphism $\tau$ is defined by rearranging the factors of $M_0^{-} \times M_1 \times N_0^- \times N_1$ into the factors of $M_0^{-} \times N_0^- \times M_1 \times N_1$. In other words, we would like to know whether the \emph{algebraic (tensor) product} of geometric \Ainf -functors between Fukaya categories defined in this paper is homotopic to the \Ainf -functor defined by the \emph{geometric product} of the Lagrangian correspondences. 
 We refer to \cite[Section 13]{fukaya-unobstructed} for a discussion on two definitions of the notion of a homotopy between \Ainf -functors.
