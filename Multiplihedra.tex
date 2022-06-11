@@ -93,7 +93,7 @@
 
 \begin{abstract}
 We define a cellular approximation for the diagonal of the Forcey--Loday realizations of the multiplihedra, and endow them with a compatible topological cellular operadic bimodule structure over the Loday realizations of the associahedra. 
-This provides a model for topological and algebraic \Ainf -morphisms, as well as a universal and explicit formula for their tensor product.
+This provides us with a model for topological and algebraic \Ainf -morphisms, as well as a universal and explicit formula for their tensor product.
 We study the monoidal properties of this newly defined tensor product and conclude by outlining several applications, notably in algebraic and symplectic topology.
 \end{abstract}
 
@@ -116,7 +116,7 @@ We study the monoidal properties of this newly defined tensor product and conclu
 \section*{Introduction}
 
 The $n$-dimensional associahedron, a polytope whose faces are in bijection with planar trees with $n+2$ leaves, was first introduced as a topological cell complex by J. Stasheff to describe algebras whose product is associative up to homotopy \cite{Stasheff63}.
-The problem of giving polytopal realizations of these CW-complexes has a rich history \cite{CeballosZiegler12}, and the algebras that they encode, called $\mathrm{A}_\infty$-algebras, have been extensively studied in various branches of mathematics. They were used in algebraic topology for the study of iterated loop spaces \cite{May72} or the study of homotopy theory of differential graded associative algebras \cite{LefevreHasegawa03,Vallette14} ; in symplectic topology to define Fukaya categories of symplectic manifolds \cite{Seidel08,fo3-I,fo3-II}, through the interpretation of the associahedra as moduli spaces of disks with marked boundary points; and more recently, in mathematical physics, mirror symmetry, Galois cohomology or non-commutative probability.
+The problem of giving polytopal realizations of these CW-complexes has a rich history \cite{CeballosZiegler12}, and the algebras that they encode, called $\mathrm{A}_\infty$-algebras, have been extensively studied in various branches of mathematics. They were used in algebraic topology for the study of iterated loop spaces \cite{May72,BoardmanVogt73} or the study of homotopy theory of differential graded associative algebras \cite{LefevreHasegawa03,Vallette14} ; in symplectic topology to define Fukaya categories of symplectic manifolds \cite{Seidel08,fo3-I,fo3-II}, through the interpretation of the associahedra as moduli spaces of disks with marked boundary points; and more recently, in mathematical physics, mirror symmetry, Galois cohomology or non-commutative probability.
 
 The $n$-dimensional multiplihedron is a polytope whose faces are in bijection with 2-colored planar trees with $n+1$ leaves. It was first introduced as a topological cell complex by J. Stasheff to describe morphisms between $\mathrm{A}_\infty$-algebras \cite{Stasheff70}.
 It was only recently realized as a convex polytope in the work of S. Forcey \cite{Forcey08}, followed by the work of S. Forcey and S. Devadoss \cite{DevadossForcey08}, F. Ardila and J. Doker \cite{AD13}, and F. Chapoton and V. Pilaud \cite{CP22}.
@@ -127,15 +127,15 @@ The need for such an approximation comes from the fact that the standard thin di
 A cellular approximation of the diagonal is a cellular map $\triangle_P^{\textrm{cell}} : P \to P\times P$ which is homotopic to $\triangle_P$ and which agrees with $\triangle_P$ on the vertices of $P$.
 
 The Alexander--Whitney map \cite{EilenbergMacLane53} and the Serre diagonal \cite{Serre51} respectively define cellular approximations for the diagonal of the simplices and for the diagonal of the cubes, yielding the cup product in singular cohomology and the cup product in cubical cohomology.
-A cellular approximation for the diagonal of the associahedra yields a universal formula for the tensor product of two $\Ainf$-algebras, and was constructed in \cite{SaneblidzeUmble04,MarklShnider06,MTTV19}. 
-By the term \textit{universal}, we mean that the same formula applies to any pair of $\Ainf$-algebras.
+A cellular approximation for the diagonal of the associahedra was constructed in \cite{MTTV19} and yields a universal formula for the tensor product of two $\Ainf$-algebras. See also \cite{SaneblidzeUmble04,MarklShnider06}.
+By the term \textit{universal}, we mean that the same formula applies uniformly to any pair of $\Ainf$-algebras.
 In a similar fashion, the cellular approximation of the diagonal of the multiplihedra will be used to define universal tensor product of $\Ainf$-morphisms in this paper.
 Our main results can be summarized as follows.
 \begin{enumerate}
   \item We define a cellular approximation of the diagonal on Forcey--Loday realizations of the multiplihedra (\cref{def:diagonal-multipl-forcey-loday}).
   \item We endow them with a compatible operadic bimodule structure over the Loday realizations of the associahedra (\cref{thm:MainOperad}).
-  \item We compute an explicit combinatorial formula for the cellular image of the diagonal (\cref{thm:formuladiagonal}).
-  \item We apply the cellular chains functor to the diagonal in order to define a universal tensor product of $\mathrm{A}_\infty$-morphisms (\cref{prop:diagonal-polytopale-m-infini}), and we study its properties.
+  \item We compute explicitly the associated combinatorial formula for the cellular image of the diagonal (\cref{thm:formuladiagonal}).
+  \item We apply the cellular chains functor to the diagonal in order to define a universal tensor product of $\mathrm{A}_\infty$-morphisms (\cref{prop:diagonal-polytopale-m-infini}), and we study its properties (\cref{ss:homotopy-properties}).
 \end{enumerate}
 
 To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, which is based on the method introduced in \cite{MTTV19}.
@@ -164,7 +164,7 @@ Together with the results of \cite[Section 4]{LA21}, one would obtain a tensor p
 \subsection*{Layout} 
 We introduce the Forcey--Loday and the Ardila-Doker realizations of the multiplihedra in \cref{sec:I}. 
 We define a cellular approximation of their diagonal and endow the Forcey--Loday multiplihedra with an operadic bimodule structure over the Loday associahedra in \cref{sec:II}.
-We compute an explicit combinatorial formula for the image of our diagonal in \cref{sec:III}. 
+We compute explicitly the associated combinatorial formula for the image of our diagonal in \cref{sec:III}. 
 We define a tensor product of \Ainf -algebras and of \Ainf -morphisms and study its properties in \cref{sec:IV}.
 We finally sketch future applications of our work in \cref{sec:V}.
 
@@ -1274,7 +1274,7 @@ $\dim F + \dim G = \dim P$  & \text{Multiplihedra} & 1 & 2 & 8 & 42 & 254 & 1678
 \label{ss:about}
 
 Given a face $F$ of a positively oriented polytope $(P, \vec v)$, the orientation vector $\vec v$ defines a unique vertex $\tp F$ (resp. $\bm F$) which maximizes (resp. minimizes) the scalar product $\langle - , \vec v \rangle$ over $F$. 
-By \cite[Proposition 1.15]{LA21}, we have that any pair of faces $(F,G) \in \Ima \triangle_{(P,\vec v)}$ satisfies $\tp F \leq \bm G$. 
+By \cite[Proposition 1.15]{LA21}, any pair of faces $(F,G) \in \Ima \triangle_{(P,\vec v)}$ satisfies $\tp F \leq \bm G$. 
 In the case of the simplices, the cubes and the associahedra, the converse also holds: the image of the diagonal is given by the "magical formula" 
 \begin{align}
 \label{eq:magical-formula}
@@ -1287,7 +1287,7 @@ The diagonal on the multiplihedron $\J_4$ is such that
 \[ \Ima \triangle_4 \subsetneq \{ (F,G) , \ \tp F\leq \bm G \} \ . \]
 \end{proposition}
 \begin{proof}
-The pairs of faces $(F,G)$ that satisfy $\dim F + \dim G = 3$ and $\tp F\leq \bm G$ include indeed the four pairs 
+The pairs of faces $(F,G)$ that satisfy $\dim F + \dim G = 3$ and $\tp F\leq \bm G$ include the four pairs 
 \begin{equation} \label{eq:quatre-paires-inclues}
 \begin{matrix}
 \purple{\blue{\bullet \bullet \bullet}\bullet} \times \red{\purple{\bullet\blue{\bullet\bullet}}\bullet} & 
@@ -1309,7 +1309,7 @@ While the image $\Ima \triangle_4$ contains the four pairs in (\ref{eq:quatre-pa
 \end{proof}
 
 \begin{remark}
-We point out that formula (\ref{eq:magical-formula}) also does not hold neither for the permutahedra nor the operahedra in general, as proven in \cite[Section 3.2]{LA21}. 
+We point out that Formula (\ref{eq:magical-formula}) also does not hold neither for the permutahedra nor the operahedra in general, as proven in \cite[Section 3.2]{LA21}. 
 \end{remark}
 
 The diagonal $\triangle_n$ being a section of the projection $\pi : \J_n \times \J_n \to \J_n , (x,y) \mapsto (x+y)/2$ \cite[Proposition 1.1]{LA21}, one can in fact represent its cellular image by projecting it to $\J_n$: for each pair of faces $(F,G) \in \Ima \triangle_n$, one draws the polytope $(F+G)/2$ in $\J_n$. This defines a polytopal subdivision of $\J_n$. The polytopal subdivision of $\J_3$ can be found in \cite[Figure 3]{LA21}, while the polytopal subdivision of $\J_4$ is illustrated on the first page of this article.
@@ -1318,13 +1318,13 @@ The diagonal $\triangle_n$ being a section of the projection $\pi : \J_n \times 
 There are two distinct diagonals on $\J_4$ which agree with the Tamari-type order on the vertices. 
 The first one, corresponding to the diagonal defined in this paper, is induced by the choice of any orientation vector $\vec v=(v_1,v_2,v_3,v_4)$ satisfying $v_1>v_2>v_3>v_4$ and $v_1 + v_4 > v_2+v_3$ (here we work with the Ardila--Doker realization of the multiplihedron).
 Changing the last condition to $v_1 + v_4 < v_2+v_3$ gives the second choice of diagonal, which is in fact exactly the diagonal of Saneblidze--Umble \cite[Section 5]{SaneblidzeUmble04}. 
-These two diagonals then differ by four pairs of faces, as represented in~\cref{fig:four-pairs}: the first diagonal includes the pairs of~(\ref{eq:quatre-paires-inclues}), while the second diagonal includes the pairs of~(\ref{eq:quatre-paires-exclues}).
-Under the projection $\pi : P\times P \to P, (x,y) \mapsto (x+y)/2$, these two families of faces induce two distinct polytopal subdivisions of the same "diamond" inside $\J_4$, represented in \cref{fig:diamonds}. 
+These two diagonals on $\J_4$ then differ by four pairs of faces, as represented in~\cref{fig:four-pairs}: the first diagonal includes the pairs of~(\ref{eq:quatre-paires-inclues}), while the second diagonal includes the pairs of~(\ref{eq:quatre-paires-exclues}).
+Under the projection $\pi : \J_4 \times \J_4 \to \J_4, (x,y) \mapsto (x+y)/2$, these two families of faces induce two distinct polytopal subdivisions of the same "diamond" inside $\J_4$, represented in \cref{fig:diamonds}. 
 We also refer to the last paragraph of \cref{ss:diagonals} for an algebraic counterpart of \cref{prop:pas-top-bot}.
 
 \begin{remark}
   The two previous families of orientation vectors correspond to two adjacent chambers in the fundamental hyperplane arrangement of the permutahedron \cite[Theorem 3.6]{LA21}, separated by the hyperplane $x_1+x_4=x_2+x_3$, pictured in blue in \cite[Figure 12]{LA21}.
-  A way to relate the diagonal constructed in this article to the diagonal of \cite[Section 5]{SaneblidzeUmble04} would be to find further choices of chambers in the fundamental hyperplane arrangements of the permutahedra (or the multiplihedra) in all dimensions $n \geq 4$ recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
+  A way to relate the diagonal constructed in this article to the diagonal of \cite[Section 5]{SaneblidzeUmble04} would possibly be to find further choices of chambers in the fundamental hyperplane arrangements of the permutahedra (or the multiplihedra) in all dimensions $n \geq 4$ recovering the latter diagonal, see also \cite[Remark~3.18]{LA21}.
 \end{remark}
 
 \begin{figure}[h]
@@ -1528,7 +1528,7 @@ and its second factor using blue for the color above the gauge and orange for th
 \[ \Minf :=  \mathcal{T}^{\Ainf , \Ainf}(\arbreopunmorphcompun , \arbreopdeuxmorphcompun , \arbreoptroismorphcompun , \arbreopquatremorphcompun , \cdots ) \ . \]
 
 \begin{definition}[Composition morphism]
-The \emph{composition morphism} is the morphism of $(\Ainf ,\Ainf )$-operadic bimodules $\comp : \Minf \rightarrow \Minf \circ_{\Ainf} \Minf$ defined on the generating operations of \Minf\ by 
+The \emph{composition morphism} is defined to be the morphism of $(\Ainf ,\Ainf )$-operadic bimodules $\comp : \Minf \rightarrow \Minf \circ_{\Ainf} \Minf$ given on the generating operations of \Minf\ by 
 \[ \comp \left( \arbreopmorph{0.15}  \right) =  \sum_{i_1+\cdots+i_k=n} (-1)^{\varepsilon} \compainf \ . \]
 \end{definition}
 
@@ -1802,7 +1802,7 @@ The proof of the following proposition is straightforward.
 
 If $\cat{A}$ and $\cat{B}$ are homotopy unital \Ainf -categories, we have to define the additional operations associated to the fact that the elements $e_X \otimes e_Y$ are identity morphisms up to homotopy in order to endow the \Ainf -category $\cat{A} \otimes \cat{B}$ with a homotopy unital \Ainf -category structure. In other words, we have to define a diagonal on the operad \uAinf\ encoding homotopy unital \Ainf -algebras, which has not been done yet to the authors knowledge. An idea would be to define a diagonal on the unital associahedra, which are CW-complexes constructed by Muro and Tonks in \cite{MuroTonks} and which form an operad whose image under the cellular chains is the operad \uAinf\ . However, not all unital associahedra are polytopes, meaning that the present techniques cannot be directly applied to them. 
 
-\subsection{Homotopy properties of diagonals on \Ainf\ and \Minf }
+\subsection{Homotopy properties of diagonals on \Ainf\ and \Minf } \label{ss:homotopy-properties}
 
 \subsubsection{The 2-colored viewpoint}
 
@@ -2001,16 +2001,16 @@ Given a fibration $F \rightarrow X \rightarrow B$ satisfying some mild assumptio
 
 \subsubsection{Convolution \Ainf -algebra} \label{sss:conv-ainf-alg}
 
-Define an \Ainf -coalgebra structure on a dg module $C$ to be a morphism of dg operads $\Ainf \rightarrow \coEnd_C$, where $\coEnd_C(n) = \Hom ( C , C^{\otimes n} )$. 
-Put differently, it is the structure obtained by dualizing the operations of an \Ainf -algebra and the equations they satisfy.
-The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a similar fashion: either by dualizing the equations for \Ainf -morphisms between \Ainf algebras or equivalenty as a morphism of dg operadic bimodules $\Minf \rightarrow \coHom^{C_1}_{C_2}$.
-We will now explain how to extend the convolution algebra construction when $C$ is an \Ainf -coalgebra and $A$ is an \Ainf -algebra.
+One defines an \textit{\Ainf -coalgebra} structure on a dg module $C$ to be a morphism of dg operads $\Ainf \rightarrow \coEnd_C$, where $\coEnd_C(n) = \Hom ( C , C^{\otimes n} )$. 
+Put differently, it is the structure dual to the structure of \Ainf -algebra, i.e. it corresponds to a collection of operations $c_n : C \rightarrow C^{\otimes n}$ of degree $2-n$ satisfying the equations obtained by inverting inputs and outputs in the equations for \Ainf -algebras. 
+The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a similar fashion: either in terms of operations $f_n : C \rightarrow D^{\otimes n}$ of degree $1-n$ and satisfying the equations dual to the equations for \Ainf -morphisms, or equivalently as a morphism of dg operadic bimodules $\Minf \rightarrow \coHom^{C_1}_{C_2}$.
+Our results allow us to extend the convolution algebra construction when $C$ is an \Ainf -coalgebra and $A$ is an \Ainf -algebra.
 
 \begin{proposition} 
 \label{prop:convolution-ainf} $ $
 \begin{enumerate}[leftmargin=*]
     \item Let $C$ be an \Ainf -coalgebra and $A$ be an \Ainf -algebra. 
-A diagonal on the operad \Ainf\ yields an \Ainf -algebra structure on the dg module $(\Hom (C,A) , [ \partial , \cdot ])$. 
+A diagonal on the operad \Ainf\ yields an \Ainf -algebra structure on the dg module $(\Hom (C,A) , \partial)$. 
 We call this \Ainf -algebra the \emph{convolution \Ainf -algebra of $C$ and $A$}.
 \item Let $F : A_1 \rightsquigarrow A_2$ be an \Ainf -morphism between two \Ainf -algebras $A_1$ and $A_2$ and $G : C_2 \rightsquigarrow C_1$ be an \Ainf -morphism between two \Ainf -coalgebras $C_2$ and $C_1$. A diagonal on the operad \Minf\ yields  an \Ainf -morphism between the convolution \Ainf -algebras $\Hom (C_1,A_1)$ and $\Hom (C_2,A_2)$. 
 \end{enumerate}
@@ -2034,7 +2034,7 @@ where the morphism of dg operads $\coEnd_C \otimes \End_A \to \End_{\Hom(C,A)}$ 
   This is a direct corollary to \cref{thm:nofunctorial}.
 \end{proof}
 
-\cref{prop:convolution-ainf} implies in particular that for an \Ainf -coalgebra $C$ and an \Ainf -algebra $A$, it is still possible to define \textit{twisting morphisms} $\alpha : C \rightarrow A$ as Maurer-Cartan elements in the \Ainf -algebra $\Hom (C,A)$.
+\cref{prop:convolution-ainf} implies in particular that for an \Ainf -coalgebra $C$ and an \Ainf -algebra $A$, it is still possible to define the notion of a \textit{twisting morphism} $\alpha : C \rightarrow A$ as a Maurer-Cartan element in the \Ainf -algebra $\Hom (C,A)$. See \cite[]{} for instance.
 It also implies that the \Ainf -morphism $\Hom (C_1,A_1) \rightsquigarrow \Hom (C_2,A_2)$ defined by the \Ainf -morphism $F : A_1 \rightsquigarrow A_2$ and $G : C_2 \rightsquigarrow C_1$, sends a twisting morphism $C_1 \rightarrow A_1$ to a twisting morphism $C_2 \rightarrow A_2$.
 We will use this key property in order to pursue the work of Brown \cite{Brown59} and \cite{Proute86} on the homology of fibered spaces in a forthcoming paper.
 
@@ -2182,12 +2182,12 @@ The tensor product of $\Ainf$-functors defined in the present paper allows one t
 \begin{problem} \label{problem}
 Does the diagram
 \begin{center} 
-\begin{tikzcd}[column sep = large]
+\begin{tikzcd}[column sep = 12ex]
 \mathrm{Fuk}(M_0) \otimes \mathrm{Fuk}(N_0) \arrow[d,squiggly] \arrow[r,"\Phi_{\mathcal{L}_M} \otimes \Phi_{\mathcal{L}_N}",squiggly] & \mathrm{Fuk}(M_1) \otimes \mathrm{Fuk}(N_1) \arrow[d,squiggly] \\
  \mathrm{Fuk}(M_0 \times N_0) \arrow[r,below,"\Phi_{\tau ( \mathcal{L}_M \times \mathcal{L}_N)}",squiggly] & \mathrm{Fuk}(M_1 \times N_1)
 \end{tikzcd}
 \end{center}
-commutes up to homotopy of \Ainf -functors ? 
+commutes up to homotopy of \Ainf -functors? 
 \end{problem}
 \end{samepage}
 
