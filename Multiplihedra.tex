@@ -2002,8 +2002,8 @@ Given a fibration $F \rightarrow X \rightarrow B$ satisfying some mild assumptio
 \subsubsection{Convolution \Ainf -algebra} \label{sss:conv-ainf-alg}
 
 One defines an \textit{\Ainf -coalgebra} structure on a dg module $C$ to be a morphism of dg operads $\Ainf \rightarrow \coEnd_C$, where $\coEnd_C(n) = \Hom ( C , C^{\otimes n} )$. 
-Put differently, it is the structure dual to the structure of \Ainf -algebra, i.e. it corresponds to a collection of operations $c_n : C \rightarrow C^{\otimes n}$ of degree $2-n$ satisfying the equations obtained by inverting inputs and outputs in the equations for \Ainf -algebras. 
-The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a similar fashion: either in terms of operations $f_n : C \rightarrow D^{\otimes n}$ of degree $1-n$ and satisfying the equations dual to the equations for \Ainf -morphisms, or equivalently as a morphism of dg operadic bimodules $\Minf \rightarrow \coHom^{C_1}_{C_2}$.
+Put differently, it is the structure dual to the structure of \Ainf -algebra, i.e. it corresponds to a collection of operations $c_n : C \rightarrow C^{\otimes n}$ of degree $n-2$ satisfying the equations obtained by inverting inputs and outputs in the equations for \Ainf -algebras. 
+The notion of an \Ainf -morphism between \Ainf -coalgebras is defined in a similar fashion: either in terms of operations $f_n : C \rightarrow D^{\otimes n}$ of degree $n-1$ and satisfying the equations dual to the equations for \Ainf -morphisms, or equivalently as a morphism of dg operadic bimodules $\Minf \rightarrow \coHom^{C_1}_{C_2}$.
 Our results allow us to extend the convolution algebra construction when $C$ is an \Ainf -coalgebra and $A$ is an \Ainf -algebra.
 
 \begin{proposition} 
@@ -2034,7 +2034,7 @@ where the morphism of dg operads $\coEnd_C \otimes \End_A \to \End_{\Hom(C,A)}$ 
   This is a direct corollary to \cref{thm:nofunctorial}.
 \end{proof}
 
-\cref{prop:convolution-ainf} implies in particular that for an \Ainf -coalgebra $C$ and an \Ainf -algebra $A$, it is still possible to define the notion of a \textit{twisting morphism} $\alpha : C \rightarrow A$ as a Maurer-Cartan element in the \Ainf -algebra $\Hom (C,A)$. See \cite[]{} for instance.
+\cref{prop:convolution-ainf} implies in particular that for an \Ainf -coalgebra $C$ and an \Ainf -algebra $A$, it is still possible to define the notion of a \textit{twisting morphism} $\alpha : C \rightarrow A$ as a Maurer-Cartan element in the \Ainf -algebra $\Hom (C,A)$, see \cite[Equation 1, p.8]{dotsenko2018twisting} for instance.
 It also implies that the \Ainf -morphism $\Hom (C_1,A_1) \rightsquigarrow \Hom (C_2,A_2)$ defined by the \Ainf -morphism $F : A_1 \rightsquigarrow A_2$ and $G : C_2 \rightsquigarrow C_1$, sends a twisting morphism $C_1 \rightarrow A_1$ to a twisting morphism $C_2 \rightarrow A_2$.
 We will use this key property in order to pursue the work of Brown \cite{Brown59} and \cite{Proute86} on the homology of fibered spaces in a forthcoming paper.
 
