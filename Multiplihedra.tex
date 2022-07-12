@@ -537,8 +537,9 @@ Let $(t, \omega)$ be a weighted 2-colored maximal tree with $n$ leaves. We order
  the sum $\beta_i$ of the weights of the leaves supported by its right input. 
 If the $i^{\rm th}$ vertex is colored by the upper color, we consider the product $\alpha_i\beta_i$ and if the 
 $i^{\rm th}$ vertex is colored by the lower color, we consider the product $2\alpha_i\beta_i$.
-The associated string produces a point with integer coordinates :
-\[M(t, \omega) \coloneqq \big(2\alpha_1\beta_1, \alpha_2\beta_2, \ldots, 2\alpha_{n-1}\beta_{n-1}\big)\in 
+The associated string produces a point with integer coordinates $M(t, \omega) \in \RR_{>0}^{n-1}$. 
+For example, if only the first and last vertices of $t$ are blue, we obtain a point of the form
+\[M(t, \omega) = \big(2\alpha_1\beta_1, \alpha_2\beta_2, \ldots, \alpha_{n-2}\beta_{n-2}, 2\alpha_{n-1}\beta_{n-1}\big)\in 
 \RR_{>0}^{n-1}\ . \]
 \begin{figure}[h!]
 \[
@@ -1126,21 +1127,27 @@ Under this map, (2-colored) maximal trees are in bijection with maximal (2-color
 \subsection{Cellular formula for the diagonal} \label{ss:cellular-formula}
 
 \begin{definition}
-Let $(\gra,\mathcal{N})$ be a nested linear graph. We denote by 
-\begin{itemize}[leftmargin=*]
-  \item $B(\mathcal{N})$ the set of blue nests of the nesting $\mathcal{N}$,
-  \item $R(\mathcal{N})$ the set of all disjoint \emph{unions} of red or purple nests of the nesting $\mathcal{N}$.
-\end{itemize}
+Let $(\gra,\mathcal{N})$ be a nested linear graph. 
+We denote by $B(\mathcal{N})$, $P(\mathcal{N})$ and $R(\mathcal{N})$ the sets of blue, purple and red nests of $\mathcal{N}$, respectively, and we define
+\[
+Q(\mathcal{N}) \coloneqq 
+\bigcup_{\substack{R_1,\ldots,R_k \in R(\mathcal{N})\\ k \geq 0}}
+\left\{ 
+  \bigcup_{B \in B(\mathcal{N})} B \cup 
+  \bigcup_{P \in P(\mathcal{N})} P \cup 
+  \bigcup_{i=1}^k R_i 
+\right\} \ ,
+\]
+where the braces are the set braces, and the case $k=0$ corresponds to taking $\cup R_i = \emptyset$.
 \end{definition}
-
 We order the edges of a linear graph $\gra$ from bottom to top, as represented in \cref{fig:bijections}. 
-To each blue nest $B \in B(\mathcal{N})$ in a 2-colored nesting $\mathcal{N}$ of a linear graph with $n$ vertices, we can then associate its \emph{characteristic vector} $\vec B\in \RR^n$ wich has a $1$ in position $i$ if $i \in B$ and $0$ otherwise.
-To each disjoint union of red or purple nests $R \in R(\mathcal{N})$, we can associate the vector $\vec R \in \RR^n$ which has a $1$ in position $i$ for $i \in R$, a $1$ in the last ($n$th) position, and $0$ otherwise. 
-We denote by $\vec n \coloneqq (1,\ldots,1) \in \RR^n$ the characteristic vector of the trivial nest.
+To each blue nest $B \in B(\mathcal{N})$ in a 2-colored nesting $\mathcal{N}$ of a linear graph with $n$ vertices, we associate its \emph{characteristic vector} $\vec B\in \RR^n$ which has a $1$ in position $i$ if $i \in B$ and $0$ otherwise.
+To each union of nests $Q \in Q(\mathcal{N})$, we can associate the vector $\vec Q \in \RR^n$ which has a $1$ in position $i$ for $i \in Q$, a $1$ in the last ($n$th) position, and $0$ otherwise. 
+We denote by $\vec n$ the vector $(1,\ldots,1) \in \RR^n$.
 
 \begin{lemma} 
 \label{lemma:normalcones}
-The normal cone of the face of the Ardila--Doker realization of the multiplihedron labeled by the 2-colored nesting $\mathcal{N}$ is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec R\}_{R \in R(\mathcal{N})} \cup \{\vec n, - \vec n\} \right) \ . \]
+The normal cone of the face of the Ardila--Doker realization of the multiplihedron labeled by the 2-colored nesting $\mathcal{N}$ is given by \[\cone\left(\{-\vec B\}_{B \in B(\mathcal{N})} \cup \{-\vec Q\}_{Q \in Q(\mathcal{N})} \cup \{\vec n, - \vec n\} \right) \ . \]
 \end{lemma} 
 
 \begin{proof} 
@@ -1161,9 +1168,9 @@ For $\mathcal{N}$ and $\mathcal{N}'$ two 2-colored nestings of the linear graph 
   (\mathcal{N},\mathcal{N}') \in \Ima\triangle_n 
   & \iff & \forall (I,J) \in D(n), \\
   && \exists B \in B(\mathcal{N}), |B\cap I|>|B\cap J| \text{ or }  \\
-  && \exists R \in R(\mathcal{N}), |(R\cup \{n\}) \cap I|>| (R\cup \{n\}) \cap J| \text{ or }  \\
+  && \exists Q \in Q(\mathcal{N}), |(Q\cup \{n\}) \cap I|>| (Q\cup \{n\}) \cap J| \text{ or }  \\
   && \exists B' \in B(\mathcal{N}'), |B'\cap I|<|B'\cap J| \text{ or } \nonumber \\
-  && \exists R' \in R(\mathcal{N}'), |(R'\cup \{n\}) \cap I|<| (R'\cup \{n\}) \cap J| \ .
+  && \exists Q' \in Q(\mathcal{N}'), |(Q'\cup \{n\}) \cap I|<| (Q'\cup \{n\}) \cap J| \ .
 \end{eqnarray*}
 \end{theorem}
 \end{samepage}
@@ -1729,7 +1736,7 @@ where the sum runs over the pairs $\mathcal{N},\mathcal{N}' \in \mathcal{N}^2_n$
 
 \begin{proof}
 The proof is similar to the proof of \cref{prop:diagonal-polytopale-a-infini}. 
-Note that in this case, there is no $-1$ term in the definition of the permutation the permutation $\sigma_{\mathcal{N}\mathcal{N}'}$ in \cref{prop:signs-mul} since $\J_n$ is full-dimensional. 
+Note that in this case, there is no $-1$ term in the definition of the permutation $\sigma_{\mathcal{N}\mathcal{N}'}$ in \cref{prop:signs-mul} since $\J_n$ is full-dimensional. 
 \end{proof}
 
 We compute in particular 
