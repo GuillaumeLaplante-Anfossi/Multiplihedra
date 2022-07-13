@@ -1,49 +1,51 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Multiplihedra.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: amsalpha.bst
+Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: bib.bib
 Warning--missing journal name in OEIS
 Warning--missing journal, volume, and year in OEIS
-You've used 49 entries,
+You've used 51 entries,
             2624 wiz_defined-function locations,
-            908 strings with 11473 characters,
-and the built_in function-call counts, 18148 in all, are:
-= -- 1704
-> -- 665
-< -- 35
-+ -- 214
-- -- 207
-* -- 1549
-:= -- 2844
-add.period$ -- 49
-call.type$ -- 49
-change.case$ -- 277
-chr.to.int$ -- 46
-cite$ -- 51
-duplicate$ -- 757
-empty$ -- 1532
-format.name$ -- 282
-if$ -- 3687
+            916 strings with 11689 characters,
+and the built_in function-call counts, 18786 in all, are:
+= -- 1759
+> -- 698
+< -- 36
++ -- 226
+- -- 218
+* -- 1591
+:= -- 2944
+add.period$ -- 51
+call.type$ -- 51
+change.case$ -- 289
+chr.to.int$ -- 48
+cite$ -- 53
+duplicate$ -- 786
+empty$ -- 1586
+format.name$ -- 296
+if$ -- 3818
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 99
-newline$ -- 158
-num.names$ -- 142
-pop$ -- 328
+missing$ -- 101
+newline$ -- 164
+num.names$ -- 148
+pop$ -- 353
 preamble$ -- 2
-purify$ -- 326
+purify$ -- 340
 quote$ -- 0
-skip$ -- 518
+skip$ -- 539
 stack$ -- 0
-substring$ -- 1348
-swap$ -- 85
-text.length$ -- 35
-text.prefix$ -- 26
+substring$ -- 1363
+swap$ -- 87
+text.length$ -- 36
+text.prefix$ -- 27
 top$ -- 0
-type$ -- 352
+type$ -- 368
 warning$ -- 2
-while$ -- 173
-width$ -- 54
-write$ -- 548
+while$ -- 178
+width$ -- 56
+write$ -- 568
 (There were 2 warnings)

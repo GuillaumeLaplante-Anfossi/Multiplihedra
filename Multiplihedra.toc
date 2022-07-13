@@ -1,45 +1,48 @@
-\contentsline {section}{\tocsection {}{}{Introduction}}{2}{section*.3}
-\contentsline {subsection}{\tocsubsection {}{}{Layout}}{4}{section*.4}
-\contentsline {subsection}{\tocsubsection {}{}{Conventions}}{4}{section*.5}
-\contentsline {subsection}{\tocsubsection {}{}{Acknowledgements}}{4}{section*.6}
-\contentsline {section}{\tocsection {}{1}{Realizations of the multiplihedra}}{4}{section.1}
-\contentsline {subsection}{\tocsubsection {}{1.1}{2-colored trees and multiplihedra}}{4}{subsection.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{1.1.1}{2-colored trees}}{4}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{1.1.2}{Grafting of trees}}{5}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{1.1.3}{Multiplihedra}}{6}{subsubsection.1.1.3}
-\contentsline {subsection}{\tocsubsection {}{1.2}{Forcey--Loday realizations of the multiplihedra}}{7}{subsection.1.2}
-\contentsline {subsection}{\tocsubsection {}{1.3}{Ardila-Doker realizations of the multiplihedra}}{9}{subsection.1.3}
-\contentsline {section}{\tocsection {}{2}{Diagonal of the multiplihedra}}{11}{section.2}
-\contentsline {subsection}{\tocsubsection {}{2.1}{The monoidal category $\mathsf {Poly}$}}{11}{subsection.2.1}
-\contentsline {subsection}{\tocsubsection {}{2.2}{Positively oriented polytopes and diagonal maps}}{11}{subsection.2.2}
-\contentsline {subsection}{\tocsubsection {}{2.3}{Good orientation vectors and generalized permutahedra}}{12}{subsection.2.3}
-\contentsline {subsection}{\tocsubsection {}{2.4}{Diagonal of the Forcey--Loday multiplihedra}}{13}{subsection.2.4}
-\contentsline {subsection}{\tocsubsection {}{2.5}{Operadic bimodule structure on the Forcey--Loday multiplihedra}}{14}{subsection.2.5}
-\contentsline {section}{\tocsection {}{3}{Cellular formula for the diagonal of the multiplihedra}}{15}{section.3}
-\contentsline {subsection}{\tocsubsection {}{3.1}{2-colored nested linear graphs}}{15}{subsection.3.1}
-\contentsline {subsection}{\tocsubsection {}{3.2}{Cellular formula for the diagonal}}{16}{subsection.3.2}
-\contentsline {subsection}{\tocsubsection {}{3.3}{About the cellular formula}}{19}{subsection.3.3}
-\contentsline {section}{\tocsection {}{4}{Tensor product of \ensuremath {\mathrm {A}_\infty }-morphisms and \ensuremath {\mathrm {A}_\infty }-functors}}{21}{section.4}
-\contentsline {subsection}{\tocsubsection {}{4.1}{\ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{21}{subsection.4.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.1}{Definitions}}{21}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.2}{The operad \ensuremath {\mathrm {A}_\infty }\ and the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{22}{subsubsection.4.1.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.3}{The Forcey--Loday multiplihedra realize the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{23}{subsubsection.4.1.3}
-\contentsline {subsection}{\tocsubsection {}{4.2}{Tensor product of \ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{24}{subsection.4.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{Diagonals on the operad \ensuremath {\mathrm {A}_\infty }\ and on the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{24}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.2}{Admissible edges and permutations}}{25}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.3}{The polytopal diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{25}{subsubsection.4.2.3}
-\contentsline {subsection}{\tocsubsection {}{4.3}{Categorification}}{27}{subsection.4.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Tensor product of \ensuremath {\mathrm {A}_\infty }-categories and \ensuremath {\mathrm {A}_\infty }-functors}}{27}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.3.2}{Identities}}{28}{subsubsection.4.3.2}
-\contentsline {subsection}{\tocsubsection {}{4.4}{Homotopy properties of diagonals on \ensuremath {\mathrm {A}_\infty }and \ensuremath {\mathrm {M}_\infty }}}{28}{subsection.4.4}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.1}{The 2-colored viewpoint}}{28}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.2}{Coassociativity and cocommutativity}}{29}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.3}{Compatibility with the composition}}{30}{subsubsection.4.4.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.4}{Homotopy properties}}{30}{subsubsection.4.4.4}
-\contentsline {section}{\tocsection {}{5}{Further applications}}{31}{section.5}
-\contentsline {subsection}{\tocsubsection {}{5.1}{Retractions and diagonals}}{31}{subsection.5.1}
-\contentsline {subsection}{\tocsubsection {}{5.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{33}{subsection.5.2}
-\contentsline {subsection}{\tocsubsection {}{5.3}{Diagonals in symplectic topology}}{34}{subsection.5.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{5.3.1}{The work of Lipshitz, {Oszv\'ath} and Thurston}}{34}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{5.3.2}{K\"unneth theorems in Lagrangian Floer theory}}{35}{subsubsection.5.3.2}
-\contentsline {section}{\tocsection {}{}{References}}{37}{section*.20}
+\contentsline {section}{\tocsection {}{}{Introduction}}{2}{section*.3}%
+\contentsline {subsection}{\tocsubsection {}{}{Layout}}{4}{section*.4}%
+\contentsline {subsection}{\tocsubsection {}{}{Conventions}}{4}{section*.5}%
+\contentsline {subsection}{\tocsubsection {}{}{Acknowledgements}}{4}{section*.6}%
+\contentsline {section}{\tocsection {}{1}{Realizations of the multiplihedra}}{4}{section.1}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{2-colored trees and multiplihedra}}{4}{subsection.1.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.1}{2-colored trees}}{4}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.2}{Grafting of trees}}{5}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.3}{Multiplihedra}}{6}{subsubsection.1.1.3}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Forcey--Loday realizations of the multiplihedra}}{7}{subsection.1.2}%
+\contentsline {subsection}{\tocsubsection {}{1.3}{Ardila-Doker realizations of the multiplihedra}}{9}{subsection.1.3}%
+\contentsline {section}{\tocsection {}{2}{Diagonal of the multiplihedra}}{11}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{The monoidal category $\mathsf {Poly}$}}{11}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Positively oriented polytopes and diagonal maps}}{11}{subsection.2.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{Good orientation vectors and generalized permutahedra}}{12}{subsection.2.3}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{Diagonal of the Forcey--Loday multiplihedra}}{13}{subsection.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5}{Operadic bimodule structure on the Forcey--Loday multiplihedra}}{14}{subsection.2.5}%
+\contentsline {section}{\tocsection {}{3}{Cellular formula for the diagonal of the multiplihedra}}{15}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{2-colored nested linear graphs}}{15}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Cellular formula for the diagonal}}{16}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{About the cellular formula}}{18}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{4}{Tensor product of \ensuremath {\mathrm {A}_\infty }-morphisms and \ensuremath {\mathrm {A}_\infty }-functors}}{21}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{\ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{21}{subsection.4.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.1.1}{Definitions}}{21}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.1.2}{The operad \ensuremath {\mathrm {A}_\infty }\ and the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{22}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.1.3}{The Forcey--Loday multiplihedra realize the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{23}{subsubsection.4.1.3}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{Tensor product of \ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{24}{subsection.4.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{Diagonals on the operad \ensuremath {\mathrm {A}_\infty }\ and on the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{24}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.2}{Admissible edges and permutations}}{25}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.3}{The polytopal diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{25}{subsubsection.4.2.3}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Categorification}}{27}{subsection.4.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Tensor product of \ensuremath {\mathrm {A}_\infty }-categories and \ensuremath {\mathrm {A}_\infty }-functors}}{27}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.2}{Identities}}{28}{subsubsection.4.3.2}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Homotopy properties of diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{28}{subsection.4.4}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.1}{The 2-colored viewpoint}}{28}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.2}{Coassociativity and cocommutativity}}{29}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.3}{Compatibility with the composition}}{30}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.4}{Homotopy properties}}{30}{subsubsection.4.4.4}%
+\contentsline {section}{\tocsection {}{5}{Further applications}}{31}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Retractions and diagonals}}{31}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{32}{subsection.5.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.2.1}{Standard convolution algebra}}{33}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.2.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{33}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.2.3}{Diagonals as twisting morphisms}}{34}{subsubsection.5.2.3}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Diagonals in symplectic topology}}{34}{subsection.5.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.3.1}{The work of Lipshitz, {Oszv\'ath} and Thurston}}{35}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.3.2}{K\"unneth theorems in Lagrangian Floer theory}}{35}{subsubsection.5.3.2}%
+\contentsline {section}{\tocsection {}{}{References}}{37}{section*.20}%

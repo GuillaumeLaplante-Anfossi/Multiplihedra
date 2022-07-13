@@ -55,6 +55,10 @@ Satyan Devadoss and Stefan Forcey, \emph{Marked tubes and the graph
 Jeffrey~Samuel Doker, \emph{Geometry of generalized permutohedra}, Ph.D.
   thesis, University of California, Berkeley, 2011.
 
+\bibitem[DSV18]{dotsenko2018twisting}
+Vladimir Dotsenko, Sergey Shadrin, and Bruno Vallette, \emph{The twisting
+  procedure}, 2018, arXiv:1810.02941.
+
 \bibitem[EML53]{EilenbergMacLane53}
 S.~Eilenberg and S.~Mac~Lane, \emph{On the groups of {$H(\Pi,n)$}. {I}}, Ann.
   of Math. (2) \textbf{58} (1953), 55--106.
@@ -163,6 +167,10 @@ S.~Ma'u, K.~Wehrheim, and C.~Woodward, \emph{{$A_\infty$} functors for
 \bibitem[OEI22]{OEIS}
 OEIS, \emph{The on-line encyclopedia of integer sequences}, Published
   electronically at \texttt{http://oeis.org}.
+
+\bibitem[Pol20]{poliakova2020cellular}
+Daria Poliakova, \emph{Cellular chains on freehedra and operadic pairs}, 2020,
+  arXiv:2011.11607.
 
 \bibitem[Pos09]{Postnikov09}
 Alexander Postnikov, \emph{Permutohedra, associahedra, and beyond}, Int. Math.

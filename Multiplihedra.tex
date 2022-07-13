@@ -129,7 +129,7 @@ A cellular approximation of the diagonal is a cellular map $\triangle_P^{\textrm
 The Alexander--Whitney map \cite{EilenbergMacLane53} and the Serre diagonal \cite{Serre51} respectively define cellular approximations for the diagonal of the simplices and for the diagonal of the cubes, yielding the cup product in singular cohomology and the cup product in cubical cohomology.
 A cellular approximation for the diagonal of the associahedra was constructed in \cite{MTTV19} and yields a universal formula for the tensor product of two $\Ainf$-algebras. See also \cite{SaneblidzeUmble04,MarklShnider06}.
 By the term \textit{universal}, we mean that the same formula applies uniformly to any pair of $\Ainf$-algebras.
-In a similar fashion, the cellular approximation of the diagonal of the multiplihedra will be used to define universal tensor product of $\Ainf$-morphisms in this paper.
+In a similar fashion, the cellular approximation of the diagonal of the multiplihedra will be used to define a universal tensor product of $\Ainf$-morphisms in this paper.
 Our main results can be summarized as follows.
 \begin{enumerate}
   \item We define a cellular approximation of the diagonal on Forcey--Loday realizations of the multiplihedra (\cref{def:diagonal-multipl-forcey-loday}).
@@ -138,13 +138,13 @@ Our main results can be summarized as follows.
   \item We apply the cellular chains functor to the diagonal in order to define a universal tensor product of $\mathrm{A}_\infty$-morphisms (\cref{prop:diagonal-polytopale-m-infini}), and we study its properties (\cref{ss:homotopy-properties}).
 \end{enumerate}
 
-To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, which is based on the method introduced in \cite{MTTV19}.
+To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, which is based on the (top,bot) method introduced in \cite{MTTV19}.
 We prove that the Forcey--Loday realizations of the multiplihedra \cite{Forcey08} can be obtained from the Ardila--Doker realization of the multiplihedra \cite{AD13} by projection (\cref{prop:lifting}).
 These last realizations are generalized permutahedra, in the sense of A. Postnikov \cite{Postnikov09}, which allows us to apply the results of \cite{LA21} directly, both to define a cellular approximation of the diagonal and to describe its cellular image combinatorially.
 
 The tensor product of $\Ainf$-morphisms defined by this diagonal does not however define a symmetric monoidal structure on the category $\infAalg$ of $\Ainf$-algebras and their $\Ainf$-morphisms, since it is not strictly compatible with the composition. 
-This is not a defect of our construction: in \cref{thm:nofunctorial}, we prove that there is no tensor product of $\Ainf$-morphisms which is compatible with the composition of $\Ainf$-morphisms. 
-This proposition should be compared to a similar result by M. Markl and S. Schnider, saying that there is no strictly associative tensor product of $\Ainf$-algebras \cite[Theorem 13]{MarklShnider06}.
+This is not a defect of our construction: in \cref{thm:nofunctorial}, we prove that there is no tensor product of $\Ainf$-morphisms which is strictly compatible with the composition of $\Ainf$-morphisms. 
+This proposition should be compared to a similar result by M. Markl and S. Shnider, saying that there is no strictly associative tensor product of $\Ainf$-algebras \cite[Theorem 13]{MarklShnider06}.
 The preceding two properties are in fact always satisfied up to homotopy (see \cref{th:homotopy-properties}), which points towards the idea that the category $\infAalg$ should possess some kind of \textit{homotopy} symmetric monoidal structure. 
 
 
@@ -153,7 +153,7 @@ The operadic bimodule structure of Point~(2) above was used in the work of the s
 The algebraic tensor product in Point~(4) has applications in Heegaard Floer homology and could be used to relate the Fukaya categories of products of symplectic manifolds via Lagrangian correspondences, see \cref{ss:diag-symp}.
 We also expect future applications of our work to the computation of the homology of fibered spaces, using the construction of the convolution $\Ainf$-algebra associated to an $\Ainf$-coalgebra and an $\Ainf$-algebra in \cref{prop:convolution-ainf}.
 This last construction can also be related to the deformation theory of $\infty$-morphisms developed in \cite{RobertNicoudWierstraI,RobertNicoudWierstraII}, see \cref{sec:RNW}.
-Moreover, our geometric methods shed a new light on a result of M. Markl and S. Schnider \cite{MarklShnider06}, pointing towards possible links with discrete and continuous Morse theory (\cref{rem:Morse}). 
+Moreover, our geometric methods shed a new light on a result of M. Markl and S. Shnider \cite{MarklShnider06}, pointing towards possible links with discrete and continuous Morse theory (\cref{rem:Morse}). 
 
 %One could also think of applications in other areas where the multiplihedron appears, such as higher category theory \cite{ForceyQuotient08}.
 
@@ -1128,22 +1128,17 @@ Under this map, (2-colored) maximal trees are in bijection with maximal (2-color
 
 \begin{definition}
 Let $(\gra,\mathcal{N})$ be a nested linear graph. 
-We denote by $B(\mathcal{N})$, $P(\mathcal{N})$ and $R(\mathcal{N})$ the sets of blue, purple and red nests of $\mathcal{N}$, respectively, and we define
-\[
-Q(\mathcal{N}) \coloneqq 
-\bigcup_{\substack{R_1,\ldots,R_k \in R(\mathcal{N})\\ k \geq 0}}
-\left\{ 
-  \bigcup_{B \in B(\mathcal{N})} B \cup 
-  \bigcup_{P \in P(\mathcal{N})} P \cup 
-  \bigcup_{i=1}^k R_i 
-\right\} \ ,
-\]
-where the braces are the set braces, and the case $k=0$ corresponds to taking $\cup R_i = \emptyset$.
+We respectively denote by $B(\mathcal{N})$, $P(\mathcal{N})$ and $R(\mathcal{N})$ the set of blue, purple and red nests of $\mathcal{N}$. We define $Q(\mathcal{N})$ to be the set whose elements are the unions of nests
+\[   \bigcup_{i=1}^k R_i \cup \bigcup_{B \in B(\mathcal{N})} B \cup 
+  \bigcup_{P \in P(\mathcal{N})} P 
+   \]
+where $R_1,\ldots,R_k \in R(\mathcal{N})$ and $\cup R_i := \emptyset$ when $k=0$.
 \end{definition}
-We order the edges of a linear graph $\gra$ from bottom to top, as represented in \cref{fig:bijections}. 
-To each blue nest $B \in B(\mathcal{N})$ in a 2-colored nesting $\mathcal{N}$ of a linear graph with $n$ vertices, we associate its \emph{characteristic vector} $\vec B\in \RR^n$ which has a $1$ in position $i$ if $i \in B$ and $0$ otherwise.
-To each union of nests $Q \in Q(\mathcal{N})$, we can associate the vector $\vec Q \in \RR^n$ which has a $1$ in position $i$ for $i \in Q$, a $1$ in the last ($n$th) position, and $0$ otherwise. 
-We denote by $\vec n$ the vector $(1,\ldots,1) \in \RR^n$.
+
+We number the edges of the linear graph with $n$ vertices from bottom to top as represented in \cref{fig:bijections}, starting at $1$ and ending at $n-1$.  
+To each blue nest $B \in B(\mathcal{N})$ in a 2-colored nesting $\mathcal{N}$ of a linear graph with $n$ vertices, we associate the \emph{characteristic vector} $\vec B\in \RR^n$ which has a $1$ in position $i$ if $i \in B$, $0$ in position $i$ if $i \notin B$ and 0 in position $n$.
+To each union of nests $Q \in Q(\mathcal{N})$, we associate the characteristic vector $\vec Q \in \RR^n$ which has a $1$ in position $i$ if $i \in Q$, $0$ in position $i$ if $i \notin Q$ and 1 in position $n$. 
+We denote moreover by $\vec n$ the vector $(1,\ldots,1) \in \RR^n$.
 
 \begin{lemma} 
 \label{lemma:normalcones}
@@ -1156,8 +1151,8 @@ the normal cone of a face of the multiplihedron is a union of normal cones of fa
 \end{proof}
 
 We are now ready to compute the cellular formula for the diagonal of the Forcey--Loday multiplihedra. We introduce \[ D(n)\coloneqq \{(I,J) \ | \ I,J\subset\{1,\ldots,n\}, |I|=|J|, I\cap J=\emptyset, \min(I\cup J)\in I \}. \]
-We number the edges of the linear graph wit $n$ vertices from bottom to top, starting at $1$ and ending at $n-1$. 
-Blue nests and disjoint unions of red and purple nests can then in particular be seen as subsets of $\{1,\ldots,n-1\}$, hence of $\{1,\ldots,n\}$.
+We number again the edges of the linear graph with $n$ vertices from bottom to top, starting at $1$ and ending at $n-1$. 
+Blue nests and unions of blue, purple and red nests can then in particular be seen as subsets of $\{1,\ldots,n-1\}$, hence of $\{1,\ldots,n\}$.
 
 \begin{samepage}
 \begin{theorem}
@@ -1837,7 +1832,7 @@ In operadic terms, this amounts to ask if the diagonal on \Ainf\ is coassociativ
 \begin{proof}
 The non-existence of a coassociative diagonal on the operad \Ainf\ was already proven in \cite[Section 6]{MarklShnider06}.
 The non-existence of a coassociative diagonal on the operad \Ainf\ implies the non-existence of a coassociative diagonal on the operad \Minf . 
-Given indeed diagonals $\triangle^{\Ainf}$ and $\triangle^{\Minf}$, it is not possible to compare the two morphisms of dg operadic bimodules $ ( \triangle^{\Minf} \otimes \triangle^{\Minf} ) \triangle^{\Minf}$ and $\triangle^{\Minf} \otimes (\triangle^{\Minf} \otimes \triangle^{\Minf} )$, as the $(\Ainf , \Ainf)$-operadic bimodule structures induced on $\Minf^{\otimes 3}$ by $ ( \triangle^{\Ainf} \otimes \triangle^{\Ainf} ) \triangle^{\Ainf}$ and $\triangle^{\Ainf} \otimes (\triangle^{\Ainf} \otimes \triangle^{\Ainf} )$ do not coincide.
+Given indeed diagonals $\triangle^{\Ainf}$ and $\triangle^{\Minf}$, it is not possible to compare the two morphisms of dg operadic bimodules $ ( \triangle^{\Minf} \otimes \ide^{\Minf} ) \triangle^{\Minf}$ and $(\ide^{\Minf} \otimes \triangle^{\Minf} )\triangle^{\Minf}$, as the $(\Ainf , \Ainf)$-operadic bimodule structures induced on $\Minf^{\otimes 3}$ by $ ( \triangle^{\Ainf} \otimes \ide^{\Ainf} ) \triangle^{\Ainf}$ and $(\ide^{\Ainf} \otimes \triangle^{\Ainf} ) \triangle^{\Ainf}$ do not coincide.
 We can in fact prove a stronger result:  for any diagonal $\triangle : \Minf \to \Minf \otimes \Minf$, we have that
 \[ \left( (\ide \otimes \triangle ) \triangle - (\triangle \otimes \ide) \triangle \right) \left( \purple{\bullet \bullet \bullet} \right) \neq 0 \ . \]
 The proof of this result involves computations identical to the ones of \cite[Section 6]{MarklShnider06}, that we do not include for the sake of concision. 
@@ -1927,7 +1922,7 @@ The proof of this proposition is a simple adaptation of the results of \cite[Sec
 \end{proof}
 
 While \cref{thm:nofunctorial} shows that it is not possible to endow the category $\infAalg$ with a symmetric monoidal category structure using the viewpoint of diagonals, \cref{th:homotopy-properties} exhibits a first level of homotopies that could be involved in the definition of some kind of \textit{homotopy symmetric monoidal} category structure on \infAalg . 
-This question will be studied in a future work by the two authors of this paper. As a first step towards solving that problem, we will inspect in particular which higher coherent homotopies arise from the lack of coassociativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes. 
+This question will be studied in a future work by D. Poliakova and the two authors of this paper. As a first step towards solving that problem, we will inspect in particular which higher coherent homotopies arise from the lack of coassociativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes. We also refer to the introduction of \cite{poliakova2020cellular} for a similar problem where the associahedra are replaced by the cubes and the multiplihedra by the freehedra. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2194,7 +2189,7 @@ Does the diagram
  \mathrm{Fuk}(M_0 \times N_0) \arrow[r,below,"\Phi_{\tau ( \mathcal{L}_M \times \mathcal{L}_N)}",squiggly] & \mathrm{Fuk}(M_1 \times N_1)
 \end{tikzcd}
 \end{center}
-commutes up to homotopy of \Ainf -functors? 
+commute up to homotopy of \Ainf -functors? 
 \end{problem}
 \end{samepage}
 
