@@ -138,7 +138,7 @@ Our main results can be summarized as follows.
   \item We apply the cellular chains functor to the diagonal in order to define a universal tensor product of $\mathrm{A}_\infty$-morphisms (\cref{prop:diagonal-polytopale-m-infini}), and we study its properties (\cref{ss:homotopy-properties}).
 \end{enumerate}
 
-To achieve these goals, we use the general theory developed by the first author in \cite{LA21}, which is based on the (top,bot) method introduced in \cite{MTTV19}.
+To achieve these goals, we use the theory of cellular approximations developed by the first author in \cite{LA21}, which is based on the theory of fiber polytopes \cite{BilleraSturmfels92}, and the method introduced in \cite{MTTV19}.
 We prove that the Forcey--Loday realizations of the multiplihedra \cite{Forcey08} can be obtained from the Ardila--Doker realization of the multiplihedra \cite{AD13} by projection (\cref{prop:lifting}).
 These last realizations are generalized permutahedra, in the sense of A. Postnikov \cite{Postnikov09}, which allows us to apply the results of \cite{LA21} directly, both to define a cellular approximation of the diagonal and to describe its cellular image combinatorially.
 
@@ -146,7 +146,7 @@ The tensor product of $\Ainf$-morphisms defined by this diagonal does not howeve
 This is not a defect of our construction: in \cref{thm:nofunctorial}, we prove that there is no tensor product of $\Ainf$-morphisms which is strictly compatible with the composition of $\Ainf$-morphisms. 
 This proposition should be compared to a similar result by M. Markl and S. Shnider, saying that there is no strictly associative tensor product of $\Ainf$-algebras \cite[Theorem 13]{MarklShnider06}.
 The preceding two properties are in fact always satisfied up to homotopy (see \cref{th:homotopy-properties}), which points towards the idea that the category $\infAalg$ should possess some kind of \textit{homotopy} symmetric monoidal structure. 
-
+A similar phenomenon was already observed for the category of homotopy representations of an algebraic group \cite{poliakova2020cellular,AriasAbadCrainicDherin11}.
 
 Our results can be readily applied to different fields. 
 The operadic bimodule structure of Point~(2) above was used in the work of the second author, in order to realize $\mathrm{A}_\infty$-algebras and $\mathrm{A}_\infty$-morphisms in Morse theory \cite{mazuir-I,mazuir-II}. 
@@ -1128,11 +1128,13 @@ Under this map, (2-colored) maximal trees are in bijection with maximal (2-color
 
 \begin{definition}
 Let $(\gra,\mathcal{N})$ be a nested linear graph. 
-We respectively denote by $B(\mathcal{N})$, $P(\mathcal{N})$ and $R(\mathcal{N})$ the set of blue, purple and red nests of $\mathcal{N}$. We define $Q(\mathcal{N})$ to be the set whose elements are the unions of nests
-\[   \bigcup_{i=1}^k R_i \cup \bigcup_{B \in B(\mathcal{N})} B \cup 
+We respectively denote by $B(\mathcal{N})$, $P(\mathcal{N})$ and $R(\mathcal{N})$ the set of blue, purple and red nests of $\mathcal{N}$. 
+We define $Q(\mathcal{N})$ to be the set whose elements are the unions of nests
+\[   
+\bigcup_{i=1}^k R_i \cup \bigcup_{B \in B(\mathcal{N})} B \cup 
   \bigcup_{P \in P(\mathcal{N})} P 
-   \]
-where $R_1,\ldots,R_k \in R(\mathcal{N})$ and $\cup R_i := \emptyset$ when $k=0$.
+\]
+where $R_1,\ldots,R_k \in R(\mathcal{N})$, the case $\cup R_i = \emptyset$ being allowed, and where two unions that result in the same set are identified.
 \end{definition}
 
 We number the edges of the linear graph with $n$ vertices from bottom to top as represented in \cref{fig:bijections}, starting at $1$ and ending at $n-1$.  
@@ -1922,7 +1924,7 @@ The proof of this proposition is a simple adaptation of the results of \cite[Sec
 \end{proof}
 
 While \cref{thm:nofunctorial} shows that it is not possible to endow the category $\infAalg$ with a symmetric monoidal category structure using the viewpoint of diagonals, \cref{th:homotopy-properties} exhibits a first level of homotopies that could be involved in the definition of some kind of \textit{homotopy symmetric monoidal} category structure on \infAalg . 
-This question will be studied in a future work by D. Poliakova and the two authors of this paper. As a first step towards solving that problem, we will inspect in particular which higher coherent homotopies arise from the lack of coassociativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes. We also refer to the introduction of \cite{poliakova2020cellular} for a similar problem where the associahedra are replaced by the cubes and the multiplihedra by the freehedra. 
+This question will be studied in a future work by D. Poliakova and the two authors of this paper. As a first step towards solving that problem, we will inspect in particular which higher coherent homotopies arise from the lack of coassociativity of $\triangle^{K_n}$ and $\triangle^{J_n}$ on the level of polytopes. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
