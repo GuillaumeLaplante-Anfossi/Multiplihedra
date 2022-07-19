@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.9)  14 JUL 2022 01:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.9)  19 JUL 2022 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1489,14 +1489,7 @@ File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 Underfull \vbox (badness 2042) has occurred while \output is active []
 
  [3]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5]
+[4] [5]
 Underfull \hbox (badness 3039) in paragraph at lines 485--485
 []\T1/Baskervaldx-TLF/m/sc/10.95 Figure 3.|\T1/Baskervaldx-TLF/m/n/10.95 A 2-di
 mensional mul-ti-pli-he-dron and the Tamari-type poset
@@ -1514,8 +1507,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.660 \[
-        ] [9]
+l.650 \end{enumerate}
+                     ] [9]
 LaTeX Font Info:    Font shape `T1/Baskervaldx-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 727.
 LaTeX Font Info:    Font shape `T1/Baskervaldx-TLF/m/it' will be
@@ -1547,41 +1540,44 @@ LaTeX Font Info:    Font shape `OT1/Baskervaldx-TLF/b/n' will be
 (Font)              scaled to size 6.1pt on input line 1122.
  [16] [17]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-270.
+272.
 
 (C:\Users\mazuir\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 [18] [19]
-<paires-choisies.png, id=450, 291.0875pt x 450.68375pt>
+<paires-choisies.png, id=456, 291.0875pt x 450.68375pt>
 File: paires-choisies.png Graphic file (type png)
 <use paires-choisies.png>
-Package pdftex.def Info: paires-choisies.png  used on input line 1449.
+Package pdftex.def Info: paires-choisies.png  used on input line 1451.
 (pdftex.def)             Requested size: 104.06825pt x 161.12509pt.
-<paires-exclues.png, id=451, 268.00125pt x 442.65375pt>
+<paires-exclues.png, id=457, 268.00125pt x 442.65375pt>
 File: paires-exclues.png Graphic file (type png)
 <use paires-exclues.png>
-Package pdftex.def Info: paires-exclues.png  used on input line 1453.
+Package pdftex.def Info: paires-exclues.png  used on input line 1455.
 (pdftex.def)             Requested size: 104.06825pt x 171.88452pt.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1461.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 1461.
+(hyperref)                removing `subscript' on input line 1463.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1461.
+(hyperref)                removing `\infty' on input line 1463.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 1461.
+(hyperref)                removing `subscript' on input line 1463.
 
-[20 <./paires-choisies.png> <./paires-exclues.png>]
-Overfull \hbox (5.2109pt too wide) in paragraph at lines 1482--1482
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 1463.
+
+[20]
+Overfull \hbox (5.2109pt too wide) in paragraph at lines 1484--1484
 []\T1/Baskervaldx-TLF/b/n/10.95 Definition 4.2 \T1/Baskervaldx-TLF/m/n/10.95 ($
 \OT1/Baskervaldx-TLF/m/n/10.95 A[]$\T1/Baskervaldx-TLF/m/n/10.95 -morphism)\T1/
 Baskervaldx-TLF/b/n/10.95 . []\T1/Baskervaldx-TLF/m/it/10.95 An $\OT1/Baskerval
@@ -1593,26 +1589,31 @@ T1/Baskervaldx-TLF/m/n/10.95 A[]$\T1/Baskervaldx-TLF/m/it/10.95 -algebras $\LMS
 t/10.95 m[]\LMS/ntxsy/m/n/10.95 gº$
  []
 
+[21 <./paires-choisies.png> <./paires-exclues.png>]
 LaTeX Font Info:    Font shape `T1/Baskervaldx-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1496.
-[21] [22]
+(Font)              scaled to size 7.0pt on input line 1498.
+ [22]
 LaTeX Font Info:    Font shape `T1/Baskervaldx-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 1534.
- [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
-[36] (Multiplihedra.bbl
+(Font)              scaled to size 7.0pt on input line 1536.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
+(Multiplihedra.bbl
 LaTeX Font Info:    Font shape `T1/Baskervaldx-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 13.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 9.0pt on input line 17.
+(Font)              scaled to size 9.0pt on input line 22.
 
-Underfull \hbox (badness 6592) in paragraph at lines 59--61
+Underfull \hbox (badness 6592) in paragraph at lines 68--70
 []\T1/Baskervaldx-TLF/m/n/9 Vladimir Dot-senko, Sergey Shadrin, and Bruno Val-l
 ette, \T1/Baskervaldx-TLF/m/it/9 The twist-ing pro-ce-dure\T1/Baskervaldx-TLF/m
 /n/9 , 2018,
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 99--101
+Underfull \hbox (badness 2384) in paragraph at lines 108--110
 []\T1/Baskervaldx-TLF/m/n/9 Kenji Fukaya, \T1/Baskervaldx-TLF/m/it/9 Un-ob-stru
 cted im-mersed La-grangian cor-re-spon-dence and fil-tered $\OML/ntxmi/m/it/9 A
 []$ \T1/Baskervaldx-TLF/m/it/9 func-tor\T1/Baskervaldx-TLF/m/n/9 , 2017,
@@ -1622,7 +1623,10 @@ cted im-mersed La-grangian cor-re-spon-dence and fil-tered $\OML/ntxmi/m/it/9 A
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37])
-[38] (Multiplihedra.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+[39] (Multiplihedra.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1631,10 +1635,10 @@ Package rerunfilecheck Info: File `Multiplihedra.out' has not changed.
 (rerunfilecheck)             Checksum: 0974D8586CA0A88366E3C55F9A03D7B1;1461.
  ) 
 Here is how much of TeX's memory you used:
- 34171 strings out of 478603
- 644994 string characters out of 2840270
- 1045508 words of memory out of 3000000
- 51213 multiletter control sequences out of 15000+600000
+ 34176 strings out of 478603
+ 645099 string characters out of 2840270
+ 1051529 words of memory out of 3000000
+ 51215 multiletter control sequences out of 15000+600000
  593253 words of font info for 225 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,23n,117p,3245b,1272s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1666,9 +1670,9 @@ ts/type1/public/txfonts/txsyb.pfb><C:/Users/mazuir/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/mazuir/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/newtx/txsys.pfb><C:/Users/mazuir/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Multiplihedra.pdf (38 pages, 576093 bytes).
+Output written on Multiplihedra.pdf (39 pages, 578471 bytes).
 PDF statistics:
- 945 PDF objects out of 1000 (max. 8388607)
- 269 named destinations out of 1000 (max. 500000)
+ 954 PDF objects out of 1000 (max. 8388607)
+ 272 named destinations out of 1000 (max. 500000)
  89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

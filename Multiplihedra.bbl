@@ -8,6 +8,11 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{FOOO09b}
 
+\bibitem[AACD11]{AriasAbadCrainicDherin11}
+Camilo Arias~Abad, Marius Crainic, and Benoit Dherin, \emph{Tensor products of
+  representations up to homotopy}, J. Homotopy Relat. Struct. \textbf{6}
+  (2011), no.~2, 239--288.
+
 \bibitem[AD13]{AD13}
 Federico Ardila and Jeffrey Doker, \emph{Lifted generalized permutahedra and
   composition polynomials}, Adv. in Appl. Math. \textbf{50} (2013), no.~4,
@@ -30,6 +35,10 @@ Denis Auroux, \emph{A beginner's introduction to {F}ukaya categories}, Contact
 \bibitem[Bro59]{Brown59}
 Edgar~H. Brown, Jr., \emph{Twisted tensor products. {I}}, Ann. of Math. (2)
   \textbf{69} (1959), 223--246.
+
+\bibitem[BS92]{BilleraSturmfels92}
+Louis~J. Billera and Bernd Sturmfels, \emph{Fiber polytopes}, Ann. of Math. (2)
+  \textbf{135} (1992), no.~3, 527--549.
 
 \bibitem[BV73]{BoardmanVogt73}
 John~M. Boardman and Rainer~M. Vogt, \emph{Homotopy invariant algebraic

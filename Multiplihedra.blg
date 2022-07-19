@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: bib.bib
 Warning--missing journal name in OEIS
 Warning--missing journal, volume, and year in OEIS
-You've used 51 entries,
+You've used 53 entries,
             2624 wiz_defined-function locations,
-            916 strings with 11689 characters,
-and the built_in function-call counts, 18786 in all, are:
-= -- 1759
-> -- 698
+            929 strings with 11981 characters,
+and the built_in function-call counts, 19644 in all, are:
+= -- 1844
+> -- 742
 < -- 36
-+ -- 226
-- -- 218
-* -- 1591
-:= -- 2944
-add.period$ -- 51
-call.type$ -- 51
-change.case$ -- 289
-chr.to.int$ -- 48
-cite$ -- 53
-duplicate$ -- 786
-empty$ -- 1586
-format.name$ -- 296
-if$ -- 3818
++ -- 241
+- -- 233
+* -- 1673
+:= -- 3084
+add.period$ -- 53
+call.type$ -- 53
+change.case$ -- 302
+chr.to.int$ -- 50
+cite$ -- 55
+duplicate$ -- 814
+empty$ -- 1648
+format.name$ -- 313
+if$ -- 3988
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 101
-newline$ -- 164
-num.names$ -- 148
-pop$ -- 353
+missing$ -- 105
+newline$ -- 170
+num.names$ -- 154
+pop$ -- 364
 preamble$ -- 2
-purify$ -- 340
+purify$ -- 355
 quote$ -- 0
-skip$ -- 539
+skip$ -- 560
 stack$ -- 0
-substring$ -- 1363
-swap$ -- 87
+substring$ -- 1427
+swap$ -- 89
 text.length$ -- 36
 text.prefix$ -- 27
 top$ -- 0
-type$ -- 368
+type$ -- 384
 warning$ -- 2
-while$ -- 178
-width$ -- 56
-write$ -- 568
+while$ -- 188
+width$ -- 58
+write$ -- 590
 (There were 2 warnings)
