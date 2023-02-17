@@ -64,9 +64,10 @@ Satyan Devadoss and Stefan Forcey, \emph{Marked tubes and the graph
 Jeffrey~Samuel Doker, \emph{Geometry of generalized permutohedra}, Ph.D.
   thesis, University of California, Berkeley, 2011.
 
-\bibitem[DSV18]{dotsenko2018twisting}
-Vladimir Dotsenko, Sergey Shadrin, and Bruno Vallette, \emph{The twisting
-  procedure}, 2018, arXiv:1810.02941.
+\bibitem[DSV22]{dotsenko2018twisting}
+Vladimir Dotsenko, Sergey Shadrin, and Bruno Vallette, \emph{Maurer-cartan
+  methods in deformation theory: the twisting procedure}, Cambridge University
+  Press, 2022, to appear.
 
 \bibitem[EML53]{EilenbergMacLane53}
 S.~Eilenberg and S.~Mac~Lane, \emph{On the groups of {$H(\Pi,n)$}. {I}}, Ann.
@@ -93,7 +94,7 @@ Stefan Forcey, \emph{Convex hull realizations of the multiplihedra}, Topology
   Appl. \textbf{156} (2008), no.~2, 326--347.
 
 \bibitem[Fra07]{Frankland07}
-Martin Frankland, \emph{Th\'eor\`eme de k\"unneth en homologie de {M}orse},
+Martin Frankland, \emph{Th\'eor\`eme de {K}\"unneth en homologie de {M}orse},
   Ann. Sci. Math. Qu\'ebec \textbf{31} (2007), 31--39.
 
 \bibitem[FS97]{FultonSturmfels97}
@@ -113,8 +114,8 @@ Joseph Hirsh and Joan Mill{\`e}s, \emph{Curved {K}oszul duality theory}, Math.
   Ann. \textbf{354} (2012), no.~4, 1465--1520.
 
 \bibitem[{Lap}22]{LA21}
-Guillaume {Laplante-Anfossi}, \emph{{The diagonal of the operahedra}}, Advances
-  in Mathematics (2022), to appear.
+Guillaume {Laplante-Anfossi}, \emph{The diagonal of the operahedra}, Advances
+  in Mathematics \textbf{405} (2022), 108494.
 
 \bibitem[LH03]{LefevreHasegawa03}
 Kenji Lef\`evre-Hasegawa, \emph{Sur les {$A_\infty$}-cat{\'e}gories}, Ph.D.
@@ -225,6 +226,10 @@ James~D. Stasheff, \emph{Homotopy associativity of {$H$}-spaces. {I}, {II}},
 Samson Saneblidze and Ronald Umble, \emph{Diagonals on the permutahedra,
   multiplihedra and associahedra}, Homology Homotopy Appl. \textbf{6} (2004),
   no.~1, 363--411.
+
+\bibitem[SU22]{saneblidzeComparingDiagonalsAssociahedra2022a}
+\bysame, \emph{Comparing {{Diagonals}} on the {{Associahedra}}}, August 2022,
+  arXiv:2207.08543.
 
 \bibitem[Tho18]{Thorngren18}
 Ryan~George Thorngren, \emph{Combinatorial topology and applications to quantum

@@ -17,32 +17,32 @@
 \contentsline {subsection}{\tocsubsection {}{2.5}{Operadic bimodule structure on the Forcey--Loday multiplihedra}}{14}{subsection.2.5}%
 \contentsline {section}{\tocsection {}{3}{Cellular formula for the diagonal of the multiplihedra}}{15}{section.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{2-colored nested linear graphs}}{15}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Cellular formula for the diagonal}}{16}{subsection.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{About the cellular formula}}{19}{subsection.3.3}%
-\contentsline {section}{\tocsection {}{4}{Tensor product of \ensuremath {\mathrm {A}_\infty }-morphisms and \ensuremath {\mathrm {A}_\infty }-functors}}{20}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{\ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{21}{subsection.4.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.1}{Definitions}}{21}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.2}{The operad \ensuremath {\mathrm {A}_\infty }\ and the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{22}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.3}{The Forcey--Loday multiplihedra realize the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{23}{subsubsection.4.1.3}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{Tensor product of \ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{24}{subsection.4.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{Diagonals on the operad \ensuremath {\mathrm {A}_\infty }\ and on the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{24}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.2}{Admissible edges and permutations}}{25}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.3}{The polytopal diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{26}{subsubsection.4.2.3}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{Categorification}}{27}{subsection.4.3}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Tensor product of \ensuremath {\mathrm {A}_\infty }-categories and \ensuremath {\mathrm {A}_\infty }-functors}}{28}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.3.2}{Identities}}{28}{subsubsection.4.3.2}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{Homotopy properties of diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{29}{subsection.4.4}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.1}{The 2-colored viewpoint}}{29}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.2}{Coassociativity and cocommutativity}}{29}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.3}{Compatibility with the composition}}{30}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\tocsubsubsection {}{4.4.4}{Homotopy properties}}{31}{subsubsection.4.4.4}%
-\contentsline {section}{\tocsection {}{5}{Further applications}}{31}{section.5}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{Retractions and diagonals}}{31}{subsection.5.1}%
-\contentsline {subsection}{\tocsubsection {}{5.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{33}{subsection.5.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{5.2.1}{Standard convolution algebra}}{33}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{5.2.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{33}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{5.2.3}{Diagonals as twisting morphisms}}{34}{subsubsection.5.2.3}%
-\contentsline {subsection}{\tocsubsection {}{5.3}{Diagonals in symplectic topology}}{35}{subsection.5.3}%
-\contentsline {subsubsection}{\tocsubsubsection {}{5.3.1}{The work of Lipshitz, {Oszv\'ath} and Thurston}}{35}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{5.3.2}{K\"unneth theorems in Lagrangian Floer theory}}{35}{subsubsection.5.3.2}%
-\contentsline {section}{\tocsection {}{}{References}}{37}{section*.20}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Cellular formula for the diagonal}}{15}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{About the cellular formula}}{18}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{4}{Tensor product of \ensuremath {\mathrm {A}_\infty }-morphisms and \ensuremath {\mathrm {A}_\infty }-functors}}{19}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{\ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{20}{subsection.4.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.1.1}{Definitions}}{20}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.1.2}{The operad \ensuremath {\mathrm {A}_\infty }\ and the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{21}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.1.3}{The Forcey--Loday multiplihedra realize the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{22}{subsubsection.4.1.3}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{Tensor product of \ensuremath {\mathrm {A}_\infty }-algebras and \ensuremath {\mathrm {A}_\infty }-morphisms}}{23}{subsection.4.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{Diagonals on the operad \ensuremath {\mathrm {A}_\infty }\ and on the operadic bimodule \ensuremath {\mathrm {M}_\infty }}}{23}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.2}{Admissible edges and permutations}}{23}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.3}{The polytopal diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{24}{subsubsection.4.2.3}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Categorification}}{26}{subsection.4.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Tensor product of \ensuremath {\mathrm {A}_\infty }-categories and \ensuremath {\mathrm {A}_\infty }-functors}}{26}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.2}{Identities}}{27}{subsubsection.4.3.2}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Homotopy properties of diagonals on \ensuremath {\mathrm {A}_\infty }\ and \ensuremath {\mathrm {M}_\infty }}}{27}{subsection.4.4}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.1}{The 2-colored viewpoint}}{27}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.2}{Coassociativity and cocommutativity}}{28}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.3}{Compatibility with the composition}}{29}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.4}{Homotopy properties}}{29}{subsubsection.4.4.4}%
+\contentsline {section}{\tocsection {}{5}{Further applications}}{30}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Retractions and diagonals}}{30}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{31}{subsection.5.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.2.1}{Standard convolution algebra}}{31}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.2.2}{Convolution \ensuremath {\mathrm {A}_\infty }-algebra}}{31}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.2.3}{Diagonals as twisting morphisms}}{32}{subsubsection.5.2.3}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Diagonals in symplectic topology}}{33}{subsection.5.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.3.1}{The work of Lipshitz, {Oszv\'ath} and Thurston}}{33}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{5.3.2}{K\"unneth theorems in Lagrangian Floer theory}}{33}{subsubsection.5.3.2}%
+\contentsline {section}{\tocsection {}{}{References}}{36}{section*.20}%
